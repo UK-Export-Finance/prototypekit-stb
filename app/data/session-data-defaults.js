@@ -28,8 +28,8 @@ module.exports = {
   'time-now': '9:54am',
 
   // Names
-  'signed-in-name': 'John Smith',
-  'last-month-name': 'John Smith',
+  'signed-in-name': 'Jane Smith',
+  'last-month-name': 'Jane Smith',
 
   // Banks
   'bank-1-name': 'Bank of Scotland',
