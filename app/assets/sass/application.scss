@@ -1,0 +1,327 @@
+//
+// For guidance on how to add CSS and SCSS see:
+// https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
+//
+// Add extra styles here
+
+html,
+body,
+address,
+blockquote,
+div,
+dl,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ol,
+p,
+pre,
+table,
+ul,
+dd,
+dt,
+li,
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr,
+button,
+del,
+ins,
+map,
+object,
+a,
+abbr,
+acronym,
+b,
+bdo,
+big,
+br,
+cite,
+code,
+dfn,
+em,
+i,
+img,
+kbd,
+q,
+samp,
+small,
+span,
+strong,
+sub,
+sup,
+tt,
+var,
+legend,
+fieldset,
+label,
+.govuk-input,
+textarea,
+caption {
+  //font-family: "helvetica neue",Arial,Helvetica,sans-serif!important;
+  font-family: arial, helvetica, sans-serif !important;
+}
+.moj-sub-navigation {
+  margin-bottom: 0;
+}
+.blue-panel {
+  background: $govuk-brand-colour;
+}
+
+// set the width of the page
+
+
+@media screen and (max-width: 1440px) {
+  .moj-header__container,
+  .moj-primary-navigation__container {
+    margin: 0 30px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .moj-header__container,
+  .moj-primary-navigation__container {
+    margin: 0 15px;
+  }
+}
+
+// make the font-sizes smaller
+.govuk-warning-text__text,
+.govuk-inset-text,
+.moj-sub-navigation__item,
+.govuk-tabs__title,
+.govuk-tabs__list-item,
+.govuk-summary-list,
+.govuk-table,
+.govuk-tag,
+.govuk-body {
+  font-size: 1rem;
+}
+
+@media (min-width: 40.0625em) {
+.govuk-accordion__section-button {
+   // font-size: 2rem;
+    line-height: 1.25;
+}}
+
+// make the horizontal rules darker and thicker
+.govuk-section-break--visible {
+  border-bottom: 3px solid $govuk-text-colour !important;
+}
+
+// lose the tabs panel borders and padding
+.js-enabled .govuk-tabs__panel {
+  margin-bottom: 0;
+  padding: 30px 0 !important;
+  border: 0;
+  border-top: 0;
+}
+
+// spacing above the sub nav
+.moj-sub-navigation {
+    margin-top: 40px;
+}
+
+// blue case summary panel
+.case-summary-buyer {
+  display: inline-block;
+  margin-left: 30px;
+  vertical-align: top;
+}
+
+.case-summary-overview-container {
+  margin-top: 30px;
+}
+
+@media (min-width: 40.0625em) {
+  .case-summary-overview-container {
+    display: flex;
+  }
+}
+
+.case-summary-overview-column {
+  border-right: 1px solid #fff;
+  padding-left: 30px;
+  padding-right: 10px;
+}
+
+.case-summary-overview-column:first-child {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.case-summary-overview-column:last-child {
+  border-right: none;
+}
+
+.case-summary-overview-item {
+  margin-bottom: 30px;
+}
+
+.case-summary-overview-item__stage {
+  margin-left: -10px;
+}
+
+.case-summary {
+  background-color: #1d70b8;
+  color: #fff;
+  font-family: Helvetica;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 20px 20px 0;
+}
+
+.case-summary-deal-id {
+  display: inline-block;
+  margin-right: 30px;
+  vertical-align: top;
+  width: 228px;
+}
+
+.case-summary-supplier {
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+}
+
+.case-summary-supplier.chevron-right {
+  padding-right: 45px;
+}
+
+.case-summary-supplier.chevron-right:after {
+  content: url(/assets/images/chevron-right.svg);
+  height: 30px;
+  opacity: 0.5;
+  position: absolute;
+  right: 0;
+  top: 20px;
+  width: 15px;
+}
+
+.case-summary-buyer {
+  display: inline-block;
+  margin-left: 30px;
+  vertical-align: top;
+}
+
+.case-summary-overview-container {
+  margin-top: 30px;
+}
+
+@media (min-width: 40.0625em) {
+  .case-summary-overview-container {
+    display: flex;
+  }
+}
+
+.case-summary-overview-column {
+  border-right: 1px solid #fff;
+  padding-left: 30px;
+  padding-right: 10px;
+}
+
+.case-summary-overview-column:first-child {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.case-summary-overview-column:last-child {
+  border-right: none;
+}
+
+.case-summary-overview-item {
+  margin-bottom: 30px;
+}
+
+.case-summary-overview-item__stage {
+  margin-left: -10px;
+}
+
+.ukef-deal-stage {
+  background: #fff;
+  padding: 10px;
+}
+
+.ukef-deal-stage__title {
+  color: #1d70b8;
+}
+
+.ukef-heading-l {
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 39px;
+}
+
+.ukef-heading-xs {
+  font-weight: 700;
+}
+
+.ukef-grid-column-one-sixth {
+  box-sizing: border-box;
+  padding: 0 15px;
+  width: 100%;
+}
+
+@media (min-width: 40.0625em) {
+  .ukef-grid-column-one-sixth {
+    float: left;
+    width: 16.6667%;
+  }
+}
+
+
+
+.ukef-grid-column-five-sixth {
+  box-sizing: border-box;
+  padding: 0 15px;
+  width: 100%;
+}
+@media (min-width: 40.0625em) {
+  .ukef-grid-column-five-sixth {
+    float: left;
+    width: 83.3333%;
+  }
+}
+
+.ukef-grid-column-one-seventh {
+  box-sizing: border-box;
+  padding: 0 15px;
+  width: 100%;
+}
+
+@media (min-width: 40.0625em) {
+  .ukef-grid-column-one-seventh {
+    float: left;
+    width: 14.28%;
+  }
+}
+
+.ukef-grid-column-six-seventh {
+  box-sizing: border-box;
+  padding: 0 15px;
+  width: 100%;
+}
+
+@media (min-width: 40.0625em) {
+  .ukef-grid-column-six-seventh {
+    float: left;
+    width: 85.72%;
+  }
+}
+
+.moj-side-navigation {
+  padding-top: 0 !important;
+}
+
+
+.moj-page-header-actions {
+  margin-bottom: 0;
+}

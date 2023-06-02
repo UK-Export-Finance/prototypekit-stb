@@ -1,0 +1,94 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: ''
+  }) }}
+  {% endblock %}  
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Short-term business reconciliation</h1>
+
+
+    <h2 class="govuk-heading-m"><a href="/tfm/index" class="govuk-link govuk-link--no-visited-state">Version 1</a></h2>
+
+      
+    {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+    <p class="govuk-body">These banks and facilities are viewable:</p>
+
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Bank"
+      },
+      value: {
+        text: "Bank of Scotland"
+      }
+    },
+    {
+      key: {
+        text: "Facility"
+      },
+      value: {
+        text: "Compressors Ltd (0020001371)"
+      }
+    },
+    {
+      key: {
+        text: "Facility"
+      },
+      value: {
+        text: "Petroleum Pipes Ltd (0020001413)"
+      }
+    }
+  ]
+}) }}
+
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Bank"
+      },
+      value: {
+        text: "Barclays Bank"
+      }
+    },
+    {
+      key: {
+        text: "Facility"
+      },
+      value: {
+        text: "Marine Equipment Ltd (0020001735)"
+      }
+    },
+    {
+      key: {
+        text: "Facility"
+      },
+      value: {
+        text: "British Pharma Supplies Ltd (0020003073)"
+      }
+    }
+  ]
+}) }}
+
+    <!--{% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}-->
+  </div>
+</div>
+
+{% endblock %}

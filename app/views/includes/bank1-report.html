@@ -1,0 +1,82 @@
+<table class="govuk-table">
+    <caption class="govuk-table__caption govuk-table__caption--l"></caption>
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header" aria-sort="ascending">Facility ID</th>
+        <th scope="col" class="govuk-table__header" aria-sort="none">Exporter</th>
+        <th scope="col" class="govuk-table__header">Value</th>  
+        <th scope="col" class="govuk-table__header">Utilisation</th>
+        <th scope="col" class="govuk-table__header">UKEF cover</th>
+        <th scope="col" class="govuk-table__header">UKEF exposure</th>
+        <th scope="col" class="govuk-table__header">Fees accrued</th>
+        <th scope="col" class="govuk-table__header">Fee payable to UKEF</th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="facility1">{{ data['facility-1-ukef-id'] }}</a></th>
+        <td class="govuk-table__cell">{{ data['facility-1-name'] }}</td>
+        <td class="govuk-table__cell">GBP {{ data['facility-1-limit'] }}</td>
+        <td class="govuk-table__cell">GBP {{ data['facility-1-utilisation'] }}</td>
+        <td class="govuk-table__cell">{{ data['facility-1-cover'] }}</td>
+        <td class="govuk-table__cell">GBP {{ data['facility-1-exposure'] }}</td>
+        <td class="govuk-table__cell">GBP {{ data['facility-1-accrued'] }} </td>
+        <td class="govuk-table__cell">GBP {{ data['facility-1-paid'] }} </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="facility1">{{ data['facility-2-ukef-id'] }}</a></th>
+        <td class="govuk-table__cell">{{ data['facility-2-name'] }}</td>
+        <td class="govuk-table__cell">GBP {{ data['facility-2-limit'] }}</td>
+        <td class="govuk-table__cell">GBP {{ data['facility-2-utilisation'] }}</td>
+        <td class="govuk-table__cell">{{ data['facility-2-cover'] }}</td>
+        <td class="govuk-table__cell">GBP {{ data['facility-2-exposure'] }}</td>
+        <td class="govuk-table__cell">GBP {{ data['facility-2-accrued'] }} </td>
+        <td class="govuk-table__cell">GBP {{ data['facility-2-paid'] }} </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="facility1">{{ data['facility-3-ukef-id'] }}</a></th>
+        <td class="govuk-table__cell">{{ data['facility-3-name'] }}</td>
+        <td class="govuk-table__cell">GBP {{ data['facility-3-limit'] }}</td>
+        <td class="govuk-table__cell">GBP {{ data['facility-3-utilisation'] }}</td>
+        <td class="govuk-table__cell">{{ data['facility-3-cover'] }}</td>
+        <td class="govuk-table__cell">GBP {{ data['facility-3-exposure'] }}</td>
+        <td class="govuk-table__cell">GBP {{ data['facility-3-accrued'] }} </td>
+        <td class="govuk-table__cell">GBP {{ data['facility-3-paid'] }} </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="facility1">{{ data['facility-4-ukef-id'] }}</a></th>
+        <td class="govuk-table__cell">{{ data['facility-4-name'] }}</td>
+        <td class="govuk-table__cell">GBP {{ data['facility-4-limit'] }}</td>
+        <td class="govuk-table__cell">GBP {{ data['facility-4-utilisation'] }}</td>
+        <td class="govuk-table__cell">{{ data['facility-4-cover'] }}</td>
+        <td class="govuk-table__cell">GBP {{ data['facility-4-exposure'] }}</td>  
+        <td class="govuk-table__cell">GBP {{ data['facility-4-accrued'] }} </td>
+        <td class="govuk-table__cell">GBP {{ data['facility-4-paid'] }} </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="facility1">{{ data['facility-5-ukef-id'] }}</a></th>
+        <td class="govuk-table__cell">{{ data['facility-5-name'] }}</td>
+        <td class="govuk-table__cell">GBP {{ data['facility-5-limit'] }}</td>
+        <td class="govuk-table__cell">GBP {{ data['facility-5-utilisation'] }}</td>
+        <td class="govuk-table__cell">{{ data['facility-5-cover'] }}</td>
+        <td class="govuk-table__cell">GBP {{ data['facility-5-exposure'] }}</td>
+        <td class="govuk-table__cell">GBP {{ data['facility-5-accrued'] }} </td>
+        <td class="govuk-table__cell">GBP {{ data['facility-5-paid'] }} </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="facility1">{{ data['facility-6-ukef-id'] }}</a></th>
+        <td class="govuk-table__cell">{{ data['facility-6-name'] }}</td>
+        <td class="govuk-table__cell">GBP {{ data['facility-6-limit'] }}</td>
+        <td class="govuk-table__cell">GBP {{ data['facility-6-utilisation'] }}</td>
+        <td class="govuk-table__cell">{{ data['facility-6-cover'] }}</td>
+        <td class="govuk-table__cell">GBP {{ data['facility-6-exposure'] }}</td>
+        <td class="govuk-table__cell">GBP {{ data['facility-6-accrued'] }} </td>
+        <td class="govuk-table__cell">GBP {{ data['facility-6-paid'] }} </td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header govuk-!-text-align-right" colspan="7">Total fees payable:</th>
+        <td class="govuk-table__cell govuk-!-font-weight-bold">GBP {{ data['bank-1-fee-payable'] }}<!--{{((data['facility-1-paid'] | float) + (data['facility-2-paid'] | float) + (data['facility-3-paid'] | float) + (data['facility-4-paid'] | float) + (data['facility-5-paid'] | float) + (data['facility-6-paid'] | float)).toFixed(2)}}--></td>
+        
+      </tr>
+    </tbody>
+  </table>
