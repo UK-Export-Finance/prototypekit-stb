@@ -24,10 +24,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 
     <h2 class="govuk-heading-m"><a href="/tfm/index" class="govuk-link govuk-link--no-visited-state">Version 1</a></h2>
 
-      
-    {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
 
-    <p class="govuk-body">These banks and facilities are viewable:</p>
+    <p class="govuk-body govuk-!-font-size-19">These banks and facilities are viewable:</p>
 
 {{ govukSummaryList({
   rows: [
@@ -86,6 +84,8 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     }
   ]
 }) }}
+
+<p class="govuk-body govuk-!-font-size-19">*Use the <span class="govuk-!-font-weight-bold">Clear data</span> link in the footer to reset inbetween sessions.</p>
 
     <!--{% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}-->
   </div>
