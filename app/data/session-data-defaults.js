@@ -21,8 +21,8 @@ module.exports = {
 
   
   '1-month-ago': '3 May 2023',
-  'todays-date': '1 June 2023',
-  'todays-date-full': '1 June 2023',
+  'todays-date': '5 June 2023',
+  'todays-date-full': '5 June 2023',
   'this-month-report-due': '14 June 2023',
   'next-month-report-due': '14 July 2023',
   'time-now': '9:54am',
