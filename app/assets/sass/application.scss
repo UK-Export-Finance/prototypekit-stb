@@ -325,3 +325,9 @@ caption {
 .moj-page-header-actions {
   margin-bottom: 0;
 }
+
+// make the email page bg white
+.body-background-white {background-color: #fff !important;}
+
+.emailcontent p.govuk-body  {font-size: 19px}
+.emailcontent li  {font-size: 19px; color: #0b0c0c}
