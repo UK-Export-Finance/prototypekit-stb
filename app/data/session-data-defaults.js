@@ -3,6 +3,9 @@ module.exports = {
  // Insert values here
   
   // Dates
+
+  'display-banner': 'not-done',
+
   'report-due': 'yes',
   'end-current-month': '31 May 2023',
   'end-previous-month': '30 April 2023',

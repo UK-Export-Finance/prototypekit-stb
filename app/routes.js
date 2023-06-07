@@ -18,3 +18,13 @@ router.use((req, res, next) => {
     console.log(JSON.stringify(log, null, 2))
   next()
 })
+
+
+// Run this code when a form is submitted to '/tfm/index' form on bank-1-check.html
+router.get('/tfm/index', (req, res) => {
+  const data = req.session.data
+  let showBanner = (data.showBanner) ? true : false
+  delete data.showBanner
+  res.render('/tfm/index', { showBanner })
+}) 
+
