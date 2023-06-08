@@ -75,23 +75,24 @@ Check your answers - {{ data['bank-2-name'] }} – {{ serviceName }} – GOV.UK 
           </div>
         </dl>
 
+        <form class="form" action="/tfm/index2" method="post">
+          <button class="govuk-button" data-module="govuk-button">
+            Confirm and save
+          </button>
+          <input type="hidden" name="bank-2-reconciliation" value="done">
+          <input type="hidden" name="answers-checked" value="true">
+          <input type="hidden" name="showBanner2" value="true">
+        </form>
+        
+        <!--
         <form class="form" action="bank-2#reconciliation" method="get">
           <input type="hidden" name="answers-checked" value="true">
           <button class="govuk-button" data-module="govuk-button">
             Confirm and save
           </button>
           <input type="hidden" name="bank-2-reconciliation" value="done">
-        </form>
+        </form>-->
       </div>
-
-
-
-
-
-
-
-
-    
   </div>
 </div>
 {% endblock %}

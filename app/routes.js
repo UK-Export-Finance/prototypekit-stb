@@ -28,3 +28,11 @@ router.get('/tfm/index', (req, res) => {
   res.render('/tfm/index', { showBanner })
 }) 
 
+// Run this code when a form is submitted to '/tfm/index' form on bank-2-check.html
+router.get('/tfm/index2', (req, res) => {
+  const data = req.session.data
+  let showBanner2 = (data.showBanner2) ? true : false
+  delete data.showBanner
+  res.render('/tfm/index', { showBanner2 })
+}) 
+
