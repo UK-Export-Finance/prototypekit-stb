@@ -1,14 +1,14 @@
 {% extends "layouts/main.html" %}
 
-{% set htmlClasses = "body-background-white" %}
+{% set bodyClasses = "body-background" %}
 
 {% block pageTitle %}
   Email - The Digital Trade Finance Service team – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block header %}
-<div style="max-width: 640px; margin: 30px auto;" class="emailcontent">
-    <p class="govuk-body">Subject line: Bank report received</p>
+<div class="emailheader">
+    <p class="govuk-body"><br>Subject line: Bank report received</p>
     <p class="govuk-body">From: The Digital Trade Finance Service team</p>
     <header class="moj-header" role="banner">
         <div class="moj-header__container">
@@ -25,7 +25,8 @@
 {% endblock %}
 
 {% block main %}
-<div style="max-width: 640px; margin: 30px auto" class="emailcontent">
+<div class="emailwrapper">
+  <div class="emailcontent">
 
 <p class="govuk-body">A bank report has been received by the Trade Finance Manager system.</p>
 
@@ -44,7 +45,7 @@
 <p class="govuk-body">Email: DigitalService.TradeFinance@ukexportfinance.gov.uk<br>
 Phone: +44 (0)207 271 8010<br>
 Opening times: Monday to Friday, 9am to 5pm (excluding public holidays)</p>
-
+</div>
 </div>
 {% endblock %}
 

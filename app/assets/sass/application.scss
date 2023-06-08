@@ -326,8 +326,12 @@ caption {
   margin-bottom: 0;
 }
 
-// make the email page bg white
-.body-background-white {background-color: #fff !important;}
 
-.emailcontent p.govuk-body  {font-size: 19px}
+// email styling
+.body-background {background-color: #f3f2f1 !important;}
+.emailheader {max-width: 640px; margin: 0 auto; background: #fff; }
+.emailheader p.govuk-body  {font-size: 19px; padding: 0 30px}
+.emailwrapper {max-width: 640px; margin: 0 auto; background-color: #f3f2f1 !important;}
+.emailcontent {padding: 30px; background: #fff;}
+.emailcontent p.govuk-body {font-size: 19px}
 .emailcontent li  {font-size: 19px; color: #0b0c0c}
