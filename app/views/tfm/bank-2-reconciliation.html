@@ -22,9 +22,10 @@ Reconciliation - {{ data['bank-2-name'] }} – {{ serviceName }} – GOV.UK Prot
 
   <div class="govuk-grid-column-full">
     <form class="form" action="bank-2-check" method="get">
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Reconciliation</h1>
-    
-    <h2 class="govuk-heading-m govuk-!-font-weight-bold">{{ data['bank-2-name'] }}, {{ data['report-month'] }}</h2>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
+        <span class="govuk-caption-xl">{{ data['bank-2-name'] }}, {{ data['report-month'] }}</span>
+        Reconciliation
+      </h1>
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
             <dl class="govuk-summary-list">
