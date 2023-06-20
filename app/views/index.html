@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Home – {{serviceName}} – GOV.UK Prototype Kit
+STB reconciiation home – {{serviceName}} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -22,7 +22,11 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     <h1 class="govuk-heading-l">Short-term business reconciliation</h1>
 
 
-    <h2 class="govuk-heading-m"><a href="/tfm/sign-in" class="govuk-link govuk-link--no-visited-state">Version 1</a></h2>
+    <h2 class="govuk-heading-m">Version 1</h2>
+
+    <p class="govuk-body govuk-!-font-size-19"><a href="/tfm/sign-in" class="govuk-link govuk-link--no-visited-state">Start with sign in</a></p>
+
+    <p class="govuk-body govuk-!-font-size-19"><a href="/tfm/email" class="govuk-link govuk-link--no-visited-state">Start with email notification</a></p>
 
 
     <p class="govuk-body govuk-!-font-size-19">These banks and facilities are viewable:</p>
@@ -39,18 +43,10 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     },
     {
       key: {
-        text: "Facility"
+        text: "Facilities"
       },
       value: {
-        text: "Compressors Ltd (0020001371)"
-      }
-    },
-    {
-      key: {
-        text: "Facility"
-      },
-      value: {
-        text: "Petroleum Pipes Ltd (0020001413)"
+        html: "Compressors Ltd (0020001371)<br>Petroleum Pipes Ltd (0020001413)"
       }
     }
   ]
@@ -68,24 +64,16 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
     },
     {
       key: {
-        text: "Facility"
+        text: "Facilities"
       },
       value: {
-        text: "Marine Equipment Ltd (0020001735)"
-      }
-    },
-    {
-      key: {
-        text: "Facility"
-      },
-      value: {
-        text: "British Pharma Supplies Ltd (0020003073)"
+        html: "Marine Equipment Ltd (0020001735)<br>British Pharma Supplies Ltd (0020003073)"
       }
     }
   ]
 }) }}
 
-<p class="govuk-body govuk-!-font-size-19"><a href="/tfm/email" class="govuk-link govuk-link--no-visited-state">Email notification</a></p>
+
 
 <p class="govuk-body govuk-!-font-size-19">*Use the <span class="govuk-!-font-weight-bold">Clear data</span> link in the footer to reset between sessions.</p>
 
