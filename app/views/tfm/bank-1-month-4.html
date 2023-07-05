@@ -35,7 +35,9 @@
                     <li class="moj-side-navigation__item moj-side-navigation__item--active">
                     <a href="bank-1-month-4" aria-current="location">{{ data['4th-month-only'] }}</a>
                     </li>
-
+                    <li class="moj-side-navigation__item">
+                      <a href="#">February</a>
+                    </li>
                     <li class="moj-side-navigation__item">
                       <a href="#">January</a>
                     </li>
@@ -286,7 +288,7 @@
               Date received
             </dt>
             <dd class="govuk-summary-list__value">
-              11 February 2023
+              11 {{ data['3rd-month'] }}
             </dd>
           </div> 
           
@@ -295,7 +297,7 @@
               Reconciled by
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['signed-in-name'] }}, 15 February 2023 at 10:32am
+              {{ data['signed-in-name'] }}, 15 {{ data['3rd-month'] }} at 10:32am
             </dd>
           </div>
 

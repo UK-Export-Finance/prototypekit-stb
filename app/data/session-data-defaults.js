@@ -7,28 +7,29 @@ module.exports = {
   'display-banner': 'not-done',
 
   'report-due': 'yes',
-  'end-current-month': '31 May 2023',
-  'end-previous-month': '30 April 2023',
-  'end-3rd-month': '28 February 2023',
+  'end-current-month': '30 June 2023',
+  'end-previous-month': '31 May 2023',
+  'end-3rd-month': '30 April 2023',
   
-  'report-month': 'May 2023',
-  'last-month': 'April 2023',
-  '3rd-month': 'March 2023',
-  '4th-month': 'February 2023',
-  '5th-month': 'January 2023',
+  'report-month': 'June 2023',
+  'last-month': 'May 2023',
+  '3rd-month': 'April 2023',
+  '4th-month': 'March 2023',
+  '5th-month': 'February 2023',
 
-  'report-month-only': 'May',
-  'last-month-only': 'April',
-  '3rd-month-only': 'March',
-  '4th-month-only': 'February',
+  'report-month-only': 'June',
+  'last-month-only': 'May',
+  '3rd-month-only': 'April',
+  '4th-month-only': 'March',
 
   
-  '1-month-ago': '3 May 2023',
-  'todays-date': '7 June 2023',
-  'todays-date-full': '7 June 2023',
-  'this-month-report-due': '14 June 2023',
-  'next-month-report-due': '14 July 2023',
-  'time-now': '9:54am',
+  '1-month-ago': '3 June 2023',
+  'this-month-report-due': '14 July 2023',
+  'next-month-report-due': '14 August 2023',
+  // using filters now
+  //'todays-date': '7 July 2023',
+  //'todays-date-full': '7 July 2023',
+  //'time-now': '9:54am',
 
   // Names
   'signed-in-name': 'Jane Smith',

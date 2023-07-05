@@ -318,7 +318,7 @@
                 Date received
               </dt>
               <dd class="govuk-summary-list__value">
-                8 May 2023
+                {{ ( data['bank2-year'] + "-" + data['bank2-month'] + "-" + data['bank2-day'] ) | govukDate }} 
               </dd>
             </div> 
             
@@ -327,7 +327,7 @@
                 Reconciled by
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['signed-in-name'] }}, {{ data['todays-date-full'] }} at {{ data['time-now'] }}
+                {{ data['signed-in-name'] }}, {{ "today" | govukDate }} at {{ "now" | govukTime }}
               </dd>
             </div>
 
@@ -597,7 +597,7 @@
                 Date received
               </dt>
               <dd class="govuk-summary-list__value">
-                7 April 2023
+                7 {{ data['report-month'] }}
               </dd>
             </div> 
             
@@ -606,7 +606,7 @@
                 Reconciled by
               </dt>
               <dd class="govuk-summary-list__value">
-                John Smith, 8 April 2023 at 11:43am
+                John Smith, 8 {{ data['report-month'] }} at 11:43am
               </dd>
             </div>
 
@@ -879,7 +879,7 @@
                 Date received
               </dt>
               <dd class="govuk-summary-list__value">
-                5 March 2023
+                5 {{ data['last-month'] }}
               </dd>
             </div> 
             
@@ -888,7 +888,7 @@
                 Reconciled by
               </dt>
               <dd class="govuk-summary-list__value">
-                John Smith, 7 March 2023 at 2:23pm
+                John Smith, 7 {{ data['last-month'] }} at 2:23pm
               </dd>
             </div>
 
@@ -1160,7 +1160,7 @@
                 Date received
               </dt>
               <dd class="govuk-summary-list__value">
-                8 February 2023
+                8 {{ data['3rd-month'] }}
               </dd>
             </div> 
             
@@ -1169,7 +1169,7 @@
                 Reconciled by
               </dt>
               <dd class="govuk-summary-list__value">
-                John Smith, 9 February 2023 at 3:16pm
+                John Smith, 9 {{ data['3rd-month'] }} at 3:16pm
               </dd>
             </div>
 

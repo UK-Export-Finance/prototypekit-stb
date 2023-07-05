@@ -37,6 +37,10 @@
                     </li>
 
                     <li class="moj-side-navigation__item">
+                      <a href="#">February</a>
+                    </li>
+
+                    <li class="moj-side-navigation__item">
                       <a href="#">January</a>
                     </li>
                 </ul>
@@ -286,7 +290,7 @@
               Date received
             </dt>
             <dd class="govuk-summary-list__value">
-              8 April 2023
+              8  {{ data['report-month'] }}
             </dd>
           </div> 
           
@@ -295,7 +299,7 @@
               Reconciled by
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['signed-in-name'] }}, 9 April 2023 at {{ data['time-now'] }}
+              {{ data['signed-in-name'] }}, 9 {{ data['report-month'] }} at {{ "now" | govukTime }}
             </dd>
           </div>
 
