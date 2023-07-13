@@ -1,0 +1,89 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+{% block pageTitle %}
+Check your answers - {{ data['bank-1-name'] }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/head.html" %}
+  {% include "includes/primary-nav-banks-forms.html" %}
+{% endblock %}
+
+{% block pageScripts %}
+  {% include "includes/scripts.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
+        <span class="govuk-caption-xl">{{ data['bank-1-name'] }}, {{ data['report-month'] }}</span>
+        Check your answers
+      </h1>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Has GBP {{ data['bank-1-fee-payable'] }} been received?
+            </dt>
+            <dd class="govuk-summary-list__value">
+                {{ data['bank-1-payment'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="bank-1-reconciliation">
+                Change<span class="govuk-visually-hidden"> Has GBP {{ data['bank-1-fee-payable'] }} been received?</span>
+              </a>
+            </dd>
+          </div>
+
+          {% if 'No' in data['bank-1-payment'] %}
+          <!-- Display amount received if no to the previous question -->
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Amount received
+            </dt>
+            <dd class="govuk-summary-list__value">
+                GBP {{ data['bank1-amount-received'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="bank-1-reconciliation">
+                Change<span class="govuk-visually-hidden"> amount received</span>
+              </a>
+            </dd>
+          </div>
+          {% else %}
+          <!-- Display nothing -->
+          {% endif %}
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                When was the payment received?
+            </dt>
+            <dd class="govuk-summary-list__value">
+                {{ ( data['bank1-year'] + "-" + data['bank1-month'] + "-" + data['bank1-day'] ) | govukDate }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="bank-1-reconciliation">
+                Change<span class="govuk-visually-hidden"> when was the payment received?</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+        <form class="form" action="/tfm/index" method="post">
+          <button class="govuk-button" data-module="govuk-button">
+            Confirm and save
+          </button>
+          <input type="hidden" name="bank-1-reconciliation" value="done">
+          <input type="hidden" name="answers-checked" value="true">
+          <input type="hidden" name="showBanner" value="true">
+        </form>
+      </div> 
+  </div>
+</div>
+{% endblock %}

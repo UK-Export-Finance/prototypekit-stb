@@ -79,6 +79,13 @@ module.exports = {
   'bank-2-fee-payable': '30,350.00',
   'bank-2-reference': 'XY51678',
 
+  'facility-1-currency': 'GBP',
+  'facility-2-currency': 'GBP',
+  'facility-3-currency': 'EUR',
+  'facility-4-currency': 'EUR',
+  'facility-5-currency': 'USD',
+  'facility-6-currency': 'USD',
+
   // FACILITY 1 VALUES
   'facility-1-updated': 'no',
   'facility-1-name': 'Compressors Ltd',
