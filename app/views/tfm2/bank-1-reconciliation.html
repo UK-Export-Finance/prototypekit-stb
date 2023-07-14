@@ -65,35 +65,65 @@ Reconciliation - {{ data['bank-1-name'] }} – {{ serviceName }} – GOV.UK Prot
             Reported fee payable
             </dt>
             <dd class="govuk-summary-list__value">
-              GBP {{ data['bank-1-fee-payable'] }}
+              GBP {{ data['facility-1-paid'] }}
             </dd>
             </div>
 
-            <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-            Payment reference
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ data['bank-1-reference'] }}
-            </dd>
-            </div>
+            
 
             </dl>
 
         <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend--m">
-                Has GBP {{ data['bank-1-fee-payable'] }} been received?
+                Has GBP {{ data['facility-1-paid'] }} been received?
               </legend>
-              <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="yes" name="bank-1-payment" type="radio" value="Yes" {{ checked('bank-1-payment','Yes') }} data-aria-controls="conditional-yes">
+                  <input class="govuk-radios__input" id="Yes" name="bank-1-payment" type="radio" value="Yes" {{ checked('bank-1-payment','Yes') }} data-aria-controls="conditional-yes">
                   <label class="govuk-label govuk-radios__label" for="Yes">
-                    Yes
+                    Yes &ndash; as a single payment
                   </label>
                 </div>
 
                 <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-yes">
+
+                  <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                        <h1 class="govuk-fieldset__heading">
+                          What currency was the payment in?
+                        </h1>
+                      </legend>
+                      <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="month">
+                          <label class="govuk-label govuk-radios__label" for="changed-name">
+                            GBP
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="year">
+                          <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                            EUR
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="changed-name-3" name="changed-name" type="radio" value="year">
+                          <label class="govuk-label govuk-radios__label" for="changed-name-3">
+                            USD
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="changed-name-4" name="changed-name" type="radio" value="year">
+                          <label class="govuk-label govuk-radios__label" for="changed-name-4">
+                            JPY
+                          </label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+
                   <div class="govuk-form-group">
                     <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
                       <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
@@ -133,16 +163,55 @@ Reconciliation - {{ data['bank-1-name'] }} – {{ serviceName }} – GOV.UK Prot
                 </div>
 
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="no" name="bank-1-payment" type="radio" value="No" {{ checked('bank-1-payment','No') }}>
-                  <label class="govuk-label govuk-radios__label" for="No">
-                    Not yet
+                  <input class="govuk-radios__input" id="Yes-multiple" name="bank-1-payment" type="radio" value="Yes" {{ checked('bank-1-payment','Yes') }} data-aria-controls="conditional-yes-multiple">
+                  <label class="govuk-label govuk-radios__label" for="Yes-multiple">
+                    Yes &ndash; as multiple payments
                   </label>
                 </div>
 
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-yes-multiple">
+                  <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                            When was the payment received?
+                      </legend>
+                      <div id="passport-issued-hint" class="govuk-hint">
+                        For example, 27 03 2023
+                      </div>
+                      <div class="govuk-date-input" id="bank1-date">
+                        <div class="govuk-date-input__item">
+                          <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="bank1-day">
+                              Day
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="bank1-day" name="bank1-day" type="text" inputmode="numeric" value="{{ data['bank1-day'] }}">
+                          </div>
+                        </div>
+                        <div class="govuk-date-input__item">
+                          <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="bank1-month">
+                              Month
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="bank1-month" name="bank1-month" type="text" inputmode="numeric" value="{{ data['bank1-month'] }}">
+                          </div>
+                        </div>
+                        <div class="govuk-date-input__item">
+                          <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="bank1-year">
+                              Year
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="bank1-year" name="bank1-year" type="text" inputmode="numeric" value="{{ data['bank1-year'] }}">
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
+
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="no" name="bank-1-payment" type="radio" value="No" {{ checked('bank-1-payment','No') }} data-aria-controls="conditional-notyet">
+                  <input class="govuk-radios__input" id="No" name="bank-1-payment" type="radio" value="No" {{ checked('bank-1-payment','No') }} data-aria-controls="conditional-notyet">
                   <label class="govuk-label govuk-radios__label" for="No">
-                    No, a different amount has been received
+                    No &ndash; a different amount has been received
                   </label>
                 </div>
                 
@@ -191,6 +260,13 @@ Reconciliation - {{ data['bank-1-name'] }} – {{ serviceName }} – GOV.UK Prot
                   </div>
                 </div>
                 
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="Not-yet" name="bank-1-payment" type="radio" value="No" {{ checked('bank-1-payment','No') }}>
+                  <label class="govuk-label govuk-radios__label" for="Not-yet">
+                    Not yet
+                  </label>
+                </div>
+
               </div>
             </fieldset>
           </div>

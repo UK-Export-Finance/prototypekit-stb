@@ -36,8 +36,8 @@ module.exports = {
   'last-month-name': 'Jane Smith',
 
   // Banks
-  'bank-1-name': 'Bank of Scotland',
-  'bank-2-name': 'Barclays Bank',
+  'bank-1-name': 'Barclays Bank',
+  'bank-2-name': 'Bank of Scotland',
   'bank-3-name': 'Emirates NBD Bank (P.J.S.C)',
   'bank-4-name': 'HSBC UK Bank',
   'bank-5-name': 'Lloyds Bank',
@@ -46,6 +46,9 @@ module.exports = {
   'bank-8-name': 'Santander UK plc.',
   'bank-9-name': 'Ulster Bank',
   'bank-10-name': 'Westminster Bank',
+
+  'bank-12-name': 'Newable',
+  'bank-12-done': 'no',
 
   'bank-1-report-date-received': '4 May 2023',
   'bank-2-report-date-received': '3 May 2023',

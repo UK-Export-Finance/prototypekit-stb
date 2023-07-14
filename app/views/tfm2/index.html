@@ -69,9 +69,7 @@ Bank reports – {{ serviceName }} – GOV.UK Prototype Kit
       Bank reports 
     </h1>
 
-    <h2 class="govuk-heading-m">Current reporting period {{ data['report-month'] }}</h2>
 
-    <p class="govuk-body">{{ data['report-month'] }} reports due by {{ data['this-month-report-due'] }}</p>
     
 
     <table class="govuk-table" data-module="moj-sortable-table">
@@ -116,7 +114,7 @@ Bank reports – {{ serviceName }} – GOV.UK Prototype Kit
             
           </tr>
           <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="{{ data['bank-2-name'] }}"><a href="bank-2">{{ data['bank-2-name'] }}</a></th>
+            <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="{{ data['bank-2-name'] }}"><a href="bank-2">{{ data['bank-12-name'] }}</a></th>
 
             {% if 'Yes' in data['bank-2-payment'] %}
             <!-- payment Payment matches -->
@@ -145,163 +143,9 @@ Bank reports – {{ serviceName }} – GOV.UK Prototype Kit
             
           </tr>
           
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="{{ data['bank-3-name'] }}"><a href="#">{{ data['bank-3-name'] }}</a></th>
-            <td class="govuk-table__cell" data-sort-value="4">
-              <strong class="govuk-tag govuk-tag--red">
-                Not received
-              </strong>
-            </td>
-            
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="{{ data['bank-4-name'] }}"><a href="#">{{ data['bank-4-name'] }}</a></th>
-            <td class="govuk-table__cell" data-sort-value="4">
-              <strong class="govuk-tag govuk-tag--red">
-                Not received
-              </strong>
-            </td>
-             
-          </tr>
-        
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="{{ data['bank-5-name'] }}"><a href="#">{{ data['bank-5-name'] }}</a></th>
-        
-            <td class="govuk-table__cell" data-sort-value="4">
-              <strong class="govuk-tag govuk-tag--red">
-                Not received
-              </strong>
-            </td>
-            
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="{{ data['bank-6-name'] }}"><a href="#">{{ data['bank-6-name'] }}</a></th>
-        
-            <td class="govuk-table__cell" data-sort-value="4">
-              <strong class="govuk-tag govuk-tag--red">
-                Not received
-              </strong>
-            </td>
-            
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="{{ data['bank-7-name'] }}"><a href="#">{{ data['bank-7-name'] }}</a></th>
-        
-            <td class="govuk-table__cell" data-sort-value="4">
-              <strong class="govuk-tag govuk-tag--red">
-                Not received
-              </strong>
-            </td>
-          
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="{{ data['bank-8-name'] }}"><a href="#">{{ data['bank-8-name'] }}</a></th>
-        
-            <td class="govuk-table__cell" data-sort-value="4">
-              <strong class="govuk-tag govuk-tag--red">
-                Not received
-              </strong>
-            </td>
-            
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="{{ data['bank-9-name'] }}"><a href="#">{{ data['bank-9-name'] }}</a></th>
-        
-            <td class="govuk-table__cell" data-sort-value="4">
-              <strong class="govuk-tag govuk-tag--red">
-                Not received
-              </strong>
-            </td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="{{ data['bank-10-name'] }}"><a href="#">{{ data['bank-10-name'] }}</a></th>
-        
-            <td class="govuk-table__cell" data-sort-value="4">
-              <strong class="govuk-tag govuk-tag--red">
-                Not received
-              </strong>
-            </td>
-          </tr>
 
 
-          <!--
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="{{ data['bank-3-name'] }}"><a href="#">{{ data['bank-3-name'] }}</a></th>
-            <td class="govuk-table__cell" data-sort-value="2">
-              <strong class="govuk-tag govuk-tag--green">
-                Payment matches
-              </strong>
-            </td>
-            
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="{{ data['bank-4-name'] }}"><a href="#">{{ data['bank-4-name'] }}</a></th>
-            <td class="govuk-table__cell" data-sort-value="3">
-              <strong class="govuk-tag govuk-tag--yellow">
-                Payment does not match
-              </strong>
-            </td>
-             
-          </tr>
-
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="{{ data['bank-5-name'] }}"><a href="#">{{ data['bank-5-name'] }}</a></th>
-
-            <td class="govuk-table__cell" data-sort-value="2">
-              <strong class="govuk-tag govuk-tag--green">
-                Payment matches
-              </strong>
-            </td>
-            
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="{{ data['bank-6-name'] }}"><a href="#">{{ data['bank-6-name'] }}</a></th>
-
-            <td class="govuk-table__cell" data-sort-value="2">
-              <strong class="govuk-tag govuk-tag--green">
-                Payment matches
-              </strong>
-            </td>
-            
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="{{ data['bank-7-name'] }}"><a href="#">{{ data['bank-7-name'] }}</a></th>
-
-            <td class="govuk-table__cell" data-sort-value="2">
-              <strong class="govuk-tag govuk-tag--green">
-                Payment matches
-              </strong>
-            </td>
-          
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="{{ data['bank-8-name'] }}"><a href="#">{{ data['bank-8-name'] }}</a></th>
-
-            <td class="govuk-table__cell" data-sort-value="2">
-              <strong class="govuk-tag govuk-tag--green">
-                Payment matches
-              </strong>
-            </td>
-            
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="{{ data['bank-9-name'] }}"><a href="#">{{ data['bank-9-name'] }}</a></th>
-
-            <td class="govuk-table__cell" data-sort-value="4">
-              <strong class="govuk-tag govuk-tag--red">
-                Not received
-              </strong>
-            </td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="{{ data['bank-10-name'] }}"><a href="#">{{ data['bank-10-name'] }}</a></th>
-
-            <td class="govuk-table__cell" data-sort-value="4">
-              <strong class="govuk-tag govuk-tag--red">
-                Not received
-              </strong>
-            </td>
-          </tr>-->
+         
 
         </tbody>
       </table>
