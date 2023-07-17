@@ -4,6 +4,16 @@ module.exports = {
   
   // Dates
 
+  'bank-11-name': 'Barclays Bank',
+  'bank-11-start': 'no',
+  'bank-11-payment': '',
+  'bank-11-reconciliation': '',
+
+  'bank-12-name': 'Newable',
+  'bank-12-start': 'no',
+  'bank-12-payment': '',
+  'bank-12-reconciliation': '',
+
   'display-banner': 'not-done',
 
   'report-due': 'yes',
@@ -26,6 +36,7 @@ module.exports = {
   '1-month-ago': '3 June 2023',
   'this-month-report-due': '14 July 2023',
   'next-month-report-due': '14 August 2023',
+  'payment-date': '4 July 2023',
   // using filters now
   //'todays-date': '7 July 2023',
   //'todays-date-full': '7 July 2023',
@@ -46,9 +57,6 @@ module.exports = {
   'bank-8-name': 'Santander UK plc.',
   'bank-9-name': 'Ulster Bank',
   'bank-10-name': 'Westminster Bank',
-
-  'bank-12-name': 'Newable',
-  'bank-12-done': 'no',
 
   'bank-1-report-date-received': '4 May 2023',
   'bank-2-report-date-received': '3 May 2023',
@@ -88,6 +96,13 @@ module.exports = {
   'facility-4-currency': 'EUR',
   'facility-5-currency': 'USD',
   'facility-6-currency': 'USD',
+
+  'facility-10-currency': 'GBP',
+  'facility-11-currency': 'GBP',
+  'facility-12-currency': 'EUR',
+  'facility-13-currency': 'EUR',
+  'facility-14-currency': 'USD',
+  'facility-15-currency': 'USD',
 
   // FACILITY 1 VALUES
   'facility-1-updated': 'no',
@@ -203,10 +218,10 @@ module.exports = {
   'facility-10-limit': '2,500,000.00',
   'facility-10-cover': '80%',
   'facility-10-max': '2,000,000.00',
-  'facility-10-utilisation': '1,500,000.00',
-  'facility-10-exposure': '1,200,000.00',
+  'facility-10-utilisation': '900,000.00',
+  'facility-10-exposure': '720,000.00',
   'facility-10-paid': '3,550.00',
-  'facility-10-accrued': '15,000.00',
+  'facility-10-accrued': '3,550.00',
 
 // FACILITY 11 VALUES
 'facility-11-updated': 'no',
@@ -228,7 +243,7 @@ module.exports = {
 'facility-11-utilisation': '800,000.00',
 'facility-11-exposure': '640,000.00',
 'facility-11-paid': '2,000.00',
-'facility-11-accrued': '12,500.00',
+'facility-11-accrued': '2,000.00',
 
   // FACILITY 12 VALUES
   'facility-12-updated': 'no',
@@ -250,7 +265,7 @@ module.exports = {
   'facility-12-utilisation': '480,000.00',
   'facility-12-exposure': '384,000.00',
   'facility-12-paid': '1,000.00',
-  'facility-12-accrued': '20,000.00',
+  'facility-12-accrued': '1,000.00',
 
   // FACILITY 13 VALUES
   'facility-13-updated': 'no',
@@ -272,7 +287,7 @@ module.exports = {
   'facility-13-utilisation': '420,000.00',
   'facility-13-exposure': '336,000.00',
   'facility-13-paid': '1,200.00',
-  'facility-13-accrued': '11,000.00',
+  'facility-13-accrued': '1,200.00',
 
     // FACILITY 14 VALUES
     'facility-14-updated': 'no',
@@ -291,10 +306,10 @@ module.exports = {
     'facility-14-limit': '800,000.00',
     'facility-14-cover': '80%',
     'facility-14-max': '640,000.00',
-    'facility-14-utilisation': '480,000.00',
-    'facility-14-exposure': '384,000.00',
-    'facility-14-paid': '1,400.00',
-    'facility-14-accrued': '12,000.00',
+    'facility-14-utilisation': '152,400.00',
+    'facility-14-exposure': '127,000.00',
+    'facility-14-paid': '400.00',
+    'facility-14-accrued': '400.00',
   
      // FACILITY 15 VALUES
      'facility-15-updated': 'no',
@@ -313,10 +328,10 @@ module.exports = {
      'facility-15-limit': '700,000.00',
      'facility-15-cover': '80%',
      'facility-15-max': '560,000.00',
-     'facility-15-utilisation': '420,000.00',
-     'facility-15-exposure': '336,000.00',
-     'facility-15-paid': '1,200.00',
-     'facility-15-accrued': '11,000.00',
+     'facility-15-utilisation': '274,800.00',
+     'facility-15-exposure': '229,000.00',
+     'facility-15-paid': '800.00',
+     'facility-15-accrued': '800.00',
    
      // FACILITY 16 VALUES
 'facility-16-updated': 'no',
@@ -338,7 +353,7 @@ module.exports = {
 'facility-16-utilisation': '540,000.00',
 'facility-16-exposure': '432,000.00',
 'facility-16-paid': '2,500.00',
-'facility-16-accrued': '8,500.00',
+'facility-16-accrued': '2,500.00',
 
 // FACILITY 17 VALUES
 'facility-17-updated': 'no',

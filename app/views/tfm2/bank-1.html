@@ -76,18 +76,6 @@
         <div class="govuk-tabs__panel" id="report">
 
           <h2 class="govuk-heading-l">Bank report</h2>
-          
-          {% if 'Yes' in data['bank-1-payment'] %}
-          <!-- payment matches -->
-          
-          {% elseif 'No' in data['bank-1-payment'] %}
-          <!-- payment doesn't match -->
-           
-          
-          {% elseif '' in data['bank-1-payment'] %}
-          <!-- reconciliation not done -->
-            <!--<p class="govuk-body"><a href="#reconciliation">Reconciliation</a> has not been completed yet.</p>-->
-          {% endif %}
 
           <table class="govuk-table" data-module="moj-sortable-table">
             <caption class="govuk-table__caption govuk-table__caption--l"></caption>
@@ -165,35 +153,6 @@
                 <td class="govuk-table__cell" data-sort-value="1200">USD {{ data['facility-6-paid'] }} </td>
               </tr>
             </tbody>
-            <!--<tfoot>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header govuk-!-text-align-right" colspan="7">Total reported fees payable</th>
-                <td class="govuk-table__cell govuk-!-font-weight-bold">GBP {{ data['bank-1-fee-payable'] }}</td>
-              </tr>
-            
-              {% if 'Yes' in data['bank-1-payment'] %}
-
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header govuk-!-text-align-right" colspan="7">Payment received</th>
-                <td class="govuk-table__cell govuk-!-font-weight-bold">GBP {{ data['bank-1-fee-payable'] }}<br><strong class="govuk-tag govuk-tag--green govuk-!-margin-top-2">
-                  Payment<br>matches
-                </strong></td>
-              </tr>
-                
-              {% elseif 'No' in data['bank-1-payment'] %}
-
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header govuk-!-text-align-right" colspan="7">Payment received</th>
-                <td class="govuk-table__cell govuk-!-font-weight-bold">GBP {{ data['bank1-amount-received'] }}<br><strong class="govuk-tag govuk-tag--yellow govuk-!-margin-top-2">
-                  Payment does<br>not match
-                </strong></td>
-              </tr>  
-              
-              {% elseif '' in data['bank-1-payment'] %}
-
-            
-              {% endif %}  
-            </tfoot>-->
           </table>
           </div>
         <!-- end of report tab -->
@@ -201,22 +160,90 @@
         
 
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="reconciliation">
+
+          {% if 'no' in data['bank-11-start'] %}
+
+           <form class="form" action="bank-1#reconciliation" method="get">
+
+              <div class="govuk-grid-row">
+                  <div class="govuk-grid-column-two-thirds">
+                      
+                  <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend--m">
+                          Have any payments been received?
+                        </legend>
+                        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="Yes" name="bank-2-payment" type="radio" value="Yes" data-aria-controls="conditional-yes">
+                            <label class="govuk-label govuk-radios__label" for="Yes">
+                              Yes
+                            </label>
+                          </div>
+                          
+                          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-yes">
+
+                            <div class="govuk-form-group">
+                              <fieldset class="govuk-fieldset">
+                                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                  <h1 class="govuk-fieldset__heading">
+                                    How have payments been received?
+                                  </h1>
+                                </legend>
+                                <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                                  <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="month">
+                                    <label class="govuk-label govuk-radios__label" for="changed-name">
+                                      Bulk payments per currency
+                                    </label>
+                                  </div>
+                                  <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="year">
+                                    <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                                      Payments per facility
+                                    </label>
+                                  </div>
+                                </div>
+                              </fieldset>
+                            </div>
+                            </div>
+
+
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="Not-yet" name="bank-2-payment" type="radio" value="No">
+                            <label class="govuk-label govuk-radios__label" for="Not-yet">
+                              No
+                            </label>
+                          </div>
           
-          <h2 class="govuk-heading-l">Reported payments to reconcile</h2>
+                        </div>
+                      </fieldset>
+                    </div>
+          
+                  </div>
+              </div>
+          
+              <button class="govuk-button" data-module="govuk-button">
+              Continue
+              </button>
+              <input type="hidden" name="bank-11-start" value="yes">
+              
+            </form>
 
-          {% if 'not-done' in data['bank-1-reconciliation'] %}
+            {% elif 'yes' in data['bank-11-start'] %}
 
-
+            <h2 class="govuk-heading-l">Reported payments to reconcile</h2>
           
           <table class="govuk-table" data-module="moj-sortable-table">
             <caption class="govuk-table__caption govuk-table__caption--m">GBP</caption>
             <thead class="govuk-table__head">
               <tr class="govuk-table__row">
-                <th scope="col" class="govuk-table__header govuk-width-one-fifth" aria-sort="ascending">Facility ID</th>
-                <th scope="col" class="govuk-table__header govuk-width-one-fifth" aria-sort="none">Exporter</th>
-                <th scope="col" class="govuk-table__header govuk-width-one-fifth" aria-sort="none">Base currency</th>
-                <th scope="col" class="govuk-table__header govuk-width-one-fifth" aria-sort="none">Fee payable to UKEF</th>
-                <th scope="col" class="govuk-table__header govuk-width-one-fifth" aria-sort="none">Status</th>
+                <th scope="col" class="govuk-table__header govuk-width-one-sixth" aria-sort="ascending">Facility ID</th>
+                <th scope="col" class="govuk-table__header govuk-width-one-sixth" aria-sort="none">Exporter</th>
+                <th scope="col" class="govuk-table__header govuk-width-one-sixth" aria-sort="none">Base currency</th>
+                <th scope="col" class="govuk-table__header govuk-width-one-sixth" aria-sort="none">Reported fee</th>
+                <th scope="col" class="govuk-table__header govuk-width-one-sixth" aria-sort="none">Payment received</th>
+                <th scope="col" class="govuk-table__header govuk-width-one-sixth" aria-sort="none">Status</th>
               </tr>
             </thead>
             <tbody class="govuk-table__body">
@@ -225,6 +252,7 @@
                 <td class="govuk-table__cell">{{ data['facility-1-name'] }}</td>
                 <td class="govuk-table__cell">{{ data['facility-1-currency'] }}</td>
                 <td class="govuk-table__cell" data-sort-value="1000"><a href="bank-1-reconciliation">GBP {{ data['facility-1-paid'] }}</a></td>
+                <td class="govuk-table__cell"></td>
                 <td class="govuk-table__cell"><strong class="govuk-tag">To do</strong></td>
                 
               </tr>
@@ -233,6 +261,7 @@
                 <td class="govuk-table__cell">{{ data['facility-2-name'] }}</td>
                 <td class="govuk-table__cell">{{ data['facility-2-currency'] }}</td>
                 <td class="govuk-table__cell" data-sort-value="800"><a href="bank-1-reconciliation2">GBP {{ data['facility-2-paid'] }}</a></td>
+                <td class="govuk-table__cell"></td>
                 <td class="govuk-table__cell"><strong class="govuk-tag">To do</strong></td>
               </tr>
               <!--<tfoot>
@@ -248,11 +277,12 @@
                 <caption class="govuk-table__caption govuk-table__caption--m">EUR</caption>
                 <thead class="govuk-table__head">
                     <tr class="govuk-table__row">
-                        <th scope="col" class="govuk-table__header govuk-width-one-fifth" aria-sort="ascending">Facility ID</th>
-                        <th scope="col" class="govuk-table__header govuk-width-one-fifth" aria-sort="none">Exporter</th>
-                        <th scope="col" class="govuk-table__header govuk-width-one-fifth" aria-sort="none">Base currency</th>
-                        <th scope="col" class="govuk-table__header govuk-width-one-fifth" aria-sort="none">Fee payable to UKEF</th>
-                        <th scope="col" class="govuk-table__header govuk-width-one-fifth" aria-sort="none">Status</th>
+                        <th scope="col" class="govuk-table__header govuk-width-one-sixth" aria-sort="ascending">Facility ID</th>
+                        <th scope="col" class="govuk-table__header govuk-width-one-sixth" aria-sort="none">Exporter</th>
+                        <th scope="col" class="govuk-table__header govuk-width-one-sixth" aria-sort="none">Base currency</th>
+                        <th scope="col" class="govuk-table__header govuk-width-one-sixth" aria-sort="none">Reported fee</th>
+                        <th scope="col" class="govuk-table__header govuk-width-one-sixth" aria-sort="none">Payment received</th>
+                        <th scope="col" class="govuk-table__header govuk-width-one-sixth" aria-sort="none">Status</th>
                       </tr>
                 </thead>
                 <tbody class="govuk-table__body">
@@ -262,6 +292,7 @@
                     <td class="govuk-table__cell">{{ data['facility-3-name'] }}</td>
                     <td class="govuk-table__cell">{{ data['facility-3-currency'] }}</td>
                     <td class="govuk-table__cell" data-sort-value="2000"><a href="#">EUR {{ data['facility-3-paid'] }}</a></td>
+                    <td class="govuk-table__cell">EUR 1,200.00<br>EUR 800.00</td>
                     <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Payment matches</strong></td>
                   </tr>
                   <tr class="govuk-table__row">
@@ -269,6 +300,7 @@
                     <td class="govuk-table__cell">{{ data['facility-4-name'] }}</td>
                     <td class="govuk-table__cell">{{ data['facility-4-currency'] }}</td>
                     <td class="govuk-table__cell" data-sort-value="1800"><a href="#">EUR {{ data['facility-4-paid'] }}</a></td>
+                    <td class="govuk-table__cell">EUR 1,800.00</td>
                     <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Payment matches</strong></td>
                   </tr>
                   <!--<tfoot>
@@ -284,11 +316,12 @@
                     <caption class="govuk-table__caption govuk-table__caption--m">USD</caption>
                     <thead class="govuk-table__head">
                         <tr class="govuk-table__row">
-                            <th scope="col" class="govuk-table__header govuk-width-one-fifth" aria-sort="ascending">Facility ID</th>
-                            <th scope="col" class="govuk-table__header govuk-width-one-fifth" aria-sort="none">Exporter</th>
-                            <th scope="col" class="govuk-table__header govuk-width-one-fifth" aria-sort="none">Base currency</th>
-                            <th scope="col" class="govuk-table__header govuk-width-one-fifth" aria-sort="none">Fee payable to UKEF</th>
-                            <th scope="col" class="govuk-table__header govuk-width-one-fifth" aria-sort="none">Status</th>
+                            <th scope="col" class="govuk-table__header govuk-width-one-sixth" aria-sort="ascending">Facility ID</th>
+                            <th scope="col" class="govuk-table__header govuk-width-one-sixth" aria-sort="none">Exporter</th>
+                            <th scope="col" class="govuk-table__header govuk-width-one-sixth" aria-sort="none">Base currency</th>
+                            <th scope="col" class="govuk-table__header govuk-width-one-sixth" aria-sort="none">Reported fee</th>
+                            <th scope="col" class="govuk-table__header govuk-width-one-sixth" aria-sort="none">Payment received</th>
+                            <th scope="col" class="govuk-table__header govuk-width-one-sixth" aria-sort="none">Status</th>
                           </tr>
                     </thead>
                     <tbody class="govuk-table__body">
@@ -298,6 +331,7 @@
                         <td class="govuk-table__cell">{{ data['facility-5-name'] }}</td>
                         <td class="govuk-table__cell">{{ data['facility-5-currency'] }}</td>
                         <td class="govuk-table__cell" data-sort-value="5000"><a href="#">USD {{ data['facility-5-paid'] }}</a></td>
+                        <td class="govuk-table__cell">USD 1,100.00<br>USD 700.00<br>USD 300.00<br>USD 1,000.00</td>
                         <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Payment matches</strong></td>
                       </tr>
                       <tr class="govuk-table__row">
@@ -305,6 +339,7 @@
                         <td class="govuk-table__cell">{{ data['facility-6-name'] }}</td>
                         <td class="govuk-table__cell">{{ data['facility-6-currency'] }}</td>
                         <td class="govuk-table__cell" data-sort-value="1200"><a href="#">USD {{ data['facility-6-paid'] }}</a></td>
+                        <td class="govuk-table__cell">-</td>
                         <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">Payment Not received</strong></td>
                       </tr>
                     </tbody>
