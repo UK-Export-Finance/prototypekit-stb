@@ -6,7 +6,7 @@
 
 {% block header %}
   {% include "includes/head.html" %}
-  {% include "includes/primary-nav-banks.html" %}
+  {% include "includes/primary-nav-banks-main.html" %}
 {% endblock %}
 
 {% block pageScripts %}
@@ -223,10 +223,23 @@
                     GBP {{ data['facility-16-paid'] }}
                   </td>
                   <td class="govuk-table__cell">
-                    
+                    {% if data['bank13-task1'] == '' %}
+
+                    {% elif data['bank13-task1'] == 'done' %}
+                    <!--currency 1 / amount 1-->
+                    {{ data['bank-13-currency1'] }} {{ data['bank-13-amount1'] }}
+
+                    {% endif %}
                   </td>
                   <td class="govuk-table__cell">
+                    {% if data['bank13-task1'] == '' %}
                     <strong class="govuk-tag">To do</strong>
+                    
+                    {% elif data['bank13-task1'] == 'done' %}
+                    <strong class="govuk-tag govuk-tag--green">Payment matches</strong>
+
+                    {% endif %}
+                    
                   </td>
                 </tr>
 
@@ -304,7 +317,7 @@
               
 
               <!-- Start view: displaying the radios to mark 1st 4 facilities-->
-              <form class="form" action="bank-2-details#reconciliation" method="get">
+              <form class="form" action="bank-3-task1a" method="get">
               <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">
                   <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
@@ -336,7 +349,7 @@
               {{ govukButton({
                 text: "Continue"
               }) }}
-              
+              <input type="hidden" name="bank-13-task1" value="start">
             </form>
 
             {% endif %} 
@@ -350,14 +363,15 @@
     
     <h2 class="govuk-heading-l">Payments received</h2>
     
-    <!-- Start view: no payments reconciled-->
+    <!-- Start view: no payments reconciled
     
-    <p class="govuk-body">No payments marked as received yet.</p>
+    <p class="govuk-body">No payments marked as received yet.</p>-->
     
     
-    <!-- 2nd stage view: displaying the radios to mark last 2 facilities-->
+    {% if data['bank13-task1'] == '' %}
 
-    <h3 class="govuk-heading-m">Payment 1</h2>
+    {% elif data['bank13-task1'] == 'done' %}
+    <h3 class="govuk-heading-m">Payment 1</h3>
 
     <dl class="govuk-summary-list">
     <div class="govuk-summary-list__row">
@@ -365,11 +379,10 @@
         Payment received
       </dt>
       <dd class="govuk-summary-list__value">
-        {{ data['bank-13-payment-bulk1'] }}
-      </strong>
+        {{ data['bank-13-currency1'] }} {{ data['bank-13-amount1'] }}
       </dd>
       <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="#">
+        <a class="govuk-link" href="bank-3-task1b">
           Change<span class="govuk-visually-hidden"> payment</span>
         </a>
       </dd>
@@ -380,7 +393,7 @@
         Date received
       </dt>
       <dd class="govuk-summary-list__value">
-        {{ data['payment-date'] }}
+        {{ ( data['bank-13-facility1-year'] + "-" + data['bank-13-facility1-month'] + "-" + data['bank-13-facility1-day'] ) | govukDate }}
       </dd>
       <dd class="govuk-summary-list__actions">
       </dd>
@@ -396,11 +409,13 @@
       <dd class="govuk-summary-list__actions">
       </dd>
     </div>
+  </dl>  
+    {% endif %}
 
-  </dl>
+     
   
  
-  <h3 class="govuk-heading-m">Payment 2</h2>
+  <!--<h3 class="govuk-heading-m">Payment 2</h3>
 
     <dl class="govuk-summary-list">
     <div class="govuk-summary-list__row">
@@ -409,7 +424,6 @@
       </dt>
       <dd class="govuk-summary-list__value">
         {{ data['bank-13-payment-bulk2'] }}
-      </strong>
       </dd>
       <dd class="govuk-summary-list__actions">
         <a class="govuk-link" href="#">
@@ -439,12 +453,14 @@
       <dd class="govuk-summary-list__actions">
       </dd>
     </div>
+  </dl>-->
 
-  </dl>
 </div>
 </div>
 
   </div>
 </div>
 
+</div>
+</div>
 {% endblock %}

@@ -17,11 +17,6 @@ module.exports = {
   'bank-12-payment-bulk1': 'EUR 10,115.00',
   'bank-12-payment-bulk2': 'USD 1,200.00',
 
-  'bank-13-name': 'Bank 3',
-  'bank-13-start': 'no',
-  'bank-13-payment': '',
-  'bank-13-reconciliation': '',
-
   'display-banner': 'not-done',
 
   'report-due': 'yes',
@@ -572,6 +567,12 @@ module.exports = {
     'facility-25-exposure': '1,200,000.00',
     'facility-25-paid': '8,000.00',
     'facility-25-accrued': '30,000.00',
+    
+    'bank-13-name': 'Bank 3',
+    'bank-13-start': 'no',
+    'bank-13-payment': '',
+    'bank-13-reconciliation': '',
+    'bank-13-task': '',
 }
 
 
