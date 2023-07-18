@@ -21,19 +21,19 @@
                 <h4 class="moj-side-navigation__title">2023</h4>
                 <ul class="moj-side-navigation__list">
                     <li class="moj-side-navigation__item moj-side-navigation__item--active">
-                    <a href="bank-1" aria-current="location">{{ data['report-month-only'] }}</a>
+                    <a href="#" aria-current="location">{{ data['report-month-only'] }}</a>
                     </li>
             
                     <li class="moj-side-navigation__item">
-                    <a href="bank-1-month-2">{{ data['last-month-only'] }}</a>
+                    <a href="#">{{ data['last-month-only'] }}</a>
                     </li>
             
                     <li class="moj-side-navigation__item">
-                    <a href="bank-1-month-3">{{ data['3rd-month-only'] }}</a>
+                    <a href="#">{{ data['3rd-month-only'] }}</a>
                     </li>
     
                     <li class="moj-side-navigation__item">
-                    <a href="bank-1-month-4">{{ data['4th-month-only'] }}</a>
+                    <a href="#">{{ data['4th-month-only'] }}</a>
                     </li>
                     <li class="moj-side-navigation__item">
                       <a href="#">February</a>
@@ -56,6 +56,7 @@
     <h2 class="govuk-heading-l">
       {{ data['report-month'] }}
     </h2> 
+    
     <div class="govuk-tabs" data-module="govuk-tabs">
         <h2 class="govuk-tabs__title">
           Contents
@@ -247,7 +248,7 @@
             
             {% endif %}
 
-            <table class="govuk-table" data-module="moj-multi-select" data-module="" data-multi-select-checkbox="#select-all">
+            <table class="govuk-table" data-module="moj-multi-select" data-multi-select-checkbox="#select-all">
               <thead class="govuk-table__head">
                 <tr class="govuk-table__row">
                   {% if (data['bank-12-reconciliation'] == '') or (data['bank-12-reconciliation'] == 'part1') or (data['bank-12-reconciliation'] == 'part3')  %}
@@ -590,6 +591,7 @@
                 }) }}
               <input type="hidden" name="bank-12-reconciliation" value="part3">
             </form>
+            </div>
             {% elif data['bank-12-reconciliation'] == 'part3' %}
             <!-- 2nd stage view: displaying the radios to mark last 2 facilities-->
 
@@ -655,7 +657,7 @@
     {% elif (data['bank-12-reconciliation'] == 'part1') or (data['bank-12-reconciliation'] == 'part2') or (data['bank-12-reconciliation'] == 'part3') %}
     <!-- 2nd stage view: displaying the radios to mark last 2 facilities-->
 
-    <h3 class="govuk-heading-m">Payment 1</h2>
+    <h3 class="govuk-heading-m">Payment 1</h3>
 
     <dl class="govuk-summary-list">
     <div class="govuk-summary-list__row">
@@ -664,7 +666,6 @@
       </dt>
       <dd class="govuk-summary-list__value">
         {{ data['bank-12-payment-bulk1'] }}
-      </strong>
       </dd>
       <dd class="govuk-summary-list__actions">
         <a class="govuk-link" href="#">
@@ -700,10 +701,8 @@
   {% if (data['bank-12-reconciliation'] == 'part2') or (data['bank-12-reconciliation'] == 'part3') %}
     <!-- 2nd stage view: displaying the radios to mark last 2 facilities-->
 
-    </dl>
-
  
-  <h3 class="govuk-heading-m">Payment 2</h2>
+  <h3 class="govuk-heading-m">Payment 2</h3>
 
     <dl class="govuk-summary-list">
     <div class="govuk-summary-list__row">
@@ -712,7 +711,7 @@
       </dt>
       <dd class="govuk-summary-list__value">
         {{ data['bank-12-payment-bulk2'] }}
-      </strong>
+
       </dd>
       <dd class="govuk-summary-list__actions">
         <a class="govuk-link" href="#">
@@ -748,6 +747,8 @@
 </div>
 {% endif %}
   </div>
+
 </div>
+<!--closing reconciliation tab div-->
 
 {% endblock %}
