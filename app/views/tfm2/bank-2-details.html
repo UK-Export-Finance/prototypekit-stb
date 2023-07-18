@@ -1,7 +1,7 @@
 {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
 
 {% block pageTitle %}
-{{ data['bank-1-name'] }} {{ data['report-month'] }} report – {{ serviceName }} – GOV.UK Prototype Kit
+{{ data['bank-12-name'] }} – {{ data['report-month'] }} report – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block header %}
@@ -63,7 +63,7 @@
         <ul class="govuk-tabs__list">
           <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
             <a class="govuk-tabs__tab" href="#report">
-              Report
+              Bank report
             </a>
           </li>
           <li class="govuk-tabs__list-item">
@@ -275,6 +275,7 @@
                   text: "Save and continue"
                 }) }}
                 <input type="hidden" name="bank-12-reconciliation" value="part2">
+                <input type="hidden" name="bank-12-payment-display" value="show-payment2">
                 <a class="govuk-link" href="">Cancel</a>
               </div>
               
@@ -298,38 +299,47 @@
     {% elif ('part1' in data['bank-12-reconciliation']) or ('part2' in data['bank-12-reconciliation']) or ('part3' in data['bank-12-reconciliation']) %}
     <!-- 2nd stage view: displaying the radios to mark last 2 facilities-->
 
-    <h3 class="govuk-heading-m">Payment 1 details</h2>
+    <h3 class="govuk-heading-m">Payment 1</h2>
 
-    <dl class="govuk-summary-list">
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-        Payment received
-      </dt>
-      <dd class="govuk-summary-list__value">
-        EUR 6,500.00
-      </strong>
-      </dd>
-    </div> 
-
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-        Date received
-      </dt>
-      <dd class="govuk-summary-list__value">
-        {{ data['payment-date'] }}
-      </dd>
-    </div> 
-    
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-        Reconciled by
-      </dt>
-      <dd class="govuk-summary-list__value">
-        {{ data['signed-in-name'] }}, {{ "today" | govukDate }} at {{ "now" | govukTime }}
-      </dd>
-    </div>
-
-  </dl>
+      <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Payment received
+        </dt>
+        <dd class="govuk-summary-list__value">
+          EUR 6,500.00
+        </strong>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> payment</span>
+          </a>
+        </dd>
+      </div> 
+  
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date received
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['payment-date'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div> 
+      
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Reconciled by
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['signed-in-name'] }}, {{ "today" | govukDate }} at {{ "now" | govukTime }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div>
+  
+    </dl>
   {% endif %}
   {% if 'part2' in data['bank-12-reconciliation'] %}
     <!-- 2nd stage view: displaying the radios to mark last 2 facilities-->
@@ -337,38 +347,47 @@
     </dl>
 
  
-  <h3 class="govuk-heading-m">Payment 2 details</h2>
+    <h3 class="govuk-heading-m">Payment 2</h2>
 
-    <dl class="govuk-summary-list">
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-        Payment received
-      </dt>
-      <dd class="govuk-summary-list__value">
-        USD 1,200.00
-      </strong>
-      </dd>
-    </div> 
-
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-        Date received
-      </dt>
-      <dd class="govuk-summary-list__value">
-        {{ data['payment-date'] }}
-      </dd>
-    </div> 
-    
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-        Reconciled by
-      </dt>
-      <dd class="govuk-summary-list__value">
-        {{ data['signed-in-name'] }}, {{ "today" | govukDate }} at {{ "now" | govukTime }}
-      </dd>
-    </div>
-
-  </dl>
+      <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Payment received
+        </dt>
+        <dd class="govuk-summary-list__value">
+          USD 1,200.00
+        </strong>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> payment</span>
+          </a>
+        </dd>
+      </div> 
+  
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date received
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['payment-date'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div> 
+      
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Reconciled by
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['signed-in-name'] }}, {{ "today" | govukDate }} at {{ "now" | govukTime }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div>
+  
+    </dl>
 </div>
 </div>
 {% endif %}

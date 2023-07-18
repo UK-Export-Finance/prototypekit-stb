@@ -4,15 +4,16 @@ module.exports = {
   
   // Dates
 
-  'bank-11-name': 'Barclays Bank',
+  'bank-11-name': 'Bank 1',
   'bank-11-start': 'no',
   'bank-11-payment': '',
   'bank-11-reconciliation': '',
 
-  'bank-12-name': 'Newable',
+  'bank-12-name': 'Bank 2',
   'bank-12-start': 'no',
   'bank-12-payment': '',
   'bank-12-reconciliation': '',
+  'bank-12-payment-display': '',
 
   'display-banner': 'not-done',
 

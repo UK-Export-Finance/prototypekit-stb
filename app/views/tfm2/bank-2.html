@@ -648,7 +648,7 @@
     {% elif (data['bank-12-reconciliation'] == 'part1') or (data['bank-12-reconciliation'] == 'part2') or (data['bank-12-reconciliation'] == 'part3') %}
     <!-- 2nd stage view: displaying the radios to mark last 2 facilities-->
 
-    <h3 class="govuk-heading-m">Payment 1 details</h2>
+    <h3 class="govuk-heading-m">Payment 1</h2>
 
     <dl class="govuk-summary-list">
     <div class="govuk-summary-list__row">
@@ -659,6 +659,11 @@
         EUR 6,500.00
       </strong>
       </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">
+          Change<span class="govuk-visually-hidden"> payment</span>
+        </a>
+      </dd>
     </div> 
 
     <div class="govuk-summary-list__row">
@@ -668,6 +673,8 @@
       <dd class="govuk-summary-list__value">
         {{ data['payment-date'] }}
       </dd>
+      <dd class="govuk-summary-list__actions">
+      </dd>
     </div> 
     
     <div class="govuk-summary-list__row">
@@ -676,6 +683,8 @@
       </dt>
       <dd class="govuk-summary-list__value">
         {{ data['signed-in-name'] }}, {{ "today" | govukDate }} at {{ "now" | govukTime }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
       </dd>
     </div>
 
@@ -687,7 +696,7 @@
     </dl>
 
  
-  <h3 class="govuk-heading-m">Payment 2 details</h2>
+  <h3 class="govuk-heading-m">Payment 2</h2>
 
     <dl class="govuk-summary-list">
     <div class="govuk-summary-list__row">
@@ -698,6 +707,11 @@
         USD 1,200.00
       </strong>
       </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">
+          Change<span class="govuk-visually-hidden"> payment</span>
+        </a>
+      </dd>
     </div> 
 
     <div class="govuk-summary-list__row">
@@ -707,6 +721,8 @@
       <dd class="govuk-summary-list__value">
         {{ data['payment-date'] }}
       </dd>
+      <dd class="govuk-summary-list__actions">
+      </dd>
     </div> 
     
     <div class="govuk-summary-list__row">
@@ -715,6 +731,8 @@
       </dt>
       <dd class="govuk-summary-list__value">
         {{ data['signed-in-name'] }}, {{ "today" | govukDate }} at {{ "now" | govukTime }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
       </dd>
     </div>
 
