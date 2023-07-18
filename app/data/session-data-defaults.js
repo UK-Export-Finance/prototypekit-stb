@@ -14,6 +14,8 @@ module.exports = {
   'bank-12-payment': '',
   'bank-12-reconciliation': '',
   'bank-12-payment-display': '',
+  'bank-12-payment-bulk1': 'EUR 10,115.00',
+  'bank-12-payment-bulk2': 'USD 1,200.00',
 
   'display-banner': 'not-done',
 
@@ -222,6 +224,7 @@ module.exports = {
   'facility-10-utilisation': '900,000.00',
   'facility-10-exposure': '720,000.00',
   'facility-10-paid': '3,550.00',
+  'facility-10B-paid': '1,450.00',
   'facility-10-accrued': '3,550.00',
 
 // FACILITY 11 VALUES

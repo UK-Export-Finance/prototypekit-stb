@@ -257,9 +257,8 @@
                   <th scope="col" class="govuk-table__header" aria-sort="ascending">Facility ID</th>
                   <th scope="col" class="govuk-table__header" aria-sort="none">Exporter</th>
                   <th scope="col" class="govuk-table__header" aria-sort="none">Base currency</th>
-                  <th scope="col" class="govuk-table__header" aria-sort="none">Reported fee</th>
+                  <th scope="col" class="govuk-table__header" aria-sort="none">Reported fee payable<br>(currency reported in)</th>
                   <th scope="col" class="govuk-table__header" aria-sort="none">Payment fee marked against</th>
-                  <th scope="col" class="govuk-table__header" aria-sort="none">Date payment received</th>
                   <th scope="col" class="govuk-table__header" aria-sort="none">Status</th>
                   
                 </tr>
@@ -280,16 +279,12 @@
                   <td class="govuk-table__cell" data-sort-value="{{ data['facility-1-ukef-id'] }}">{{ data['facility-10-ukef-id'] }}</td>
                   <td class="govuk-table__cell">{{ data['facility-10-name'] }}</td>
                   <td class="govuk-table__cell">{{ data['facility-10-currency'] }}</td>
-                  <td class="govuk-table__cell" data-sort-value="1000">GBP {{ data['facility-10-paid'] }}</td>
                   <td class="govuk-table__cell">
-                    {% if ('part1' in data['bank-12-reconciliation']) or ('part2' in data['bank-12-reconciliation']) or ('part3' in data['bank-12-reconciliation']) %}
-                    EUR 6500
-                    {% elif '' in data['bank-12-reconciliation'] %}
-                    {% endif %} 
+                    GBP {{ data['facility-10-paid'] }}
                   </td>
                   <td class="govuk-table__cell">
                     {% if ('part1' in data['bank-12-reconciliation']) or ('part2' in data['bank-12-reconciliation']) or ('part3' in data['bank-12-reconciliation']) %}
-                    {{ data['payment-date'] }}
+                    {{ data['bank-12-payment-bulk1'] }}
                     {% elif '' in data['bank-12-reconciliation'] %}
                     {% endif %} 
                   </td>
@@ -301,6 +296,40 @@
                     {% endif %}
                   </td>
                 </tr>
+
+                <tr class="govuk-table__row govuk-table__row--selected">
+                  {% if (data['bank-12-reconciliation'] == '') or (data['bank-12-reconciliation'] == 'part1') or (data['bank-12-reconciliation'] == 'part3')  %}
+                  <td class="govuk-table__cell govuk-!-padding-top-0 govuk-!-padding-bottom-0">
+                    <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                      <input type="checkbox" class="govuk-checkboxes__input" id="{{ data['facility-10-ukef-id'] }}">
+                      <label class="govuk-label govuk-checkboxes__label" for="{{ data['facility-10-ukef-id'] }}">
+                        <span class="govuk-visually-hidden">{{ data['facility-10-ukef-id'] }}</span>
+                      </label>
+                    </div>
+                  </td>
+                  {% elif data['bank-12-reconciliation'] == 'part2' %}
+                  {% endif %}
+                  <td class="govuk-table__cell" data-sort-value="{{ data['facility-1-ukef-id'] }}">{{ data['facility-10-ukef-id'] }}</td>
+                  <td class="govuk-table__cell">{{ data['facility-10-name'] }}</td>
+                  <td class="govuk-table__cell">{{ data['facility-10-currency'] }}</td>
+                  <td class="govuk-table__cell">
+                    EUR {{ data['facility-10B-paid'] }}
+                  </td>
+                  <td class="govuk-table__cell">
+                    {% if ('part1' in data['bank-12-reconciliation']) or ('part2' in data['bank-12-reconciliation']) or ('part3' in data['bank-12-reconciliation']) %}
+                    {{ data['bank-12-payment-bulk1'] }}
+                    {% elif '' in data['bank-12-reconciliation'] %}
+                    {% endif %} 
+                  </td>
+                  <td class="govuk-table__cell">
+                    {% if ('part1' in data['bank-12-reconciliation']) or ('part2' in data['bank-12-reconciliation']) or ('part3' in data['bank-12-reconciliation']) %}
+                    <strong class="govuk-tag govuk-tag--green">Done</strong>
+                    {% elif '' in data['bank-12-reconciliation'] %}
+                    <strong class="govuk-tag">To do</strong>
+                    {% endif %}
+                  </td>
+                </tr>
+
                 <tr class="govuk-table__row">
                   
                   {% if (data['bank-12-reconciliation'] == '') or (data['bank-12-reconciliation'] == 'part1') or (data['bank-12-reconciliation'] == 'part3')  %}
@@ -318,16 +347,10 @@
                   <td class="govuk-table__cell" data-sort-value="{{ data['facility-11-ukef-id'] }}">{{ data['facility-11-ukef-id'] }}</td>
                   <td class="govuk-table__cell">{{ data['facility-11-name'] }}</td>
                   <td class="govuk-table__cell">{{ data['facility-11-currency'] }}</td>
-                  <td class="govuk-table__cell" data-sort-value="800">GBP {{ data['facility-11-paid'] }}</td>
+                  <td class="govuk-table__cell">GBP {{ data['facility-11-paid'] }}</td>
                   <td class="govuk-table__cell">
                     {% if ('part1' in data['bank-12-reconciliation']) or ('part2' in data['bank-12-reconciliation']) or ('part3' in data['bank-12-reconciliation']) %}
-                    EUR 6500
-                    {% elif '' in data['bank-12-reconciliation'] %}
-                    {% endif %}
-                  </td>
-                  <td class="govuk-table__cell">
-                    {% if ('part1' in data['bank-12-reconciliation']) or ('part2' in data['bank-12-reconciliation']) or ('part3' in data['bank-12-reconciliation']) %}
-                    {{ data['payment-date'] }}
+                    {{ data['bank-12-payment-bulk1'] }}
                     {% elif '' in data['bank-12-reconciliation'] %}
                     {% endif %} 
                   </td>
@@ -355,16 +378,12 @@
                   <td class="govuk-table__cell" data-sort-value="{{ data['facility-12-ukef-id'] }}">{{ data['facility-12-ukef-id'] }}</td>
                   <td class="govuk-table__cell">{{ data['facility-12-name'] }}</td>
                   <td class="govuk-table__cell">{{ data['facility-12-currency'] }}</td>
-                  <td class="govuk-table__cell" data-sort-value="2000">EUR {{ data['facility-12-paid'] }}</td>
                   <td class="govuk-table__cell">
-                    {% if ('part1' in data['bank-12-reconciliation']) or ('part2' in data['bank-12-reconciliation']) or ('part3' in data['bank-12-reconciliation']) %}
-                    EUR 6500
-                    {% elif '' in data['bank-12-reconciliation'] %}
-                    {% endif %}
+                    EUR {{ data['facility-12-paid'] }}
                   </td>
                   <td class="govuk-table__cell">
                     {% if ('part1' in data['bank-12-reconciliation']) or ('part2' in data['bank-12-reconciliation']) or ('part3' in data['bank-12-reconciliation']) %}
-                    {{ data['payment-date'] }}
+                    {{ data['bank-12-payment-bulk1'] }}
                     {% elif '' in data['bank-12-reconciliation'] %}
                     {% endif %} 
                   </td>
@@ -392,16 +411,12 @@
                   <td class="govuk-table__cell" data-sort-value="{{ data['facility-13-ukef-id'] }}">{{ data['facility-13-ukef-id'] }}</td>
                   <td class="govuk-table__cell">{{ data['facility-13-name'] }}</td>
                   <td class="govuk-table__cell">{{ data['facility-13-currency'] }}</td>
-                  <td class="govuk-table__cell" data-sort-value="1800">EUR {{ data['facility-13-paid'] }}</td>
                   <td class="govuk-table__cell">
-                    {% if ('part1' in data['bank-12-reconciliation']) or ('part2' in data['bank-12-reconciliation']) or ('part3' in data['bank-12-reconciliation']) %}
-                    EUR 6500
-                    {% elif '' in data['bank-12-reconciliation'] %}
-                    {% endif %}
+                    EUR {{ data['facility-13-paid'] }}
                   </td>
                   <td class="govuk-table__cell">
                     {% if ('part1' in data['bank-12-reconciliation']) or ('part2' in data['bank-12-reconciliation']) or ('part3' in data['bank-12-reconciliation']) %}
-                    {{ data['payment-date'] }}
+                    {{ data['bank-12-payment-bulk1'] }}
                     {% elif '' in data['bank-12-reconciliation'] %}
                     {% endif %} 
                   </td>
@@ -430,16 +445,12 @@
                   <td class="govuk-table__cell" data-sort-value="{{ data['facility-14-ukef-id'] }}">{{ data['facility-14-ukef-id'] }}</td>
                   <td class="govuk-table__cell">{{ data['facility-14-name'] }}</td>
                   <td class="govuk-table__cell">{{ data['facility-14-currency'] }}</td>
-                  <td class="govuk-table__cell" data-sort-value="5000">USD {{ data['facility-14-paid'] }}</td>
                   <td class="govuk-table__cell">
-                    {% if ('part2' in data['bank-12-reconciliation']) or ('part3' in data['bank-12-reconciliation']) %}
-                    USD 1200
-                    {% elif '' in data['bank-12-reconciliation'] %}
-                    {% endif %}
+                    USD {{ data['facility-14-paid'] }}
                   </td>
                   <td class="govuk-table__cell">
                     {% if ('part2' in data['bank-12-reconciliation']) or ('part3' in data['bank-12-reconciliation']) %}
-                    {{ data['payment-date'] }}
+                    {{ data['bank-12-payment-bulk2'] }}
                     {% elif '' in data['bank-12-reconciliation'] %}
                     {% endif %} 
                   </td>
@@ -467,16 +478,12 @@
                   <td class="govuk-table__cell" data-sort-value="{{ data['facility-15-ukef-id'] }}">{{ data['facility-15-ukef-id'] }}</td>
                   <td class="govuk-table__cell">{{ data['facility-15-name'] }}</td>
                   <td class="govuk-table__cell">{{ data['facility-15-currency'] }}</td>
-                  <td class="govuk-table__cell" data-sort-value="1200">USD {{ data['facility-15-paid'] }}</td>
                   <td class="govuk-table__cell">
-                    {% if ('part2' in data['bank-12-reconciliation']) or ('part3' in data['bank-12-reconciliation']) %}
-                    USD 1200
-                    {% elif '' in data['bank-12-reconciliation'] %}
-                    {% endif %}
+                    USD {{ data['facility-15-paid'] }}
                   </td>
                   <td class="govuk-table__cell">
                     {% if ('part2' in data['bank-12-reconciliation']) or ('part3' in data['bank-12-reconciliation']) %}
-                    {{ data['payment-date'] }}
+                    {{ data['bank-12-payment-bulk2'] }}
                     {% elif '' in data['bank-12-reconciliation'] %}
                     {% endif %} 
                   </td>
@@ -656,7 +663,7 @@
         Payment received
       </dt>
       <dd class="govuk-summary-list__value">
-        EUR 6,500.00
+        {{ data['bank-12-payment-bulk1'] }}
       </strong>
       </dd>
       <dd class="govuk-summary-list__actions">
@@ -704,7 +711,7 @@
         Payment received
       </dt>
       <dd class="govuk-summary-list__value">
-        USD 1,200.00
+        {{ data['bank-12-payment-bulk2'] }}
       </strong>
       </dd>
       <dd class="govuk-summary-list__actions">

@@ -253,6 +253,31 @@
                                 </div>
                               </fieldset>
                             </div>    
+
+                            <div class="govuk-form-group">
+                              <fieldset class="govuk-fieldset">
+                                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                  <h1 class="govuk-fieldset__heading">
+                                    Add another payment?
+                                  </h1>
+                                </legend>
+                                <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                                  <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="month">
+                                    <label class="govuk-label govuk-radios__label" for="changed-name">
+                                      Yes
+                                    </label>
+                                  </div>
+                                  <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="year">
+                                    <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                                      No
+                                    </label>
+                                  </div>
+                                  
+                                </div>
+                              </fieldset>
+                            </div>
                   </div>
               </div>
               
@@ -307,7 +332,7 @@
           Payment received
         </dt>
         <dd class="govuk-summary-list__value">
-          EUR 6,500.00
+          {{ data['bank-12-payment-bulk1'] }}
         </strong>
         </dd>
         <dd class="govuk-summary-list__actions">
@@ -355,7 +380,7 @@
           Payment received
         </dt>
         <dd class="govuk-summary-list__value">
-          USD 1,200.00
+          {{ data['bank-12-payment-bulk2'] }}
         </strong>
         </dd>
         <dd class="govuk-summary-list__actions">
