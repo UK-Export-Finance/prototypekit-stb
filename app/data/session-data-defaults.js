@@ -109,7 +109,7 @@ module.exports = {
 
   'facility-16-currency': 'GBP',
   'facility-17-currency': 'USD',
-  'facility-18-currency': 'EUR',
+  'facility-18-currency': 'GBP',
   
 
   // FACILITY 1 VALUES
@@ -345,7 +345,7 @@ module.exports = {
 
      // FACILITY 16 VALUES
     'facility-16-updated': 'no',
-    'facility-16-name': 'British Engineering Solutions Ltd',
+    'facility-16-name': 'Direct Engineering Solutions Ltd',
     'facility-16-buyer': 'GlobalTech Corp.',
     'facility-16-ukef-id': '0020002154',
     'facility-16-deal-id': '0030625197',
@@ -568,11 +568,17 @@ module.exports = {
     'facility-25-paid': '8,000.00',
     'facility-25-accrued': '30,000.00',
     
-    'bank-13-name': 'Bank 3',
+    'bank-13-name': 'Barclays',
     'bank-13-start': 'no',
     'bank-13-payment': '',
     'bank-13-reconciliation': '',
-    'bank-13-task': '',
+    'bank-13-show-task': 'one',
+    'bank-13-task1': '',
+    'bank-13-task2': '',
+    'bank-13-task3': '',
+    'bank-13-task4a': '',
+    'bank-13-task4b': '',
+    'bank-13-task4c': '',
 }
 
 

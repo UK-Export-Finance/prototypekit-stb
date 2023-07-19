@@ -1,0 +1,198 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+{% block pageTitle %}
+Reconciliation - {{ data['bank-13-name'] }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/head.html" %}
+  {% include "includes/primary-nav-banks-forms.html" %}
+{% endblock %}
+
+{% block pageScripts %}
+  {% include "includes/scripts.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="bank-3#reconciliation" method="get">
+    <input type="hidden" name="bank-13-task2" value="done">
+    <input type="hidden" name="bank-13-show-task" value="three">
+      
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-6">
+        <span class="govuk-caption-l">{{ data['bank-13-name'] }}, {{ data['report-month'] }}</span>
+        Payment reconciliation
+      </h1>
+          <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+            Reported details
+          </h2>
+
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-width-one-half">
+                Facility ID
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['facility-17-ukef-id'] }}
+                </dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-width-one-half">
+                Exporter
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['facility-17-name'] }}
+                </dd>
+              </div>
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-width-one-half">
+                Facility base currency
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['facility-17-currency'] }}
+                </dd>
+              </div>
+
+
+            <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-half">
+            Reported fee payable
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['facility-17-currency'] }} {{ data['facility-17-paid'] }}
+            </dd>
+        </div>
+    </dl>
+
+
+
+        <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Payment details</legend>
+                
+                <div class="govuk-form-group">
+
+                    <fieldset class="govuk-fieldset">
+                    
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Currency payment was in</legend>
+
+                    <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="GBP" name="bank-13-task2-currency" type="radio" value="GBP" {{ checked('bank-13-task2-currency','GBP') }}>
+                            <label class="govuk-label govuk-radios__label" for="GBP">GBP</label>
+                          </div>
+
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="EUR" name="bank-13-task2-currency" type="radio" value="EUR" {{ checked('bank-13-task2-currency','EUR') }}>
+                            <label class="govuk-label govuk-radios__label" for="bank-13-currency1-2">EUR</label>
+                          </div>
+
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="USD" name="bank-13-task2-currency" type="radio" value="USD" {{ checked('bank-13-task2-currency','USD') }}>
+                            <label class="govuk-label govuk-radios__label" for="USD">USD</label>
+                          </div>
+   
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="JPY" name="bank-13-task2-currency" type="radio" value="JPY" {{ checked('bank-13-task2-currency','JPY') }}>
+                            <label class="govuk-label govuk-radios__label" for="bank-13-currency1-4">JPY</label>
+                          </div>
+                    </div>
+                  </fieldset>
+                </div>
+
+                {{ govukInput({
+                    label: {
+                      text: "Amount received",
+                      classes: "govuk-label--s",
+                      isPageHeading: false
+                    },
+                    hint: {
+                      text: "Enter the amount not the currency, for example 850.00"
+                    },
+                    classes: "govuk-!-width-one-half",
+                    id: "amount1",
+                    name: "bank-13-task2-amount",
+                    value: data ['bank-13-task2-amount']
+                }) }}
+
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" role="group" aria-describedby="date1-hint">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                          Date payment received
+                        </legend>
+                        
+                        <div id="date1-hint" class="govuk-hint">
+                          For example, 27 03 2023
+                        </div>
+                      
+                        <div class="govuk-date-input" id="bank-13-task2-date">
+                          <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                              <label class="govuk-label govuk-date-input__label" for="bank-13-task2-day">
+                                Day
+                              </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="bank-13-task2-day" name="bank-13-task2-day" type="text" inputmode="numeric" value="{{ data['bank-13-task2-day'] }}">
+                            </div>
+                          </div>
+                        
+                          <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                              <label class="govuk-label govuk-date-input__label" for="bank-13-task2-month">
+                                Month
+                              </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="bank-13-task2-month" name="bank-13-task2-month" type="text" inputmode="numeric" value="{{ data['bank-13-task2-month'] }}">
+                            </div>
+                          </div>
+                        
+                          <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                              <label class="govuk-label govuk-date-input__label" for="bank-13-task2-year">
+                                Year
+                              </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="bank-13-task2-year" name="bank-13-task2-year" type="text" inputmode="numeric" value="{{ data['bank-13-task2-year'] }}">
+                            </div>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                
+                  <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+  
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                      Add another payment?
+                    </legend>
+                    <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="yes" name="bank-13-task2-another" type="radio" value="yes" {{ checked('bank-13-task2-another','yes') }}>
+                            <label class="govuk-label govuk-radios__label" for="yes">
+                          Yes
+                        </label>
+                          </div>
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="no" name="bank-13-task2-another" type="radio" value="no" {{ checked('bank-13-task2-another','no') }}>
+                            <label class="govuk-label govuk-radios__label" for="no">
+                          No
+                        </label>
+                          </div>
+                    </div>
+                  </fieldset>
+                </div>
+                  
+                  {{ govukButton({
+                    text: "Continue"
+                  }) }}
+            </fieldset>   
+  </form>
+</div>
+
+</div>
+{% endblock %}

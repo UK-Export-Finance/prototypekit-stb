@@ -36,3 +36,53 @@ router.get('/tfm/index2', (req, res) => {
   res.render('/tfm/index', { showBanner2 })
 }) 
 
+
+// Run this code when a form is submitted to '/tfm2/bank-3a' form on bank-3-task4a.html
+router.post('/tfm2/bank-3a', function (req, res) {
+
+  // Make a variable and give it the value from 'check' radios
+  var another4a = req.session.data['bank-13-task4a-another']
+
+  // Check whether the variable matches a condition.
+  if (another4a == "yes"){
+    // Send user to confirmation screen
+    res.redirect('/tfm2/bank-3-task4b')
+  } else {
+    // Send user to upload screen
+    res.redirect('/tfm2/bank-3#reconciliation')
+  }
+})
+
+// Run this code when a form is submitted to '/tfm2/bank-3b' form on bank-3-task4b.html
+router.post('/tfm2/bank-3b', function (req, res) {
+
+  // Make a variable and give it the value from 'check' radios
+  var another4b = req.session.data['bank-13-task4b-another']
+
+  // Check whether the variable matches a condition.
+  if (another4b == "yes"){
+    // Send user to confirmation screen
+    res.redirect('/tfm2/bank-3-task4c')
+  } else {
+    // Send user to upload screen
+    res.redirect('/tfm2/bank-3#reconciliation')
+  }
+})
+
+// Run this code when a form is submitted to '/tfm2/bank-3c' form on bank-3-task4b.html
+router.post('/tfm2/bank-3c', function (req, res) {
+
+  // Make a variable and give it the value from 'check' radios
+  var another4c = req.session.data['bank-13-task4b-another']
+
+  // Check whether the variable matches a condition.
+  if (another4c == "yes"){
+    // Send user to confirmation screen
+    res.redirect('/tfm2/bank-3#reconciliation')
+  } else {
+    // Send user to upload screen
+    res.redirect('/tfm2/bank-3#reconciliation')
+  }
+})
+
+
