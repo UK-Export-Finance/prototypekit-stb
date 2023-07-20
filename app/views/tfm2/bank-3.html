@@ -235,7 +235,7 @@
                   <td class="govuk-table__cell">
                     {% if data['bank-13-task1'] == 'done' %}
                       <!-- task1 currency | task1 amount -->
-                      {{ data['bank-13-task1-currency'] }} {{ data['bank-13-task1-amount'] }}
+                      <a href="bank-3-task1" class="govuk-link govuk-link--no-visited-state">{{ data['bank-13-task1-currency'] }} {{ data['bank-13-task1-amount'] }}</a>
                     {% endif %}
                   </td>
                   
@@ -276,12 +276,12 @@
                   <td class="govuk-table__cell">
                     {% if data['bank-13-task2'] == 'done' %}
                       <!-- task2 currency | task2 amount -->
-                      {{ data['bank-13-task2-currency'] }} {{ data['bank-13-task2-amount'] }}
+                      <a href="bank-3-task2" class="govuk-link govuk-link--no-visited-state">{{ data['bank-13-task2-currency'] }} {{ data['bank-13-task2-amount'] }}</a>
                     {% endif %}
 
                     {% if data['bank-13-task3'] == 'done' %}
                       <!-- task3 currency | task3 amount -->
-                      <br>{{ data['bank-13-task3-currency'] }} {{ data['bank-13-task3-amount'] }}
+                      <br><a href="bank-3-task3" class="govuk-link govuk-link--no-visited-state">{{ data['bank-13-task3-currency'] }} {{ data['bank-13-task3-amount'] }}</a>
                     {% endif %}
                   </td>
                   
@@ -321,17 +321,17 @@
                   <td class="govuk-table__cell">
                       {% if data['bank-13-task4a'] == 'done' %}
                         <!-- task4a currency | task4a amount -->
-                        {{ data['bank-13-task4a-currency'] }} {{ data['bank-13-task4a-amount'] }}
+                        <a href="bank-3-task4a" class="govuk-link govuk-link--no-visited-state">{{ data['bank-13-task4a-currency'] }} {{ data['bank-13-task4a-amount'] }}</a>
                       {% endif %}
                       
                       {% if data['bank-13-task4b'] == 'done' %}
                         <!-- task4a currency | task4a amount -->
-                        <br>{{ data['bank-13-task4b-currency'] }} {{ data['bank-13-task4b-amount'] }}
+                        <br><a href="bank-3-task4b" class="govuk-link govuk-link--no-visited-state">{{ data['bank-13-task4b-currency'] }} {{ data['bank-13-task4b-amount'] }}</a>
                       {% endif %}
 
                       {% if data['bank-13-task4c'] == 'done' %}
                         <!-- task4a currency | task4a amount -->
-                        <br>{{ data['bank-13-task4c-currency'] }} {{ data['bank-13-task4c-amount'] }}
+                        <br><a href="bank-3-task4c" class="govuk-link govuk-link--no-visited-state">{{ data['bank-13-task4c-currency'] }} {{ data['bank-13-task4c-amount'] }}</a>
                       {% endif %}
                   </td>
 
@@ -583,7 +583,10 @@
               </form>
               </div>
               </div>
+            
+            
             {% elif data['bank-13-show-task'] == 'five' %}
+           
             <!-- Task 5 radios -->
             <div class="govuk-grid-row">
               <div class="govuk-grid-column-two-thirds">
@@ -674,30 +677,31 @@
               
               <h2 class="govuk-heading-l">Reconciliation summary</h2>
               
-              <!--{% if (data['bank-13-task1'] == '') or (data['bank-13-task1'] == 'start') %}
+              {% if (data['bank-13-task1'] == '') or (data['bank-13-task1'] == 'start') %}
             
               <p class="govuk-body">No payments marked as received yet.</p>
               
               {% elif (data['bank-13-task1'] == 'done') %}
               <table class="govuk-table" data-module="moj-sortable-table">
-                <caption class="govuk-table__caption govuk-table__caption--m"></caption>
+                <caption class="govuk-table__caption govuk-table__caption--m">Payments received</caption>
                 <thead class="govuk-table__head">
 
                   <tr class="govuk-table__row">
-                    <th scope="col" class="govuk-table__header" aria-sort="ascending">Facility ID</th>
                     <th scope="col" class="govuk-table__header" aria-sort="none">Amount</th>
+                    <th scope="col" class="govuk-table__header" aria-sort="ascending">Facility ID</th>
+                    
                     <th scope="col" class="govuk-table__header" aria-sort="none">Date received</th>
-                    <th scope="col" class="govuk-table__header" aria-sort="none">Reconciled by</th>
                     <th scope="col" class="govuk-table__header">Action</th>
                   </tr>
                 </thead>
                 <tbody class="govuk-table__body">
 
                   <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">{{ data['facility-16-ukef-id'] }}</td>
+                    
                     <td class="govuk-table__cell">{{ data['bank-13-task1-currency'] }} {{ data['bank-13-task1-amount'] }}</td>
+                    <td class="govuk-table__cell">{{ data['facility-16-ukef-id'] }}</td>
                     <td class="govuk-table__cell">{{ ( data['bank-13-task1-year'] + "-" + data['bank-13-task1-month'] + "-" + data['bank-13-task1-day'] ) | govukDate }}</td>
-                    <td class="govuk-table__cell">{{ data['signed-in-name'] }}, {{ "today" | govukDate }} at {{ "now" | govukTime }}</td>
+
                     <td class="govuk-table__cell"><a class="govuk-link" href="bank-3-task1">
                       Change<span class="govuk-visually-hidden"> payment</span>
                     </a></td>
@@ -706,10 +710,11 @@
 
                   {% if (data['bank-13-task2'] == 'done') %}
                   <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">{{ data['facility-17-ukef-id'] }}</td>
+                    
                     <td class="govuk-table__cell">{{ data['bank-13-task2-currency'] }} {{ data['bank-13-task2-amount'] }}</td>
+                    <td class="govuk-table__cell">{{ data['facility-17-ukef-id'] }}</td>
                     <td class="govuk-table__cell">{{ ( data['bank-13-task2-year'] + "-" + data['bank-13-task2-month'] + "-" + data['bank-13-task2-day'] ) | govukDate }}</td>
-                    <td class="govuk-table__cell">{{ data['signed-in-name'] }}, {{ "today" | govukDate }} at {{ "now" | govukTime }}</td>
+
                     <td class="govuk-table__cell"><a class="govuk-link" href="bank-3-task2">
                       Change<span class="govuk-visually-hidden"> payment</span>
                     </a></td>
@@ -718,10 +723,10 @@
 
                   {% if (data['bank-13-task3'] == 'done') %}
                   <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">{{ data['facility-17-ukef-id'] }}</td>
+                    
                     <td class="govuk-table__cell">{{ data['bank-13-task3-currency'] }} {{ data['bank-13-task3-amount'] }}</td>
+                    <td class="govuk-table__cell">{{ data['facility-17-ukef-id'] }}</td>
                     <td class="govuk-table__cell">{{ ( data['bank-13-task3-year'] + "-" + data['bank-13-task3-month'] + "-" + data['bank-13-task3-day'] ) | govukDate }}</td>
-                    <td class="govuk-table__cell">{{ data['signed-in-name'] }}, {{ "today" | govukDate }} at {{ "now" | govukTime }}</td>
                     <td class="govuk-table__cell"><a class="govuk-link" href="bank-3-task3">
                       Change<span class="govuk-visually-hidden"> payment</span>
                     </a></td>
@@ -730,10 +735,10 @@
               
                   {% if (data['bank-13-task4a'] == 'done') %}
                   <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">{{ data['facility-18-ukef-id'] }}</td>
+                    
                     <td class="govuk-table__cell">{{ data['bank-13-task4a-currency'] }} {{ data['bank-13-task4a-amount'] }}</td>
+                    <td class="govuk-table__cell">{{ data['facility-18-ukef-id'] }}</td>
                     <td class="govuk-table__cell">{{ ( data['bank-13-task4a-year'] + "-" + data['bank-13-task4a-month'] + "-" + data['bank-13-task4a-day'] ) | govukDate }}</td>
-                    <td class="govuk-table__cell">{{ data['signed-in-name'] }}, {{ "today" | govukDate }} at {{ "now" | govukTime }}</td>
                     <td class="govuk-table__cell"><a class="govuk-link" href="bank-3-task4a">
                       Change<span class="govuk-visually-hidden"> payment</span>
                     </a></td>
@@ -742,10 +747,10 @@
 
                   {% if (data['bank-13-task4b'] == 'done') %}
                   <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">{{ data['facility-18-ukef-id'] }}</td>
+                    
                     <td class="govuk-table__cell">{{ data['bank-13-task4b-currency'] }} {{ data['bank-13-task4b-amount'] }}</td>
+                    <td class="govuk-table__cell">{{ data['facility-18-ukef-id'] }}</td>
                     <td class="govuk-table__cell">{{ ( data['bank-13-task4b-year'] + "-" + data['bank-13-task4b-month'] + "-" + data['bank-13-task4b-day'] ) | govukDate }}</td>
-                    <td class="govuk-table__cell">{{ data['signed-in-name'] }}, {{ "today" | govukDate }} at {{ "now" | govukTime }}</td>
                     <td class="govuk-table__cell"><a class="govuk-link" href="bank-3-task4b">
                       Change<span class="govuk-visually-hidden"> payment</span>
                     </a></td>
@@ -754,10 +759,10 @@
 
                   {% if (data['bank-13-task4c'] == 'done') %}
                   <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">{{ data['facility-18-ukef-id'] }}</td>
+                    
                     <td class="govuk-table__cell">{{ data['bank-13-task4c-currency'] }} {{ data['bank-13-task4c-amount'] }}</td>
+                    <td class="govuk-table__cell">{{ data['facility-18-ukef-id'] }}</td>
                     <td class="govuk-table__cell">{{ ( data['bank-13-task4c-year'] + "-" + data['bank-13-task4c-month'] + "-" + data['bank-13-task4c-day'] ) | govukDate }}</td>
-                    <td class="govuk-table__cell">{{ data['signed-in-name'] }}, {{ "today" | govukDate }} at {{ "now" | govukTime }}</td>
                     <td class="govuk-table__cell"><a class="govuk-link" href="bank-3-task4c">
                       Change<span class="govuk-visually-hidden"> payment</span>
                     </a></td>
@@ -768,7 +773,7 @@
 
             </tbody>
           </table>
-              {% endif %}-->
+              {% endif %}
 
               </div>
               </div>
