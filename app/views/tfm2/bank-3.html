@@ -205,7 +205,12 @@
             <table class="govuk-table" data-module="moj-multi-select" data-multi-select-checkbox="#select-all">
               <thead class="govuk-table__head">
                 <tr class="govuk-table__row">
+                  {% if data['bank-13-checkboxes'] == 'hide' %}
+
+                  {% elif data['bank-13-checkboxes'] == 'show' %}
                   <th class="govuk-table__header govuk-!-padding-top-0" scope="col" id="select-all"></th>
+                  {% endif %}
+                  
                   <th scope="col" class="govuk-table__header" aria-sort="ascending">Facility ID</th>
                   <th scope="col" class="govuk-table__header" aria-sort="none">Exporter</th>
                   <th scope="col" class="govuk-table__header" aria-sort="none">Base currency</th>
@@ -218,6 +223,7 @@
               </thead>
               <tbody class="govuk-table__body">
                 <tr class="govuk-table__row govuk-table__row--selected">
+                  {% if data['bank-13-checkboxes'] == 'show' %}
                   <td class="govuk-table__cell govuk-!-padding-top-0 govuk-!-padding-bottom-0">
                     <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
                       <input type="checkbox" class="govuk-checkboxes__input" id="{{ data['facility-16-ukef-id'] }}">
@@ -226,6 +232,8 @@
                       </label>
                     </div>
                   </td>
+                  {% endif %}
+                  
                   <td class="govuk-table__cell" data-sort-value="{{ data['facility-16-ukef-id'] }}">{{ data['facility-16-ukef-id'] }}</td>
                   <td class="govuk-table__cell">{{ data['facility-16-name'] }}</td>
                   <td class="govuk-table__cell">{{ data['facility-16-currency'] }}</td>
@@ -234,8 +242,15 @@
                   
                   <td class="govuk-table__cell">
                     {% if data['bank-13-task1'] == 'done' %}
+
+                    {% if data['bank-13-checkboxes'] == 'hide' %}
+                    {{ data['bank-13-task1-currency'] }} {{ data['bank-13-task1-amount'] }}
+                    {% elif data['bank-13-checkboxes'] == 'show' %}
                       <!-- task1 currency | task1 amount -->
-                      <a href="bank-3-task1" class="govuk-link govuk-link--no-visited-state">{{ data['bank-13-task1-currency'] }} {{ data['bank-13-task1-amount'] }}</a>
+                      <a href="bank-3-task1-change" class="govuk-link govuk-link--no-visited-state">{{ data['bank-13-task1-currency'] }} {{ data['bank-13-task1-amount'] }}</a>
+                    {% endif %}
+
+
                     {% endif %}
                   </td>
                   
@@ -257,6 +272,7 @@
                 </tr>
 
                 <tr class="govuk-table__row govuk-table__row--selected">
+                  {% if data['bank-13-checkboxes'] == 'show' %}
                   <td class="govuk-table__cell govuk-!-padding-top-0 govuk-!-padding-bottom-0">
                     <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
                       <input type="checkbox" class="govuk-checkboxes__input" id="{{ data['facility-17-ukef-id'] }}">
@@ -265,6 +281,7 @@
                       </label>
                     </div>
                   </td>
+                  {% endif %}
                   <td class="govuk-table__cell" data-sort-value="{{ data['facility-17-ukef-id'] }}">{{ data['facility-17-ukef-id'] }}</td>
                   <td class="govuk-table__cell">{{ data['facility-17-name'] }}</td>
                   <td class="govuk-table__cell">{{ data['facility-17-currency'] }}</td>
@@ -275,13 +292,21 @@
                   
                   <td class="govuk-table__cell">
                     {% if data['bank-13-task2'] == 'done' %}
-                      <!-- task2 currency | task2 amount -->
-                      <a href="bank-3-task2" class="govuk-link govuk-link--no-visited-state">{{ data['bank-13-task2-currency'] }} {{ data['bank-13-task2-amount'] }}</a>
+                        <!-- task2 currency | task2 amount -->
+                      {% if data['bank-13-checkboxes'] == 'hide' %}
+                        {{ data['bank-13-task2-currency'] }} {{ data['bank-13-task2-amount'] }}
+                      {% elif data['bank-13-checkboxes'] == 'show' %}
+                          <a href="bank-3-task2-change" class="govuk-link govuk-link--no-visited-state">{{ data['bank-13-task2-currency'] }} {{ data['bank-13-task2-amount'] }}</a>
+                      {% endif %}
                     {% endif %}
 
                     {% if data['bank-13-task3'] == 'done' %}
                       <!-- task3 currency | task3 amount -->
-                      <br><a href="bank-3-task3" class="govuk-link govuk-link--no-visited-state">{{ data['bank-13-task3-currency'] }} {{ data['bank-13-task3-amount'] }}</a>
+                      {% if data['bank-13-checkboxes'] == 'hide' %}
+                        <br>{{ data['bank-13-task3-currency'] }} {{ data['bank-13-task3-amount'] }}
+                      {% elif data['bank-13-checkboxes'] == 'show' %}
+                        <br><a href="bank-3-task3-change" class="govuk-link govuk-link--no-visited-state">{{ data['bank-13-task3-currency'] }} {{ data['bank-13-task3-amount'] }}</a>
+                      {% endif %}
                     {% endif %}
                   </td>
                   
@@ -304,6 +329,7 @@
                 </tr>
 
                 <tr class="govuk-table__row">
+                  {% if data['bank-13-checkboxes'] == 'show' %}
                   <td class="govuk-table__cell govuk-!-padding-top-0 govuk-!-padding-bottom-0">
                     <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
                       <input type="checkbox" class="govuk-checkboxes__input" id="{{ data['facility-18-ukef-id'] }}">
@@ -312,6 +338,7 @@
                       </label>
                     </div>
                   </td>
+                  {% endif %}
                   <td class="govuk-table__cell" data-sort-value="{{ data['facility-18-ukef-id'] }}">{{ data['facility-18-ukef-id'] }}</td>
                   <td class="govuk-table__cell">{{ data['facility-18-name'] }}</td>
                   <td class="govuk-table__cell">{{ data['facility-18-currency'] }}</td>
@@ -321,17 +348,34 @@
                   <td class="govuk-table__cell">
                       {% if data['bank-13-task4a'] == 'done' %}
                         <!-- task4a currency | task4a amount -->
-                        <a href="bank-3-task4a" class="govuk-link govuk-link--no-visited-state">{{ data['bank-13-task4a-currency'] }} {{ data['bank-13-task4a-amount'] }}</a>
+
+                        {% if data['bank-13-checkboxes'] == 'hide' %}
+                          {{ data['bank-13-task4a-currency'] }} {{ data['bank-13-task4a-amount'] }}
+                          {% elif data['bank-13-checkboxes'] == 'show' %}
+                          <a href="bank-3-task4a-change" class="govuk-link govuk-link--no-visited-state">{{ data['bank-13-task4a-currency'] }} {{ data['bank-13-task4a-amount'] }}</a>
+                        {% endif %}
+
                       {% endif %}
                       
                       {% if data['bank-13-task4b'] == 'done' %}
                         <!-- task4a currency | task4a amount -->
-                        <br><a href="bank-3-task4b" class="govuk-link govuk-link--no-visited-state">{{ data['bank-13-task4b-currency'] }} {{ data['bank-13-task4b-amount'] }}</a>
+                        
+                        {% if data['bank-13-checkboxes'] == 'hide' %}
+                          <br>{{ data['bank-13-task4b-currency'] }} {{ data['bank-13-task4b-amount'] }}
+                        {% elif data['bank-13-checkboxes'] == 'show' %}
+                          <br><a href="bank-3-task4b-change" class="govuk-link govuk-link--no-visited-state">{{ data['bank-13-task4b-currency'] }} {{ data['bank-13-task4b-amount'] }}</a>
+                        {% endif %}
+
                       {% endif %}
 
                       {% if data['bank-13-task4c'] == 'done' %}
+
+                      {% if data['bank-13-checkboxes'] == 'hide' %}
+                        <br>{{ data['bank-13-task4c-currency'] }} {{ data['bank-13-task4c-amount'] }}
+                      {% elif data['bank-13-checkboxes'] == 'show' %}  
                         <!-- task4a currency | task4a amount -->
-                        <br><a href="bank-3-task4c" class="govuk-link govuk-link--no-visited-state">{{ data['bank-13-task4c-currency'] }} {{ data['bank-13-task4c-amount'] }}</a>
+                        <br><a href="bank-3-task4c-change" class="govuk-link govuk-link--no-visited-state">{{ data['bank-13-task4c-currency'] }} {{ data['bank-13-task4c-amount'] }}</a>
+                        {% endif %}
                       {% endif %}
                   </td>
 
@@ -592,7 +636,8 @@
               <div class="govuk-grid-column-two-thirds">
             <form class="form" action="bank-3#reconciliation" method="get">
             <input type="hidden" name="bank-13-accepted" value="yes"> 
-
+            <input type="hidden" name="bank-13-show-task" value="complete">
+            <input type="hidden" name="bank-13-checkboxes" value="hide">
               <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">
                   <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
@@ -661,6 +706,28 @@
             </form>
             </div>
             </div>
+
+            {% elif data['bank-13-show-task'] == 'complete' %}
+            <h3 class="govuk-heading-m">[Header]</h3>
+            <p class="govuk-body">When the report has been marked as reconciled a keying sheet will be generated for downloading.</p>
+            <div class="govuk-button-group">
+
+              {{ govukButton({
+                text: "Mark report as reconciled"
+              }) }}
+              
+              <!--<form class="form" action="bank-3#reconciliation" method="get"> 
+                <input type="hidden" name="bank-13-show-task" value="five">
+                <input type="hidden" name="bank-13-checkboxes" value="show">
+              {{ govukButton({
+                text: "Make amendments",
+                classes: "govuk-button--secondary"
+              }) }}
+                </form>-->
+              <!--<a class="govuk-link" href="#">Download the keying sheet</a>-->
+            </div>
+
+
             {% endif %} 
             <!-- end of task radios -->
 

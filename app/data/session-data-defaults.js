@@ -583,6 +583,7 @@ module.exports = {
     'bank-13-task4b': '',
     'bank-13-task4c': '',
     'bank-13-accepted': '',
+    'bank-13-checkboxes': 'show',
     
 }
 

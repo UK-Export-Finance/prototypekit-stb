@@ -21,8 +21,7 @@ Reconciliation - {{ data['bank-13-name'] }} – {{ serviceName }} – GOV.UK Pro
 <div class="govuk-grid-row">
 
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="/tfm2/bank-3b" method="post">
-    <input type="hidden" name="bank-13-task4b" value="done">
+    <form class="form" action="bank-3#reconciliation" method="get">
       
     <h1 class="govuk-heading-l govuk-!-margin-bottom-6">
         <span class="govuk-caption-l">{{ data['bank-13-name'] }}, {{ data['report-month'] }}</span>
@@ -70,9 +69,10 @@ Reconciliation - {{ data['bank-13-name'] }} – {{ serviceName }} – GOV.UK Pro
             </dd>
         </div>
     </dl>
-
+    
     {% set accordianHtml %}
     <h3 class="govuk-heading-m">Payment 1 details</h3>
+
     <dl class="govuk-summary-list">
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key govuk-!-width-one-half">
@@ -96,7 +96,32 @@ Reconciliation - {{ data['bank-13-name'] }} – {{ serviceName }} – GOV.UK Pro
     
   </dl>
   
+  <h3 class="govuk-heading-m">Payment 2 details</h3>
+  
+      <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          Amount received
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['bank-13-task4b-currency'] }} {{ data['bank-13-task4b-amount'] }}
+        </dd>
+      </div> 
+  
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date received
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ ( data['bank-13-task4b-year'] + "-" + data['bank-13-task4b-month'] + "-" + data['bank-13-task4b-day'] ) | govukDate }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div> 
+      
+    </dl>  
     {% endset -%}
+
 
     {{ govukAccordion({
         id: "accordion-default",
@@ -110,42 +135,68 @@ Reconciliation - {{ data['bank-13-name'] }} – {{ serviceName }} – GOV.UK Pro
             }
         }
         ]
-    }) }}
-        
+    }) }} 
+    
     <!--<details class="govuk-details" data-module="govuk-details">
-      <summary class="govuk-details__summary">
-        <span class="govuk-details__summary-text">
-          Payment 1 details
-        </span>
-      </summary>
-      <div class="govuk-details__text">
-        <dl class="govuk-summary-list">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key govuk-!-width-one-half">
-              Amount received
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ data['bank-13-task4a-currency'] }} {{ data['bank-13-task4a-amount'] }}
-            </dd>
-          </div> 
-        
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Date received
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ ( data['bank-13-task4a-year'] + "-" + data['bank-13-task4a-month'] + "-" + data['bank-13-task4a-day'] ) | govukDate }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
-          </div> 
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Payment 1 and 2 details
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+            <h3 class="govuk-heading-m govuk-!-margin-top-9">Payment 1 details</h3>
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key govuk-!-width-one-half">
+                Amount received
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['bank-13-task4a-currency'] }} {{ data['bank-13-task4a-amount'] }}
+              </dd>
+            </div> 
           
-        </dl>
-      </div>
-    </details>-->
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Date received
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ ( data['bank-13-task4a-year'] + "-" + data['bank-13-task4a-month'] + "-" + data['bank-13-task4a-day'] ) | govukDate }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+              </dd>
+            </div> 
+            
+          </dl>
+        
+
+        <h3 class="govuk-heading-m govuk-!-margin-top-9">Payment 2 details</h3>
+  
+      <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          Amount received
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['bank-13-task4b-currency'] }} {{ data['bank-13-task4b-amount'] }}
+        </dd>
+      </div> 
+  
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date received
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ ( data['bank-13-task4b-year'] + "-" + data['bank-13-task4b-month'] + "-" + data['bank-13-task4b-day'] ) | govukDate }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div> 
+      
+    </dl>  
+      </details>  -->
 
         <fieldset class="govuk-fieldset">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Payment 2 details</legend>
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Payment 3 details</legend>
                 
                 <div class="govuk-form-group">
 
@@ -156,22 +207,22 @@ Reconciliation - {{ data['bank-13-name'] }} – {{ serviceName }} – GOV.UK Pro
                     <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
 
                           <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="GBP" name="bank-13-task4b-currency" type="radio" value="GBP" {{ checked('bank-13-task4b-currency','GBP') }}>
+                            <input class="govuk-radios__input" id="GBP" name="bank-13-task4c-currency" type="radio" value="GBP" {{ checked('bank-13-task4c-currency','GBP') }}>
                             <label class="govuk-label govuk-radios__label" for="GBP">GBP</label>
                           </div>
 
                           <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="EUR" name="bank-13-task4b-currency" type="radio" value="EUR" {{ checked('bank-13-task4b-currency','EUR') }}>
+                            <input class="govuk-radios__input" id="EUR" name="bank-13-task4c-currency" type="radio" value="EUR" {{ checked('bank-13-task4c-currency','EUR') }}>
                             <label class="govuk-label govuk-radios__label" for="bank-13-currency1-2">EUR</label>
                           </div>
 
                           <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="USD" name="bank-13-task4b-currency" type="radio" value="USD" {{ checked('bank-13-task4b-currency','USD') }}>
+                            <input class="govuk-radios__input" id="USD" name="bank-13-task4c-currency" type="radio" value="USD" {{ checked('bank-13-task4c-currency','USD') }}>
                             <label class="govuk-label govuk-radios__label" for="USD">USD</label>
                           </div>
    
                           <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="JPY" name="bank-13-task4b-currency" type="radio" value="JPY" {{ checked('bank-13-task4b-currency','JPY') }}>
+                            <input class="govuk-radios__input" id="JPY" name="bank-13-task4c-currency" type="radio" value="JPY" {{ checked('bank-13-task4c-currency','JPY') }}>
                             <label class="govuk-label govuk-radios__label" for="bank-13-currency1-4">JPY</label>
                           </div>
                     </div>
@@ -189,8 +240,8 @@ Reconciliation - {{ data['bank-13-name'] }} – {{ serviceName }} – GOV.UK Pro
                     },
                     classes: "govuk-!-width-one-half",
                     id: "amount1",
-                    name: "bank-13-task4b-amount",
-                    value: data ['bank-13-task4b-amount']
+                    name: "bank-13-task4c-amount",
+                    value: data ['bank-13-task4c-amount']
                 }) }}
 
                 <div class="govuk-form-group">
@@ -203,31 +254,31 @@ Reconciliation - {{ data['bank-13-name'] }} – {{ serviceName }} – GOV.UK Pro
                           For example, 27 03 2023
                         </div>
                       
-                        <div class="govuk-date-input" id="bank-13-task4b-date">
+                        <div class="govuk-date-input" id="bank-13-task4c-date">
                           <div class="govuk-date-input__item">
                             <div class="govuk-form-group">
-                              <label class="govuk-label govuk-date-input__label" for="bank-13-task4b-day">
+                              <label class="govuk-label govuk-date-input__label" for="bank-13-task4c-day">
                                 Day
                               </label>
-                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="bank-13-task4b-day" name="bank-13-task4b-day" type="text" inputmode="numeric" value="{{ data['bank-13-task4b-day'] }}">
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="bank-13-task4c-day" name="bank-13-task4c-day" type="text" inputmode="numeric" value="{{ data['bank-13-task4c-day'] }}">
                             </div>
                           </div>
                         
                           <div class="govuk-date-input__item">
                             <div class="govuk-form-group">
-                              <label class="govuk-label govuk-date-input__label" for="bank-13-task4b-month">
+                              <label class="govuk-label govuk-date-input__label" for="bank-13-task4c-month">
                                 Month
                               </label>
-                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="bank-13-task4b-month" name="bank-13-task4b-month" type="text" inputmode="numeric" value="{{ data['bank-13-task4b-month'] }}">
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="bank-13-task4c-month" name="bank-13-task4c-month" type="text" inputmode="numeric" value="{{ data['bank-13-task4c-month'] }}">
                             </div>
                           </div>
                         
                           <div class="govuk-date-input__item">
                             <div class="govuk-form-group">
-                              <label class="govuk-label govuk-date-input__label" for="bank-13-task4b-year">
+                              <label class="govuk-label govuk-date-input__label" for="bank-13-task4c-year">
                                 Year
                               </label>
-                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="bank-13-task4b-year" name="bank-13-task4b-year" type="text" inputmode="numeric" value="{{ data['bank-13-task4b-year'] }}">
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="bank-13-task4c-year" name="bank-13-task4c-year" type="text" inputmode="numeric" value="{{ data['bank-13-task4c-year'] }}">
                             </div>
                           </div>
                         </div>
@@ -241,35 +292,14 @@ Reconciliation - {{ data['bank-13-name'] }} – {{ serviceName }} – GOV.UK Pro
                         isPageHeading: false
                       },
                       classes: "govuk-!-width-one-half",
-                      id: "bank-13-task4b-reference",
-                      name: "bank-13-task4b-reference",
-                      value: data ['bank-13-task4b-reference']
+                      id: "bank-13-task4c-reference",
+                      name: "bank-13-task4c-reference",
+                      value: data ['bank-13-task4c-reference']
                   }) }}
 
-                  <div class="govuk-form-group">
-                  <fieldset class="govuk-fieldset">
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                      Add another payment?
-                    </legend>
-                    <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
-                          <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="yes" name="bank-13-task4b-another" type="radio" value="yes" {{ checked('bank-13-task4b-another','yes') }}>
-                            <label class="govuk-label govuk-radios__label" for="yes">
-                          Yes
-                        </label>
-                          </div>
-                          <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="no" name="bank-13-task4b-another" type="radio" value="no" {{ checked('bank-13-task4b-another','no') }}>
-                            <label class="govuk-label govuk-radios__label" for="no">
-                          No
-                        </label>
-                          </div>
-                    </div>
-                  </fieldset>
-                </div>
                   
                   {{ govukButton({
-                    text: "Continue"
+                    text: "Change"
                   }) }}
             </fieldset>   
   </form>

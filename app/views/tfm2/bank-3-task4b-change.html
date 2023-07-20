@@ -21,8 +21,7 @@ Reconciliation - {{ data['bank-13-name'] }} – {{ serviceName }} – GOV.UK Pro
 <div class="govuk-grid-row">
 
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="/tfm2/bank-3b" method="post">
-    <input type="hidden" name="bank-13-task4b" value="done">
+    <form class="form" action="bank-3#reconciliation" method="get">
       
     <h1 class="govuk-heading-l govuk-!-margin-bottom-6">
         <span class="govuk-caption-l">{{ data['bank-13-name'] }}, {{ data['report-month'] }}</span>
@@ -246,30 +245,9 @@ Reconciliation - {{ data['bank-13-name'] }} – {{ serviceName }} – GOV.UK Pro
                       value: data ['bank-13-task4b-reference']
                   }) }}
 
-                  <div class="govuk-form-group">
-                  <fieldset class="govuk-fieldset">
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                      Add another payment?
-                    </legend>
-                    <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
-                          <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="yes" name="bank-13-task4b-another" type="radio" value="yes" {{ checked('bank-13-task4b-another','yes') }}>
-                            <label class="govuk-label govuk-radios__label" for="yes">
-                          Yes
-                        </label>
-                          </div>
-                          <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="no" name="bank-13-task4b-another" type="radio" value="no" {{ checked('bank-13-task4b-another','no') }}>
-                            <label class="govuk-label govuk-radios__label" for="no">
-                          No
-                        </label>
-                          </div>
-                    </div>
-                  </fieldset>
-                </div>
                   
                   {{ govukButton({
-                    text: "Continue"
+                    text: "Save"
                   }) }}
             </fieldset>   
   </form>
