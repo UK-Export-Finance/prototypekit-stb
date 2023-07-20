@@ -203,9 +203,20 @@ Reconciliation - {{ data['bank-13-name'] }} – {{ serviceName }} – GOV.UK Pro
                       </fieldset>
                     </div>
                 
+                    {{ govukInput({
+                      label: {
+                        text: "Payment reference (optional)",
+                        classes: "govuk-label--s",
+                        isPageHeading: false
+                      },
+                      classes: "govuk-!-width-one-half",
+                      id: "bank-13-task3-reference",
+                      name: "bank-13-task3-reference",
+                      value: data ['bank-13-task3-reference']
+                  }) }}
+
                   <div class="govuk-form-group">
                   <fieldset class="govuk-fieldset">
-  
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                       Add another payment?
                     </legend>

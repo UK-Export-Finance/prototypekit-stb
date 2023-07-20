@@ -415,7 +415,7 @@ module.exports = {
     'facility-18-exposure': '576,000.00',
     'facility-18-paid': '1,500.00',
     'facility-18-accrued': '1,500.00',
-    'facility-18-paid-total': '1,501.25',
+    'facility-18-paid-total': '1,503.75',
 
     // FACILITY 19 VALUES
     'facility-19-updated': 'no',
