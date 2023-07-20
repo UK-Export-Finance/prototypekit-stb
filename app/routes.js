@@ -77,7 +77,7 @@ router.post('/tfm2/bank-3c', function (req, res) {
 
   // Check whether the variable matches a condition.
   if (another4c == "yes"){
-    // Send user to confirmation screen
+    // Send user to bank 3 screen
     res.redirect('/tfm2/bank-3#reconciliation')
   } else {
     // Send user to upload screen

@@ -4,12 +4,12 @@ module.exports = {
   
   // Dates
 
-  'bank-11-name': 'Bank 1',
+  'bank-11-name': 'Natwest',
   'bank-11-start': 'no',
   'bank-11-payment': '',
   'bank-11-reconciliation': '',
 
-  'bank-12-name': 'Bank 2',
+  'bank-12-name': 'Santander',
   'bank-12-start': 'no',
   'bank-12-payment': '',
   'bank-12-reconciliation': '',
@@ -108,7 +108,7 @@ module.exports = {
   'facility-15-currency': 'USD',
 
   'facility-16-currency': 'GBP',
-  'facility-17-currency': 'USD',
+  
   'facility-18-currency': 'GBP',
   
 
@@ -364,7 +364,7 @@ module.exports = {
     'facility-16-exposure': '432,000.00',
     'facility-16-paid': '2,500.00',
     'facility-16B-paid': '1,450.00',
-    
+    'facility-16-paid-total': '2,500.00', 
     'facility-16-accrued': '2,500.00',
 
     // FACILITY 17 VALUES
@@ -390,6 +390,8 @@ module.exports = {
     'facility-17-accrued': '1,000.00',
     'facility-17B-paid': '1,250.00',
     'facility-17B-accrued': '1,250.00',
+    'facility-17-paid-total': '2,400.00', 
+    'facility-17-currency': 'USD',
     
 
     // FACILITY 18 VALUES
@@ -413,6 +415,7 @@ module.exports = {
     'facility-18-exposure': '576,000.00',
     'facility-18-paid': '1,500.00',
     'facility-18-accrued': '1,500.00',
+    'facility-18-paid-total': '1,501.25',
 
     // FACILITY 19 VALUES
     'facility-19-updated': 'no',
@@ -579,6 +582,8 @@ module.exports = {
     'bank-13-task4a': '',
     'bank-13-task4b': '',
     'bank-13-task4c': '',
+    'bank-13-accepted': '',
+    
 }
 
 
