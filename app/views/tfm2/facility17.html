@@ -8,7 +8,7 @@
 {% endblock %}
 
 {% block pageTitle %}
-{{ data['facility-1-name'] }} - {{ data['facility-1-ukef-id'] }} – {{ serviceName }} – GOV.UK Prototype Kit
+{{ data['facility-17-name'] }} - {{ data['facility-17-ukef-id'] }} – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block header %}
@@ -27,7 +27,7 @@
   <div>
       <div class="case-summary-deal-id">
           <div class="label">Deal ID</div>
-          <div class="ukef-heading-l" data-cy="ukef-deal-id">{{ data['facility-1-deal-id'] }}</div>
+          <div class="ukef-heading-l" data-cy="ukef-deal-id">{{ data['facility-17-deal-id'] }}</div>
       </div>
       <div class="case-summary-supplier chevron-right" data-cy="supplier-column">
           <div class="label">
@@ -35,11 +35,11 @@
                   Exporter
               </span>
           </div>
-          <div class="ukef-heading-l" data-cy="exporter-name">{{ data['facility-1-name'] }}</div>
+          <div class="ukef-heading-l" data-cy="exporter-name">{{ data['facility-17-name'] }}</div>
       </div>
       <div class="case-summary-buyer" data-cy="buyer-name-column">
           <div class="label"><!--Buyer label-->Buyer</div>
-          <div class="ukef-heading-l" data-cy="buyer-name"><!--Buyer name-->{{ data['facility-1-buyer'] }}</div>
+          <div class="ukef-heading-l" data-cy="buyer-name"><!--Buyer name-->{{ data['facility-17-buyer'] }}</div>
       </div>
   </div>
   <div class="case-summary-overview-container">
@@ -56,7 +56,7 @@
           <div class="case-summary-overview-item">
               <div class="ukef-heading-xs">Date received</div>
               <div class="ukef-body-s" data-cy="date-received">
-                {{ data['facility-1-start-date'] }}
+                {{ data['facility-17-start-date'] }}
               </div>
           </div>
       </div>
@@ -100,11 +100,11 @@
           </div>
           <div class="case-summary-overview-item">
               <div class="ukef-heading-xs">Total facilities in this deal</div>
-              <div class="ukef-body-s" data-cy="total-facilities-in-gbp">GBP {{ data['facility-1-limit'] }}</div>
+              <div class="ukef-body-s" data-cy="total-facilities-in-gbp">GBP {{ data['facility-17-limit'] }}</div>
           </div>
           <div class="case-summary-overview-item">
               <div class="ukef-heading-xs">UKEF exposure for this deal</div>
-              <div class="ukef-body-s" data-cy="total-ukef-exposure">GBP {{ data['facility-1-exposure'] }}</div>
+              <div class="ukef-body-s" data-cy="total-ukef-exposure">GBP {{ data['facility-17-exposure'] }}</div>
           </div>
       </div>
   </div>
@@ -141,7 +141,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <span class="govuk-caption-l">Facility {{ data['facility-1-ukef-id'] }}</span>
+    <span class="govuk-caption-l">Facility {{ data['facility-17-ukef-id'] }}</span>
     <h1 class="govuk-heading-l">
       Cash facility
     </h1>
@@ -205,7 +205,7 @@
                         Bank facility reference
                     </dt>
                     <dd class="govuk-summary-list__value">
-                        {{ data['facility-1-ref'] }}
+                        {{ data['facility-17-ref'] }}
                     </dd>
                 </div>
                 <div class="govuk-summary-list__row">
@@ -224,7 +224,7 @@
             <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-9">
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key govuk-!-width-one-third">Value (export currency)</dt>
-                    <dd class="govuk-summary-list__value">GBP {{ data['facility-1-limit'] }}</dd>
+                    <dd class="govuk-summary-list__value">GBP {{ data['facility-17-limit'] }}</dd>
                 </div>
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">Exchange rate</dt>
@@ -232,15 +232,15 @@
                 </div>
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">Value (GBP)</dt>
-                    <dd class="govuk-summary-list__value">GBP {{ data['facility-1-limit'] }}</dd>
+                    <dd class="govuk-summary-list__value">GBP {{ data['facility-17-limit'] }}</dd>
                 </div>
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">UKEF cover</dt>
-                    <dd class="govuk-summary-list__value">{{ data['facility-1-cover'] }}</dd>
+                    <dd class="govuk-summary-list__value">{{ data['facility-17-cover'] }}</dd>
                 </div>
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">Maximum UKEF exposure</dt>
-                    <dd class="govuk-summary-list__value">GBP {{ data['facility-1-max'] }} as at {{ data['end-previous-month'] }}</dd>
+                    <dd class="govuk-summary-list__value">GBP {{ data['facility-17-max'] }} as at {{ data['end-previous-month'] }}</dd>
                 </div>
             </dl> 
 
@@ -254,7 +254,7 @@
                     Inclusion notice received
                 </dt>
                 <dd class="govuk-summary-list__value">
-                    {{ data['facility-1-start-date'] }}
+                    {{ data['facility-17-start-date'] }}
                 </dd>
                 </div>
         
@@ -263,7 +263,7 @@
                     Bank issue notice received
                 </dt>
                 <dd class="govuk-summary-list__value">
-                    {{ data['facility-1-start-date'] }}
+                    {{ data['facility-17-start-date'] }}
                 </dd>
                 </div>
         
@@ -272,7 +272,7 @@
                     Cover start date
                 </dt>
                 <dd class="govuk-summary-list__value">
-                    {{ data['facility-1-start-date'] }}
+                    {{ data['facility-17-start-date'] }}
                 </dd>
                 </div>
 
@@ -281,7 +281,7 @@
                     Cover end date
                 </dt>
                 <dd class="govuk-summary-list__value">
-                    {{ data['facility-1-end-date'] }}
+                    {{ data['facility-17-end-date'] }}
                 </dd>
                 </div>
 
@@ -290,7 +290,7 @@
                     Tenor
                 </dt>
                 <dd class="govuk-summary-list__value">
-                    {{ data['facility-1-tenor'] }}
+                    {{ data['facility-17-tenor'] }}
                 </dd>
                 </div>
             </dl> 
@@ -304,7 +304,7 @@
                     Bank's interest margin
                 </dt>
                 <dd class="govuk-summary-list__value">
-                    {{ data['facility-1-interest-margin'] }}
+                    {{ data['facility-17-interest-margin'] }}
                 </dd>
                 </div>
         
@@ -313,7 +313,7 @@
                     Guarantee fee payable to UKEF 
                 </dt>
                 <dd class="govuk-summary-list__value">
-                    {{ data['facility-1-fee-payable'] }}
+                    {{ data['facility-17-fee-payable'] }}
                 </dd>
                 </div>
         
@@ -322,7 +322,7 @@
                     Credit rating
                 </dt>
                 <dd class="govuk-summary-list__value">
-                    {{ data['facility-1-credit-rating'] }}
+                    {{ data['facility-17-credit-rating'] }}
                 </dd>
                 </div>
             </dl> 
@@ -349,13 +349,13 @@
             </thead>
             <tbody class="govuk-table__body">
               <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="bank-1">{{ data['report-month'] }}</a></th>
-                <td class="govuk-table__cell">GBP {{ data['facility-1-limit'] }}</td>
-                <td class="govuk-table__cell">GBP {{ data['facility-1-utilisation'] }}</td>
-                <td class="govuk-table__cell">{{ data['facility-1-cover'] }}</td>
-                <td class="govuk-table__cell">GBP {{ data['facility-1-exposure'] }}</td>
+                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="bank-3">{{ data['report-month'] }}</a></th>
+                <td class="govuk-table__cell">GBP {{ data['facility-17-limit'] }}</td>
+                <td class="govuk-table__cell">GBP {{ data['facility-17-utilisation'] }}</td>
+                <td class="govuk-table__cell">{{ data['facility-17-cover'] }}</td>
+                <td class="govuk-table__cell">GBP {{ data['facility-17-exposure'] }}</td>
                 <td class="govuk-table__cell">GBP 10,000.00</td>
-                <td class="govuk-table__cell">GBP {{ data['facility-1-paid'] }} </td>
+                <td class="govuk-table__cell">GBP {{ data['facility-17-paid'] }} </td>
                 <td class="govuk-table__cell">
                     {% if 'Yes' in data['bank-1-payment'] %}
                     <!-- payment matches -->
@@ -376,10 +376,10 @@
                     </td>
               </tr>
               <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="bank-1-month-2">{{ data['last-month'] }}</a></th>
-                <td class="govuk-table__cell">GBP {{ data['facility-1-limit'] }}</td>
+                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="#">{{ data['last-month'] }}</a></th>
+                <td class="govuk-table__cell">GBP {{ data['facility-17-limit'] }}</td>
                 <td class="govuk-table__cell">GBP 360,000.00</td>
-                <td class="govuk-table__cell">{{ data['facility-1-cover'] }}</td>
+                <td class="govuk-table__cell">{{ data['facility-17-cover'] }}</td>
                 <td class="govuk-table__cell">GBP 288,000.00</td>
                 <td class="govuk-table__cell">GBP 9,000.00</td>
                 <td class="govuk-table__cell">GBP 900.00</td>
@@ -390,10 +390,10 @@
                 </td>
               </tr>
               <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="bank-1-month-3">{{ data['3rd-month'] }}</a></th>
-                <td class="govuk-table__cell govuk-!-font-weight-regular">GBP {{ data['facility-1-limit'] }}</td>
+                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="#">{{ data['3rd-month'] }}</a></th>
+                <td class="govuk-table__cell govuk-!-font-weight-regular">GBP {{ data['facility-17-limit'] }}</td>
                 <td class="govuk-table__cell">GBP 324,000.00</td>
-                <td class="govuk-table__cell">{{ data['facility-1-cover'] }}</td>
+                <td class="govuk-table__cell">{{ data['facility-17-cover'] }}</td>
                 <td class="govuk-table__cell">GBP 259,200.00</td>
                 <td class="govuk-table__cell">GBP 8,100.00</td>
                 <td class="govuk-table__cell">GBP 810.00</td>
@@ -404,10 +404,10 @@
                 </td>
               </tr>
               <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="bank-1-month-4">{{ data['4th-month'] }}</a></th>
-                <td class="govuk-table__cell">GBP {{ data['facility-1-limit'] }}</td>
+                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="#">{{ data['4th-month'] }}</a></th>
+                <td class="govuk-table__cell">GBP {{ data['facility-17-limit'] }}</td>
                 <td class="govuk-table__cell">GBP 291,600.00</td>
-                <td class="govuk-table__cell">{{ data['facility-1-cover'] }}</td>
+                <td class="govuk-table__cell">{{ data['facility-17-cover'] }}</td>
                 <td class="govuk-table__cell">GBP 233,280.00</td>
                 <td class="govuk-table__cell">GBP 7,290.00</td>
                 <td class="govuk-table__cell">GBP 729.00</td>

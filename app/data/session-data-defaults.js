@@ -370,7 +370,7 @@ module.exports = {
     // FACILITY 17 VALUES
     'facility-17-updated': 'no',
     'facility-17-name': 'Meridian Manufacturing Ltd',
-    'facility-17-buyer': 'Global Solutions Inc.',
+    'facility-17-buyer': 'Universal Solutions Inc.',
     'facility-17-ukef-id': '0020002167',
     'facility-17-deal-id': '0030718945',
     'facility-17-ref': '0412356',
@@ -397,7 +397,7 @@ module.exports = {
     // FACILITY 18 VALUES
     'facility-18-updated': 'no',
     'facility-18-name': 'British Tech Innovators Ltd',
-    'facility-18-buyer': 'Global Industries Co.',
+    'facility-18-buyer': 'International Industries Co.',
     'facility-18-ukef-id': '0020002193',
     'facility-18-deal-id': '0030854210',
     'facility-18-ref': '0567890',

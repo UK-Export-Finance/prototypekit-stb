@@ -1,0 +1,434 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+{% set containerClasses = "app-width-container" %}
+
+{% block stylesheets %}
+  {{ super() }}
+  <link href="/public/css/settings.scss" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block pageTitle %}
+{{ data['facility-18-name'] }} - {{ data['facility-18-ukef-id'] }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/head.html" %}
+  {% include "includes/primary-nav-facilities.html" %}
+{% endblock %}
+
+{% block pageScripts %}
+  {% include "includes/scripts.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+<!-- start of summary panel -->
+<div data-cy="case-summary" class="case-summary">
+  <div>
+      <div class="case-summary-deal-id">
+          <div class="label">Deal ID</div>
+          <div class="ukef-heading-l" data-cy="ukef-deal-id">{{ data['facility-18-deal-id'] }}</div>
+      </div>
+      <div class="case-summary-supplier chevron-right" data-cy="supplier-column">
+          <div class="label">
+              <span data-cy="supplier-type">
+                  Exporter
+              </span>
+          </div>
+          <div class="ukef-heading-l" data-cy="exporter-name">{{ data['facility-18-name'] }}</div>
+      </div>
+      <div class="case-summary-buyer" data-cy="buyer-name-column">
+          <div class="label"><!--Buyer label-->Buyer</div>
+          <div class="ukef-heading-l" data-cy="buyer-name"><!--Buyer name-->{{ data['facility-18-buyer'] }}</div>
+      </div>
+  </div>
+  <div class="case-summary-overview-container">
+      <div class="ukef-grid-column-one-sixth case-summary-overview-column">
+          <div class="case-summary-overview-item case-summary-overview-item__stage">
+              <div data-cy="ukef-deal-stage" class="ukef-deal-stage">
+                  <div class="ukef-heading-xs ukef-deal-stage__title">Deal stage</div>
+                  <strong class="govuk-tag govuk-tag--blue ukef-body-s govuk-!-font-weight-bold"
+                      data-cy="ukef-deal-stage-value">
+                      Confirmed
+                  </strong>
+              </div>
+          </div>
+          <div class="case-summary-overview-item">
+              <div class="ukef-heading-xs">Date received</div>
+              <div class="ukef-body-s" data-cy="date-received">
+                {{ data['facility-18-start-date'] }}
+              </div>
+          </div>
+      </div>
+      <div class="case-summary-overview-column ukef-grid-column-one-sixth">
+          <div class="case-summary-overview-item">
+              <div class="ukef-heading-xs">Product</div>
+              <div class="ukef-body-s" data-cy="ukef-product">GEF</div>
+          </div>
+          <div class="case-summary-overview-item">
+              <div class="ukef-heading-xs">Type</div>
+              <div class="ukef-body-s" data-cy="submission-type">Automatic Inclusion Notice</div>
+          </div>
+          <div class="case-summary-overview-item">
+              <div class="ukef-heading-xs">Bank</div>
+              <div class="ukef-body-s" data-cy="bank-name">{{ data['bank-1-name'] }}</div>
+          </div>
+      </div>
+      <div class="case-summary-overview-column govuk-grid-column-one-third">
+          <div class="case-summary-overview-item">
+              <div class="ukef-heading-xs">Export description</div>
+              <div class="ukef-body-s" data-cy="export-description">-</div>
+          </div>
+          <div class="case-summary-overview-item">
+              <div class="ukef-heading-xs">Destination Country</div>
+              <div class="ukef-body-s" data-cy="destination-country">-</div>
+          </div>
+          <div class="case-summary-overview-item">
+              <div class="ukef-heading-xs">Agent</div>
+              <div class="ukef-body-s">-</div>
+          </div>
+      </div>
+      <div class="case-summary-overview-column govuk-grid-column-one-third">
+          <div class="case-summary-overview-item">
+              <div class="ukef-heading-xs">Export contract value</div>
+              <div class="ukef-body-s">
+                  <span data-cy="contract-value">
+                      -
+                  </span>
+                  <span data-cy="contract-value-in-gbp"></span>
+              </div>
+          </div>
+          <div class="case-summary-overview-item">
+              <div class="ukef-heading-xs">Total facilities in this deal</div>
+              <div class="ukef-body-s" data-cy="total-facilities-in-gbp">GBP {{ data['facility-18-limit'] }}</div>
+          </div>
+          <div class="case-summary-overview-item">
+              <div class="ukef-heading-xs">UKEF exposure for this deal</div>
+              <div class="ukef-body-s" data-cy="total-ukef-exposure">GBP {{ data['facility-18-exposure'] }}</div>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- end of summary panel -->
+
+{{ mojSubNavigation({
+  label: 'Sub navigation',
+  items: [{
+    text: 'Tasks',
+    href: '#1'
+  }, {
+    text: 'Deal',
+    href: '#2'
+  }, {
+    text: 'Parties',
+    href: '#3'
+  }, {
+    text: 'Documents',
+    href: '#3'
+  }, {
+    text: 'Activity and comments',
+    href: '#3'
+  }, {
+    text: 'Underwriting',
+    href: '#3'
+  }]
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <span class="govuk-caption-l">Facility {{ data['facility-18-ukef-id'] }}</span>
+    <h1 class="govuk-heading-l">
+      Cash facility
+    </h1>
+
+    <div class="govuk-tabs" data-module="govuk-tabs">
+      <h2 class="govuk-tabs__title">
+        Contents
+      </h2>
+      <ul class="govuk-tabs__list">
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="#details">
+            Details
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#monthly-reports">
+            Monthly reports
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#amendments">
+              Amendments
+            </a>
+          </li>
+      </ul>
+      
+        <div class="govuk-tabs__panel" id="details">
+        
+            <h2 class="govuk-heading-l">Overview</h2>
+            <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-9">
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-width-one-third">
+                        Product
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        General export facility
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Type
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        Contingent facility
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Facility stage
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        <strong class="govuk-tag govuk-tag--blue">Issued</strong>
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Bank facility reference
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        {{ data['facility-18-ref'] }}
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                    Facility provided on
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                    Uncommited basis
+                    </dd>
+                </div>
+            </dl>
+
+            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+            <h2 class="govuk-heading-l">Value and exposure</h2>
+            <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-9">
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key govuk-!-width-one-third">Value (export currency)</dt>
+                    <dd class="govuk-summary-list__value">GBP {{ data['facility-18-limit'] }}</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">Exchange rate</dt>
+                    <dd class="govuk-summary-list__value">-</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">Value (GBP)</dt>
+                    <dd class="govuk-summary-list__value">GBP {{ data['facility-18-limit'] }}</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">UKEF cover</dt>
+                    <dd class="govuk-summary-list__value">{{ data['facility-18-cover'] }}</dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">Maximum UKEF exposure</dt>
+                    <dd class="govuk-summary-list__value">GBP {{ data['facility-18-max'] }} as at {{ data['end-previous-month'] }}</dd>
+                </div>
+            </dl> 
+
+
+            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+            <h2 class="govuk-heading-l">Dates</h2>
+            <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-9">
+                <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-width-one-third">
+                    Inclusion notice received
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    {{ data['facility-18-start-date'] }}
+                </dd>
+                </div>
+        
+                <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Bank issue notice received
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    {{ data['facility-18-start-date'] }}
+                </dd>
+                </div>
+        
+                <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Cover start date
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    {{ data['facility-18-start-date'] }}
+                </dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Cover end date
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    {{ data['facility-18-end-date'] }}
+                </dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Tenor
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    {{ data['facility-18-tenor'] }}
+                </dd>
+                </div>
+            </dl> 
+
+            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+            <h2 class="govuk-heading-l">Pricing and risk</h2>
+            <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-9">
+                <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-width-one-third">
+                    Bank's interest margin
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    {{ data['facility-18-interest-margin'] }}
+                </dd>
+                </div>
+        
+                <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Guarantee fee payable to UKEF 
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    {{ data['facility-18-fee-payable'] }}
+                </dd>
+                </div>
+        
+                <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Credit rating
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    {{ data['facility-18-credit-rating'] }}
+                </dd>
+                </div>
+            </dl> 
+
+        </div>
+
+        <!-- end of Details -->
+
+      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="monthly-reports">
+
+        <table class="govuk-table">
+            <caption class="govuk-table__caption govuk-table__caption--m">Reported details</caption>
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Month</th>
+                <th scope="col" class="govuk-table__header">Value</th>
+                <th scope="col" class="govuk-table__header">Utilisation</th>
+                <th scope="col" class="govuk-table__header">UKEF cover</th>
+                <th scope="col" class="govuk-table__header">UKEF exposure</th>
+                <th scope="col" class="govuk-table__header">Fees accrued</th>
+                <th scope="col" class="govuk-table__header">Fee payable to UKEF</th>
+                <th scope="col" class="govuk-table__header">UKEF reconciliation</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="bank-3">{{ data['report-month'] }}</a></th>
+                <td class="govuk-table__cell">GBP {{ data['facility-18-limit'] }}</td>
+                <td class="govuk-table__cell">GBP {{ data['facility-18-utilisation'] }}</td>
+                <td class="govuk-table__cell">{{ data['facility-18-cover'] }}</td>
+                <td class="govuk-table__cell">GBP {{ data['facility-18-exposure'] }}</td>
+                <td class="govuk-table__cell">GBP 10,000.00</td>
+                <td class="govuk-table__cell">GBP {{ data['facility-18-paid'] }} </td>
+                <td class="govuk-table__cell">
+                    {% if 'Yes' in data['bank-1-payment'] %}
+                    <!-- payment matches -->
+                    <strong class="govuk-tag govuk-tag--green">
+                        Payment matches
+                    </strong>
+                    {% elseif 'No' in data['bank-1-payment'] %}
+                    <!-- payment doesn't match -->
+                    <strong class="govuk-tag govuk-tag--yellow">
+                        Payment does not match
+                    </strong>
+                    {% elseif '' in data['bank-1-payment'] %}
+                    <!-- reconciliation not done -->
+                    <strong class="govuk-tag govuk-tag--blue">
+                        Pending reconciliation
+                    </strong>
+                    {% endif %}  
+                    </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="#">{{ data['last-month'] }}</a></th>
+                <td class="govuk-table__cell">GBP {{ data['facility-18-limit'] }}</td>
+                <td class="govuk-table__cell">GBP 360,000.00</td>
+                <td class="govuk-table__cell">{{ data['facility-18-cover'] }}</td>
+                <td class="govuk-table__cell">GBP 288,000.00</td>
+                <td class="govuk-table__cell">GBP 9,000.00</td>
+                <td class="govuk-table__cell">GBP 900.00</td>
+                <td class="govuk-table__cell">
+                    <strong class="govuk-tag govuk-tag--green">
+                    Payment matches
+                    </strong>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="#">{{ data['3rd-month'] }}</a></th>
+                <td class="govuk-table__cell govuk-!-font-weight-regular">GBP {{ data['facility-18-limit'] }}</td>
+                <td class="govuk-table__cell">GBP 324,000.00</td>
+                <td class="govuk-table__cell">{{ data['facility-18-cover'] }}</td>
+                <td class="govuk-table__cell">GBP 259,200.00</td>
+                <td class="govuk-table__cell">GBP 8,100.00</td>
+                <td class="govuk-table__cell">GBP 810.00</td>
+                <td class="govuk-table__cell">
+                    <strong class="govuk-tag govuk-tag--green">
+                        Payment matches
+                        </strong>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="#">{{ data['4th-month'] }}</a></th>
+                <td class="govuk-table__cell">GBP {{ data['facility-18-limit'] }}</td>
+                <td class="govuk-table__cell">GBP 291,600.00</td>
+                <td class="govuk-table__cell">{{ data['facility-18-cover'] }}</td>
+                <td class="govuk-table__cell">GBP 233,280.00</td>
+                <td class="govuk-table__cell">GBP 7,290.00</td>
+                <td class="govuk-table__cell">GBP 729.00</td>
+                <td class="govuk-table__cell">
+                    <strong class="govuk-tag govuk-tag--green">
+                    Payment matches
+                    </strong></td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+      <!-- end of Monthly reports -->
+
+      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="amendments">
+
+      </div>
+      <!-- end of Ammendments -->
+
+    </div>
+    <!-- end of tabs -->
+  </div>
+</div>
+
+{% endblock %}
