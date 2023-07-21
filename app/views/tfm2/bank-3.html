@@ -930,7 +930,7 @@
 
                   <tr class="govuk-table__row">
                     <td class="govuk-table__cell"><a href="bank-3-task2-change" class="govuk-link govuk-link--no-visited-state">{{ data['bank-13-task2-currency'] }} {{ data['bank-13-task2-amount'] }}</a></td>
-                    <td class="govuk-table__cell">{{ data['bank-13-task4c-reference'] }}</td>
+                    <td class="govuk-table__cell">{{ data['bank-13-task2-reference'] }}</td>
                     <td class="govuk-table__cell">{{ data['facility-17-ukef-id'] }}</td>
                     <td class="govuk-table__cell">{{ data['facility-17-name'] }}</td>
                     <td class="govuk-table__cell">{{ ( data['bank-13-task2-year'] + "-" + data['bank-13-task2-month'] + "-" + data['bank-13-task2-day'] ) | govukDate }}</td>
@@ -971,7 +971,6 @@
               <table class="govuk-table" data-module="moj-sortable-table">
                 <caption class="govuk-table__caption govuk-table__caption--s">USD</caption>
                 <thead class="govuk-table__head">
-
                   <tr class="govuk-table__row">
                     <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Amount</th>
                     <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Payment reference</th>
@@ -981,9 +980,7 @@
                   </tr>
                 </thead>
                 <tbody class="govuk-table__body">
-
                   <tr class="govuk-table__row">
-                    
                     <td class="govuk-table__cell"><a href="bank-3-task3-change" class="govuk-link govuk-link--no-visited-state">{{ data['bank-13-task3-currency'] }} {{ data['bank-13-task3-amount'] }}</a></td>
                     <td class="govuk-table__cell">{{ data['bank-13-task3-reference'] }}</td>
                     <td class="govuk-table__cell">{{ data['facility-17-ukef-id'] }}</td>
@@ -996,9 +993,6 @@
                       <td class="govuk-table__cell govuk-!-font-weight-bold" colspan="5">Total USD 1,000.00</td>
                     </tr>    
                   </tfoot> 
-
-
-            </tbody>
           </table>
               {% endif %}
 
