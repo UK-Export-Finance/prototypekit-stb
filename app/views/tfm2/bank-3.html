@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block header %}
-  {% include "includes/head.html" %}
+  {% include "includes/head2.html" %}
   {% include "includes/primary-nav-banks-main.html" %}
 {% endblock %}
 
@@ -424,7 +424,7 @@
                         <div class="govuk-radios__item">
                           <input class="govuk-radios__input" id="override" name="bank-13-markas-task4" type="radio" value="override" data-aria-controls="conditional-override">
                           <label class="govuk-label govuk-radios__label" for="override">
-                            Override 'Variation' and mark facility as 'Accepted'
+                            Mark 'Variation' as 'Accepted' 
                           </label>
                         </div>
     
@@ -433,13 +433,13 @@
                           <div class="govuk-form-group">
                             <fieldset class="govuk-fieldset">
                               <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                                  Reason for overriding
+                                  Reason for accepting
                               </legend>
                               <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
                                 <div class="govuk-radios__item">
                                   <input class="govuk-radios__input" id="variation" name="bank-13-override-reason" type="radio" value="variation">
                                   <label class="govuk-label govuk-radios__label" for="variation">
-                                    Variation within tolerances
+                                    Expecting further payment from bank from bank
                                   </label>
                                 </div>
                                 
@@ -500,7 +500,7 @@
                       <div class="govuk-radios__item">
                         <input class="govuk-radios__input" id="override" name="bank-13-markas-task4" type="radio" value="override" data-aria-controls="conditional-override">
                         <label class="govuk-label govuk-radios__label" for="override">
-                          Override 'Variation' and mark facility as 'Accepted'
+                          Mark 'Variation' as 'Accepted' 
                         </label>
                       </div>
   
@@ -509,13 +509,13 @@
                         <div class="govuk-form-group">
                           <fieldset class="govuk-fieldset">
                             <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                                Reason for overriding
+                                Reason for accepting
                             </legend>
                             <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
                               <div class="govuk-radios__item">
                                 <input class="govuk-radios__input" id="variation" name="bank-13-override-reason" type="radio" value="variation">
                                 <label class="govuk-label govuk-radios__label" for="variation">
-                                  Variation within tolerances
+                                  Expecting further payment from bank 
                                 </label>
                               </div>
                               
@@ -574,7 +574,7 @@
                       <div class="govuk-radios__item">
                         <input class="govuk-radios__input" id="override" name="bank-13-markas-task4" type="radio" value="override" data-aria-controls="conditional-override">
                         <label class="govuk-label govuk-radios__label" for="override">
-                          Override 'Variation' and mark facility as 'Accepted'
+                          Mark 'Variation' as 'Accepted' 
                         </label>
                       </div>
   
@@ -583,13 +583,13 @@
                         <div class="govuk-form-group">
                           <fieldset class="govuk-fieldset">
                             <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                                Reason for overriding
+                                Reason for accepting
                             </legend>
                             <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
                               <div class="govuk-radios__item">
                                 <input class="govuk-radios__input" id="variation" name="bank-13-override-reason" type="radio" value="variation">
                                 <label class="govuk-label govuk-radios__label" for="variation">
-                                  Variation within tolerances
+                                  Expecting further payment from bank 
                                 </label>
                               </div>
                               
@@ -653,7 +653,7 @@
                     <div class="govuk-radios__item">
                       <input class="govuk-radios__input" id="override" name="bank-13-markas-task5" type="radio" value="override" data-aria-controls="conditional-override">
                       <label class="govuk-label govuk-radios__label" for="override">
-                        Override 'Variation' and mark facility as 'Accepted'
+                        Mark 'Variation' as 'Accepted' 
                       </label>
                     </div>
 
@@ -662,13 +662,13 @@
                       <div class="govuk-form-group">
                         <fieldset class="govuk-fieldset">
                           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                              Reason for overriding
+                              Reason for accepting
                           </legend>
                           <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
                             <div class="govuk-radios__item">
                               <input class="govuk-radios__input" id="variation" name="bank-13-override-reason" type="radio" value="variation">
                               <label class="govuk-label govuk-radios__label" for="variation">
-                                Variation within tolerances
+                                Expecting further payment from bank 
                               </label>
                             </div>
                             
@@ -708,8 +708,8 @@
             </div>
 
             {% elif data['bank-13-show-task'] == 'complete' %}
-            <h3 class="govuk-heading-m">[Header]</h3>
-            <p class="govuk-body">When the report has been marked as reconciled a keying sheet will be generated for downloading.</p>
+            <h3 class="govuk-heading-m">Complete the report</h3>
+            <p class="govuk-body">When the report has been marked as reconciled the keying sheet will be generated for downloading.</p>
             <div class="govuk-button-group">
 
               {{ govukButton({
@@ -740,7 +740,7 @@
             <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="payments-received">
               
               <div class="govuk-grid-row">
-                <div class="govuk-grid-column-full">
+                <div class="govuk-grid-column-three-quarters">
               
               <h2 class="govuk-heading-l">Reconciliation summary</h2>
               
@@ -749,94 +749,238 @@
               <p class="govuk-body">No payments marked as received yet.</p>
               
               {% elif (data['bank-13-task1'] == 'done') %}
+
+              <h3 class="govuk-heading-m">Payments received</h3> 
+
               <table class="govuk-table" data-module="moj-sortable-table">
-                <caption class="govuk-table__caption govuk-table__caption--m">Payments received</caption>
+                <caption class="govuk-table__caption govuk-table__caption--s">All payments</caption>
                 <thead class="govuk-table__head">
 
                   <tr class="govuk-table__row">
-                    <th scope="col" class="govuk-table__header" aria-sort="none">Amount</th>
-                    <th scope="col" class="govuk-table__header" aria-sort="ascending">Facility ID</th>
-                    
-                    <th scope="col" class="govuk-table__header" aria-sort="none">Date received</th>
-                    <th scope="col" class="govuk-table__header">Action</th>
+                    <th scope="col" class="govuk-table__header govuk-!-width-one-quarter" aria-sort="none">Amount</th>
+                    <th scope="col" class="govuk-table__header govuk-!-width-one-quarter" aria-sort="ascending">Facility ID</th>
+                    <th scope="col" class="govuk-table__header govuk-!-width-one-quarter" aria-sort="ascending">Exporter</th>
+                    <th scope="col" class="govuk-table__header govuk-!-width-one-quarter" aria-sort="none">Date received</th>
                   </tr>
                 </thead>
                 <tbody class="govuk-table__body">
 
                   <tr class="govuk-table__row">
                     
-                    <td class="govuk-table__cell">{{ data['bank-13-task1-currency'] }} {{ data['bank-13-task1-amount'] }}</td>
+                    <td class="govuk-table__cell"><a href="bank-3-task1-change" class="govuk-link govuk-link--no-visited-state">{{ data['bank-13-task1-currency'] }} {{ data['bank-13-task1-amount'] }}</a></td>
                     <td class="govuk-table__cell">{{ data['facility-16-ukef-id'] }}</td>
+                    <td class="govuk-table__cell">{{ data['facility-16-name'] }}</td>
                     <td class="govuk-table__cell">{{ ( data['bank-13-task1-year'] + "-" + data['bank-13-task1-month'] + "-" + data['bank-13-task1-day'] ) | govukDate }}</td>
-
-                    <td class="govuk-table__cell"><a class="govuk-link" href="bank-3-task1">
-                      Change<span class="govuk-visually-hidden"> payment</span>
-                    </a></td>
                   </tr>
                   {% endif %}
 
                   {% if (data['bank-13-task2'] == 'done') %}
                   <tr class="govuk-table__row">
                     
-                    <td class="govuk-table__cell">{{ data['bank-13-task2-currency'] }} {{ data['bank-13-task2-amount'] }}</td>
+                    <td class="govuk-table__cell"><a href="bank-3-task2-change" class="govuk-link govuk-link--no-visited-state">{{ data['bank-13-task2-currency'] }} {{ data['bank-13-task2-amount'] }}</a></td>
                     <td class="govuk-table__cell">{{ data['facility-17-ukef-id'] }}</td>
+                    <td class="govuk-table__cell">{{ data['facility-17-name'] }}</td>
                     <td class="govuk-table__cell">{{ ( data['bank-13-task2-year'] + "-" + data['bank-13-task2-month'] + "-" + data['bank-13-task2-day'] ) | govukDate }}</td>
-
-                    <td class="govuk-table__cell"><a class="govuk-link" href="bank-3-task2">
-                      Change<span class="govuk-visually-hidden"> payment</span>
-                    </a></td>
                   </tr>
                   {% endif %}
 
                   {% if (data['bank-13-task3'] == 'done') %}
                   <tr class="govuk-table__row">
                     
-                    <td class="govuk-table__cell">{{ data['bank-13-task3-currency'] }} {{ data['bank-13-task3-amount'] }}</td>
+                    <td class="govuk-table__cell"><a href="bank-3-task3-change" class="govuk-link govuk-link--no-visited-state">{{ data['bank-13-task3-currency'] }} {{ data['bank-13-task3-amount'] }}</a></td>
                     <td class="govuk-table__cell">{{ data['facility-17-ukef-id'] }}</td>
+                    <td class="govuk-table__cell">{{ data['facility-17-name'] }}</td>
                     <td class="govuk-table__cell">{{ ( data['bank-13-task3-year'] + "-" + data['bank-13-task3-month'] + "-" + data['bank-13-task3-day'] ) | govukDate }}</td>
-                    <td class="govuk-table__cell"><a class="govuk-link" href="bank-3-task3">
-                      Change<span class="govuk-visually-hidden"> payment</span>
-                    </a></td>
                   </tr>    
                   {% endif %}
               
                   {% if (data['bank-13-task4a'] == 'done') %}
                   <tr class="govuk-table__row">
                     
-                    <td class="govuk-table__cell">{{ data['bank-13-task4a-currency'] }} {{ data['bank-13-task4a-amount'] }}</td>
+                    <td class="govuk-table__cell"><a href="bank-3-task4a-change" class="govuk-link govuk-link--no-visited-state">{{ data['bank-13-task4a-currency'] }} {{ data['bank-13-task4a-amount'] }}</a></td>
                     <td class="govuk-table__cell">{{ data['facility-18-ukef-id'] }}</td>
+                    <td class="govuk-table__cell">{{ data['facility-18-name'] }}</td>
                     <td class="govuk-table__cell">{{ ( data['bank-13-task4a-year'] + "-" + data['bank-13-task4a-month'] + "-" + data['bank-13-task4a-day'] ) | govukDate }}</td>
-                    <td class="govuk-table__cell"><a class="govuk-link" href="bank-3-task4a">
-                      Change<span class="govuk-visually-hidden"> payment</span>
-                    </a></td>
                   </tr>    
                   {% endif %}
 
                   {% if (data['bank-13-task4b'] == 'done') %}
                   <tr class="govuk-table__row">
-                    
-                    <td class="govuk-table__cell">{{ data['bank-13-task4b-currency'] }} {{ data['bank-13-task4b-amount'] }}</td>
+                    <td class="govuk-table__cell"><a href="bank-3-task4b-change" class="govuk-link govuk-link--no-visited-state">{{ data['bank-13-task4b-currency'] }} {{ data['bank-13-task4b-amount'] }}</a></td>
                     <td class="govuk-table__cell">{{ data['facility-18-ukef-id'] }}</td>
+                    <td class="govuk-table__cell">{{ data['facility-18-name'] }}</td>
                     <td class="govuk-table__cell">{{ ( data['bank-13-task4b-year'] + "-" + data['bank-13-task4b-month'] + "-" + data['bank-13-task4b-day'] ) | govukDate }}</td>
-                    <td class="govuk-table__cell"><a class="govuk-link" href="bank-3-task4b">
-                      Change<span class="govuk-visually-hidden"> payment</span>
-                    </a></td>
                   </tr>    
                   {% endif %}
 
                   {% if (data['bank-13-task4c'] == 'done') %}
                   <tr class="govuk-table__row">
-                    
-                    <td class="govuk-table__cell">{{ data['bank-13-task4c-currency'] }} {{ data['bank-13-task4c-amount'] }}</td>
+                    <td class="govuk-table__cell"><a href="bank-3-task4c-change" class="govuk-link govuk-link--no-visited-state">{{ data['bank-13-task4c-currency'] }} {{ data['bank-13-task4c-amount'] }}</a></td>
                     <td class="govuk-table__cell">{{ data['facility-18-ukef-id'] }}</td>
+                    <td class="govuk-table__cell">{{ data['facility-18-name'] }}</td>
                     <td class="govuk-table__cell">{{ ( data['bank-13-task4c-year'] + "-" + data['bank-13-task4c-month'] + "-" + data['bank-13-task4c-day'] ) | govukDate }}</td>
-                    <td class="govuk-table__cell"><a class="govuk-link" href="bank-3-task4c">
-                      Change<span class="govuk-visually-hidden"> payment</span>
-                    </a></td>
                   </tr>    
                   {% endif %}
 
               {% if (data['bank-13-task1'] == 'done') %}
+
+            </tbody>
+          </table>
+              {% endif %}
+              
+              {% if (data['bank-13-task1'] == 'done') %}
+              <table class="govuk-table" data-module="moj-sortable-table">
+                <caption class="govuk-table__caption govuk-table__caption--s">GBP</caption>
+                <thead class="govuk-table__head">
+
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header govuk-!-width-one-quarter" aria-sort="none">Amount</th>
+                    <th scope="col" class="govuk-table__header govuk-!-width-one-quarter" aria-sort="ascending">Facility ID</th>
+                    <th scope="col" class="govuk-table__header govuk-!-width-one-quarter" aria-sort="ascending">Exporter</th>
+                    <th scope="col" class="govuk-table__header govuk-!-width-one-quarter" aria-sort="none">Date received</th>
+                  </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+
+                  <tr class="govuk-table__row">
+                    
+                    <td class="govuk-table__cell"><a href="bank-3-task1-change" class="govuk-link govuk-link--no-visited-state">{{ data['bank-13-task1-currency'] }} {{ data['bank-13-task1-amount'] }}</a></td>
+                    <td class="govuk-table__cell">{{ data['facility-16-ukef-id'] }}</td>
+                    <td class="govuk-table__cell">{{ data['facility-16-name'] }}</td>
+                    <td class="govuk-table__cell">{{ ( data['bank-13-task1-year'] + "-" + data['bank-13-task1-month'] + "-" + data['bank-13-task1-day'] ) | govukDate }}</td>
+                  </tr>
+                  {% endif %}
+              
+                  {% if (data['bank-13-task4a'] == 'done') %}
+                  <tr class="govuk-table__row">
+                    
+                    <td class="govuk-table__cell"><a href="bank-3-task4a-change" class="govuk-link govuk-link--no-visited-state">{{ data['bank-13-task4a-currency'] }} {{ data['bank-13-task4a-amount'] }}</a></td>
+                    <td class="govuk-table__cell">{{ data['facility-18-ukef-id'] }}</td>
+                    <td class="govuk-table__cell">{{ data['facility-18-name'] }}</td>
+                    <td class="govuk-table__cell">{{ ( data['bank-13-task4a-year'] + "-" + data['bank-13-task4a-month'] + "-" + data['bank-13-task4a-day'] ) | govukDate }}</td>
+                  </tr>    
+                  {% endif %}
+
+                  {% if (data['bank-13-task4b'] == 'done') %}
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="bank-3-task4b-change" class="govuk-link govuk-link--no-visited-state">{{ data['bank-13-task4b-currency'] }} {{ data['bank-13-task4b-amount'] }}</a></td>
+                    <td class="govuk-table__cell">{{ data['facility-18-ukef-id'] }}</td>
+                    <td class="govuk-table__cell">{{ data['facility-18-name'] }}</td>
+                    <td class="govuk-table__cell">{{ ( data['bank-13-task4b-year'] + "-" + data['bank-13-task4b-month'] + "-" + data['bank-13-task4b-day'] ) | govukDate }}</td>
+                  </tr>  
+                  
+                  {% endif %}
+
+                  {% if (data['bank-13-task1'] == 'done') and (data['bank-13-task4a'] == '') and (data['bank-13-task4b'] == '') %}
+                    <tfoot> 
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-!-font-weight-bold" colspan="4">Total GBP 2,500.00</td>
+                      </tr>    
+                    </tfoot> 
+                  </tbody>
+                </table>
+                
+                {% elif (data['bank-13-task1'] == 'done') and (data['bank-13-task4a'] == 'done') and (data['bank-13-task4b'] == '') %}
+                  <tfoot> 
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell govuk-!-font-weight-bold" colspan="4">Total GBP 3,500.00</td>
+                    </tr>    
+                  </tfoot> 
+                </tbody>
+              </table>
+
+              {% elif (data['bank-13-task1'] == 'done') and (data['bank-13-task4a'] == 'done') and (data['bank-13-task4b'] == 'done') %}
+                  <tfoot> 
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell govuk-!-font-weight-bold" colspan="4">Total GBP 3,900.00</td>
+                    </tr>    
+                  </tfoot> 
+                </tbody>
+              </table>
+              {% endif %}
+
+            
+              {% if (data['bank-13-task2'] == 'done') %}
+              <table class="govuk-table" data-module="moj-sortable-table">
+                <caption class="govuk-table__caption govuk-table__caption--s">EUR</caption>
+                <thead class="govuk-table__head">
+
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header govuk-!-width-one-quarter" aria-sort="none">Amount</th>
+                    <th scope="col" class="govuk-table__header govuk-!-width-one-quarter" aria-sort="ascending">Facility ID</th>
+                    <th scope="col" class="govuk-table__header govuk-!-width-one-quarter" aria-sort="ascending">Exporter</th>
+                    <th scope="col" class="govuk-table__header govuk-!-width-one-quarter" aria-sort="none">Date received</th>
+                  </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="bank-3-task2-change" class="govuk-link govuk-link--no-visited-state">{{ data['bank-13-task2-currency'] }} {{ data['bank-13-task2-amount'] }}</a></td>
+                    <td class="govuk-table__cell">{{ data['facility-17-ukef-id'] }}</td>
+                    <td class="govuk-table__cell">{{ data['facility-17-name'] }}</td>
+                    <td class="govuk-table__cell">{{ ( data['bank-13-task2-year'] + "-" + data['bank-13-task2-month'] + "-" + data['bank-13-task2-day'] ) | govukDate }}</td>
+                  </tr>    
+                  {% endif %}
+
+                  {% if (data['bank-13-task4c'] == 'done') %}
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="bank-3-task4c-change" class="govuk-link govuk-link--no-visited-state">{{ data['bank-13-task4c-currency'] }} {{ data['bank-13-task4c-amount'] }}</a></td>
+                    <td class="govuk-table__cell">{{ data['facility-18-ukef-id'] }}</td>
+                    <td class="govuk-table__cell">{{ data['facility-18-name'] }}</td>
+                    <td class="govuk-table__cell">{{ ( data['bank-13-task4c-year'] + "-" + data['bank-13-task4c-month'] + "-" + data['bank-13-task4c-day'] ) | govukDate }}</td>
+                  </tr>
+                  {% endif %}
+
+              {% if (data['bank-13-task3'] == 'done') and (data['bank-13-task4c'] == '') %}
+                  <tfoot> 
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell govuk-!-font-weight-bold" colspan="4">Total EUR 1,250.00</td>
+                    </tr>    
+                  </tfoot>     
+                </tbody>
+              </table>
+              {% elif (data['bank-13-task3'] == 'done') and (data['bank-13-task4c'] == 'done') %}
+                  <tfoot> 
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell govuk-!-font-weight-bold" colspan="4">Total EUR 1,370.00</td>
+                    </tr>    
+                  </tfoot>     
+                </tbody>
+              </table>
+              {% endif %}
+
+              {% if (data['bank-13-task3'] == 'done') %}
+
+              <table class="govuk-table" data-module="moj-sortable-table">
+                <caption class="govuk-table__caption govuk-table__caption--s">USD</caption>
+                <thead class="govuk-table__head">
+
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header govuk-!-width-one-quarter" aria-sort="none">Amount</th>
+                    <th scope="col" class="govuk-table__header govuk-!-width-one-quarter" aria-sort="ascending">Facility ID</th>
+                    <th scope="col" class="govuk-table__header govuk-!-width-one-quarter" aria-sort="ascending">Exporter</th>
+                    <th scope="col" class="govuk-table__header govuk-!-width-one-quarter" aria-sort="none">Date received</th>
+                  </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+
+                  <tr class="govuk-table__row">
+                    
+                    <td class="govuk-table__cell"><a href="bank-3-task3-change" class="govuk-link govuk-link--no-visited-state">{{ data['bank-13-task3-currency'] }} {{ data['bank-13-task3-amount'] }}</a></td>
+                    <td class="govuk-table__cell">{{ data['facility-17-ukef-id'] }}</td>
+                    <td class="govuk-table__cell">{{ data['facility-17-name'] }}</td>
+                    <td class="govuk-table__cell">{{ ( data['bank-13-task3-year'] + "-" + data['bank-13-task3-month'] + "-" + data['bank-13-task3-day'] ) | govukDate }}</td>
+                  </tr>
+                  <tfoot> 
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell govuk-!-font-weight-bold" colspan="4">Total USD 1,000.00</td>
+                    </tr>    
+                  </tfoot> 
+                  {% endif %}
+
+                  
+
+              {% if (data['bank-13-task2'] == 'done') %}
 
             </tbody>
           </table>

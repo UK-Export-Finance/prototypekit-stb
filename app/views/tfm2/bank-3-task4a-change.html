@@ -5,7 +5,7 @@ Reconciliation - {{ data['bank-13-name'] }} – {{ serviceName }} – GOV.UK Pro
 {% endblock %}
 
 {% block header %}
-  {% include "includes/head.html" %}
+  {% include "includes/head2.html" %}
   {% include "includes/primary-nav-banks-forms.html" %}
 {% endblock %}
 
@@ -174,9 +174,12 @@ Reconciliation - {{ data['bank-13-name'] }} – {{ serviceName }} – GOV.UK Pro
                       value: data ['bank-13-task4a-reference']
                   }) }}
                   
-                  {{ govukButton({
-                    text: "Save"
-                  }) }}
+                  <div class="govuk-button-group">
+                    {{ govukButton({
+                      text: "Save"
+                    }) }}
+                    <a class="govuk-link" href="javascript:window.history.back()">Cancel</a>
+                  </div>
             </fieldset>   
   </form>
 </div>

@@ -5,7 +5,7 @@ Reconciliation - {{ data['bank-13-name'] }} – {{ serviceName }} – GOV.UK Pro
 {% endblock %}
 
 {% block header %}
-  {% include "includes/head.html" %}
+  {% include "includes/head2.html" %}
   {% include "includes/primary-nav-banks-forms.html" %}
 {% endblock %}
 
@@ -70,130 +70,7 @@ Reconciliation - {{ data['bank-13-name'] }} – {{ serviceName }} – GOV.UK Pro
         </div>
     </dl>
     
-    {% set accordianHtml %}
-    <h3 class="govuk-heading-m">Payment 1 details</h3>
-
-    <dl class="govuk-summary-list">
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key govuk-!-width-one-half">
-        Amount received
-      </dt>
-      <dd class="govuk-summary-list__value">
-        {{ data['bank-13-task4a-currency'] }} {{ data['bank-13-task4a-amount'] }}
-      </dd>
-    </div> 
   
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-        Date received
-      </dt>
-      <dd class="govuk-summary-list__value">
-        {{ ( data['bank-13-task4a-year'] + "-" + data['bank-13-task4a-month'] + "-" + data['bank-13-task4a-day'] ) | govukDate }}
-      </dd>
-      <dd class="govuk-summary-list__actions">
-      </dd>
-    </div> 
-    
-  </dl>
-  
-  <h3 class="govuk-heading-m">Payment 2 details</h3>
-  
-      <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key govuk-!-width-one-half">
-          Amount received
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data['bank-13-task4b-currency'] }} {{ data['bank-13-task4b-amount'] }}
-        </dd>
-      </div> 
-  
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Date received
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ ( data['bank-13-task4b-year'] + "-" + data['bank-13-task4b-month'] + "-" + data['bank-13-task4b-day'] ) | govukDate }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-        </dd>
-      </div> 
-      
-    </dl>  
-    {% endset -%}
-
-
-    {{ govukAccordion({
-        id: "accordion-default",
-        items: [
-        {
-            heading: {
-            text: "Recorded payments"
-            },
-            content: {
-            html: accordianHtml
-            }
-        }
-        ]
-    }) }} 
-    
-    <!--<details class="govuk-details" data-module="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            Payment 1 and 2 details
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-            <h3 class="govuk-heading-m govuk-!-margin-top-9">Payment 1 details</h3>
-          <dl class="govuk-summary-list">
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key govuk-!-width-one-half">
-                Amount received
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['bank-13-task4a-currency'] }} {{ data['bank-13-task4a-amount'] }}
-              </dd>
-            </div> 
-          
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Date received
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ ( data['bank-13-task4a-year'] + "-" + data['bank-13-task4a-month'] + "-" + data['bank-13-task4a-day'] ) | govukDate }}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-              </dd>
-            </div> 
-            
-          </dl>
-        
-
-        <h3 class="govuk-heading-m govuk-!-margin-top-9">Payment 2 details</h3>
-  
-      <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key govuk-!-width-one-half">
-          Amount received
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data['bank-13-task4b-currency'] }} {{ data['bank-13-task4b-amount'] }}
-        </dd>
-      </div> 
-  
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Date received
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ ( data['bank-13-task4b-year'] + "-" + data['bank-13-task4b-month'] + "-" + data['bank-13-task4b-day'] ) | govukDate }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-        </dd>
-      </div> 
-      
-    </dl>  
-      </details>  -->
 
         <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Payment 3 details</legend>
@@ -298,9 +175,13 @@ Reconciliation - {{ data['bank-13-name'] }} – {{ serviceName }} – GOV.UK Pro
                   }) }}
 
                   
-                  {{ govukButton({
-                    text: "Change"
-                  }) }}
+                  <div class="govuk-button-group">
+                    {{ govukButton({
+                      text: "Save"
+                    }) }}
+                    <a class="govuk-link" href="javascript:window.history.back()">Cancel</a>
+                    
+                  </div>
             </fieldset>   
   </form>
 </div>
