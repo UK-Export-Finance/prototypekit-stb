@@ -744,13 +744,136 @@
               
               <h2 class="govuk-heading-l">Reconciliation summary</h2>
               
+              {%
+              if (data['bank-13-task1'] == 'done') 
+              and (data['bank-13-task3'] == '')
+              and (data['bank-13-task4a'] == '')
+              and (data['bank-13-checkboxes'] == 'show') 
+              %}
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-half">    
+
+              <dl class="govuk-summary-list">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    1 facility 
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    <strong class="govuk-tag govuk-tag--green">Match</strong>
+                  </dd>
+                </div>
+              </dl>    
+              </div>
+              </div>
+
+              {% elif (data['bank-13-task1'] == 'done') 
+              and (data['bank-13-task3'] == 'done')
+              and (data['bank-13-task4a'] == '')
+              and (data['bank-13-checkboxes'] == 'show')  %}
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-half">    
+
+              <dl class="govuk-summary-list">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    2 facilities 
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    <strong class="govuk-tag govuk-tag--green">Match</strong>
+                  </dd>
+                </div>
+              </dl>    
+              </div>
+              </div>
+
+
+              {% elif (data['bank-13-task1'] == 'done') 
+              and (data['bank-13-task3'] == 'done')
+              and (data['bank-13-task4a'] == 'done')
+              and (data['bank-13-checkboxes'] == 'show')  %}
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-half">    
+
+              <dl class="govuk-summary-list">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    2 facilities 
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    <strong class="govuk-tag govuk-tag--green">Match</strong>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    1 facility 
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    <strong class="govuk-tag govuk-tag--red">Variation</strong>
+                  </dd>
+                </div>
+              </dl>    
+              </div>
+              </div>
+
+              {% elif (data['bank-13-task1'] == 'done') 
+              and (data['bank-13-task3'] == 'done')
+              and (data['bank-13-task4a'] == 'done')
+              and (data['bank-13-checkboxes'] == 'hide')  %}
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-half">    
+
+              <dl class="govuk-summary-list">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    2 facilities 
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    <strong class="govuk-tag govuk-tag--green">Match</strong>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    1 facility 
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    <strong class="govuk-tag govuk-tag--yellow">Accept</strong>
+                  </dd>
+                </div>
+              </dl>    
+              </div>
+              </div>
+
+              <div class="govuk-grid-row govuk-!-margin-top-6">
+                <div class="govuk-grid-column-one-half">
+              <table class="govuk-table">
+                <caption class="govuk-table__caption govuk-table__caption--m">Facilities manually accepted</caption>
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Facility ID</th>
+                    <th scope="col" class="govuk-table__header">Exporter</th>
+                    <th scope="col" class="govuk-table__header">Reason</th>
+                  </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">0020002193</td>
+                    <td class="govuk-table__cell">British Tech Innovators Ltd</td>
+                    <td class="govuk-table__cell">Expecting further payment from bank </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+              {% endif %}
+
               {% if (data['bank-13-task1'] == '') or (data['bank-13-task1'] == 'start') %}
             
               <p class="govuk-body">No payments marked as received yet.</p>
               
               {% elif (data['bank-13-task1'] == 'done') %}
 
-              <h3 class="govuk-heading-m">Payments received</h3> 
+
+              <h3 class="govuk-heading-m govuk-!-margin-top-6">Payments received</h3> 
 
               <table class="govuk-table" data-module="moj-sortable-table">
                 <caption class="govuk-table__caption govuk-table__caption--s">All payments</caption>
