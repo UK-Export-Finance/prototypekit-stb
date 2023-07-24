@@ -397,7 +397,7 @@
                     {% if (data['bank-13-task4a'] == '') or (data['bank-13-task4a'] == 'start') %}
                       <strong class="govuk-tag">To&nbsp;do</strong>
                       {% elif (data['bank-13-task4a'] == 'done') and (data['bank-13-accepted'] == '') %}
-                      <strong class="govuk-tag govuk-tag--red">Variation</strong>
+                      <strong class="govuk-tag govuk-tag--red">Does not match</strong>
                     
                       {% elif (data['bank-13-task4a'] == 'done') and (data['bank-13-accepted'] == 'yes') %}
                       <strong class="govuk-tag govuk-tag--yellow">Accept</strong>
@@ -430,7 +430,7 @@
                         <div class="govuk-radios__item">
                           <input class="govuk-radios__input" id="override" name="bank-13-markas-task4" type="radio" value="override" data-aria-controls="conditional-override">
                           <label class="govuk-label govuk-radios__label" for="override">
-                            Mark 'Variation' as 'Accepted' 
+                            Mark 'Does not match' as 'Accepted' 
                           </label>
                         </div>
     
@@ -506,7 +506,7 @@
                       <div class="govuk-radios__item">
                         <input class="govuk-radios__input" id="override" name="bank-13-markas-task4" type="radio" value="override" data-aria-controls="conditional-override">
                         <label class="govuk-label govuk-radios__label" for="override">
-                          Mark 'Variation' as 'Accepted' 
+                          Mark 'Does not match' as 'Accepted' 
                         </label>
                       </div>
   
@@ -580,7 +580,7 @@
                       <div class="govuk-radios__item">
                         <input class="govuk-radios__input" id="override" name="bank-13-markas-task4" type="radio" value="override" data-aria-controls="conditional-override">
                         <label class="govuk-label govuk-radios__label" for="override">
-                          Mark 'Variation' as 'Accepted' 
+                          Mark 'Does not match' as 'Accepted' 
                         </label>
                       </div>
   
@@ -659,7 +659,7 @@
                     <div class="govuk-radios__item">
                       <input class="govuk-radios__input" id="override" name="bank-13-markas-task5" type="radio" value="override" data-aria-controls="conditional-override">
                       <label class="govuk-label govuk-radios__label" for="override">
-                        Mark 'Variation' as 'Accepted' 
+                        Mark 'Does not match' as 'Accepted' 
                       </label>
                     </div>
 
@@ -715,7 +715,7 @@
 
             {% elif data['bank-13-show-task'] == 'complete' %}
             <h3 class="govuk-heading-m">Complete the report</h3>
-            <p class="govuk-body">When the report has been marked as reconciled the keying sheet will be generated for downloading.</p>
+            <p class="govuk-body">A keying sheet can be downloaded from the Reconciliation summary section.</p>
             <div class="govuk-button-group">
 
               {{ govukButton({
@@ -758,7 +758,7 @@
               %}
               <div class="govuk-grid-row">
                 <div class="govuk-grid-column-one-half">    
-
+                  <h3 class="govuk-heading-m">Total facilities by status</h3>
               <dl class="govuk-summary-list">
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
@@ -778,7 +778,7 @@
               and (data['bank-13-checkboxes'] == 'show')  %}
               <div class="govuk-grid-row">
                 <div class="govuk-grid-column-one-half">    
-
+                  <h3 class="govuk-heading-m">Total facilities by status</h3>
               <dl class="govuk-summary-list">
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
@@ -799,6 +799,7 @@
               and (data['bank-13-checkboxes'] == 'show')  %}
               <div class="govuk-grid-row">
                 <div class="govuk-grid-column-one-half">    
+                  <h3 class="govuk-heading-m">Total facilities by status</h3>
 
               <dl class="govuk-summary-list">
                 <div class="govuk-summary-list__row">
@@ -814,7 +815,7 @@
                     1 facility 
                   </dt>
                   <dd class="govuk-summary-list__value">
-                    <strong class="govuk-tag govuk-tag--red">Variation</strong>
+                    <strong class="govuk-tag govuk-tag--red">Does not match</strong>
                   </dd>
                 </div>
               </dl>    
@@ -826,7 +827,62 @@
               and (data['bank-13-task4a'] == 'done')
               and (data['bank-13-checkboxes'] == 'hide')  %}
               <div class="govuk-grid-row">
-                <div class="govuk-grid-column-one-half">    
+                <div class="govuk-grid-column-two-thirds">    
+
+
+                  <div class="govuk-grid-row govuk-!-margin-top-6">
+                    <div class="govuk-grid-column-full">
+                      <table class="govuk-table">
+                        <caption class="govuk-table__caption govuk-table__caption--m">Total amounts by currency</caption>
+                        <thead class="govuk-table__head">
+                          <tr class="govuk-table__row">
+                            <th scope="col" class="govuk-table__header">Currency</th>
+                            <th scope="col" class="govuk-table__header govuk-!-text-align-right">Reported</th>
+                            <th scope="col" class="govuk-table__header govuk-!-text-align-right">Paid</th>
+                            <th scope="col" class="govuk-table__header govuk-!-text-align-right">Submitted</th>
+                            <th scope="col" class="govuk-table__header govuk-!-text-align-right">Outstanding</th>
+                          </tr>
+                        </thead>
+                        <tbody class="govuk-table__body">
+                          <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">GBP</th>
+                            <td class="govuk-table__cell govuk-!-text-align-right">3,900.00</td>
+                            <td class="govuk-table__cell govuk-!-text-align-right">3,900.00</td>
+                            <td class="govuk-table__cell govuk-!-text-align-right"></td>
+                            <td class="govuk-table__cell govuk-!-text-align-right"></td>
+                          </tr>
+                          <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">EUR</th>
+                            <td class="govuk-table__cell govuk-!-text-align-right">1,250.00</td>
+                            <td class="govuk-table__cell govuk-!-text-align-right">1,362.00</td>
+                            <td class="govuk-table__cell govuk-!-text-align-right"></td>
+                            <td class="govuk-table__cell govuk-!-text-align-right"></td>
+                          </tr>
+                          <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">USD</th>
+                            <td class="govuk-table__cell govuk-!-text-align-right">1,000.00</td>
+                            <td class="govuk-table__cell govuk-!-text-align-right">1,000.00</td>
+                            <td class="govuk-table__cell govuk-!-text-align-right"></td>
+                            <td class="govuk-table__cell govuk-!-text-align-right"></td>
+                          </tr>
+                          <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">JPY</th>
+                            <td class="govuk-table__cell govuk-!-text-align-right">0</td>
+                            <td class="govuk-table__cell govuk-!-text-align-right">0</td>
+                            <td class="govuk-table__cell govuk-!-text-align-right">0</td>
+                            <td class="govuk-table__cell govuk-!-text-align-right">0</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-half">  
+              <h3 class="govuk-heading-m govuk-!-margin-top-6">Total facilities by status</h3>
 
               <dl class="govuk-summary-list">
                 <div class="govuk-summary-list__row">
@@ -849,8 +905,10 @@
               </div>
               </div>
 
+             
+
               <div class="govuk-grid-row govuk-!-margin-top-6">
-                <div class="govuk-grid-column-one-half">
+                <div class="govuk-grid-column-full">
               <table class="govuk-table">
                 <caption class="govuk-table__caption govuk-table__caption--m">Facilities manually accepted</caption>
                 <thead class="govuk-table__head">
@@ -858,13 +916,17 @@
                     <th scope="col" class="govuk-table__header">Facility ID</th>
                     <th scope="col" class="govuk-table__header">Exporter</th>
                     <th scope="col" class="govuk-table__header">Reason</th>
+                    <th scope="col" class="govuk-table__header">Total reported (base currency)</th>
+                    <th scope="col" class="govuk-table__header">Total received (base currency)</th>
                   </tr>
                 </thead>
                 <tbody class="govuk-table__body">
                   <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">0020002193</td>
+                    <th scope="row" class="govuk-table__header">0020002193</th>
                     <td class="govuk-table__cell">British Tech Innovators Ltd</td>
                     <td class="govuk-table__cell">Expecting further payment from bank </td>
+                    <td class="govuk-table__cell">{{ data['facility-18-currency'] }} {{ data['facility-18-paid'] }}</td>
+                    <td class="govuk-table__cell">{{ data['facility-18-currency'] }} {{ data['facility-18-paid-total'] }}</td>
                   </tr>
                 </tbody>
               </table>
@@ -1163,7 +1225,7 @@
 
                   {% elif (data['bank-13-task2'] == 'done') and (data['bank-13-task4c'] == 'done') %}
 
-                  <h4 class="govuk-heading-s">Total EUR: 1,370.00</h4>
+                  <h4 class="govuk-heading-s">Total EUR: 1,362.00</h4>
 
                   <details class="govuk-details" data-module="govuk-details">
                     <summary class="govuk-details__summary">
@@ -1204,7 +1266,7 @@
                         </tbody>
                         <tfoot> 
                           <tr class="govuk-table__row">
-                            <td class="govuk-table__cell govuk-!-font-weight-bold" colspan="5">Total EUR 1,370.00</td>
+                            <td class="govuk-table__cell govuk-!-font-weight-bold" colspan="5">Total EUR 1,362.00</td>
                           </tr>    
                         </tfoot>     
                     </table>  
