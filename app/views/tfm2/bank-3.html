@@ -30,7 +30,7 @@
         active: true
       },{
         text: 'May 2023',
-        href: '#2'
+        href: '#'
       }, {
         text: 'April 2023',
         href: '#3'
@@ -134,10 +134,24 @@
         
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="reconciliation">
           
-          {% if 'no' in data['bank-13-start'] %}
+          {% if data['bank-13-start'] == 'no' %}
 
-          <!-- Show this by deafault: enabling reconciling to start. Always goes to bulk payment option -->
+          <!-- Show this by deafault: enabling reconciling to start -->
+
+          <h2 class="govuk-heading-l">Reconciliation</h2>
+
+
+          <form class="form" action="bank-3#reconciliation" method="get">
+            <input type="hidden" name="bank-13-start" value="payments-question">
+            <button class="govuk-button" data-module="govuk-button">
+              Start reconciliation
+              </button>
+          </form>  
+
+          {% elif data['bank-13-start'] == 'payments-question' %}
+
            <form class="form" action="bank-3#reconciliation" method="get">
+            <input type="hidden" name="bank-13-start" value="yes">
 
               <div class="govuk-grid-row">
                   <div class="govuk-grid-column-two-thirds">
@@ -197,11 +211,11 @@
               <button class="govuk-button" data-module="govuk-button">
               Continue
               </button>
-              <input type="hidden" name="bank-13-start" value="yes">
+              
               
             </form>
 
-            {% elif 'yes' in data['bank-13-start'] %}
+            {% elif data['bank-13-start'] == 'yes' %}
             <!-- Show this when ready to start reconciliing -->
             
             <h2 class="govuk-heading-l">Reported fees to reconcile</h2>
@@ -934,11 +948,15 @@
           </div>
               {% endif %}
 
-              {% if (data['bank-13-task1'] == '') or (data['bank-13-task1'] == 'start') %}
+              {% if (data['bank-13-start'] == 'no') and (data['bank-13-task1'] == '') %}
+
+              <p class="govuk-body">Reconciliation has not started.</p>
+
+              {% elif (data['bank-13-task1'] == '') or (data['bank-13-task1'] == 'start') and (data['bank-13-start'] == 'yes') %}
             
-              <p class="govuk-body">No payments marked as received yet.</p>
+              <p class="govuk-body">No payments have been marked as received.</p>
               
-              {% elif (data['bank-13-task1'] == 'done') %}
+              {% elif (data['bank-13-task1'] == 'done') and (data['bank-13-start'] == 'yes') %}
 
 
               <h3 class="govuk-heading-m govuk-!-margin-top-6">Payments received</h3> 

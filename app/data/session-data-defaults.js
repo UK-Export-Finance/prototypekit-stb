@@ -2,8 +2,7 @@ module.exports = {
 
  // Insert values here
   
-  // Dates
-
+  // TFM 2 banks
   'bank-11-name': 'Natwest',
   'bank-11-start': 'no',
   'bank-11-payment': '',
@@ -17,7 +16,22 @@ module.exports = {
   'bank-12-payment-bulk1': 'EUR 10,115.00',
   'bank-12-payment-bulk2': 'USD 1,200.00',
 
+  'bank-14-name': 'HSBC',
+  'bank-15-name': 'Lloyds Bank', 
+  'bank-16-name': 'Newable',
+  'bank-17-name': 'Clydesdale',
+
+  'bank-13-report-received': '4 July 2023',
+  'bank-12-report-received': '6 July 2023',
+  'bank-11-report-received': '3 July 2023',
+  'bank-14-report-received': '7 July 2023',
+  'bank-15-report-received': '9 July 2023',
+  'bank-16-report-received': '3 July 2023',
+  'bank-17-report-received': '5 July 2023',
+
   'display-banner': 'not-done',
+
+  // Dates
 
   'report-due': 'yes',
   'end-current-month': '30 June 2023',

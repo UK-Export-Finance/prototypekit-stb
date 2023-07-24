@@ -24,79 +24,70 @@ Bank reports – {{ serviceName }} – GOV.UK Prototype Kit
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
-    
-
-    {% if (showBanner) and (data['bank-1-payment'] == 'Yes') %}
-
-    <!-- Bank 1 reconciliation done and payment matches show the banner -->
-    <div class="moj-banner moj-banner--success" role="region" aria-label="Success">
-      <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
-        <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" />
-      </svg>
-      <div class="moj-banner__message">Bank of Scotland reconciliation complete &ndash; payment matches.</div>
-    </div>
-    {% elif (showBanner) and (data['bank-1-payment'] == 'No') %}
-
-    <!-- Bank 1 reconciliation done and payment does NOT match show the banner -->
-    <div class="moj-banner moj-banner--success" role="region" aria-label="Success">
-      <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
-        <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" />
-      </svg>
-      <div class="moj-banner__message">Bank of Scotland reconciliation complete &ndash; payment does not match.</div>
-    </div>
-    {% endif %}
-
-
-    {% if (showBanner2) and (data['bank-2-payment'] == 'Yes') %}
-
-    <!-- Bank 2 reconciliation done and payment matches show the banner -->
-    <div class="moj-banner moj-banner--success" role="region" aria-label="Success">
-      <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
-        <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" />
-      </svg>
-      <div class="moj-banner__message">Barclays Bank reconciliation complete &ndash; payment matches.</div>
-    </div>
-    {% elif (showBanner2) and (data['bank-2-payment'] == 'No') %}
-
-    <!-- Bank 2 reconciliation done and payment does NOT match show the banner -->
-    <div class="moj-banner moj-banner--success" role="region" aria-label="Success">
-      <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
-        <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" />
-      </svg>
-      <div class="moj-banner__message">Barclays Bank reconciliation complete &ndash; payment does not match.</div>
-    </div>
-    {% endif %}
-
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">
       Bank reports 
     </h1>
 
-    <!--{{ mojSubNavigation({
-      label: 'Sub navigation',
-      items: [{
-        text: 'Reports to reconcile',
-        href: '#1',
-        active: true
-      }, {
-        text: 'Old reports',
-        href: '#2'
-      }]
-    }) }}-->
-    
+    <h2 class="govuk-heading-m">Current reporting period {{ data['report-month'] }}</h2>
 
-    <table class="govuk-table">
+    <p class="govuk-body">{{ data['report-month'] }} reports due to be received by {{ data['this-month-report-due'] }}.</p>
 
+    <table class="govuk-table" data-module="moj-sortable-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header" aria-sort="none">Bank</th>
+          <th scope="col" class="govuk-table__header" aria-sort="ascending">Status</th>
+          <th scope="col" class="govuk-table__header" aria-sort="none">Date report received</th>
+          <!--<th scope="col" class="govuk-table__header" aria-sort="none">Total facilities</th>
+          <th scope="col" class="govuk-table__header" aria-sort="none">Facilities submitted</th>
+          <th scope="col" class="govuk-table__header" aria-sort="none">Facilities outstanding</th>-->
+        </tr>
+      </thead>
 
-        <tbody class="govuk-table__body">
+        <tbody class="govuk-table__body" >
           <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="{{ data['bank-1-name'] }}"><a href="bank-1">{{ data['bank-11-name'] }}</a></th>
+            <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="{{ data['bank-13-name'] }}"><a href="bank-3">{{ data['bank-13-name'] }}</a></th>
+            <td class="govuk-table__cell" data-sort-value="1">
+              
+              {% if data['bank-13-start'] == 'no' %}
+              <strong class="govuk-tag govuk-tag--blue">Pending reconciliation</strong>
+
+              {% elif (data['bank-13-start'] == 'yes') or (data['bank-13-start'] == 'payments-question') %}
+              <strong class="govuk-tag">Reconciliation started</strong>
+
+              {% endif %}  
+
+            </td>
+            <td class="govuk-table__cell" data-sort-value="">{{ data['bank-13-report-received'] }}</td>
           </tr>
           <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="{{ data['bank-2-name'] }}"><a href="bank-2">{{ data['bank-12-name'] }}</a></th>
+            <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="{{ data['bank-11-name'] }}"><a href="#">{{ data['bank-11-name'] }}</a></th>
+            <td class="govuk-table__cell" data-sort-value="4"><strong class="govuk-tag govuk-tag--red">Not received</strong></td>
+            <td class="govuk-table__cell" data-sort-value=""></td>
           </tr>
           <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="{{ data['bank-3-name'] }}"><a href="bank-3">{{ data['bank-13-name'] }}</a></th>
+            <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="{{ data['bank-12-name'] }}"><a href="#">{{ data['bank-12-name'] }}</a></th>
+            <td class="govuk-table__cell" data-sort-value="4"><strong class="govuk-tag govuk-tag--red">Not received</strong></td>
+            <td class="govuk-table__cell" data-sort-value=""></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="{{ data['bank-14-name'] }}"><a href="#">{{ data['bank-14-name'] }}</a></th>
+            <td class="govuk-table__cell" data-sort-value="4"><strong class="govuk-tag govuk-tag--red">Not received</strong></td>
+            <td class="govuk-table__cell" data-sort-value=""></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="{{ data['bank-15-name'] }}"><a href="#">{{ data['bank-15-name'] }}</a></th>
+            <td class="govuk-table__cell" data-sort-value="4"><strong class="govuk-tag govuk-tag--red">Not received</strong></td>
+            <td class="govuk-table__cell" data-sort-value=""></td>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="{{ data['bank-16-name'] }}"><a href="#">{{ data['bank-16-name'] }}</a></th>
+            <td class="govuk-table__cell" data-sort-value="4"><strong class="govuk-tag govuk-tag--red">Not received</strong></td>
+            <td class="govuk-table__cell" data-sort-value=""></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="{{ data['bank-17-name'] }}"><a href="#">{{ data['bank-17-name'] }}</a></th>
+            <td class="govuk-table__cell" data-sort-value="4"><strong class="govuk-tag govuk-tag--red">Not received</strong></td>
+            <td class="govuk-table__cell" data-sort-value=""></td>
           </tr>
         </tbody>
       </table>

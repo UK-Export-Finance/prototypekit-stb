@@ -1,0 +1,154 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+{% block pageTitle %}
+{{ data['bank-13-name'] }} – {{ data['report-month'] }} report – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/head2.html" %}
+  {% include "includes/primary-nav-banks-main.html" %}
+{% endblock %}
+
+{% block pageScripts %}
+  {% include "includes/scripts.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
+      {{ data['bank-13-name'] }}
+    </h1>
+
+    {{ mojSubNavigation({
+      label: 'Sub navigation',
+      items: [{
+        text: 'June 2023',
+        href: 'bank-3'
+      },{
+        text: 'May 2023',
+        href: '#2',
+        active: true
+      }, {
+        text: 'April 2023',
+        href: '#3'
+      },{
+        text: 'Older reports',
+        href: '#4'
+      }]
+    }) }}
+
+
+    <h2 class="govuk-heading-l">
+      {{ data['last-month'] }}
+    </h2> 
+    
+    <div class="govuk-tabs" data-module="govuk-tabs">
+        <h2 class="govuk-tabs__title">
+          Contents
+        </h2>
+        <ul class="govuk-tabs__list">
+          <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+            <a class="govuk-tabs__tab" href="#report">
+              Utilisation
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#reconciliation">
+              Premium payments
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#payments-received">
+              Reconciliation summary
+            </a>
+          </li>
+        </ul>
+        
+        <div class="govuk-tabs__panel" id="report">
+
+          <h2 class="govuk-heading-l">Bank report</h2>
+          
+          <p class="govuk-body"><a class="govuk-link govuk-link--no-visited-state" href="#">Download Excel report submitted by bank</a></p>
+
+          <table class="govuk-table" data-module="moj-sortable-table">
+            <caption class="govuk-table__caption govuk-table__caption--l"></caption>
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header" aria-sort="ascending">Facility ID</th>
+                <th scope="col" class="govuk-table__header" aria-sort="none">Exporter</th>
+                <th scope="col" class="govuk-table__header" aria-sort="none">Value</th>  
+                <th scope="col" class="govuk-table__header" aria-sort="none">Utilisation</th>
+                <th scope="col" class="govuk-table__header" aria-sort="none">UKEF cover</th>
+                <th scope="col" class="govuk-table__header" aria-sort="none">UKEF exposure</th>
+                <th scope="col" class="govuk-table__header" aria-sort="none">Fees accrued</th>
+                <th scope="col" class="govuk-table__header" aria-sort="none">Fee payable to UKEF</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="{{ data['facility-16-ukef-id'] }}"><a href="facility16">{{ data['facility-16-ukef-id'] }}</a></th>
+                <td class="govuk-table__cell">{{ data['facility-16-name'] }}</td>
+                <td class="govuk-table__cell" data-sort-value="600000">{{ data['facility-16-currency'] }} {{ data['facility-16-limit'] }}</td>
+                <td class="govuk-table__cell" data-sort-value="400000">{{ data['facility-16-currency'] }} {{ data['facility-16-utilisation'] }}</td>
+                <td class="govuk-table__cell">{{ data['facility-16-cover'] }}</td>
+                <td class="govuk-table__cell" data-sort-value="320000">{{ data['facility-16-currency'] }} {{ data['facility-16-exposure'] }}</td>
+                <td class="govuk-table__cell" data-sort-value="10000">{{ data['facility-16-currency'] }} {{ data['facility-16-accrued'] }} </td>
+                <td class="govuk-table__cell" data-sort-value="1000">{{ data['facility-16-currency'] }} {{ data['facility-16-paid'] }} </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="{{ data['facility-17-ukef-id'] }}"><a href="facility17">{{ data['facility-17-ukef-id'] }}</a></th>
+                <td class="govuk-table__cell">{{ data['facility-17-name'] }}</td>
+                <td class="govuk-table__cell" data-sort-value="300000">{{ data['facility-17-currency'] }} {{ data['facility-17-limit'] }}</td>
+                <td class="govuk-table__cell" data-sort-value="125000">{{ data['facility-17-currency'] }} {{ data['facility-17-utilisation'] }}</td>
+                <td class="govuk-table__cell">{{ data['facility-17-cover'] }}</td>
+                <td class="govuk-table__cell" data-sort-value="100000">{{ data['facility-17-currency'] }} {{ data['facility-17-exposure'] }}</td>
+                <td class="govuk-table__cell" data-sort-value="3600">{{ data['facility-17-currency'] }} {{ data['facility-17-accrued'] }} </td>
+                <td class="govuk-table__cell" data-sort-value="800">{{ data['facility-17-currency'] }} {{ data['facility-17-paid'] }} </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="{{ data['facility-17-ukef-id'] }}"><a href="facility17">{{ data['facility-17-ukef-id'] }}</a></th>
+                <td class="govuk-table__cell">{{ data['facility-17-name'] }}</td>
+                <td class="govuk-table__cell" data-sort-value="800000">{{ data['facility-17-currency'] }} {{ data['facility-17-limit'] }}</td>
+                <td class="govuk-table__cell" data-sort-value="200000">{{ data['facility-17-currency'] }} {{ data['facility-17-utilisation'] }}</td>
+                <td class="govuk-table__cell">{{ data['facility-17-cover'] }}</td>
+                <td class="govuk-table__cell" data-sort-value="160000">{{ data['facility-17-currency'] }} {{ data['facility-17-exposure'] }}</td>
+                <td class="govuk-table__cell" data-sort-value="50000">{{ data['facility-17-currency'] }} {{ data['facility-17B-accrued'] }} </td>
+                <td class="govuk-table__cell" data-sort-value="2000">EUR {{ data['facility-17B-paid'] }} </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="{{ data['facility-18-ukef-id'] }}"><a href="facility18">{{ data['facility-18-ukef-id'] }}</a></th>
+                <td class="govuk-table__cell">{{ data['facility-18-name'] }}</td>
+                <td class="govuk-table__cell" data-sort-value="800000">{{ data['facility-18-currency'] }} {{ data['facility-18-limit'] }}</td>
+                <td class="govuk-table__cell" data-sort-value="200000">{{ data['facility-18-currency'] }} {{ data['facility-18-utilisation'] }}</td>
+                <td class="govuk-table__cell">{{ data['facility-18-cover'] }}</td>
+                <td class="govuk-table__cell" data-sort-value="160000">{{ data['facility-18-currency'] }} {{ data['facility-18-exposure'] }}</td>
+                <td class="govuk-table__cell" data-sort-value="50000">{{ data['facility-18-currency'] }} {{ data['facility-18-accrued'] }} </td>
+                <td class="govuk-table__cell" data-sort-value="2000">{{ data['facility-18-currency'] }} {{ data['facility-18-paid'] }} </td>
+              </tr>
+            </tbody>
+          </table>
+          </div>
+        <!-- end of report tab -->
+        
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="reconciliation">
+
+          <h2 class="govuk-heading-l">Reconciliation</h2>
+
+        </div>
+
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="payments-received">
+            
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+            
+                    <h2 class="govuk-heading-l">Reconciliation summary</h2>
+            
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
