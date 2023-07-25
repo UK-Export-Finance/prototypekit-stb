@@ -49,11 +49,14 @@ Bank reports – {{ serviceName }} – GOV.UK Prototype Kit
             <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="{{ data['bank-13-name'] }}"><a href="bank-3">{{ data['bank-13-name'] }}</a></th>
             <td class="govuk-table__cell" data-sort-value="1">
               
-              {% if data['bank-13-start'] == 'no' %}
-              <strong class="govuk-tag govuk-tag--blue">Pending reconciliation</strong>
+              {% if (data['bank-13-show-task'] == 'reportcomplete') %} 
+              <strong class="govuk-tag govuk-tag--green">Report completed</strong>
+
+              {% elif data['bank-13-start'] == 'no' %}
+              <strong class="govuk-tag">Pending reconciliation</strong>
 
               {% elif (data['bank-13-start'] == 'yes') or (data['bank-13-start'] == 'payments-question') %}
-              <strong class="govuk-tag">Reconciliation started</strong>
+              <strong class="govuk-tag govuk-tag--blue">Reconciliation in progress</strong>
 
               {% endif %}  
 

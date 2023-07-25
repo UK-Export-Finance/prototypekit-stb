@@ -29,6 +29,8 @@ module.exports = {
   'bank-16-report-received': '3 July 2023',
   'bank-17-report-received': '5 July 2023',
 
+  'bank-13-task-content': 'Select one or more facilities to add a payment.',
+
   'display-banner': 'not-done',
 
   // Dates
@@ -429,7 +431,8 @@ module.exports = {
     'facility-18-exposure': '576,000.00',
     'facility-18-paid': '1,500.00',
     'facility-18-accrued': '1,500.00',
-    'facility-18-paid-total': '1,497.75',
+    'facility-18-paid-total': '1,400.00',
+    'facility-18-paid-subtotal': '1,500.00',
 
     // FACILITY 19 VALUES
     'facility-19-updated': 'no',

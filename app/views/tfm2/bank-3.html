@@ -35,8 +35,8 @@
         text: 'April 2023',
         href: '#3'
       },{
-        text: 'Older reports',
-        href: '#4'
+        text: 'Previous reports',
+        href: 'bank-3-older-reports'
       }]
     }) }}
 
@@ -218,10 +218,138 @@
             {% elif data['bank-13-start'] == 'yes' %}
             <!-- Show this when ready to start reconciliing -->
             
-            <h2 class="govuk-heading-l">Reported fees to reconcile</h2>
+            
 
             <!--<h2 class="govuk-heading-l">All reported fees reconciled</h2>-->
+
+            {% if data['bank-13-show-task'] == 'one' %}
+            <!-- Start view: task 1 button for facility 1 -->
+
+            <h2 class="govuk-heading-l govuk-!-margin-bottom-4">Reported fees to reconcile</h2>
+
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                  <form class="form" action="bank-3-task1" method="get">
+                    <p class="govuk-body">{{ data['bank-13-task-content'] }}</p>
+                    {{ govukButton({
+                      text: "Add a payment"
+                    }) }}
+                  </form>
+                </div>
+              </div>  
             
+            {% elif data['bank-13-show-task'] == 'two' %}
+            <!-- Task 2 button for facility 2 -->
+
+            <h2 class="govuk-heading-l govuk-!-margin-bottom-4">Reported fees to reconcile</h2>
+
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                  <form class="form" action="bank-3-task2" method="get">
+                    <p class="govuk-body">{{ data['bank-13-task-content'] }}</p>
+                    {{ govukButton({
+                      text: "Add a payment"
+                    }) }}
+                  </form>
+                </div>
+              </div>  
+              
+            {% elif data['bank-13-show-task'] == 'four' %}
+            <!-- Task 4 button for facility 3, 1st 2 payments -->
+
+            <h2 class="govuk-heading-l govuk-!-margin-bottom-4">Reported fees to reconcile</h2>
+
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-two-thirds">
+                <form class="form" action="bank-3-task4a" method="get">
+                  <p class="govuk-body">{{ data['bank-13-task-content'] }}</p>
+                  {{ govukButton({
+                    text: "Add a payment"
+                  }) }}
+                </form>
+              </div>
+            </div>  
+
+            {% elif data['bank-13-show-task'] == 'five' %}
+            <!-- Task 5 button  for facility 3, 3rd payment-->
+
+            <h2 class="govuk-heading-l govuk-!-margin-bottom-4">Reported fees to reconcile</h2>
+
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-two-thirds">
+                <form class="form" action="bank-3-task4c" method="get">
+                  <p class="govuk-body">{{ data['bank-13-task-content'] }}</p>
+                  {{ govukButton({
+                    text: "Add a payment"
+                  }) }}
+                </form>
+              </div>
+            </div>  
+            
+            {% elif data['bank-13-show-task'] == 'six' %}
+            <!-- Task 5 button  for facility 3, 3rd payment-->
+
+            <h2 class="govuk-heading-l govuk-!-margin-bottom-4">Reported fees to reconcile</h2>
+
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-two-thirds">
+                
+                  <p class="govuk-body">{{ data['bank-13-task-content'] }}</p>
+                  <div class="govuk-button-group">
+                    <form class="form">  
+                  {{ govukButton({
+                    text: "Add a payment"
+                  }) }}
+                  </form>
+                  <form class="form" action="bank-3#reconciliation" method="get">
+                    <input type="hidden" name="bank-13-checkboxes" value="hide">
+                    <input type="hidden" name="bank-13-show-task" value="reportcomplete">
+                    <input type="hidden" name="bank-13-start" value="reportcomplete">  
+                  {{ govukButton({
+                    text: "Finished – mark report as completed",
+                    classes: "govuk-button--secondary"
+                  }) }}
+                </form>
+                </div>
+
+                
+              </div>
+            </div>  
+
+            {% elif data['bank-13-show-task'] == 'complete' %}
+            <h2 class="govuk-heading-l govuk-!-margin-bottom-4">Reported fees reconciled</h2>
+
+            <p class="govuk-body">A keying spreadsheet can be downloaded from the Reconciliation summary tab.</p>
+            <div class="govuk-button-group">
+              <form class="form" action="bank-3#reconciliation" method="get">
+                <input type="hidden" name="bank-13-checkboxes" value="hide">
+                <input type="hidden" name="bank-13-show-task" value="reportcomplete">
+                 
+              {{ govukButton({
+                text: "Mark report as completed"
+              }) }}
+            </form>
+            
+              <form class="form" action="bank-3#reconciliation" method="get"> 
+                <input type="hidden" name="bank-13-show-task" value="six">
+                <input type="hidden" name="bank-13-checkboxes" value="show">
+              {{ govukButton({
+                text: "Continue adding payments",
+                classes: "govuk-button--secondary"
+              }) }}
+                </form>
+            </div>
+
+            {% elif data['bank-13-show-task'] == 'reportcomplete' %}
+            <h2 class="govuk-heading-l govuk-!-margin-bottom-4">Report completed</h2>
+
+            <p class="govuk-body">A keying spreadsheet can be downloaded from the Reconciliation summary tab.</p>
+            
+            {% endif %} 
+            <!-- end of task radios -->
+
+
+
             <table class="govuk-table" data-module="moj-multi-select" data-multi-select-checkbox="#select-all">
               <thead class="govuk-table__head">
                 <tr class="govuk-table__row">
@@ -403,6 +531,9 @@
                     <!-- total payments in base from task4a and task4b  and task4c --> 
                     {% if data['bank-13-task4a'] == 'done' %}
                       <!-- task1 currency | task1 amount -->
+                      {{ data['facility-18-currency'] }} {{ data['facility-18-paid-subtotal'] }}
+
+                      {% elif (data['bank-13-task4c'] == 'done') and (data['bank-13-accepted'] == 'yes') %}
                       {{ data['facility-18-currency'] }} {{ data['facility-18-paid-total'] }}
                     {% endif %} 
                   </td>
@@ -410,11 +541,11 @@
                    <td class="govuk-table__cell">
                     {% if (data['bank-13-task4a'] == '') or (data['bank-13-task4a'] == 'start') %}
                       <strong class="govuk-tag">To&nbsp;do</strong>
-                      {% elif (data['bank-13-task4a'] == 'done') and (data['bank-13-accepted'] == '') %}
+                    {% elif (data['bank-13-task4a'] == 'done') and (data['bank-13-accepted'] == '') %}
                       <strong class="govuk-tag govuk-tag--red">Does not match</strong>
                     
-                      {% elif (data['bank-13-task4a'] == 'done') and (data['bank-13-accepted'] == 'yes') %}
-                      <strong class="govuk-tag govuk-tag--yellow">Accept</strong>
+                    {% elif (data['bank-13-task4c'] == 'done') and (data['bank-13-accepted'] == 'yes') %}
+                      <strong class="govuk-tag govuk-tag--green">Match</strong>
                     {% endif %}
                   </td>
                 </tr>
@@ -423,333 +554,7 @@
               </table>
               
 
-              {% if data['bank-13-show-task'] == 'one' %}
-              <!-- Start view: task 1 radios -->
-                <div class="govuk-grid-row">
-                  <div class="govuk-grid-column-two-thirds">
-                    <form class="form" action="bank-3-task1" method="get">
-    
-                  <div class="govuk-form-group">
-                    <fieldset class="govuk-fieldset">
-                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                       For a selected facility
-                      </legend>
-                      <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
-                        <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="add" name="bank-13-markas-task4" type="radio" value="add">
-                          <label class="govuk-label govuk-radios__label" for="add">
-                            Add a payment
-                          </label>
-                        </div>
-                        <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="override" name="bank-13-markas-task4" type="radio" value="override" data-aria-controls="conditional-override">
-                          <label class="govuk-label govuk-radios__label" for="override">
-                            Mark 'Does not match' as 'Accepted' 
-                          </label>
-                        </div>
-    
-                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-override">
-    
-                          <div class="govuk-form-group">
-                            <fieldset class="govuk-fieldset">
-                              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                                  Reason for accepting
-                              </legend>
-                              <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
-                                <div class="govuk-radios__item">
-                                  <input class="govuk-radios__input" id="variation" name="bank-13-override-reason" type="radio" value="variation">
-                                  <label class="govuk-label govuk-radios__label" for="variation">
-                                    Expecting further payment from bank from bank
-                                  </label>
-                                </div>
-                                
-                                <div class="govuk-radios__item">
-                                  <input class="govuk-radios__input" id="per-facility" name="bank-13-override-reason" type="radio" value="per-facility" data-aria-controls="conditional-other">
-                                  <label class="govuk-label govuk-radios__label" for="per-facility">
-                                    Other
-                                  </label>
-                                </div>
-    
-                                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-other">
-                                  <div class="govuk-form-group">
-                                    {{ govukCharacterCount({
-                                      name: "other-reason",
-                                      id: "other-reason",
-                                      maxlength: 200,
-                                      label: {
-                                        text: "Enter reason",
-                                        classes: "govuk-label--s govuk-!-width-one-half"
-                                      }
-                                    }) }}
-                                  </div>
-                                </div>
-                              </div>
-                            </fieldset>
-                          </div>
-                        </div>
-                      </div>
-                    </fieldset>
-                  </div>
-    
-                  {{ govukButton({
-                    text: "Continue"
-                  }) }}
-                </form>
-                </div>
-            </div>    
-            {% elif data['bank-13-show-task'] == 'two' %}
-            <!-- Task 2 radios -->
             
-              
-              <div class="govuk-grid-row">
-                <div class="govuk-grid-column-two-thirds">
-                  <form class="form" action="bank-3-task2" method="get">
-  
-                <div class="govuk-form-group">
-                  <fieldset class="govuk-fieldset">
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                     For a selected facility
-                    </legend>
-                    <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
-                      <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="add" name="bank-13-markas-task4" type="radio" value="add">
-                        <label class="govuk-label govuk-radios__label" for="add">
-                          Add a payment
-                        </label>
-                      </div>
-                      <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="override" name="bank-13-markas-task4" type="radio" value="override" data-aria-controls="conditional-override">
-                        <label class="govuk-label govuk-radios__label" for="override">
-                          Mark 'Does not match' as 'Accepted' 
-                        </label>
-                      </div>
-  
-                      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-override">
-  
-                        <div class="govuk-form-group">
-                          <fieldset class="govuk-fieldset">
-                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                                Reason for accepting
-                            </legend>
-                            <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
-                              <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="variation" name="bank-13-override-reason" type="radio" value="variation">
-                                <label class="govuk-label govuk-radios__label" for="variation">
-                                  Expecting further payment from bank 
-                                </label>
-                              </div>
-                              
-                              <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="per-facility" name="bank-13-override-reason" type="radio" value="per-facility" data-aria-controls="conditional-other">
-                                <label class="govuk-label govuk-radios__label" for="per-facility">
-                                  Other
-                                </label>
-                              </div>
-  
-                              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-other">
-                                <div class="govuk-form-group">
-                                  {{ govukCharacterCount({
-                                    name: "other-reason",
-                                    id: "other-reason",
-                                    maxlength: 200,
-                                    label: {
-                                      text: "Enter reason",
-                                      classes: "govuk-label--s govuk-!-width-one-half"
-                                    }
-                                  }) }}
-                                </div>
-                              </div>
-                            </div>
-                          </fieldset>
-                        </div>
-                      </div>
-                    </div>
-                  </fieldset>
-                </div>
-  
-                {{ govukButton({
-                  text: "Continue"
-                }) }}
-              </form>
-              </div>
-              </div>
-            {% elif data['bank-13-show-task'] == 'four' %}
-            <!-- Task 4 radios -->
-              <div class="govuk-grid-row">
-                <div class="govuk-grid-column-two-thirds">
-                  <form class="form" action="bank-3-task4a" method="get">
-  
-                <div class="govuk-form-group">
-                  <fieldset class="govuk-fieldset">
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                     For a selected facility
-                    </legend>
-                    <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
-                      <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="add" name="bank-13-markas-task4" type="radio" value="add">
-                        <label class="govuk-label govuk-radios__label" for="add">
-                          Add a payment
-                        </label>
-                      </div>
-                      <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="override" name="bank-13-markas-task4" type="radio" value="override" data-aria-controls="conditional-override">
-                        <label class="govuk-label govuk-radios__label" for="override">
-                          Mark 'Does not match' as 'Accepted' 
-                        </label>
-                      </div>
-  
-                      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-override">
-  
-                        <div class="govuk-form-group">
-                          <fieldset class="govuk-fieldset">
-                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                                Reason for accepting
-                            </legend>
-                            <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
-                              <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="variation" name="bank-13-override-reason" type="radio" value="variation">
-                                <label class="govuk-label govuk-radios__label" for="variation">
-                                  Expecting further payment from bank 
-                                </label>
-                              </div>
-                              
-                              <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="per-facility" name="bank-13-override-reason" type="radio" value="per-facility" data-aria-controls="conditional-other">
-                                <label class="govuk-label govuk-radios__label" for="per-facility">
-                                  Other
-                                </label>
-                              </div>
-  
-                              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-other">
-                                <div class="govuk-form-group">
-                                  {{ govukCharacterCount({
-                                    name: "other-reason",
-                                    id: "other-reason",
-                                    maxlength: 200,
-                                    label: {
-                                      text: "Enter reason",
-                                      classes: "govuk-label--s govuk-!-width-one-half"
-                                    }
-                                  }) }}
-                                </div>
-                              </div>
-                            </div>
-                          </fieldset>
-                        </div>
-                      </div>
-                    </div>
-                  </fieldset>
-                </div>
-  
-                {{ govukButton({
-                  text: "Continue"
-                }) }}
-              </form>
-              </div>
-              </div>
-            
-            
-            {% elif data['bank-13-show-task'] == 'five' %}
-           
-            <!-- Task 5 radios -->
-            <div class="govuk-grid-row">
-              <div class="govuk-grid-column-two-thirds">
-            <form class="form" action="bank-3#reconciliation" method="get">
-            <input type="hidden" name="bank-13-accepted" value="yes"> 
-            <input type="hidden" name="bank-13-show-task" value="complete">
-            <input type="hidden" name="bank-13-checkboxes" value="hide">
-              <div class="govuk-form-group">
-                <fieldset class="govuk-fieldset">
-                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                   For a selected facility
-                  </legend>
-                  <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
-                    <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="add" name="bank-13-markas-task5" type="radio" value="add">
-                      <label class="govuk-label govuk-radios__label" for="add">
-                        Add a payment
-                      </label>
-                    </div>
-                    <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="override" name="bank-13-markas-task5" type="radio" value="override" data-aria-controls="conditional-override">
-                      <label class="govuk-label govuk-radios__label" for="override">
-                        Mark 'Does not match' as 'Accepted' 
-                      </label>
-                    </div>
-
-                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-override">
-
-                      <div class="govuk-form-group">
-                        <fieldset class="govuk-fieldset">
-                          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                              Reason for accepting
-                          </legend>
-                          <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
-                            <div class="govuk-radios__item">
-                              <input class="govuk-radios__input" id="variation" name="bank-13-override-reason" type="radio" value="variation">
-                              <label class="govuk-label govuk-radios__label" for="variation">
-                                Expecting further payment from bank 
-                              </label>
-                            </div>
-                            
-                            <div class="govuk-radios__item">
-                              <input class="govuk-radios__input" id="per-facility" name="bank-13-override-reason" type="radio" value="per-facility" data-aria-controls="conditional-other">
-                              <label class="govuk-label govuk-radios__label" for="per-facility">
-                                Other
-                              </label>
-                            </div>
-
-                            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-other">
-                              <div class="govuk-form-group">
-                                {{ govukCharacterCount({
-                                  name: "other-reason",
-                                  id: "other-reason",
-                                  maxlength: 200,
-                                  label: {
-                                    text: "Enter reason",
-                                    classes: "govuk-label--s govuk-!-width-one-half"
-                                  }
-                                }) }}
-                              </div>
-                            </div>
-                          </div>
-                        </fieldset>
-                      </div>
-                    </div>
-                  </div>
-                </fieldset>
-              </div>
-
-              {{ govukButton({
-                text: "Continue"
-              }) }}
-            </form>
-            </div>
-            </div>
-
-            {% elif data['bank-13-show-task'] == 'complete' %}
-            <h3 class="govuk-heading-m">Complete the report</h3>
-            <p class="govuk-body">A keying sheet can be downloaded from the Reconciliation summary section.</p>
-            <div class="govuk-button-group">
-
-              {{ govukButton({
-                text: "Mark report as reconciled"
-              }) }}
-              
-              <!--<form class="form" action="bank-3#reconciliation" method="get"> 
-                <input type="hidden" name="bank-13-show-task" value="five">
-                <input type="hidden" name="bank-13-checkboxes" value="show">
-              {{ govukButton({
-                text: "Make amendments",
-                classes: "govuk-button--secondary"
-              }) }}
-                </form>-->
-              <!--<a class="govuk-link" href="#">Download the keying sheet</a>-->
-            </div>
-
-
-            {% endif %} 
-            <!-- end of task radios -->
 
 
             {% endif %} 
@@ -901,51 +706,16 @@
               <dl class="govuk-summary-list">
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
-                    2 facilities 
+                    3 facilities 
                   </dt>
                   <dd class="govuk-summary-list__value">
                     <strong class="govuk-tag govuk-tag--green">Match</strong>
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    1 facility 
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    <strong class="govuk-tag govuk-tag--yellow">Accept</strong>
                   </dd>
                 </div>
               </dl>    
               </div>
               </div>
 
-             
-
-              <div class="govuk-grid-row govuk-!-margin-top-6">
-                <div class="govuk-grid-column-full">
-              <table class="govuk-table">
-                <caption class="govuk-table__caption govuk-table__caption--m">Facilities manually accepted</caption>
-                <thead class="govuk-table__head">
-                  <tr class="govuk-table__row">
-                    <th scope="col" class="govuk-table__header">Facility ID</th>
-                    <th scope="col" class="govuk-table__header">Exporter</th>
-                    <th scope="col" class="govuk-table__header">Reason</th>
-                    <th scope="col" class="govuk-table__header">Total reported (base currency)</th>
-                    <th scope="col" class="govuk-table__header">Total received (base currency)</th>
-                  </tr>
-                </thead>
-                <tbody class="govuk-table__body">
-                  <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">0020002193</th>
-                    <td class="govuk-table__cell">British Tech Innovators Ltd</td>
-                    <td class="govuk-table__cell">Expecting further payment from bank </td>
-                    <td class="govuk-table__cell">{{ data['facility-18-currency'] }} {{ data['facility-18-paid'] }}</td>
-                    <td class="govuk-table__cell">{{ data['facility-18-currency'] }} {{ data['facility-18-paid-total'] }}</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
               {% endif %}
 
               {% if (data['bank-13-start'] == 'no') and (data['bank-13-task1'] == '') %}
