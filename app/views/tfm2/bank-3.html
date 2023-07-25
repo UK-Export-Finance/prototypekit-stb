@@ -151,56 +151,32 @@
                   <div class="govuk-grid-column-two-thirds">
                       
                   <div class="govuk-form-group">
+                    <div class="govuk-form-group">
                       <fieldset class="govuk-fieldset">
-                        <legend class="govuk-fieldset__legend--m">
-                          Have any payments been received?
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                            How have payments been received?
                         </legend>
                         <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
                           <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="Yes" name="bank-13-received" type="radio" value="Yes" data-aria-controls="conditional-yes">
-                            <label class="govuk-label govuk-radios__label" for="Yes">
-                              Yes
+                            <input class="govuk-radios__input" id="bulk" name="bank-13-received-how" type="radio" value="bulk">
+                            <label class="govuk-label govuk-radios__label" for="bulk">
+                              Bulk payments per currency
                             </label>
                           </div>
-                          
-                          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-yes">
-
-                            <div class="govuk-form-group">
-                              <fieldset class="govuk-fieldset">
-                                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                                    How have payments been received?
-                                </legend>
-                                <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
-                                  <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" id="bulk" name="bank-13-received-how" type="radio" value="bulk">
-                                    <label class="govuk-label govuk-radios__label" for="bulk">
-                                      Bulk payments per currency
-                                    </label>
-                                  </div>
-                                  <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" id="per-facility" name="bank-13-received-how" type="radio" value="per-facility">
-                                    <label class="govuk-label govuk-radios__label" for="per-facility">
-                                      Payments per facility
-                                    </label>
-                                  </div>
-                                </div>
-                              </fieldset>
-                            </div>
-                          </div>
-
                           <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="Not-yet" name="bank-13-received" type="radio" value="No">
-                            <label class="govuk-label govuk-radios__label" for="Not-yet">
-                              No
+                            <input class="govuk-radios__input" id="per-facility" name="bank-13-received-how" type="radio" value="per-facility">
+                            <label class="govuk-label govuk-radios__label" for="per-facility">
+                              Payments per facility
                             </label>
                           </div>
-          
                         </div>
                       </fieldset>
                     </div>
+                  </div>
+                    </div>
           
                   </div>
-              </div>
+
           
               <button class="govuk-button" data-module="govuk-button">
               Continue
