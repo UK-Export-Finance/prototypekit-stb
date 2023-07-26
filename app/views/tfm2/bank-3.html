@@ -185,7 +185,9 @@
               
             </form>
 
-            {% elif data['bank-13-start'] == 'yes' %}
+            {% elif (data['bank-13-start'] == 'yes') or (data['bank-13-start'] == 'reportcomplete') %}
+
+
             <!-- Show this when ready to start reconciliing -->
             
             
@@ -696,7 +698,7 @@
             
               <p class="govuk-body">No payments have been marked as received.</p>
               
-              {% elif (data['bank-13-task1'] == 'done') and (data['bank-13-start'] == 'yes') %}
+              {% elif ((data['bank-13-task1'] == 'done') and (data['bank-13-start'] == 'yes')) or ((data['bank-13-task1'] == 'done') and (data['bank-13-start'] == 'reportcomplete')) %}
 
 
               <h3 class="govuk-heading-m govuk-!-margin-top-6">Payments received</h3> 
