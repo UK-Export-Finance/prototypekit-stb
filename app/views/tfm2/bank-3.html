@@ -136,54 +136,11 @@
 
 
           <form class="form" action="bank-3#reconciliation" method="get">
-            <input type="hidden" name="bank-13-start" value="payments-question">
+            <input type="hidden" name="bank-13-start" value="yes">
             <button class="govuk-button" data-module="govuk-button">
               Start reconciliation
               </button>
           </form>  
-
-          {% elif data['bank-13-start'] == 'payments-question' %}
-
-           <form class="form" action="bank-3#reconciliation" method="get">
-            <input type="hidden" name="bank-13-start" value="yes">
-
-              <div class="govuk-grid-row">
-                  <div class="govuk-grid-column-two-thirds">
-                      
-                  <div class="govuk-form-group">
-                    <div class="govuk-form-group">
-                      <fieldset class="govuk-fieldset">
-                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                            How have payments been received?
-                        </legend>
-                        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
-                          <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="bulk" name="bank-13-received-how" type="radio" value="bulk">
-                            <label class="govuk-label govuk-radios__label" for="bulk">
-                              Bulk payments per currency
-                            </label>
-                          </div>
-                          <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="per-facility" name="bank-13-received-how" type="radio" value="per-facility">
-                            <label class="govuk-label govuk-radios__label" for="per-facility">
-                              Payments per facility
-                            </label>
-                          </div>
-                        </div>
-                      </fieldset>
-                    </div>
-                  </div>
-                    </div>
-          
-                  </div>
-
-          
-              <button class="govuk-button" data-module="govuk-button">
-              Continue
-              </button>
-              
-              
-            </form>
 
             {% elif (data['bank-13-start'] == 'yes') or (data['bank-13-start'] == 'reportcomplete') %}
 
