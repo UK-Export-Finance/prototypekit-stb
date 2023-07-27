@@ -4,4 +4,3 @@
 .gitignore
 .npmrc
 dist
-node_modules
