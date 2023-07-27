@@ -1,12 +1,13 @@
 FROM node:16-alpine
 
-CACHE_DIR="/node_modules"
-
 WORKDIR /app
 
 COPY package.json .
 
 RUN npm install
+RUN npm install --save govuk-frontend
+
+RUN npm cache save --include=node_modules
 
 COPY . .
 
