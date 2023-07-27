@@ -1,8 +1,5 @@
 FROM node:18
 
-# Set the working directory
-WORKDIR /
-
 # Install dependencies
 # RUN npm install @ministryofjustice/frontend
 
