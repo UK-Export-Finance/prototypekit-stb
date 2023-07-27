@@ -1,9 +1,9 @@
 version: "3"
 services:
-  prototypekit-customer-record:
+  prototypekit-stb:
     build:
       context: .
-    image: prototypekit-customer-record
+    image: prototypekit-stb
     restart: always
     ports:
       - "3000:3000"

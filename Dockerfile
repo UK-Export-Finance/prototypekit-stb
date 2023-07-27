@@ -3,15 +3,12 @@ FROM node:18
 # Set the working directory
 WORKDIR /app
 
-# Copy package.json and package-lock.json
-COPY package*.json ./
-
 # Install dependencies
-RUN npm install
-RUN npm install @ministryofjustice/frontend
+# RUN npm install
+# RUN npm install @ministryofjustice/frontend
 
 # Copy the application source code
-COPY . .
+COPY . ./app
 
 # Start the application
 CMD ["npm", "run", "dev"]
