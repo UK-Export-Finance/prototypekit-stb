@@ -1,11 +1,13 @@
-FROM node:18
+FROM node:16-alpine
 
-# Install dependencies
-# RUN npm install @ministryofjustice/frontend
+WORKDIR /app
 
-# Copy the application source code
+COPY package.json .
+
+RUN npm install
+
 COPY . .
-RUN npm i
 
-# Start the application
+EXPOSE 3000
+
 CMD ["npm", "run", "dev"]
