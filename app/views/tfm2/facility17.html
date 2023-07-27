@@ -357,22 +357,18 @@
                 <td class="govuk-table__cell">GBP 10,000.00</td>
                 <td class="govuk-table__cell">GBP {{ data['facility-17-paid'] }} </td>
                 <td class="govuk-table__cell">
-                    {% if 'Yes' in data['bank-1-payment'] %}
-                    <!-- payment matches -->
-                    <strong class="govuk-tag govuk-tag--green">
-                        Payment matches
-                    </strong>
-                    {% elseif 'No' in data['bank-1-payment'] %}
-                    <!-- payment doesn't match -->
-                    <strong class="govuk-tag govuk-tag--yellow">
-                        Payment does not match
-                    </strong>
-                    {% elseif '' in data['bank-1-payment'] %}
-                    <!-- reconciliation not done -->
-                    <strong class="govuk-tag govuk-tag--blue">
-                        Pending reconciliation
-                    </strong>
-                    {% endif %}  
+                    
+                    {% if (data['bank-13-show-task'] == 'reportcomplete') or (data['bank-13-show-task'] == 'sheet-generated') %} 
+                    <strong class="govuk-tag govuk-tag--green">Match</strong>
+
+                    {% elif data['bank-13-start'] == 'no' %}
+                    <strong class="govuk-tag">Pending reconciliation</strong>
+
+                    {% elif (data['bank-13-start'] == 'yes') or (data['bank-13-start'] == 'payments-question') %}
+                    <strong class="govuk-tag govuk-tag--blue">Reconciliation in progress</strong>
+
+                    {% endif %} 
+
                     </td>
               </tr>
               <tr class="govuk-table__row">
@@ -385,7 +381,7 @@
                 <td class="govuk-table__cell">GBP 900.00</td>
                 <td class="govuk-table__cell">
                     <strong class="govuk-tag govuk-tag--green">
-                    Payment matches
+                    Match
                     </strong>
                 </td>
               </tr>
@@ -399,7 +395,7 @@
                 <td class="govuk-table__cell">GBP 810.00</td>
                 <td class="govuk-table__cell">
                     <strong class="govuk-tag govuk-tag--green">
-                        Payment matches
+                        Match
                         </strong>
                 </td>
               </tr>
@@ -413,7 +409,7 @@
                 <td class="govuk-table__cell">GBP 729.00</td>
                 <td class="govuk-table__cell">
                     <strong class="govuk-tag govuk-tag--green">
-                    Payment matches
+                    Match
                     </strong></td>
               </tr>
             </tbody>

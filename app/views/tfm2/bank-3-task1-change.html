@@ -22,8 +22,15 @@ Reconciliation - {{ data['bank-13-name'] }} – {{ serviceName }} – GOV.UK Pro
 
   <div class="govuk-grid-column-two-thirds">
 
+
+    {% if (data['from-summary-bank-3-task1-change'] == 'yes') %}
+    <form class="form" action="bank-3#summary" method="get">
+    
+    {% elif (data['from-summary-bank-3-task1-change'] == 'no') %}
     <form class="form" action="bank-3#reconciliation" method="get">
-      
+    
+    {% endif %}
+
     <h1 class="govuk-heading-l govuk-!-margin-bottom-6">
         <span class="govuk-caption-l">{{ data['bank-13-name'] }}, {{ data['report-month'] }}</span>
         Add a payment

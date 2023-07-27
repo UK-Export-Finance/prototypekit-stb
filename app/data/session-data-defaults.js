@@ -601,7 +601,13 @@ module.exports = {
     'bank-13-task4c': '',
     'bank-13-accepted': '',
     'bank-13-checkboxes': 'show',
-    
+    'from-summary-bank-3-task1-change': 'no',
+    'from-summary-bank-3-task2-change': 'no',
+    'from-summary-bank-3-task3-change': 'no',
+    'from-summary-bank-3-task4a-change': 'no',
+    'from-summary-bank-3-task4b-change': 'no',
+    'from-summary-bank-3-task4c-change': 'no',   
+    'bank-13-filter': 'no',
 }
 
 
