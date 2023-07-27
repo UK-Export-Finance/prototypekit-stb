@@ -8,7 +8,7 @@ WORKDIR /app
 # RUN npm install @ministryofjustice/frontend
 
 # Copy the application source code
-COPY . ./app
+COPY . .
 
 # Start the application
 CMD ["npm", "run", "dev"]
