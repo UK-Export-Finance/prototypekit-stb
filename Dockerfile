@@ -5,9 +5,7 @@ WORKDIR /app
 COPY package.json .
 
 RUN npm install
-RUN npm install --save govuk-frontend
-
-RUN npm cache save --include=node_modules
+RUN npm install --save govuk-frontend @ministryofjustice/frontend
 
 COPY . .
 
