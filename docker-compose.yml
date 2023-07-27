@@ -1,0 +1,12 @@
+version: "3"
+services:
+  prototypekit-customer-record:
+    build:
+      context: .
+    image: prototypekit-customer-record
+    restart: always
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/app
+    command: npm run dev
