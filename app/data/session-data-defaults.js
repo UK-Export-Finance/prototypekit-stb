@@ -66,12 +66,12 @@ module.exports = {
   'last-month-name': 'Jane Smith',
 
   // Banks
-  'bank-1-name': 'Barclays',
+  'bank-1-name': 'Barclays Bank',
   'bank-2-name': 'Bank of Scotland',
   'bank-3-name': 'Emirates NBD Bank (P.J.S.C)',
   'bank-4-name': 'HSBC UK Bank',
   'bank-5-name': 'Lloyds Bank',
-  'bank-6-name': 'Newable',
+  'bank-6-name': 'Newable Bank',
   'bank-7-name': 'Royal Bank of Scotland',
   'bank-8-name': 'Santander UK plc.',
   'bank-9-name': 'Ulster Bank',
@@ -608,6 +608,7 @@ module.exports = {
     'from-summary-bank-3-task4b-change': 'no',
     'from-summary-bank-3-task4c-change': 'no',   
     'bank-13-filter': 'no',
+    'older-report-show': 'no',
 }
 
 

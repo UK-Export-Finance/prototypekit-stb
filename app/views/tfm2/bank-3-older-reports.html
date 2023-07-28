@@ -37,11 +37,11 @@
     </nav>
 
 
+    {% if data['older-report-show'] == 'no' %}
+
     <div class="find-report">
-
-      <form action="#" method="post">
-
-
+      <form action="bank-3-older-reports" method="get">
+        <input type="hidden" name="older-report-show" value="yes">
           <label class="govuk-label moj-search__label govuk-!-font-weight-bold" for="search">
             Find a previous report
           </label>
@@ -54,11 +54,12 @@
                   Month
                 </label>
                 <select class="govuk-select" id="month" name="month">
+                  <option value="may" selected></option>
                   <option value="jan">January</option>
                   <option value="feb">February</option>
                   <option value="mar">March</option>
                   <option value="apr">April</option>
-                  <option value="may" selected>May</option>
+                  <option value="may">May</option>
                   <option value="jun">June</option>
                   <option value="jul">July</option>
                   <option value="aug">August</option>
@@ -74,7 +75,8 @@
                   Year
                 </label>
                 <select class="govuk-select moj-search__input" id="year" name="year" >
-                  <option value="2023" selected>2023</option>
+                  <option value="2023" selected></option>
+                  <option value="2023">2023</option>
                   <option value="2022">2022</option>
                   <option value="2021">2021</option>
                   <option value="2020">2020</option>
@@ -90,17 +92,72 @@
                 <button class="govuk-button govuk-!-margin-top-6 govuk-!-margin-left-2" data-module="govuk-button">
                   Search
                 </button>
-                
-                <p class="govuk-body govuk-!-display-inline-block"><a class="govuk-link govuk-!-margin-left-2" href="#">Clear</a></p>
 
             </div>
-          
           </div>
           </form>
       </div>
 
-    
-    
+      {% elif data['older-report-show'] == 'yes' %}
+      <div class="find-report">
+        <form action="bank-3-older-reports" method="get">
+          <input type="hidden" name="older-report-show" value="yes">
+            <label class="govuk-label moj-search__label govuk-!-font-weight-bold" for="search">
+              Find a previous report
+            </label>
+            
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-full">
+  
+                <div class="govuk-form-group govuk-!-display-inline-block govuk-!-margin-right-2">
+                  <label class="govuk-label" for="month">
+                    Month
+                  </label>
+                  <select class="govuk-select" id="month" name="month">
+                    <option value="jan">January</option>
+                    <option value="feb">February</option>
+                    <option value="mar">March</option>
+                    <option value="apr">April</option>
+                    <option value="may" selected>May</option>
+                    <option value="jun">June</option>
+                    <option value="jul">July</option>
+                    <option value="aug">August</option>
+                    <option value="sep">September</option>
+                    <option value="oct">October</option>
+                    <option value="nov">November</option>
+                    <option value="dec">December</option>
+                  </select>
+                </div>
+  
+                <div class="govuk-form-group govuk-!-display-inline-block">
+                  <label class="govuk-label" for="year">
+                    Year
+                  </label>
+                  <select class="govuk-select moj-search__input" id="year" name="year" >
+                    <option value="2023" selected>2023</option>
+                    <option value="2022">2022</option>
+                    <option value="2021">2021</option>
+                    <option value="2020">2020</option>
+                    <option value="2019">2019</option>
+                    <option value="2018">2018</option>
+                    <option value="2017">2017</option>
+                    <option value="2016">2016</option>
+                    <option value="2015">2015</option>
+  
+                  </select>
+                </div>  
+  
+                  <button class="govuk-button govuk-!-margin-top-6 govuk-!-margin-left-2" data-module="govuk-button">
+                    Search
+                  </button>
+
+              </div>
+            </div>
+            </form>
+        </div>
+      {% endif %}
+      
+      {% if data['older-report-show'] == 'yes' %}
 
     <h2 class="govuk-heading-l">
       {{ data['last-month'] }}
@@ -974,4 +1031,5 @@
 
 
     </div>
+    {% endif %}
 {% endblock %}
