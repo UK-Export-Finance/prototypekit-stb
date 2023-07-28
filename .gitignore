@@ -4,6 +4,8 @@
 migrate.log
 usage-data-config.json
 
+node_modules/
+
 # General ignores
 .DS_Store
 .idea
