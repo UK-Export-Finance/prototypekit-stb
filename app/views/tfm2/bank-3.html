@@ -78,52 +78,57 @@
               <tr class="govuk-table__row">
                 <th scope="col" class="govuk-table__header" aria-sort="ascending">Facility ID</th>
                 <th scope="col" class="govuk-table__header" aria-sort="none">Exporter</th>
+                <th scope="col" class="govuk-table__header" aria-sort="none">Base currency</th>
                 <th scope="col" class="govuk-table__header" aria-sort="none">Value</th>  
                 <th scope="col" class="govuk-table__header" aria-sort="none">Utilisation</th>
                 <th scope="col" class="govuk-table__header" aria-sort="none">UKEF cover</th>
                 <th scope="col" class="govuk-table__header" aria-sort="none">UKEF exposure</th>
-                <th scope="col" class="govuk-table__header" aria-sort="none">Fees accrued</th>
-                <th scope="col" class="govuk-table__header" aria-sort="none">Fee payable to UKEF</th>
+                <th scope="col" class="govuk-table__header" aria-sort="none">Fees accrued (reported currency)</th>
+                <th scope="col" class="govuk-table__header" aria-sort="none">Fee payable to UKEF (reported currency)</th>
               </tr>
             </thead>
             <tbody class="govuk-table__body">
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="{{ data['facility-16-ukef-id'] }}"><a href="facility16">{{ data['facility-16-ukef-id'] }}</a></th>
                 <td class="govuk-table__cell">{{ data['facility-16-name'] }}</td>
-                <td class="govuk-table__cell" data-sort-value="900000">{{ data['facility-16-currency'] }} {{ data['facility-16-limit'] }}</td>
-                <td class="govuk-table__cell" data-sort-value="540000">{{ data['facility-16-currency'] }} {{ data['facility-16-utilisation'] }}</td>
+                <td class="govuk-table__cell">{{ data['facility-16-currency'] }}</td>
+                <td class="govuk-table__cell" data-sort-value="900000">{{ data['facility-16-limit'] }}</td>
+                <td class="govuk-table__cell" data-sort-value="540000">{{ data['facility-16-utilisation'] }}</td>
                 <td class="govuk-table__cell">{{ data['facility-16-cover'] }}</td>
-                <td class="govuk-table__cell" data-sort-value="432000">{{ data['facility-16-currency'] }} {{ data['facility-16-exposure'] }}</td>
+                <td class="govuk-table__cell" data-sort-value="432000">{{ data['facility-16-exposure'] }}</td>
                 <td class="govuk-table__cell" data-sort-value="25000">{{ data['facility-16-currency'] }} {{ data['facility-16-accrued'] }} </td>
                 <td class="govuk-table__cell" data-sort-value="25000">{{ data['facility-16-currency'] }} {{ data['facility-16-paid'] }} </td>
               </tr>
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="{{ data['facility-17-ukef-id'] }}"><a href="facility17">{{ data['facility-17-ukef-id'] }}</a></th>
                 <td class="govuk-table__cell">{{ data['facility-17-name'] }}</td>
-                <td class="govuk-table__cell" data-sort-value="500000">{{ data['facility-17-currency'] }} {{ data['facility-17-limit'] }}</td>
-                <td class="govuk-table__cell" data-sort-value="300000">{{ data['facility-17-currency'] }} {{ data['facility-17-utilisation'] }}</td>
+                <td class="govuk-table__cell">{{ data['facility-17-currency'] }}</td>
+                <td class="govuk-table__cell" data-sort-value="500000">{{ data['facility-17-limit'] }}</td>
+                <td class="govuk-table__cell" data-sort-value="300000">{{ data['facility-17-utilisation'] }}</td>
                 <td class="govuk-table__cell">{{ data['facility-17-cover'] }}</td>
-                <td class="govuk-table__cell" data-sort-value="240000">{{ data['facility-17-currency'] }} {{ data['facility-17-exposure'] }}</td>
+                <td class="govuk-table__cell" data-sort-value="240000">{{ data['facility-17-exposure'] }}</td>
                 <td class="govuk-table__cell" data-sort-value="1000">{{ data['facility-17-currency'] }} {{ data['facility-17-accrued'] }} </td>
                 <td class="govuk-table__cell" data-sort-value="1000">{{ data['facility-17-currency'] }} {{ data['facility-17-paid'] }} </td>
               </tr>
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="{{ data['facility-17-ukef-id'] }}"><a href="facility17">{{ data['facility-17-ukef-id'] }}</a></th>
                 <td class="govuk-table__cell">{{ data['facility-17-name'] }}</td>
-                <td class="govuk-table__cell" data-sort-value="500000">{{ data['facility-17-currency'] }} {{ data['facility-17-limit'] }}</td>
-                <td class="govuk-table__cell" data-sort-value="300000">{{ data['facility-17-currency'] }} {{ data['facility-17-utilisation'] }}</td>
+                <td class="govuk-table__cell">{{ data['facility-17-currency'] }}</td>
+                <td class="govuk-table__cell" data-sort-value="500000">{{ data['facility-17-limit'] }}</td>
+                <td class="govuk-table__cell" data-sort-value="300000">{{ data['facility-17-utilisation'] }}</td>
                 <td class="govuk-table__cell">{{ data['facility-17-cover'] }}</td>
-                <td class="govuk-table__cell" data-sort-value="240000">{{ data['facility-17-currency'] }} {{ data['facility-17-exposure'] }}</td>
+                <td class="govuk-table__cell" data-sort-value="240000">{{ data['facility-17-exposure'] }}</td>
                 <td class="govuk-table__cell" data-sort-value="1250">EUR {{ data['facility-17B-accrued'] }} </td>
                 <td class="govuk-table__cell" data-sort-value="1250">EUR {{ data['facility-17B-paid'] }} </td>
               </tr>
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="{{ data['facility-18-ukef-id'] }}"><a href="facility18">{{ data['facility-18-ukef-id'] }}</a></th>
                 <td class="govuk-table__cell">{{ data['facility-18-name'] }}</td>
-                <td class="govuk-table__cell" data-sort-value="1200000">{{ data['facility-18-currency'] }} {{ data['facility-18-limit'] }}</td>
-                <td class="govuk-table__cell" data-sort-value="720000">{{ data['facility-18-currency'] }} {{ data['facility-18-utilisation'] }}</td>
+                <td class="govuk-table__cell">{{ data['facility-18-currency'] }}</td>
+                <td class="govuk-table__cell" data-sort-value="1200000">{{ data['facility-18-limit'] }}</td>
+                <td class="govuk-table__cell" data-sort-value="720000">{{ data['facility-18-utilisation'] }}</td>
                 <td class="govuk-table__cell">{{ data['facility-18-cover'] }}</td>
-                <td class="govuk-table__cell" data-sort-value="576000">{{ data['facility-18-currency'] }} {{ data['facility-18-exposure'] }}</td>
+                <td class="govuk-table__cell" data-sort-value="576000">{{ data['facility-18-exposure'] }}</td>
                 <td class="govuk-table__cell" data-sort-value="1500">{{ data['facility-18-currency'] }} {{ data['facility-18-accrued'] }} </td>
                 <td class="govuk-table__cell" data-sort-value="1500">{{ data['facility-18-currency'] }} {{ data['facility-18-paid'] }} </td>
               </tr>
@@ -337,7 +342,7 @@
                   <th scope="col" class="govuk-table__header" aria-sort="ascending">Facility ID</th>
                   <th scope="col" class="govuk-table__header" aria-sort="none">Exporter</th>
                   <th scope="col" class="govuk-table__header" aria-sort="none">Base currency</th>
-                  <th scope="col" class="govuk-table__header" aria-sort="none">Reported fees payable<br>(currency reported in)</th>
+                  <th scope="col" class="govuk-table__header" aria-sort="none">Reported fees payable<br>(reported currency)</th>
                   <th scope="col" class="govuk-table__header" aria-sort="none">Total reported<br>(base currency)</th>
                   <th scope="col" class="govuk-table__header" aria-sort="none">Payments received</th>
                   <th scope="col" class="govuk-table__header" aria-sort="none">Total received<br>(base currency)</th>
@@ -940,14 +945,14 @@
 
                   <h3 class="govuk-heading-m govuk-!-margin-top-7" id="summary-payments-received">Payments received by currency</h3>  
 
-                  <aside class="part-navigation-container" role="complementary">
-                    <nav aria-label="Sections" class="gem-c-contents-list" role="navigation">
+                  <aside class="part-navigation-container">
+                    <nav aria-label="Sections" class="gem-c-contents-list">
                       <h2 class="gem-c-contents-list__title">
                         Contents
                       </h2>
                         <ol class="gem-c-contents-list__list">
                             <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
-                              <a class="gem-c-contents-list__link govuk-link" href="#all-payments"">All payments</a>
+                              <a class="gem-c-contents-list__link govuk-link" href="#all-payments">All payments</a>
                     
                             </li>
                             <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
@@ -966,14 +971,14 @@
 
                   <h3 class="govuk-heading-m govuk-!-margin-top-7" id="summary-payments-received">Payments received by currency</h3>  
 
-                  <aside class="part-navigation-container" role="complementary">
-                    <nav aria-label="Sections" class="gem-c-contents-list" role="navigation">
+                  <aside class="part-navigation-container">
+                    <nav aria-label="Sections" class="gem-c-contents-list">
                       <h2 class="gem-c-contents-list__title">
                         Contents
                       </h2>
                         <ol class="gem-c-contents-list__list">
                             <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
-                              <a class="gem-c-contents-list__link govuk-link" href="#all-payments"">All payments</a>
+                              <a class="gem-c-contents-list__link govuk-link" href="#all-payments">All payments</a>
                     
                             </li>
                             <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
@@ -1063,10 +1068,10 @@
                       {{ data['bank-13-task1-currency'] }} {{ data['bank-13-task1-amount'] }}
                       {% endif %}
                     </td>
-                    <td class="govuk-table__cell" data-sort-value="">{{ data['bank-13-task1-reference'] }}</td>
-                    <td class="govuk-table__cell" data-sort-value="">{{ data['facility-16-ukef-id'] }}</td>
-                    <td class="govuk-table__cell" data-sort-value="">{{ data['facility-16-name'] }}</td>
-                    <td class="govuk-table__cell" data-sort-value="">{{ ( data['bank-13-task1-year'] + "-" + data['bank-13-task1-month'] + "-" + data['bank-13-task1-day'] ) | govukDate }}</td>
+                    <td class="govuk-table__cell">{{ data['bank-13-task1-reference'] }}</td>
+                    <td class="govuk-table__cell">{{ data['facility-16-ukef-id'] }}</td>
+                    <td class="govuk-table__cell">{{ data['facility-16-name'] }}</td>
+                    <td class="govuk-table__cell">{{ ( data['bank-13-task1-year'] + "-" + data['bank-13-task1-month'] + "-" + data['bank-13-task1-day'] ) | govukDate }}</td>
                   </tr>
                   {% endif %}
 
@@ -1080,10 +1085,10 @@
                       {{ data['bank-13-task2-currency'] }} {{ data['bank-13-task2-amount'] }}
                       {% endif %}
                     </td>
-                    <td class="govuk-table__cell" data-sort-value="">{{ data['bank-13-task2-reference'] }}</td>
-                    <td class="govuk-table__cell" data-sort-value="">{{ data['facility-17-ukef-id'] }}</td>
-                    <td class="govuk-table__cell" data-sort-value="">{{ data['facility-17-name'] }}</td>
-                    <td class="govuk-table__cell" data-sort-value="">{{ ( data['bank-13-task2-year'] + "-" + data['bank-13-task2-month'] + "-" + data['bank-13-task2-day'] ) | govukDate }}</td>
+                    <td class="govuk-table__cell">{{ data['bank-13-task2-reference'] }}</td>
+                    <td class="govuk-table__cell">{{ data['facility-17-ukef-id'] }}</td>
+                    <td class="govuk-table__cell">{{ data['facility-17-name'] }}</td>
+                    <td class="govuk-table__cell">{{ ( data['bank-13-task2-year'] + "-" + data['bank-13-task2-month'] + "-" + data['bank-13-task2-day'] ) | govukDate }}</td>
                   </tr>
                   {% endif %}
 
@@ -1097,10 +1102,10 @@
                       {{ data['bank-13-task3-currency'] }} {{ data['bank-13-task3-amount'] }}
                       {% endif %}
                     </td>
-                    <td class="govuk-table__cell" data-sort-value="">{{ data['bank-13-task3-reference'] }}</td>
-                    <td class="govuk-table__cell" data-sort-value="">{{ data['facility-17-ukef-id'] }}</td>
-                    <td class="govuk-table__cell" data-sort-value="">{{ data['facility-17-name'] }}</td>
-                    <td class="govuk-table__cell" data-sort-value="">{{ ( data['bank-13-task3-year'] + "-" + data['bank-13-task3-month'] + "-" + data['bank-13-task3-day'] ) | govukDate }}</td>
+                    <td class="govuk-table__cell">{{ data['bank-13-task3-reference'] }}</td>
+                    <td class="govuk-table__cell">{{ data['facility-17-ukef-id'] }}</td>
+                    <td class="govuk-table__cell">{{ data['facility-17-name'] }}</td>
+                    <td class="govuk-table__cell">{{ ( data['bank-13-task3-year'] + "-" + data['bank-13-task3-month'] + "-" + data['bank-13-task3-day'] ) | govukDate }}</td>
                   </tr>    
                   {% endif %}
               
@@ -1114,10 +1119,10 @@
                       {{ data['bank-13-task4a-currency'] }} {{ data['bank-13-task4a-amount'] }}
                       {% endif %}
                     </td>
-                    <td class="govuk-table__cell" data-sort-value="">{{ data['bank-13-task4a-reference'] }}</td>
-                    <td class="govuk-table__cell" data-sort-value="">{{ data['facility-18-ukef-id'] }}</td>
-                    <td class="govuk-table__cell" data-sort-value="">{{ data['facility-18-name'] }}</td>
-                    <td class="govuk-table__cell" data-sort-value="">{{ ( data['bank-13-task4a-year'] + "-" + data['bank-13-task4a-month'] + "-" + data['bank-13-task4a-day'] ) | govukDate }}</td>
+                    <td class="govuk-table__cell">{{ data['bank-13-task4a-reference'] }}</td>
+                    <td class="govuk-table__cell">{{ data['facility-18-ukef-id'] }}</td>
+                    <td class="govuk-table__cell">{{ data['facility-18-name'] }}</td>
+                    <td class="govuk-table__cell">{{ ( data['bank-13-task4a-year'] + "-" + data['bank-13-task4a-month'] + "-" + data['bank-13-task4a-day'] ) | govukDate }}</td>
                   </tr>    
                   {% endif %}
 
@@ -1130,10 +1135,10 @@
                       {{ data['bank-13-task4b-currency'] }} {{ data['bank-13-task4b-amount'] }}
                       {% endif %}
                     </td>
-                    <td class="govuk-table__cell" data-sort-value="">{{ data['bank-13-task4b-reference'] }}</td>
-                    <td class="govuk-table__cell" data-sort-value="">{{ data['facility-18-ukef-id'] }}</td>
-                    <td class="govuk-table__cell" data-sort-value="">{{ data['facility-18-name'] }}</td>
-                    <td class="govuk-table__cell" data-sort-value="">{{ ( data['bank-13-task4b-year'] + "-" + data['bank-13-task4b-month'] + "-" + data['bank-13-task4b-day'] ) | govukDate }}</td>
+                    <td class="govuk-table__cell">{{ data['bank-13-task4b-reference'] }}</td>
+                    <td class="govuk-table__cell">{{ data['facility-18-ukef-id'] }}</td>
+                    <td class="govuk-table__cell">{{ data['facility-18-name'] }}</td>
+                    <td class="govuk-table__cell">{{ ( data['bank-13-task4b-year'] + "-" + data['bank-13-task4b-month'] + "-" + data['bank-13-task4b-day'] ) | govukDate }}</td>
                   </tr>    
                   {% endif %}
 
@@ -1146,10 +1151,10 @@
                       {{ data['bank-13-task4c-currency'] }} {{ data['bank-13-task4c-amount'] }}
                       {% endif %}
                     </td>
-                    <td class="govuk-table__cell" data-sort-value="">{{ data['bank-13-task4c-reference'] }}</td>
-                    <td class="govuk-table__cell" data-sort-value="">{{ data['facility-18-ukef-id'] }}</td>
-                    <td class="govuk-table__cell" data-sort-value="">{{ data['facility-18-name'] }}</td>
-                    <td class="govuk-table__cell" data-sort-value="">{{ ( data['bank-13-task4c-year'] + "-" + data['bank-13-task4c-month'] + "-" + data['bank-13-task4c-day'] ) | govukDate }}</td>
+                    <td class="govuk-table__cell">{{ data['bank-13-task4c-reference'] }}</td>
+                    <td class="govuk-table__cell">{{ data['facility-18-ukef-id'] }}</td>
+                    <td class="govuk-table__cell">{{ data['facility-18-name'] }}</td>
+                    <td class="govuk-table__cell">{{ ( data['bank-13-task4c-year'] + "-" + data['bank-13-task4c-month'] + "-" + data['bank-13-task4c-day'] ) | govukDate }}</td>
                   </tr>    
                   {% endif %}
 
@@ -1479,9 +1484,7 @@
 
               <p class="govuk-body"><a class="govuk-link govuk-link--no-visited-state" href="/public/downloads/Barclays-keying-sheet-june2023.xlsx" rel="noreferrer noopener" target="_blank">Download the keying sheet as an Excel document</a></p>
               
-              <table class="govuk-table" data-module="moj-sortable-table" border="0">
-
-                <thead class="govuk-table__head">
+              <table class="govuk-table" data-module="moj-sortable-table">
                   <col>
                   <col>
                   <col>
@@ -1490,7 +1493,7 @@
                   <colgroup span="2"></colgroup>
                   <colgroup span="2"></colgroup>
                   <colgroup span="2"></colgroup>
-                <thead>  
+                  <thead class="govuk-table__head">  
                   <tr class="govuk-table__row">
                     <th scope="col" class="govuk-table__header" aria-sort="ascending" rowspan="2">Facility ID</th>
                     <th scope="col" class="govuk-table__header" aria-sort="none" rowspan="2">Exporter</th>
