@@ -1032,7 +1032,7 @@
                   </div>-->
 
               <table class="govuk-table" data-module="moj-sortable-table">
-                <caption class="govuk-table__caption govuk-table__caption--s"></caption>
+                <caption class="govuk-table__caption govuk-table__caption--s govuk-visually-hidden">All payments</caption>
                 <thead class="govuk-table__head">
 
                   <tr class="govuk-table__row">
@@ -1041,6 +1041,8 @@
                     <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="ascending">Facility ID</th>
                     <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Exporter</th>
                     <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Date received</th>
+                    <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Reconciled by</th>
+                    <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Date reconciled</th>
                   </tr>
                 </thead>
                 <tbody class="govuk-table__body">
@@ -1058,6 +1060,8 @@
                     <td class="govuk-table__cell">{{ data['facility-16-ukef-id'] }}</td>
                     <td class="govuk-table__cell">{{ data['facility-16-name'] }}</td>
                     <td class="govuk-table__cell">{{ ( data['bank-13-task1-year'] + "-" + data['bank-13-task1-month'] + "-" + data['bank-13-task1-day'] ) | govukDate }}</td>
+                    <td class="govuk-table__cell">{{ data['signed-in-name'] }}</td>
+                    <td class="govuk-table__cell">{{ "today" | govukDate }} at {{ "09:15" | govukTime }}</td>
                   </tr>
                   {% endif %}
 
@@ -1075,6 +1079,8 @@
                     <td class="govuk-table__cell">{{ data['facility-17-ukef-id'] }}</td>
                     <td class="govuk-table__cell">{{ data['facility-17-name'] }}</td>
                     <td class="govuk-table__cell">{{ ( data['bank-13-task2-year'] + "-" + data['bank-13-task2-month'] + "-" + data['bank-13-task2-day'] ) | govukDate }}</td>
+                    <td class="govuk-table__cell">{{ data['signed-in-name'] }}</td>
+                    <td class="govuk-table__cell">{{ "today" | govukDate }} at {{ "09:21" | govukTime }}</td>
                   </tr>
                   {% endif %}
 
@@ -1092,6 +1098,8 @@
                     <td class="govuk-table__cell">{{ data['facility-17-ukef-id'] }}</td>
                     <td class="govuk-table__cell">{{ data['facility-17-name'] }}</td>
                     <td class="govuk-table__cell">{{ ( data['bank-13-task3-year'] + "-" + data['bank-13-task3-month'] + "-" + data['bank-13-task3-day'] ) | govukDate }}</td>
+                    <td class="govuk-table__cell">{{ data['signed-in-name'] }}</td>
+                    <td class="govuk-table__cell">{{ "today" | govukDate }} at {{ "09:24" | govukTime }}</td>
                   </tr>    
                   {% endif %}
               
@@ -1109,6 +1117,8 @@
                     <td class="govuk-table__cell">{{ data['facility-18-ukef-id'] }}</td>
                     <td class="govuk-table__cell">{{ data['facility-18-name'] }}</td>
                     <td class="govuk-table__cell">{{ ( data['bank-13-task4a-year'] + "-" + data['bank-13-task4a-month'] + "-" + data['bank-13-task4a-day'] ) | govukDate }}</td>
+                    <td class="govuk-table__cell">{{ data['signed-in-name'] }}</td>
+                    <td class="govuk-table__cell">{{ "today" | govukDate }} at {{ "09:29" | govukTime }}</td>
                   </tr>    
                   {% endif %}
 
@@ -1125,6 +1135,8 @@
                     <td class="govuk-table__cell">{{ data['facility-18-ukef-id'] }}</td>
                     <td class="govuk-table__cell">{{ data['facility-18-name'] }}</td>
                     <td class="govuk-table__cell">{{ ( data['bank-13-task4b-year'] + "-" + data['bank-13-task4b-month'] + "-" + data['bank-13-task4b-day'] ) | govukDate }}</td>
+                    <td class="govuk-table__cell">{{ data['signed-in-name'] }}</td>
+                    <td class="govuk-table__cell">{{ "today" | govukDate }} at {{ "09:32" | govukTime }}</td>
                   </tr>    
                   {% endif %}
 
@@ -1141,6 +1153,8 @@
                     <td class="govuk-table__cell">{{ data['facility-18-ukef-id'] }}</td>
                     <td class="govuk-table__cell">{{ data['facility-18-name'] }}</td>
                     <td class="govuk-table__cell">{{ ( data['bank-13-task4c-year'] + "-" + data['bank-13-task4c-month'] + "-" + data['bank-13-task4c-day'] ) | govukDate }}</td>
+                    <td class="govuk-table__cell">{{ data['signed-in-name'] }}</td>
+                            <td class="govuk-table__cell">{{ "today" | govukDate }} at {{ "09:43" | govukTime }}</td>
                   </tr>    
                   {% endif %}
 
@@ -1167,6 +1181,8 @@
                         <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="ascending">Facility ID</th>
                         <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Exporter</th>
                         <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Date received</th>
+                        <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Reconciled by</th>
+                        <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Date reconciled</th>
                       </tr>
                     </thead>
                     <tbody class="govuk-table__body">
@@ -1184,11 +1200,13 @@
                         <td class="govuk-table__cell">{{ data['facility-16-ukef-id'] }}</td>
                         <td class="govuk-table__cell">{{ data['facility-16-name'] }}</td>
                         <td class="govuk-table__cell">{{ ( data['bank-13-task1-year'] + "-" + data['bank-13-task1-month'] + "-" + data['bank-13-task1-day'] ) | govukDate }}</td>
+                        <td class="govuk-table__cell">{{ data['signed-in-name'] }}</td>
+                        <td class="govuk-table__cell">{{ "today" | govukDate }} at {{ "09:15" | govukTime }}</td>
                       </tr>
                     </tbody>
                     <tfoot> 
                       <tr class="govuk-table__row">
-                        <td class="govuk-table__cell govuk-!-font-weight-bold" colspan="5">Total: GBP 2,500.00</td>
+                        <td class="govuk-table__cell govuk-!-font-weight-bold" colspan="7">Total: GBP 2,500.00</td>
                       </tr>    
                     </tfoot>   
                   </table>
@@ -1210,6 +1228,8 @@
                         <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="ascending">Facility ID</th>
                         <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Exporter</th>
                         <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Date received</th>
+                        <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Reconciled by</th>
+                        <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Date reconciled</th>
                       </tr>
                     </thead>
                     <tbody class="govuk-table__body">
@@ -1219,6 +1239,8 @@
                         <td class="govuk-table__cell">{{ data['facility-16-ukef-id'] }}</td>
                         <td class="govuk-table__cell">{{ data['facility-16-name'] }}</td>
                         <td class="govuk-table__cell">{{ ( data['bank-13-task1-year'] + "-" + data['bank-13-task1-month'] + "-" + data['bank-13-task1-day'] ) | govukDate }}</td>
+                        <td class="govuk-table__cell">{{ data['signed-in-name'] }}</td>
+                        <td class="govuk-table__cell">{{ "today" | govukDate }} at {{ "09:15" | govukTime }}</td>
                       </tr>
                       <tr class="govuk-table__row">
                         <td class="govuk-table__cell"><a href="bank-3-task4a-change?from-summary-bank-3-task4a-change=yes" class="govuk-link govuk-link--no-visited-state">{{ data['bank-13-task4a-currency'] }} {{ data['bank-13-task4a-amount'] }}</a></td>
@@ -1226,11 +1248,13 @@
                         <td class="govuk-table__cell">{{ data['facility-18-ukef-id'] }}</td>
                         <td class="govuk-table__cell">{{ data['facility-18-name'] }}</td>
                         <td class="govuk-table__cell">{{ ( data['bank-13-task4a-year'] + "-" + data['bank-13-task4a-month'] + "-" + data['bank-13-task4a-day'] ) | govukDate }}</td>
+                        <td class="govuk-table__cell">{{ data['signed-in-name'] }}</td>
+                        <td class="govuk-table__cell">{{ "today" | govukDate }} at {{ "09:29" | govukTime }}</td>
                       </tr>    
                     </tbody>
                     <tfoot> 
                       <tr class="govuk-table__row">
-                        <td class="govuk-table__cell govuk-!-font-weight-bold" colspan="5">Total: GBP: 3,500.00</td>
+                        <td class="govuk-table__cell govuk-!-font-weight-bold" colspan="7">Total: GBP: 3,500.00</td>
                       </tr>    
                     </tfoot>   
                   </table>
@@ -1248,6 +1272,8 @@
                         <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="ascending">Facility ID</th>
                         <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Exporter</th>
                         <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Date received</th>
+                        <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Reconciled by</th>
+                        <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Date reconciled</th>
                       </tr>
                     </thead>
                     <tbody class="govuk-table__body">
@@ -1264,6 +1290,8 @@
                         <td class="govuk-table__cell">{{ data['facility-16-ukef-id'] }}</td>
                         <td class="govuk-table__cell">{{ data['facility-16-name'] }}</td>
                         <td class="govuk-table__cell">{{ ( data['bank-13-task1-year'] + "-" + data['bank-13-task1-month'] + "-" + data['bank-13-task1-day'] ) | govukDate }}</td>
+                        <td class="govuk-table__cell">{{ data['signed-in-name'] }}</td>
+                        <td class="govuk-table__cell">{{ "today" | govukDate }} at {{ "09:15" | govukTime }}</td>
                       </tr>
                       <tr class="govuk-table__row">
                         <td class="govuk-table__cell">
@@ -1277,6 +1305,8 @@
                         <td class="govuk-table__cell">{{ data['facility-18-ukef-id'] }}</td>
                         <td class="govuk-table__cell">{{ data['facility-18-name'] }}</td>
                         <td class="govuk-table__cell">{{ ( data['bank-13-task4a-year'] + "-" + data['bank-13-task4a-month'] + "-" + data['bank-13-task4a-day'] ) | govukDate }}</td>
+                        <td class="govuk-table__cell">{{ data['signed-in-name'] }}</td>
+                    <td class="govuk-table__cell">{{ "today" | govukDate }} at {{ "09:29" | govukTime }}</td>
                       </tr>    
                       <tr class="govuk-table__row">
                         <td class="govuk-table__cell">
@@ -1290,11 +1320,13 @@
                         <td class="govuk-table__cell">{{ data['facility-18-ukef-id'] }}</td>
                         <td class="govuk-table__cell">{{ data['facility-18-name'] }}</td>
                         <td class="govuk-table__cell">{{ ( data['bank-13-task4b-year'] + "-" + data['bank-13-task4b-month'] + "-" + data['bank-13-task4b-day'] ) | govukDate }}</td>
+                        <td class="govuk-table__cell">{{ data['signed-in-name'] }}</td>
+                    <td class="govuk-table__cell">{{ "today" | govukDate }} at {{ "09:32" | govukTime }}</td>
                       </tr>  
                     </tbody>
                     <tfoot> 
                       <tr class="govuk-table__row">
-                        <td class="govuk-table__cell govuk-!-font-weight-bold" colspan="5">Total: GBP 3,900.00</td>
+                        <td class="govuk-table__cell govuk-!-font-weight-bold" colspan="7">Total: GBP 3,900.00</td>
                       </tr>    
                     </tfoot>   
                   </table>
@@ -1319,6 +1351,8 @@
                         <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="ascending">Facility ID</th>
                         <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Exporter</th>
                         <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Date received</th>
+                        <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Reconciled by</th>
+                      <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Date reconciled</th>
                       </tr>
                     </thead>
                     <tbody class="govuk-table__body">
@@ -1328,11 +1362,13 @@
                         <td class="govuk-table__cell">{{ data['facility-17-ukef-id'] }}</td>
                         <td class="govuk-table__cell">{{ data['facility-17-name'] }}</td>
                         <td class="govuk-table__cell">{{ ( data['bank-13-task2-year'] + "-" + data['bank-13-task2-month'] + "-" + data['bank-13-task2-day'] ) | govukDate }}</td>
+                        <td class="govuk-table__cell">{{ data['signed-in-name'] }}</td>
+                        <td class="govuk-table__cell">{{ "today" | govukDate }} at {{ "09:21" | govukTime }}</td>
                       </tr> 
                     </tbody>
                     <tfoot> 
                       <tr class="govuk-table__row">
-                        <td class="govuk-table__cell govuk-!-font-weight-bold" colspan="5">Total: EUR 1,250.00</td>
+                        <td class="govuk-table__cell govuk-!-font-weight-bold" colspan="7">Total: EUR 1,250.00</td>
                       </tr>    
                     </tfoot>     
                 </table> 
@@ -1355,6 +1391,8 @@
                             <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="ascending">Facility ID</th>
                             <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Exporter</th>
                             <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Date received</th>
+                            <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Reconciled by</th>
+                            <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Date reconciled</th>
                           </tr>
                         </thead>
                         <tbody class="govuk-table__body">
@@ -1371,6 +1409,8 @@
                             <td class="govuk-table__cell">{{ data['facility-17-ukef-id'] }}</td>
                             <td class="govuk-table__cell">{{ data['facility-17-name'] }}</td>
                             <td class="govuk-table__cell">{{ ( data['bank-13-task2-year'] + "-" + data['bank-13-task2-month'] + "-" + data['bank-13-task2-day'] ) | govukDate }}</td>
+                            <td class="govuk-table__cell">{{ data['signed-in-name'] }}</td>
+                        <td class="govuk-table__cell">{{ "today" | govukDate }} at {{ "09:21" | govukTime }}</td>
                           </tr> 
                           <tr class="govuk-table__row">
                             <td class="govuk-table__cell">
@@ -1385,11 +1425,13 @@
                             <td class="govuk-table__cell">{{ data['facility-18-ukef-id'] }}</td>
                             <td class="govuk-table__cell">{{ data['facility-18-name'] }}</td>
                             <td class="govuk-table__cell">{{ ( data['bank-13-task4c-year'] + "-" + data['bank-13-task4c-month'] + "-" + data['bank-13-task4c-day'] ) | govukDate }}</td>
+                            <td class="govuk-table__cell">{{ data['signed-in-name'] }}</td>
+                            <td class="govuk-table__cell">{{ "today" | govukDate }} at {{ "09:43" | govukTime }}</td>
                           </tr>
                         </tbody>
                         <tfoot> 
                           <tr class="govuk-table__row">
-                            <td class="govuk-table__cell govuk-!-font-weight-bold" colspan="5">Total: EUR 1,362.00</td>
+                            <td class="govuk-table__cell govuk-!-font-weight-bold" colspan="7">Total: EUR 1,362.00</td>
                           </tr>    
                         </tfoot>     
                     </table>  
@@ -1413,6 +1455,8 @@
                         <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="ascending">Facility ID</th>
                         <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Exporter</th>
                         <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Date received</th>
+                        <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Reconciled by</th>
+                        <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Date reconciled</th>
                       </tr>
                     </thead>
                     <tbody class="govuk-table__body">
@@ -1430,11 +1474,13 @@
                         <td class="govuk-table__cell">{{ data['facility-17-ukef-id'] }}</td>
                         <td class="govuk-table__cell">{{ data['facility-17-name'] }}</td>
                         <td class="govuk-table__cell">{{ ( data['bank-13-task3-year'] + "-" + data['bank-13-task3-month'] + "-" + data['bank-13-task3-day'] ) | govukDate }}</td>
+                        <td class="govuk-table__cell">{{ data['signed-in-name'] }}</td>
+                    <td class="govuk-table__cell">{{ "today" | govukDate }} at {{ "09:24" | govukTime }}</td>
                       </tr>
                     </tbody>
                      <tfoot> 
                         <tr class="govuk-table__row">
-                          <td class="govuk-table__cell govuk-!-font-weight-bold" colspan="5">Total: USD 1,000.00</td>
+                          <td class="govuk-table__cell govuk-!-font-weight-bold" colspan="7">Total: USD 1,000.00</td>
                         </tr>    
                       </tfoot> 
                   </table>
