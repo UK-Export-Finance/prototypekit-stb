@@ -1,0 +1,1072 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+{% block pageTitle %}
+{{ data['bank-13-name'] }} – {{ data['report-month'] }} report – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/head2.html" %}
+  {% include "includes/primary-nav-banks-main.html" %}
+{% endblock %}
+
+{% block pageScripts %}
+  {% include "includes/scripts.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
+      {{ data['bank-13-name'] }}
+    </h1>
+
+	{{ mojSubNavigation({
+		label: 'Sub navigation',
+		items: [{
+		  text: 'June 2023',
+		  href: 'bank-4'
+		}, 
+		{
+		  text: 'May 2023',
+		  href: '#2'
+		}, 
+		{
+		  text: 'April 2023',
+		  href: '#3'
+		}, 
+		{
+		  text: 'Completed reports',
+		  href: 'bank-4-completed-reports',
+		  active: true
+		}
+		]
+	  }) }}
+
+
+    {% if data['older-report-show'] == 'no' %}
+
+    <div class="find-report">
+      <form action="bank-3-older-reports" method="get">
+        <input type="hidden" name="older-report-show" value="yes">
+          <label class="govuk-label moj-search__label govuk-!-font-weight-bold" for="search">
+            Find a completed report
+          </label>
+          
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+
+              <div class="govuk-form-group govuk-!-display-inline-block govuk-!-margin-right-2">
+                <label class="govuk-label" for="month">
+                  Month
+                </label>
+                <select class="govuk-select" id="month" name="month">
+                  <option value="may" selected></option>
+                  <option value="jan">January</option>
+                  <option value="feb">February</option>
+                  <option value="mar">March</option>
+                  <option value="apr">April</option>
+                  <option value="may">May</option>
+                  <option value="jun">June</option>
+                  <option value="jul">July</option>
+                  <option value="aug">August</option>
+                  <option value="sep">September</option>
+                  <option value="oct">October</option>
+                  <option value="nov">November</option>
+                  <option value="dec">December</option>
+                </select>
+              </div>
+
+              <div class="govuk-form-group govuk-!-display-inline-block">
+                <label class="govuk-label" for="year">
+                  Year
+                </label>
+                <select class="govuk-select moj-search__input" id="year" name="year" >
+                  <option value="2023" selected></option>
+                  <option value="2023">2023</option>
+                  <option value="2022">2022</option>
+                  <option value="2021">2021</option>
+                  <option value="2020">2020</option>
+                  <option value="2019">2019</option>
+                  <option value="2018">2018</option>
+                  <option value="2017">2017</option>
+                  <option value="2016">2016</option>
+                  <option value="2015">2015</option>
+
+                </select>
+              </div>  
+
+                <button class="govuk-button govuk-!-margin-top-6 govuk-!-margin-left-2" data-module="govuk-button">
+                  Search
+                </button>
+
+            </div>
+          </div>
+          </form>
+      </div>
+
+      {% elif data['older-report-show'] == 'yes' %}
+      <div class="find-report">
+        <form action="bank-3-older-reports" method="get">
+          <input type="hidden" name="older-report-show" value="yes">
+            <label class="govuk-label moj-search__label govuk-!-font-weight-bold" for="search">
+              Find a previous report
+            </label>
+            
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-full">
+  
+                <div class="govuk-form-group govuk-!-display-inline-block govuk-!-margin-right-2">
+                  <label class="govuk-label" for="month">
+                    Month
+                  </label>
+                  <select class="govuk-select" id="month" name="month">
+                    <option value="jan">January</option>
+                    <option value="feb">February</option>
+                    <option value="mar">March</option>
+                    <option value="apr">April</option>
+                    <option value="may" selected>May</option>
+                    <option value="jun">June</option>
+                    <option value="jul">July</option>
+                    <option value="aug">August</option>
+                    <option value="sep">September</option>
+                    <option value="oct">October</option>
+                    <option value="nov">November</option>
+                    <option value="dec">December</option>
+                  </select>
+                </div>
+  
+                <div class="govuk-form-group govuk-!-display-inline-block">
+                  <label class="govuk-label" for="year">
+                    Year
+                  </label>
+                  <select class="govuk-select moj-search__input" id="year" name="year" >
+                    <option value="2023" selected>2023</option>
+                    <option value="2022">2022</option>
+                    <option value="2021">2021</option>
+                    <option value="2020">2020</option>
+                    <option value="2019">2019</option>
+                    <option value="2018">2018</option>
+                    <option value="2017">2017</option>
+                    <option value="2016">2016</option>
+                    <option value="2015">2015</option>
+  
+                  </select>
+                </div>  
+  
+                  <button class="govuk-button govuk-!-margin-top-6 govuk-!-margin-left-2" data-module="govuk-button">
+                    Search
+                  </button>
+
+              </div>
+            </div>
+            </form>
+        </div>
+      {% endif %}
+      
+      {% if data['older-report-show'] == 'yes' %}
+
+    <h2 class="govuk-heading-l">
+      {{ data['last-month'] }}
+    </h2> 
+    
+    <div class="govuk-tabs" data-module="govuk-tabs">
+        <h2 class="govuk-tabs__title">
+          Contents
+        </h2>
+        <ul class="govuk-tabs__list">
+          <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+            <a class="govuk-tabs__tab" href="#report">
+              Utilisation
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#reconciliation">
+              Premium payments
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#summary">
+              Reconciliation summary
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#keying-sheet">
+              Keying sheet
+            </a>
+          </li>
+        </ul>
+        
+        <div class="govuk-tabs__panel" id="report">
+
+          <h2 class="govuk-heading-l">Bank report</h2>
+          
+          <p class="govuk-body"><a class="govuk-link govuk-link--no-visited-state" href="#">Download the Excel report submitted by the bank</a></p>
+
+          <table class="govuk-table" data-module="moj-sortable-table">
+            <caption class="govuk-table__caption govuk-table__caption--l govuk-visually-hidden">Bank report</caption>
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header" aria-sort="ascending">Facility ID</th>
+                <th scope="col" class="govuk-table__header" aria-sort="none">Exporter</th>
+                <th scope="col" class="govuk-table__header" aria-sort="none">Base currency</th>
+                <th scope="col" class="govuk-table__header" aria-sort="none">Value</th>  
+                <th scope="col" class="govuk-table__header" aria-sort="none">Utilisation</th>
+                <th scope="col" class="govuk-table__header" aria-sort="none">UKEF cover</th>
+                <th scope="col" class="govuk-table__header" aria-sort="none">UKEF exposure</th>
+                <th scope="col" class="govuk-table__header" aria-sort="none">Fees accrued (reported currency)</th>
+                <th scope="col" class="govuk-table__header" aria-sort="none">Fee payable to UKEF (reported currency)</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="{{ data['facility-16-ukef-id'] }}"><a href="facility16" class="govuk-link govuk-link--no-visited-state">{{ data['facility-16-ukef-id'] }}</a></th>
+                <td class="govuk-table__cell">{{ data['facility-16-name'] }}</td>
+                <td class="govuk-table__cell" data-sort-value="">{{ data['facility-16-currency'] }}</td>
+                <td class="govuk-table__cell" data-sort-value="900000">{{ data['facility-16-limit'] }}</td>
+                <td class="govuk-table__cell" data-sort-value="540000">{{ data['facility-16-utilisation'] }}</td>
+                <td class="govuk-table__cell">{{ data['facility-16-cover'] }}</td>
+                <td class="govuk-table__cell" data-sort-value="432000">{{ data['facility-16-exposure'] }}</td>
+                <td class="govuk-table__cell" data-sort-value="25000">{{ data['facility-16-currency'] }} {{ data['facility-16-accrued'] }} </td>
+                <td class="govuk-table__cell" data-sort-value="25000">{{ data['facility-16-currency'] }} {{ data['facility-16-paid'] }} </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="{{ data['facility-17-ukef-id'] }}"><a href="facility17" class="govuk-link govuk-link--no-visited-state">{{ data['facility-17-ukef-id'] }}</a></th>
+                <td class="govuk-table__cell">{{ data['facility-17-name'] }}</td>
+                <td class="govuk-table__cell" data-sort-value="">{{ data['facility-17-currency'] }}</td>
+                <td class="govuk-table__cell" data-sort-value="500000">{{ data['facility-17-limit'] }}</td>
+                <td class="govuk-table__cell" data-sort-value="300000">{{ data['facility-17-utilisation'] }}</td>
+                <td class="govuk-table__cell">{{ data['facility-17-cover'] }}</td>
+                <td class="govuk-table__cell" data-sort-value="240000">{{ data['facility-17-exposure'] }}</td>
+                <td class="govuk-table__cell" data-sort-value="1000">{{ data['facility-17-currency'] }} {{ data['facility-17-accrued'] }} </td>
+                <td class="govuk-table__cell" data-sort-value="1000">{{ data['facility-17-currency'] }} {{ data['facility-17-paid'] }} </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="{{ data['facility-17-ukef-id'] }}"><a href="facility17" class="govuk-link govuk-link--no-visited-state">{{ data['facility-17-ukef-id'] }}</a></th>
+                <td class="govuk-table__cell">{{ data['facility-17-name'] }}</td>
+                <td class="govuk-table__cell" data-sort-value="">{{ data['facility-17-currency'] }}</td>
+                <td class="govuk-table__cell" data-sort-value="500000">{{ data['facility-17-limit'] }}</td>
+                <td class="govuk-table__cell" data-sort-value="300000">{{ data['facility-17-utilisation'] }}</td>
+                <td class="govuk-table__cell">{{ data['facility-17-cover'] }}</td>
+                <td class="govuk-table__cell" data-sort-value="240000">{{ data['facility-17-exposure'] }}</td>
+                <td class="govuk-table__cell" data-sort-value="1250">EUR {{ data['facility-17B-accrued'] }} </td>
+                <td class="govuk-table__cell" data-sort-value="1250">EUR {{ data['facility-17B-paid'] }} </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="{{ data['facility-18-ukef-id'] }}"><a href="facility18" class="govuk-link govuk-link--no-visited-state">{{ data['facility-18-ukef-id'] }}</a></th>
+                <td class="govuk-table__cell">{{ data['facility-18-name'] }}</td>
+                <td class="govuk-table__cell" data-sort-value="">{{ data['facility-18-currency'] }}</td>
+                <td class="govuk-table__cell" data-sort-value="1200000">{{ data['facility-18-limit'] }}</td>
+                <td class="govuk-table__cell" data-sort-value="720000">{{ data['facility-18-utilisation'] }}</td>
+                <td class="govuk-table__cell">{{ data['facility-18-cover'] }}</td>
+                <td class="govuk-table__cell" data-sort-value="576000">{{ data['facility-18-exposure'] }}</td>
+                <td class="govuk-table__cell" data-sort-value="1500">{{ data['facility-18-currency'] }} {{ data['facility-18-accrued'] }} </td>
+                <td class="govuk-table__cell" data-sort-value="1500">{{ data['facility-18-currency'] }} {{ data['facility-18-paid'] }} </td>
+              </tr>
+            </tbody>
+          </table>
+          </div>
+        <!-- end of report tab -->
+        
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="reconciliation">
+          
+          
+
+
+          <!-- Show this when ready to start reconciliing -->
+          <!--<h2 class="govuk-heading-l">All reported fees reconciled</h2>-->
+
+          
+
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-half">
+              <h2 class="govuk-heading-l govuk-!-margin-bottom-4">Report completed</h2>
+              
+            </div>
+
+            <div class="govuk-grid-column-one-half govuk-!-text-align-right govuk-!-margin-top-3">
+ 
+              <div class="filter-wrap">
+              <div class="govuk-form-group govuk-!-text-align-left govuk-!-display-inline-block">
+                  
+                  <label class="govuk-label govuk-!-font-weight-bold" for="filter">
+                  Filter by facility ID
+                  </label>
+
+                  
+                  <input class="govuk-input" id="filter" name="filter" type="text">
+                  
+              </div>  
+
+              <div class="govuk-form-group govuk-!-display-inline-block">    
+                  <form action="" method="get">
+                      <input type="hidden" name="bank-13-filter" value="yes">
+                      <button class="govuk-button govuk-!-margin-left-2 ukef-filter-button" data-module="govuk-button">Filter</button>
+                  </form>
+              </div>
+              <div class="govuk-form-group govuk-!-display-inline-block">
+                  
+                  <form action="bank-3#reconciliation" method="get">
+                      <input type="hidden" name="bank-13-filter" value="no">
+                      <button class="govuk-button govuk-button--secondary govuk-!-margin-left-2 ukef-filter-button" data-module="govuk-button">Clear filter</button>
+                  </form>    
+              </div>  
+              </div>   
+            </div>
+          </div>
+
+           
+          <!-- end of task radios -->
+
+          
+          <table class="govuk-table" data-module="moj-multi-select" data-multi-select-checkbox="#select-all">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                
+
+                
+                
+                <th scope="col" class="govuk-table__header" aria-sort="ascending">Facility ID</th>
+                <th scope="col" class="govuk-table__header" aria-sort="none">Exporter</th>
+                <th scope="col" class="govuk-table__header" aria-sort="none">Base currency</th>
+                <th scope="col" class="govuk-table__header" aria-sort="none">Reported fees payable<br>(reported currency)</th>
+                <th scope="col" class="govuk-table__header" aria-sort="none">Total reported<br>(base currency)</th>
+                <th scope="col" class="govuk-table__header" aria-sort="none">Payments received</th>
+                <th scope="col" class="govuk-table__header" aria-sort="none">Total received<br>(base currency)</th>
+                <th scope="col" class="govuk-table__header" aria-sort="none">Status</th>            
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+
+              
+
+              <tr class="govuk-table__row govuk-table__row--selected">
+                
+                
+                <td class="govuk-table__cell" data-sort-value="0020002154">0020002154</td>
+                <td class="govuk-table__cell">Direct Engineering Solutions Ltd</td>
+                <td class="govuk-table__cell">GBP</td>
+                <td class="govuk-table__cell">GBP 2,500.00</td>
+                <td class="govuk-table__cell">GBP 2,500.00</td>
+                
+                <td class="govuk-table__cell">
+                  
+
+                  
+                  GBP 2,500.00
+                  
+
+
+                  
+                </td>
+                
+                <td class="govuk-table__cell">
+                  
+                    <!-- task1 currency | task1 amount -->
+                    GBP 2,500.00
+                  
+                </td>
+
+                <td class="govuk-table__cell">
+                  
+                    <strong class="govuk-tag govuk-tag--green">Match</strong>
+                  
+                </td>
+
+              </tr>
+              
+              
+
+              <tr class="govuk-table__row govuk-table__row--selected">
+                
+                <td class="govuk-table__cell" data-sort-value="0020002167">0020002167</td>
+                <td class="govuk-table__cell">Meridian Manufacturing Ltd</td>
+                <td class="govuk-table__cell">USD</td>
+                <td class="govuk-table__cell">EUR 1,250.00
+                  <br>USD 1,000.00</td>
+                
+                  <td class="govuk-table__cell">USD 2,400.00</td>
+                
+                <td class="govuk-table__cell">
+                  
+                      <!-- task2 currency | task2 amount -->
+                    
+                      EUR 1,250.00
+                    
+                  
+
+                  
+                    <!-- task3 currency | task3 amount -->
+                    
+                      <br>USD 1,000.00
+                    
+                  
+                </td>
+                
+                <td class="govuk-table__cell">
+                  <!-- total payments in base from task2 and task3 --> 
+                  
+                    <!-- task1 currency | task1 amount -->
+                    USD 2,400.00
+                  
+                </td>
+                
+                <td class="govuk-table__cell">
+                  
+                    <strong class="govuk-tag govuk-tag--green">Match</strong>
+                  
+                </td>
+
+              </tr>
+
+              
+
+              <tr class="govuk-table__row">
+                
+                <td class="govuk-table__cell" data-sort-value="0020002193">0020002193</td>
+                <td class="govuk-table__cell">British Tech Innovators Ltd</td>
+                <td class="govuk-table__cell">GBP</td>
+                <td class="govuk-table__cell">GBP 1,500.00</td>
+                <td class="govuk-table__cell">GBP 1,500.00</td>
+                
+                <td class="govuk-table__cell">
+                    
+                      <!-- task4a currency | task4a amount -->
+
+                      
+                        GBP 1,000.00
+                        
+
+                    
+                    
+                    
+                      <!-- task4a currency | task4a amount -->
+                      
+                      
+                        <br>GBP 400.00
+                      
+
+                    
+
+                    
+
+                    
+                      <br>EUR 112.00
+                    
+                    
+                </td>
+
+                <td class="govuk-table__cell">
+                  <!-- total payments in base from task4a and task4b  and task4c --> 
+                  
+                  
+                    
+                  GBP 1,500.00
+                   
+                </td>
+                
+                 <td class="govuk-table__cell">
+                  
+                    <strong class="govuk-tag govuk-tag--green">Match</strong>
+                  
+                </td>
+              </tr>
+
+                
+
+            </tbody>
+            </table>
+
+           
+          <!-- end of this: 'bank-13-start' -->
+
+      </div>
+      <!-- end of premium payments (reconciliation) tab -->
+
+      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="summary">
+              
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+            
+            <h2 class="govuk-heading-l govuk-!-margin-bottom-4">Reconciliation summary</h2>
+            
+            
+            <!-- everything matches - keying sheet generated -->
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-half">  
+            <h3 class="govuk-heading-m govuk-!-margin-top-4">Total facilities by status</h3>
+
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  3 facilities 
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <strong class="govuk-tag govuk-tag--green">Match</strong>
+                </dd>
+              </div>
+            </dl>    
+            </div>
+            </div>
+            
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-two-thirds">    
+                <div class="govuk-grid-row">
+                  <div class="govuk-grid-column-full">
+                    <table class="govuk-table">
+                      <caption class="govuk-table__caption govuk-table__caption--mg ovuk-!-margin-top-4">Total amounts by currency</caption>
+                      <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                          <th scope="col" class="govuk-table__header">Currency</th>
+                          <th scope="col" class="govuk-table__header govuk-!-text-align-right">Reported</th>
+                          <th scope="col" class="govuk-table__header govuk-!-text-align-right">Reconciled</th>
+                          <th scope="col" class="govuk-table__header govuk-!-text-align-right">Keyed</th>
+                          <th scope="col" class="govuk-table__header govuk-!-text-align-right">Outstanding</th>
+                        </tr>
+                      </thead>
+                      <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header">GBP</th>
+                          <td class="govuk-table__cell govuk-!-text-align-right">4,000.00</td>
+                          <td class="govuk-table__cell govuk-!-text-align-right">3,900.00</td>
+                          <td class="govuk-table__cell govuk-!-text-align-right">3,900.00</td>
+                          <td class="govuk-table__cell govuk-!-text-align-right">-100.00</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header">EUR</th>
+                          <td class="govuk-table__cell govuk-!-text-align-right">1,250.00</td>
+                          <td class="govuk-table__cell govuk-!-text-align-right">1,362.00</td>
+                          <td class="govuk-table__cell govuk-!-text-align-right">1,250.00</td>
+                          <td class="govuk-table__cell govuk-!-text-align-right">112.00</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header">USD</th>
+                          <td class="govuk-table__cell govuk-!-text-align-right">1,000.00</td>
+                          <td class="govuk-table__cell govuk-!-text-align-right">1,000.00</td>
+                          <td class="govuk-table__cell govuk-!-text-align-right">1,000.00</td>
+                          <td class="govuk-table__cell govuk-!-text-align-right">0</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <th scope="row" class="govuk-table__header">JPY</th>
+                          <td class="govuk-table__cell govuk-!-text-align-right">0</td>
+                          <td class="govuk-table__cell govuk-!-text-align-right">0</td>
+                          <td class="govuk-table__cell govuk-!-text-align-right">0</td>
+                          <td class="govuk-table__cell govuk-!-text-align-right">0</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+
+            
+
+            
+            
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-style-section-break--visible">
+
+                <h3 class="govuk-heading-m govuk-!-margin-top-7" id="summary-payments-received">Payments received by currency</h3>  
+
+                <aside class="part-navigation-container">
+                  <nav aria-label="Sections" class="gem-c-contents-list">
+                    <h2 class="gem-c-contents-list__title">
+                      Contents
+                    </h2>
+                      <ol class="gem-c-contents-list__list">
+                          <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+                            <a class="gem-c-contents-list__link govuk-link govuk-link--no-visited-state" href="#all-payments">All payments</a>
+                  
+                          </li>
+                          <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+                            <a class="gem-c-contents-list__link govuk-link govuk-link--no-visited-state" href="#gbp-payments">GBP payments</a>
+                  
+                          </li>
+                          <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+                            <a class="gem-c-contents-list__link govuk-link govuk-link--no-visited-state" href="#eur-payments">EUR payments</a>
+                  
+                          </li>
+                          <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+                            <a class="gem-c-contents-list__link govuk-link govuk-link--no-visited-state" href="#usd-payments">USD payments</a>
+                  
+                          </li>
+                      </ol>
+                  </nav>
+                </aside>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible govuk-style-section-break--visible"> 
+
+                
+                <!--<div class="filter-wrap summary">
+
+                  <div class="govuk-form-group govuk-!-display-inline-block">
+                    <fieldset class="govuk-fieldset">
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                        Filter by
+                      </legend>
+                      
+                      <div class="govuk-radios govuk-radios--small govuk-radios--inline" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="yes">
+                          <label class="govuk-label govuk-radios__label" for="changed-name">
+                            Payment reference
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
+                          <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                            Facility ID
+                          </label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+
+                <div class="govuk-form-group govuk-!-text-align-left govuk-!-display-inline-block">
+                    <label class="govuk-label govuk-!-font-weight-bold" for="filter-summary">Enter value</label>
+                    <input class="govuk-input" id="filter-summary" name="filter-summary" type="text">
+                </div>  
+            
+                <div class="govuk-form-group govuk-!-display-inline-block">    
+                    <form action="bank-3#reconciliation" method="get">
+                        <input type="hidden" name="bank-13-filter" value="yes">
+                        <button class="govuk-button govuk-!-margin-left-2 ukef-filter-button" data-module="govuk-button">Filter</button>
+                    </form>
+                </div>
+                <div class="govuk-form-group govuk-!-display-inline-block">
+                    <p class="govuk-body govuk-!-display-inline-block"><a class="govuk-link govuk-link--no-visited-state govuk-!-margin-left-2" href="bank-3?bank-13-filter=no#reconciliation">Clear filter</a></p>
+                    
+ 
+                </div>  
+                </div>-->   
+
+            <h4 class="govuk-heading-s" id="all-payments">All payments</h4>    
+
+            <table class="govuk-table" data-module="moj-sortable-table">
+              <caption class="govuk-table__caption govuk-table__caption--s"></caption>
+              <thead class="govuk-table__head">
+
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Amount</th>
+                  <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Payment reference</th>
+                  <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="ascending">Facility ID</th>
+                  <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Exporter</th>
+                  <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Date received</th>
+                  <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Reconciled by</th>
+                  <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Date reconciled</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+
+                <tr class="govuk-table__row">
+                  
+                  <td class="govuk-table__cell" data-sort-value="2,500.00">
+                    
+                    GBP 2,500.00
+                    
+                  </td>
+                  <td class="govuk-table__cell">1</td>
+                  <td class="govuk-table__cell">0020002154</td>
+                  <td class="govuk-table__cell">Direct Engineering Solutions Ltd</td>
+                  <td class="govuk-table__cell">8 July 2023</td>
+                  <td class="govuk-table__cell">Jane Smith</td>
+                  <td class="govuk-table__cell">18 July 2023 at 9:15am</td>
+                </tr>
+                
+
+                
+                <tr class="govuk-table__row">
+                  
+                  <td class="govuk-table__cell" data-sort-value="1,250.00">
+                    
+                    EUR 1,250.00
+                    
+                  </td>
+                  <td class="govuk-table__cell">2</td>
+                  <td class="govuk-table__cell">0020002167</td>
+                  <td class="govuk-table__cell">Meridian Manufacturing Ltd</td>
+                  <td class="govuk-table__cell">12 July 2023</td>
+                  <td class="govuk-table__cell">Jane Smith</td>
+                  <td class="govuk-table__cell">18 July 2023 at 9:21am</td>
+                </tr>
+                
+
+                
+                <tr class="govuk-table__row">
+                  
+                  <td class="govuk-table__cell" data-sort-value="1,000.00">
+                    
+                    USD 1,000.00
+                    
+                  </td>
+                  <td class="govuk-table__cell">3</td>
+                  <td class="govuk-table__cell">0020002167</td>
+                  <td class="govuk-table__cell">Meridian Manufacturing Ltd</td>
+                  <td class="govuk-table__cell">15 July 2023</td>
+                  <td class="govuk-table__cell">Jane Smith</td>
+                  <td class="govuk-table__cell">18 July 2023 at 9:24am</td>
+                </tr>    
+                
+            
+                
+                <tr class="govuk-table__row">
+                  
+                  <td class="govuk-table__cell" data-sort-value="1,000.00">
+                    
+                    GBP 1,000.00
+                    
+                  </td>
+                  <td class="govuk-table__cell">4</td>
+                  <td class="govuk-table__cell">0020002193</td>
+                  <td class="govuk-table__cell">British Tech Innovators Ltd</td>
+                  <td class="govuk-table__cell">8 July 2023</td>
+                  <td class="govuk-table__cell">Jane Smith</td>
+                  <td class="govuk-table__cell">18 July 2023 at 9:29am</td>
+                </tr>    
+                
+
+                
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell" data-sort-value="400.00">
+                    
+                    GBP 400.00
+                    
+                  </td>
+                  <td class="govuk-table__cell">5</td>
+                  <td class="govuk-table__cell">0020002193</td>
+                  <td class="govuk-table__cell">British Tech Innovators Ltd</td>
+                  <td class="govuk-table__cell">5 July 2023</td>
+                  <td class="govuk-table__cell">Jane Smith</td>
+                  <td class="govuk-table__cell">18 July 2023 at 9:32am</td>
+                </tr>    
+                
+
+                
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell" data-sort-value="112.00">
+                    
+                    EUR 112.00
+                    
+                  </td>
+                  <td class="govuk-table__cell">6</td>
+                  <td class="govuk-table__cell">0020002193</td>
+                  <td class="govuk-table__cell">British Tech Innovators Ltd</td>
+                  <td class="govuk-table__cell">12 July 2023</td>
+                  <td class="govuk-table__cell">Jane Smith</td>
+                  <td class="govuk-table__cell">18 July 2023 at 9:43am</td>
+                </tr>    
+                
+
+                
+
+                  </tbody>
+                </table>
+
+                <p class="govuk-body"><a class="govuk-link govuk-link--no-visited-state" href="#summary-payments-received">Back to top of section</a></p>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible govuk-style-section-break--visible ">
+                
+            
+              
+
+            <h4 class="govuk-heading-s" id="gbp-payments">GBP payments</h4>
+
+                <table class="govuk-table" data-module="moj-sortable-table">
+                  <caption class="govuk-table__caption govuk-table__caption--s govuk-visually-hidden">GBP payments</caption>
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Amount</th>
+                      <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Payment reference</th>
+                      <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="ascending">Facility ID</th>
+                      <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Exporter</th>
+                      <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Date received</th>
+                      <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Reconciled by</th>
+                      <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Date reconciled</th>
+                    </tr>
+                  </thead>
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        
+                        GBP 2,500.00
+                        
+                      
+                      </td>
+                      <td class="govuk-table__cell">1</td>
+                      <td class="govuk-table__cell">0020002154</td>
+                      <td class="govuk-table__cell">Direct Engineering Solutions Ltd</td>
+                      <td class="govuk-table__cell">8 July 2023</td>
+                      <td class="govuk-table__cell">Jane Smith</td>
+                      <td class="govuk-table__cell">18 July 2023 at 9:15am</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        
+                        GBP 1,000.00
+                        
+                      </td>
+                      <td class="govuk-table__cell">4</td>
+                      <td class="govuk-table__cell">0020002193</td>
+                      <td class="govuk-table__cell">British Tech Innovators Ltd</td>
+                      <td class="govuk-table__cell">8 July 2023</td>
+                      <td class="govuk-table__cell">Jane Smith</td>
+                      <td class="govuk-table__cell">18 July 2023 at 9:29am</td>
+                    </tr>    
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        
+                        GBP 400.00
+                        
+                      </td>
+                      <td class="govuk-table__cell">5</td>
+                      <td class="govuk-table__cell">0020002193</td>
+                      <td class="govuk-table__cell">British Tech Innovators Ltd</td>
+                      <td class="govuk-table__cell">5 July 2023</td>
+                      <td class="govuk-table__cell">Jane Smith</td>
+                      <td class="govuk-table__cell">18 July 2023 at 9:32am</td>
+                    </tr>  
+                  </tbody>
+                  <tfoot> 
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell govuk-!-font-weight-bold" colspan="7">Total: GBP 3,900.00</td>
+                    </tr>    
+                  </tfoot>   
+                </table>
+
+                <p class="govuk-body"><a class="govuk-link govuk-link--no-visited-state" href="#summary-payments-received">Back to top of section</a></p>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible govuk-style-section-break--visible ">
+            
+
+               
+          
+            
+
+                <h4 class="govuk-heading-s" id="eur-payments">EUR payments</h4>
+
+                    <table class="govuk-table" data-module="moj-sortable-table">
+                      <caption class="govuk-table__caption govuk-table__caption--s govuk-visually-hidden">EUR payments</caption>
+                      <thead class="govuk-table__head">
+      
+                        <tr class="govuk-table__row">
+                          <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Amount</th>
+                          <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Payment reference</th>
+                          <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="ascending">Facility ID</th>
+                          <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Exporter</th>
+                          <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Date received</th>
+                          <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Reconciled by</th>
+                          <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Date reconciled</th>
+                        </tr>
+                      </thead>
+                      <tbody class="govuk-table__body">
+      
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell">
+                            
+                            EUR 1,250.00
+                            
+                          </td>
+                          <td class="govuk-table__cell">2</td>
+                          <td class="govuk-table__cell">0020002167</td>
+                          <td class="govuk-table__cell">Meridian Manufacturing Ltd</td>
+                          <td class="govuk-table__cell">12 July 2023</td>
+                          <td class="govuk-table__cell">Jane Smith</td>
+                        <td class="govuk-table__cell">18 July 2023 at 9:21am</td>
+                        </tr> 
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell">
+                            
+                            EUR 112.00
+                            
+                          
+                          </td>
+                          <td class="govuk-table__cell">6</td>
+                          <td class="govuk-table__cell">0020002193</td>
+                          <td class="govuk-table__cell">British Tech Innovators Ltd</td>
+                          <td class="govuk-table__cell">12 July 2023</td>
+                          <td class="govuk-table__cell">Jane Smith</td>
+                            <td class="govuk-table__cell">18 July 2023 at 9:43am</td>
+                        </tr>
+                      </tbody>
+                      <tfoot> 
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell govuk-!-font-weight-bold" colspan="7">Total: EUR 1,362.00</td>
+                        </tr>    
+                      </tfoot>     
+                  </table>  
+  
+                  <p class="govuk-body"><a class="govuk-link govuk-link--no-visited-state" href="#summary-payments-received">Back to top of section</a></p>
+                  
+                  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible govuk-style-section-break--visible ">
+                
+
+
+            
+                
+            <h4 class="govuk-heading-s" id="usd-payments">USD payments</h4>
+
+                <table class="govuk-table" data-module="moj-sortable-table">
+                  <caption class="govuk-table__caption govuk-table__caption--s govuk-visually-hidden">USD payments</caption>
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Amount</th>
+                      <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Payment reference</th>
+                      <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="ascending">Facility ID</th>
+                      <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Exporter</th>
+                      <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Date received</th>
+                      <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Reconciled by</th>
+                      <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Date reconciled</th>
+                    </tr>
+                  </thead>
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">
+                        
+                        
+                        USD 1,000.00
+                        
+
+                      </td>
+                      <td class="govuk-table__cell">3</td>
+                      <td class="govuk-table__cell">0020002167</td>
+                      <td class="govuk-table__cell">Meridian Manufacturing Ltd</td>
+                      <td class="govuk-table__cell">15 July 2023</td>
+                      <td class="govuk-table__cell">Jane Smith</td>
+                      <td class="govuk-table__cell">18 July 2023 at 9:24am</td>
+                    </tr>
+                  </tbody>
+                   <tfoot> 
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-!-font-weight-bold" colspan="7">Total: USD 1,000.00</td>
+                      </tr>    
+                    </tfoot> 
+                </table>
+
+                <p class="govuk-body"><a class="govuk-link govuk-link--no-visited-state" href="#summary-payments-received">Back to top of section</a></p>
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible govuk-style-section-break--visible ">
+            
+            
+
+            </div>
+            </div>
+
+      </div>
+      <!-- end of summary tab -->
+
+      <div class="govuk-tabs__panel" id="keying-sheet">
+
+        <h2 class="govuk-heading-l">Keying sheet</h2>
+
+        
+
+            <!-- this only appears when the generate button is clicked -->
+
+            <p class="govuk-body"><a class="govuk-link govuk-link--no-visited-state" href="#">Download the keying sheet as an Excel document</a></p>
+            
+            <table class="govuk-table" data-module="moj-sortable-table">
+                <col>
+                <col>
+                <col>
+                <col>
+                <col>
+                <colgroup span="2"></colgroup>
+                <colgroup span="2"></colgroup>
+                <colgroup span="2"></colgroup>
+                <thead class="govuk-table__head">  
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header" aria-sort="ascending" rowspan="2">Facility ID</th>
+                  <th scope="col" class="govuk-table__header" aria-sort="none" rowspan="2">Exporter</th>
+                  <th scope="col" class="govuk-table__header" aria-sort="none" rowspan="2">Base currency</th>
+                  <th scope="col" class="govuk-table__header" aria-sort="none" rowspan="2">Fee currency</th>
+                  <th scope="col" class="govuk-table__header" rowspan="2">Fee payment</th>
+                  <th scope="col" class="govuk-table__header" colspan="2" scope="colgroup">Premium accrual balance adjustment</th>
+                  <th scope="col" class="govuk-table__header" colspan="2" scope="colgroup">Principal balance adjustment</th>
+                  <th scope="col" class="govuk-table__header" colspan="2" scope="colgroup">Fee adjustment</th>
+                </tr>
+                <tr class="govuk-table__row">
+                  
+                  <th scope="col" class="govuk-table__header">Decrease</th>
+                  <th scope="col" class="govuk-table__header">Increase</th>
+                  <th scope="col" class="govuk-table__header">Decrease</th>
+                  <th scope="col" class="govuk-table__header">Increase</th>
+                  <th scope="col" class="govuk-table__header">Decrease</th>
+                  <th scope="col" class="govuk-table__header">Increase</th>
+                </tr>
+              </thead>
+            
+              <tbody class="govuk-table__body">
+            
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="0020002154">0020002154</th>
+                  <td class="govuk-table__cell">Direct Engineering Solutions Ltd</td>
+                  <td class="govuk-table__cell">GBP</td>
+                  <td class="govuk-table__cell">GBP</td>
+                  <td class="govuk-table__cell">2,500.00</td>
+                  <td class="govuk-table__cell">1,140.00</td>
+                  <td class="govuk-table__cell">-</td>
+                  <td class="govuk-table__cell">300,000.00</td>
+                  <td class="govuk-table__cell">-</td>
+                  <td class="govuk-table__cell">6,230.00</td>
+                  <td class="govuk-table__cell">-</td>
+                  
+                </tr>
+                
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="0020002154">0020002167</th>
+                  <td class="govuk-table__cell">Meridian Manufacturing Ltd</td>
+                  <td class="govuk-table__cell">USD</td>
+                  <td class="govuk-table__cell">USD</td>
+                  <td class="govuk-table__cell">1,000.00</td>
+                  <td class="govuk-table__cell">400.00</td>
+                  <td class="govuk-table__cell">-</td>
+                  <td class="govuk-table__cell">140,000.00</td>
+                  <td class="govuk-table__cell">-</td>
+                  <td class="govuk-table__cell">2,312.00</td>
+                  <td class="govuk-table__cell">-</td>
+                  
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="0020002154">0020002167</th>
+                  <td class="govuk-table__cell">Meridian Manufacturing Ltd</td>
+                  <td class="govuk-table__cell">USD</td>
+                  <td class="govuk-table__cell">EUR</td>
+                  <td class="govuk-table__cell">1,250.00</td>
+                  <td class="govuk-table__cell">500.00</td>
+                  <td class="govuk-table__cell">-</td>
+                  <td class="govuk-table__cell">80,000.00</td>
+                  <td class="govuk-table__cell">-</td>
+                  <td class="govuk-table__cell">1,123.00</td>
+                  <td class="govuk-table__cell">-</td>
+                  
+                </tr>
+
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="0020002154">0020002193</th>
+                  <td class="govuk-table__cell">British Tech Innovators Ltd</td>
+                  <td class="govuk-table__cell">GBP</td>
+                  <td class="govuk-table__cell">GBP</td>
+                  <td class="govuk-table__cell">1,500.00</td>
+                  <td class="govuk-table__cell">900.00</td>
+                  <td class="govuk-table__cell">-</td>
+                  <td class="govuk-table__cell">220,000.00</td>
+                  <td class="govuk-table__cell">-</td>
+                  <td class="govuk-table__cell">3,256.00</td>
+                  <td class="govuk-table__cell">-</td>
+                  
+                </tr>
+
+              </tbody>
+            </table>
+
+        
+
+      </div>
+      <!-- end of keying sheet tab -->
+
+
+    </div>
+    {% endif %}
+{% endblock %}
