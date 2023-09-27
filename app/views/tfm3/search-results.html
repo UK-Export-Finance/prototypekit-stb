@@ -1,0 +1,78 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+{% set containerClasses = "app-width-container" %}
+
+{% block stylesheets %}
+  {{ super() }}
+  <link href="/public/css/settings.scss" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block pageTitle %}
+Search results – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/head2.html" %}
+  {% include "includes/primary-nav-banks-main.html" %}
+{% endblock %}
+
+{% block pageScripts %}
+  {% include "includes/scripts.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+	<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Search results</h1>
+    
+	<h2 class="govuk-heading-m">Barclays 2022 reports</h2>
+	
+	<ul class="govuk-list">
+		<li>
+		  <a class="govuk-link" href="#" rel="noreferrer noopener" target="_blank">Barclays January 2022</a>
+		</li>
+		<li>
+		  <a class="govuk-link" href="#" rel="noreferrer noopener" target="_blank">Barclays February 2022</a>
+		</li>
+		<li>
+		  <a class="govuk-link" href="#" rel="noreferrer noopener" target="_blank">Barclays March 2022</a>
+		</li>
+		<li>
+		  <a class="govuk-link" href="#" rel="noreferrer noopener" target="_blank">Barclays April 2022</a>
+		</li>
+		<li>
+			<a class="govuk-link" href="#" rel="noreferrer noopener" target="_blank">Barclays May 2022</a>
+		</li>
+		<li>
+			<a class="govuk-link" href="#" rel="noreferrer noopener" target="_blank">Barclays June 2022</a>
+		  </li>
+		  <li>
+			<a class="govuk-link" href="#" rel="noreferrer noopener" target="_blank">Barclays July 2022</a>
+		  </li>
+		  <li>
+			<a class="govuk-link" href="#" rel="noreferrer noopener" target="_blank">Barclays August 2022</a>
+		  </li>
+		  <li>
+			<a class="govuk-link" href="#" rel="noreferrer noopener" target="_blank">Barclays September 2022</a>
+		  </li>
+		  <li>
+			  <a class="govuk-link" href="#" rel="noreferrer noopener" target="_blank">Barclays October 2022</a>
+		  </li>
+		  <li>
+			<a class="govuk-link" href="#" rel="noreferrer noopener" target="_blank">Barclays November 2022</a>
+		</li>
+		<li>
+			<a class="govuk-link" href="#" rel="noreferrer noopener" target="_blank">Barclays December 2022</a>
+		</li>
+
+	  </ul>
+
+
+  </div>
+</div>
+{% endblock %}

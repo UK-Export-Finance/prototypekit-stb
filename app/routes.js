@@ -69,7 +69,7 @@ router.post('/tfm2/bank-3b', function (req, res) {
   }
 })
 
-// Run this code when a form is submitted to '/tfm2/bank-3c' form on bank-3-task4b.html
+// Run this code when a form is submitted to '/tfm2/bank-3c' form on bank-3-task4c.html
 router.post('/tfm2/bank-3c', function (req, res) {
 
   // Make a variable and give it the value from 'check' radios
@@ -84,5 +84,22 @@ router.post('/tfm2/bank-3c', function (req, res) {
     res.redirect('/tfm2/bank-3#reconciliation')
   }
 })
+
+// Run this code when a form is submitted to '/tfm3/bank-100-task1' form on /tfm3/bank-100.html
+// This is for when there are 2 buttons on a form that need to go to different pages
+router.post('/tfm3/bank-100-task1', function (req, res) {
+
+  // We initialise a new constant and make it equal the current value of addaPayment.
+  const addaPayment = req.session.data['addaPayment']
+  
+  //Then we use some logic to decide what page to load next.
+  if (addaPayment == 'true'){
+    res.redirect('bank-100-task1')
+  } else {
+    res.redirect('bank-100#reconciliation')
+  }
+});
+
+
 
 

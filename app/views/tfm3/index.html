@@ -1,0 +1,147 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+{% set containerClasses = "app-width-container" %}
+
+{% block stylesheets %}
+  {{ super() }}
+  <link href="/public/css/settings.scss" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block pageTitle %}
+Bank reports – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/head2.html" %}
+  {% include "includes/primary-nav-banks-main.html" %}
+{% endblock %}
+
+{% block pageScripts %}
+  {% include "includes/scripts.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-one-half">
+		<h1 class="govuk-heading-xl govuk-!-margin-bottom-6"">Bank reports</h1>
+	</div>
+	<div class="govuk-grid-column-one-half govuk-!-text-align-right">
+		<a href="search" class="govuk-link govuk-link--no-visited-state">Search for a report</a>
+	</div>
+  </div>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h2 class="govuk-heading-m">Current reporting period {{ data['report-month'] }}</h2>
+
+    <p class="govuk-body">{{ data['report-month'] }} reports due to be received by {{ data['this-month-report-due'] }}.</p>
+
+    <table class="govuk-table" data-module="moj-sortable-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header" aria-sort="ascending">Bank</th>
+          <th scope="col" class="govuk-table__header" aria-sort="none">Status</th>
+          <th scope="col" class="govuk-table__header" aria-sort="none">Date report received</th>
+		      <th scope="col" class="govuk-table__header" aria-sort="none">Total facilities reported</th>
+          <th scope="col" class="govuk-table__header" aria-sort="none">Facilities left to reconcile</th>
+        </tr>
+      </thead>
+
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="1"><a class="govuk-link govuk-link--no-visited-state" href="#">Barclays</a></th>
+          <td class="govuk-table__cell" data-sort-value=""><strong class="govuk-tag govuk-tag--blue">Reconciliation in progress</strong></td>
+          <td class="govuk-table__cell" data-sort-value="">8 July 2023</td>
+          <td class="govuk-table__cell" data-sort-value="">35</td>
+          <td class="govuk-table__cell" data-sort-value="">14</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="2"><a class="govuk-link govuk-link--no-visited-state" href="#">Clydesdale</a></th>
+          <td class="govuk-table__cell" data-sort-value=""><strong class="govuk-tag govuk-tag--blue">Reconciliation in progress</strong></td>
+          <td class="govuk-table__cell" data-sort-value="">6 July 2023</td>
+          <td class="govuk-table__cell" data-sort-value="">14</td>
+          <td class="govuk-table__cell" data-sort-value="">1</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="3"><a class="govuk-link govuk-link--no-visited-state" href="#">HSBC</a></th>
+          <td class="govuk-table__cell" data-sort-value=""><strong class="govuk-tag govuk-tag--green">Report completed</strong></td>
+          <td class="govuk-table__cell" data-sort-value="">8 July 2023</td>
+          <td class="govuk-table__cell" data-sort-value="">68</td>
+          <td class="govuk-table__cell" data-sort-value="">0</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="4"><a class="govuk-link govuk-link--no-visited-state" href="bank-100">{{ data['bank-100-name'] }}</a></th>
+          <td class="govuk-table__cell" data-sort-value="1">
+            
+            {% if (data['bank-100-show-task'] == 'reportcomplete') or (data['bank-100-show-task'] == 'sheet-generated') %} 
+            <strong class="govuk-tag govuk-tag--green">Report completed</strong>
+
+            {% elif data['bank-100-start'] == 'no' %}
+            <strong class="govuk-tag">Pending reconciliation</strong>
+
+            {% elif (data['bank-100-start'] == 'yes') or (data['bank-100-start'] == 'payments-question') %}
+            <strong class="govuk-tag govuk-tag--blue">Reconciliation in progress</strong>
+
+            {% endif %}  
+
+          </td>
+          <td class="govuk-table__cell" data-sort-value="">{{ data['bank-100-report-received'] }}</td>
+          <td class="govuk-table__cell" data-sort-value="">10</td>
+          <td class="govuk-table__cell" data-sort-value="">10</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="5"><a class="govuk-link govuk-link--no-visited-state" href="#">Natwest</a></th>
+          <td class="govuk-table__cell" data-sort-value=""><strong class="govuk-tag govuk-tag--red">Not received</strong></td>
+          <td class="govuk-table__cell" data-sort-value=""></td>
+          <td class="govuk-table__cell" data-sort-value=""></td>
+          <td class="govuk-table__cell" data-sort-value=""></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="6"><a class="govuk-link govuk-link--no-visited-state" href="#">Newable</a></th>
+          <td class="govuk-table__cell" data-sort-value=""><strong class="govuk-tag govuk-tag--red">Not received</strong></td>
+          <td class="govuk-table__cell" data-sort-value=""></td>
+          <td class="govuk-table__cell" data-sort-value=""></td>
+          <td class="govuk-table__cell" data-sort-value=""></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="7"><a class="govuk-link govuk-link--no-visited-state" href="#">Santander</a></th>
+          <td class="govuk-table__cell" data-sort-value=""><strong class="govuk-tag govuk-tag--red">Not received</strong></td>
+          <td class="govuk-table__cell" data-sort-value=""></td>
+          <td class="govuk-table__cell" data-sort-value=""></td>
+          <td class="govuk-table__cell" data-sort-value=""></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table class="govuk-table" data-module="moj-sortable-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header" aria-sort="ascending">Bank</th>
+          <th scope="col" class="govuk-table__header" aria-sort="none">Status</th>
+          <th scope="col" class="govuk-table__header" aria-sort="none">Date report received</th>
+		      <th scope="col" class="govuk-table__header" aria-sort="none">Total facilities reported</th>
+          <th scope="col" class="govuk-table__header" aria-sort="none">Facilities left to reconcile</th>
+        </tr>
+      </thead>
+
+      <h2 class="govuk-heading-m">{{ data['last-month'] }} open reports</h2>
+
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="1"><a class="govuk-link govuk-link--no-visited-state" href="#">Barclays</a></th>
+          <td class="govuk-table__cell" data-sort-value=""><strong class="govuk-tag govuk-tag--blue">Reconciliation in progress</strong></td>
+          <td class="govuk-table__cell" data-sort-value="">1 July 2023</td>
+          <td class="govuk-table__cell" data-sort-value="">35</td>
+          <td class="govuk-table__cell" data-sort-value="">1</td>
+        </tr>
+      </tbody>
+    </table>
+    
+
+  </div>
+</div>
+{% endblock %}
