@@ -328,15 +328,23 @@
 
             {% endif %} 
             <!-- end of task radios -->
-
             
-            <table class="govuk-table" data-module="moj-multi-select" data-multi-select-checkbox="#select-all">
+            <table class="govuk-table" data-module="moj-sortable-table">
+            <!--<table class="govuk-table" data-module="moj-multi-select" data-multi-select-checkbox="#select-all">-->
               <thead class="govuk-table__head">
                 <tr class="govuk-table__row">
                   {% if data['bank-13-checkboxes'] == 'hide' %}
 
                   {% elif data['bank-13-checkboxes'] == 'show' %}
-                  <th class="govuk-table__header govuk-!-padding-top-0" scope="col" id="select-all"></th>
+                  <th class="govuk-table__header govuk-!-padding-top-0" scope="col">
+                    <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                      
+                      <input type="checkbox" class="govuk-checkboxes__input" id="facility-id-check" onclick="javascript:checkAll(this)">
+                      <label class="govuk-label govuk-checkboxes__label" for="facility-id-check">
+                        <span class="govuk-visually-hidden">Facility ID</span>
+                      </label>
+                    </div> 
+                  </th>
                   {% endif %}
                   
                   <th scope="col" class="govuk-table__header" aria-sort="ascending">Facility ID</th>

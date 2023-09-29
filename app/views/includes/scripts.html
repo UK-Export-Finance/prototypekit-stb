@@ -1,5 +1,16 @@
 <script type="text/javascript">
     var $element = document.querySelector('#step-by-step-navigation')
     var stepByStepNavigation = new GOVUK.Modules.AppStepNav($element).init()
+
+    function checkAll(o) {
+                var boxes = document.getElementsByTagName("input");
+                for (var x = 0; x < boxes.length; x++) {
+                  var obj = boxes[x];
+                  if (obj.type == "checkbox") {
+                    if (obj.name != "check")
+                      obj.checked = o.checked;
+                  }
+                }
+              }
 </script>
 <script src="/public/javascripts/mojFrontend.js"></script>
