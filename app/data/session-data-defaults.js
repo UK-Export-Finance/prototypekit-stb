@@ -7,7 +7,7 @@ module.exports = {
 // BANK
 'bank-100-name': 'Lloyds Bank',
 'bank-100-report-received': '9 July 2023',
-'bank-100-start': 'no',
+'bank-100-start': 'yes',
 'bank-100-payment': '', 
 'bank-100-reconciliation': '',
 'bank-100-show-task': 'one',

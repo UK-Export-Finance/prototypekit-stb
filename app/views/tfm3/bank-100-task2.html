@@ -23,8 +23,8 @@ Reconciliation - {{ data['bank-100-name'] }} – {{ serviceName }} – GOV.UK Pr
   <div class="govuk-grid-column-two-thirds">
 
       <form class="form" action="bank-100#reconciliation" method="get">
-      <input type="hidden" name="bank-100-task1" value="done">
-      <input type="hidden" name="bank-100-show-task" value="two">
+      <input type="hidden" name="bank-100-task2" value="done">
+      <input type="hidden" name="bank-100-show-task" value="three">
       
     <h1 class="govuk-heading-l govuk-!-margin-bottom-6">
         <span class="govuk-caption-l">{{ data['bank-100-name'] }}, {{ data['report-month'] }}</span>
@@ -44,52 +44,33 @@ Reconciliation - {{ data['bank-100-name'] }} – {{ serviceName }} – GOV.UK Pr
 			</thead>
 			<tbody class="govuk-table__body">
 				<tr class="govuk-table__row">
-					<td class="govuk-table__cell">{{ data['facility-100-ukef-id'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-100-name'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-100-currency'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-100-currency'] }} {{ data['facility-100-paid'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-300-ukef-id'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-300-name'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-300-currency'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-300-currency'] }} {{ data['facility-300-paid'] }}</td>
 				</tr>
 				<tr class="govuk-table__row">
-					<td class="govuk-table__cell">{{ data['facility-400-ukef-id'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-400-name'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-400-currency'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-400-currency'] }} {{ data['facility-400-paid'] }}</td>
-				</tr>
-				<tr class="govuk-table__row">
-					<td class="govuk-table__cell">{{ data['facility-500-ukef-id'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-500-name'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-500-currency'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-500-currency'] }} {{ data['facility-500-paid'] }}</td>
-				</tr>
-				<tr class="govuk-table__row">
-					<td class="govuk-table__cell">{{ data['facility-600-ukef-id'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-600-name'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-600-currency'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-600-currency'] }} {{ data['facility-600-paid'] }}</td>
-				</tr>
-				<tr class="govuk-table__row">
-					<td class="govuk-table__cell">{{ data['facility-700-ukef-id'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-700-name'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-700-currency'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-700-currency'] }} {{ data['facility-700-paid'] }}</td>
-				</tr>
-				<tr class="govuk-table__row">
-					<td class="govuk-table__cell">{{ data['facility-900-ukef-id'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-900-name'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-900-currency'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-900-currency'] }} {{ data['facility-900-paid'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-800-ukef-id'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-800-name'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-800-currency'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-800-currency'] }} {{ data['facility-800-paid'] }}</td>
 				</tr>
 			</tbody>
 			<tfoot> 
 				<tr class="govuk-table__row">
 				  <td class="govuk-table__cell govuk-!-font-weight-bold govuk-!-text-align-right" colspan="3">Total reported fee:</td>
-				  <td class="govuk-table__cell govuk-!-font-weight-bold">GBP 8,741.00</td>
+				  <td class="govuk-table__cell govuk-!-font-weight-bold">EUR 3,260.00</td>
 				</tr>    
 			  </tfoot>   
 			</table>
 
 
-
+			{{ govukButton({
+                text: "Add to an existing payment",
+                classes: "govuk-button--secondary",
+                name: "addexistingPayment",
+                value: false
+              }) }}
 
         <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">New payment details</legend>
@@ -103,22 +84,22 @@ Reconciliation - {{ data['bank-100-name'] }} – {{ serviceName }} – GOV.UK Pr
                     <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
 
                           <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="GBP" name="bank-100-task1-currency" type="radio" value="GBP" {{ checked('bank-100-task1-currency','GBP') }}>
+                            <input class="govuk-radios__input" id="GBP" name="bank-100-task2-currency" type="radio" value="GBP" {{ checked('bank-100-task2-currency','GBP') }}>
                             <label class="govuk-label govuk-radios__label" for="GBP">GBP</label>
                           </div>
 
                           <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="EUR" name="bank-100-task1-currency" type="radio" value="EUR" {{ checked('bank-100-task1-currency','EUR') }}>
+                            <input class="govuk-radios__input" id="EUR" name="bank-100-task2-currency" type="radio" value="EUR" {{ checked('bank-100-task2-currency','EUR') }}>
                             <label class="govuk-label govuk-radios__label" for="bank-100-currency1-2">EUR</label>
                           </div>
 
                           <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="USD" name="bank-100-task1-currency" type="radio" value="USD" {{ checked('bank-100-task1-currency','USD') }}>
+                            <input class="govuk-radios__input" id="USD" name="bank-100-task2-currency" type="radio" value="USD" {{ checked('bank-100-task2-currency','USD') }}>
                             <label class="govuk-label govuk-radios__label" for="USD">USD</label>
                           </div>
    
                           <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="JPY" name="bank-100-task1-currency" type="radio" value="JPY" {{ checked('bank-100-task1-currency','JPY') }}>
+                            <input class="govuk-radios__input" id="JPY" name="bank-100-task2-currency" type="radio" value="JPY" {{ checked('bank-100-task2-currency','JPY') }}>
                             <label class="govuk-label govuk-radios__label" for="bank-100-currency1-4">JPY</label>
                           </div>
                     </div>
@@ -136,8 +117,8 @@ Reconciliation - {{ data['bank-100-name'] }} – {{ serviceName }} – GOV.UK Pr
                     },
                     classes: "govuk-!-width-one-half",
                     id: "amount1",
-                    name: "bank-100-task1-amount",
-                    value: data ['bank-100-task1-amount']
+                    name: "bank-100-task2-amount",
+                    value: data ['bank-100-task2-amount']
                 }) }}
 
                 <div class="govuk-form-group">
@@ -150,31 +131,31 @@ Reconciliation - {{ data['bank-100-name'] }} – {{ serviceName }} – GOV.UK Pr
                           For example, 27 03 2023
                         </div>
                       
-                        <div class="govuk-date-input" id="bank-100-task1-date">
+                        <div class="govuk-date-input" id="bank-100-task2-date">
                           <div class="govuk-date-input__item">
                             <div class="govuk-form-group">
-                              <label class="govuk-label govuk-date-input__label" for="bank-100-task1-day">
+                              <label class="govuk-label govuk-date-input__label" for="bank-100-task2-day">
                                 Day
                               </label>
-                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="bank-100-task1-day" name="bank-100-task1-day" type="text" inputmode="numeric" value="{{ data['bank-100-task1-day'] }}">
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="bank-100-task2-day" name="bank-100-task2-day" type="text" inputmode="numeric" value="{{ data['bank-100-task2-day'] }}">
                             </div>
                           </div>
                         
                           <div class="govuk-date-input__item">
                             <div class="govuk-form-group">
-                              <label class="govuk-label govuk-date-input__label" for="bank-100-task1-month">
+                              <label class="govuk-label govuk-date-input__label" for="bank-100-task2-month">
                                 Month
                               </label>
-                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="bank-100-task1-month" name="bank-100-task1-month" type="text" inputmode="numeric" value="{{ data['bank-100-task1-month'] }}">
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="bank-100-task2-month" name="bank-100-task2-month" type="text" inputmode="numeric" value="{{ data['bank-100-task2-month'] }}">
                             </div>
                           </div>
                         
                           <div class="govuk-date-input__item">
                             <div class="govuk-form-group">
-                              <label class="govuk-label govuk-date-input__label" for="bank-100-task1-year">
+                              <label class="govuk-label govuk-date-input__label" for="bank-100-task2-year">
                                 Year
                               </label>
-                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="bank-100-task1-year" name="bank-100-task1-year" type="text" inputmode="numeric" value="{{ data['bank-100-task1-year'] }}">
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="bank-100-task2-year" name="bank-100-task2-year" type="text" inputmode="numeric" value="{{ data['bank-100-task2-year'] }}">
                             </div>
                           </div>
                         </div>
@@ -188,9 +169,9 @@ Reconciliation - {{ data['bank-100-name'] }} – {{ serviceName }} – GOV.UK Pr
                         isPageHeading: false
                       },
                       classes: "govuk-!-width-one-half",
-                      id: "bank-100-task1-reference",
-                      name: "bank-100-task1-reference",
-                      value: data ['bank-100-task1-reference']
+                      id: "bank-100-task2-reference",
+                      name: "bank-100-task2-reference",
+                      value: data ['bank-100-task2-reference']
                   }) }}
 
                   <div class="govuk-form-group">
@@ -201,13 +182,13 @@ Reconciliation - {{ data['bank-100-name'] }} – {{ serviceName }} – GOV.UK Pr
                     </legend>
                     <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
                           <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="yes" name="bank-100-task1-another" type="radio" value="yes" {{ checked('bank-100-task1-another','yes') }}>
+                            <input class="govuk-radios__input" id="yes" name="bank-100-task2-another" type="radio" value="yes" {{ checked('bank-100-task2-another','yes') }}>
                             <label class="govuk-label govuk-radios__label" for="yes">
                           Yes
                         </label>
                           </div>
                           <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="no" name="bank-100-task1-another" type="radio" value="no" {{ checked('bank-100-task1-another','no') }}>
+                            <input class="govuk-radios__input" id="no" name="bank-100-task2-another" type="radio" value="no" {{ checked('bank-100-task2-another','no') }}>
                             <label class="govuk-label govuk-radios__label" for="no">
                           No
                         </label>
