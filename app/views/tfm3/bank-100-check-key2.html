@@ -1,0 +1,126 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+{% block pageTitle %}
+Check before generating keying sheet data - {{ data['bank-100-name'] }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/head3.html" %}
+  {% include "includes/primary-nav-banks-main.html" %}
+{% endblock %}
+
+{% block pageScripts %}
+  {% include "includes/scripts.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+		
+      <form class="form" action="/tfm3/bank-100#keying-sheet" method="post">
+		<input type="hidden" name="bank-100-task6" value="done">
+		<input type="hidden" name="bank-100-show-task" value="seven">
+		<input type="hidden" name="generate-keying-sheet" value="generated2">
+		<input type="hidden" name="showBannerKey2" value="true">
+		
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-6">
+        <span class="govuk-caption-l">{{ data['bank-100-name'] }}, {{ data['report-month'] }}</span>
+        Check before generating keying sheet data 
+      </h1>
+          <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+            9 matched facilities
+          </h2>
+            <table class="govuk-table" data-module="moj-sortable-table">
+			<thead class="govuk-table__head">
+				<tr class="govuk-table__row">
+				<th scope="col" class="govuk-table__header" aria-sort="ascending">Facility ID</th>
+				<th scope="col" class="govuk-table__header" aria-sort="none">Exporter</th>
+				<th scope="col" class="govuk-table__header" aria-sort="none">Facility base currency</th>
+				<th scope="col" class="govuk-table__header" aria-sort="none">Reported fee payable (reported currency)</th>
+				<th scope="col" class="govuk-table__header" aria-sort="none">Payments received</th>
+				<th scope="col" class="govuk-table__header" aria-sort="none">Status</th>
+				</tr>
+			</thead>
+			<tbody class="govuk-table__body">
+				<tr class="govuk-table__row">
+					<td class="govuk-table__cell">{{ data['facility-100-ukef-id'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-100-name'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-100-currency'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-100-currency'] }} {{ data['facility-100-paid'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-100-currency'] }} {{ data['facility-100-paid'] }}</td>
+					<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Match</strong></td>
+				</tr>
+				<tr class="govuk-table__row">
+					<td class="govuk-table__cell">{{ data['facility-400-ukef-id'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-400-name'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-400-currency'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-400-currency'] }} {{ data['facility-400-paid'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-400-currency'] }} {{ data['facility-400-paid'] }}</td>
+					<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Match</strong></td>
+				</tr>
+				<tr class="govuk-table__row">
+					<td class="govuk-table__cell">{{ data['facility-500-ukef-id'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-500-name'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-500-currency'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-500-currency'] }} {{ data['facility-500-paid'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-500-currency'] }} {{ data['facility-500-paid'] }}</td>
+					<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Match</strong></td>
+				</tr>
+
+				<tr class="govuk-table__row">
+					<td class="govuk-table__cell">{{ data['facility-600-ukef-id'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-600-name'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-600-currency'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-600-currency'] }} {{ data['facility-600-paid'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-600-currency'] }} {{ data['facility-600-paid'] }}</td>
+					<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Match</strong></td>
+				</tr>
+
+				<tr class="govuk-table__row">
+					<td class="govuk-table__cell">{{ data['facility-700-ukef-id'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-700-name'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-700-currency'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-700-currency'] }} {{ data['facility-700-paid'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-700-currency'] }} {{ data['facility-700-paid'] }}</td>
+					<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Match</strong></td>
+				</tr>
+				
+				<tr class="govuk-table__row">
+					<td class="govuk-table__cell">{{ data['facility-900-ukef-id'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-900-name'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-900-currency'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-900-currency'] }} {{ data['facility-900-paid'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-900-currency'] }} {{ data['facility-900-paid'] }}</td>
+					<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Match</strong></td>
+				</tr>
+
+				<tr class="govuk-table__row">
+					<td class="govuk-table__cell">{{ data['facility-1000-ukef-id'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-1000-name'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-1000-currency'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-1000-currency'] }} {{ data['facility-1000-paid'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-1000-currency'] }} {{ data['facility-1000-paid'] }}</td>
+					<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Match</strong></td>
+				</tr>
+			</tbody> 
+			</table>
+
+			<div class="govuk-button-group">
+
+
+			{{ govukButton({
+				text: "Generate keying sheet data"
+			  }) }}
+			  <a class="govuk-link" href="javascript:window.history.back()">Cancel</a>
+			  </div>
+
+  </form>
+</div>
+
+</div>
+{% endblock %}

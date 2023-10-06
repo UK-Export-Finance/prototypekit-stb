@@ -28,6 +28,8 @@ module.exports = {
 'bank-100-filter': 'no',
 'older-report-show': 'no',
 'bank-100-task-content': 'Select one or more facilities to add received payments to.',
+'generate-keying-sheet': 'not-generated',
+'gen1-checks': '',
 
 // FACILITIES
 
