@@ -76,21 +76,31 @@ Bank reports – {{ serviceName }} – GOV.UK Prototype Kit
           <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="4"><a class="govuk-link govuk-link--no-visited-state" href="bank-100">{{ data['bank-100-name'] }}</a></th>
           <td class="govuk-table__cell" data-sort-value="1">
             
-            {% if (data['bank-100-show-task'] == 'reportcomplete') or (data['bank-100-show-task'] == 'sheet-generated') %} 
-            <strong class="govuk-tag govuk-tag--green">Report completed</strong>
+            {% if (data['bank-100-status'] == 'pending') %} 
+            <strong class="govuk-tag">Pending reconciliation</strong> 
 
-            {% elif data['bank-100-start'] == 'no' %}
-            <strong class="govuk-tag">Pending reconciliation</strong>
-
-            {% elif (data['bank-100-start'] == 'yes') or (data['bank-100-start'] == 'payments-question') %}
+            {% elif (data['bank-100-status'] == 'inprogress') %} 
             <strong class="govuk-tag govuk-tag--blue">Reconciliation in progress</strong>
 
+            {% elif (data['bank-100-status'] == 'completed') %} 
+            <strong class="govuk-tag govuk-tag--green">Report completed</strong>
+            
             {% endif %}  
 
           </td>
           <td class="govuk-table__cell" data-sort-value="">{{ data['bank-100-report-received'] }}</td>
-          <td class="govuk-table__cell" data-sort-value="">10</td>
-          <td class="govuk-table__cell" data-sort-value="">10</td>
+          <td class="govuk-table__cell" data-sort-value="">
+            9
+          </td>
+          <td class="govuk-table__cell" data-sort-value="">
+            {% if (data['generate-keying-sheet'] == 'not-generated') %} 
+            9
+            {% elif (data['generate-keying-sheet'] == 'generated1') %} 
+            6
+            {% elif (data['generate-keying-sheet'] == 'generated2') %} 
+            0
+            {% endif %}
+          </td>
         </tr>
 
         <tr class="govuk-table__row">

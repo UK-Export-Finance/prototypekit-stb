@@ -27,9 +27,11 @@ module.exports = {
 'from-summary-bank-100-task4c-change': 'no',   
 'bank-100-filter': 'no',
 'older-report-show': 'no',
+'bank-100-status': 'pending',
 'bank-100-task-content': 'Select one or more facilities to add received payments to.',
 'generate-keying-sheet': 'not-generated',
 'gen1-checks': '',
+'gen2-checks': '',
 
 // FACILITIES
 
