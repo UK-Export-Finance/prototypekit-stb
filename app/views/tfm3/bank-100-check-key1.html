@@ -22,11 +22,12 @@ Check before generating keying sheet data - {{ data['bank-100-name'] }} – {{ s
 
   <div class="govuk-grid-column-full">
 		
-      <form class="form" action="/tfm3/bank-100#keying-sheet" method="post">
+      <form class="form" method="post" action="/tfm3/bank-100#keying-sheet">
+		<input type="hidden" name="showBanner" value="true">
 		<input type="hidden" name="bank-100-task4" value="done">
 		<input type="hidden" name="bank-100-show-task" value="five">
 		<input type="hidden" name="generate-keying-sheet" value="generated1">
-		<input type="hidden" name="showBannerKey1" value="true">
+		
 		
     <h1 class="govuk-heading-l govuk-!-margin-bottom-6">
         <span class="govuk-caption-l">{{ data['bank-100-name'] }}, {{ data['report-month'] }}</span>
@@ -75,8 +76,6 @@ Check before generating keying sheet data - {{ data['bank-100-name'] }} – {{ s
 			</table>
 
 			<div class="govuk-button-group">
-
-
 			{{ govukButton({
 				text: "Generate keying sheet data"
 			  }) }}

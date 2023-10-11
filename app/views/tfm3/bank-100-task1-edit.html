@@ -1,7 +1,7 @@
 {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
 
 {% block pageTitle %}
-Add a payment - {{ data['bank-100-name'] }} – {{ serviceName }} – GOV.UK Prototype Kit
+Edit a payment - {{ data['bank-100-name'] }} – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block header %}
@@ -29,12 +29,12 @@ Add a payment - {{ data['bank-100-name'] }} – {{ serviceName }} – GOV.UK Pro
       
     <h1 class="govuk-heading-l govuk-!-margin-bottom-6">
         <span class="govuk-caption-l">{{ data['bank-100-name'] }}, {{ data['report-month'] }}</span>
-        Add a payment
+        Edit a payment
       </h1>
           <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
-            Selected facilities details
+            Added facilities
           </h2>
-            <table class="govuk-table" data-module="moj-sortable-table">
+            <table class="govuk-table stb-table" data-module="moj-sortable-table">
 			<thead class="govuk-table__head">
 				<tr class="govuk-table__row">
 				<th scope="col" class="govuk-table__header" aria-sort="ascending">Facility ID</th>
@@ -45,37 +45,79 @@ Add a payment - {{ data['bank-100-name'] }} – {{ serviceName }} – GOV.UK Pro
 			</thead>
 			<tbody class="govuk-table__body">
 				<tr class="govuk-table__row">
-					<td class="govuk-table__cell">{{ data['facility-100-ukef-id'] }}</td>
+					<td class="govuk-table__cell govuk-!-padding-top-1 govuk-!-padding-bottom-1">
+						<div class="govuk-checkboxes__item govuk-checkboxes--small">
+							<input type="checkbox" class="govuk-checkboxes__input" id="{{ data['facility-100-ukef-id'] }}">
+							<label class="govuk-label govuk-checkboxes__label" for="{{ data['facility-100-ukef-id'] }}">
+							  {{ data['facility-100-ukef-id'] }}
+							</label>
+						  </div>
+						</td>
 					<td class="govuk-table__cell">{{ data['facility-100-name'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-100-currency'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-100-currency'] }} {{ data['facility-100-paid'] }}</td>
 				</tr>
 				<tr class="govuk-table__row">
-					<td class="govuk-table__cell">{{ data['facility-400-ukef-id'] }}</td>
+					<td class="govuk-table__cell govuk-!-padding-top-1 govuk-!-padding-bottom-1">
+						<div class="govuk-checkboxes__item govuk-checkboxes--small">
+							<input type="checkbox" class="govuk-checkboxes__input" id="{{ data['facility-400-ukef-id'] }}">
+							<label class="govuk-label govuk-checkboxes__label" for="{{ data['facility-400-ukef-id'] }}">
+							  {{ data['facility-400-ukef-id'] }}
+							</label>
+						  </div>
+						</td>
 					<td class="govuk-table__cell">{{ data['facility-400-name'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-400-currency'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-400-currency'] }} {{ data['facility-400-paid'] }}</td>
 				</tr>
 				<tr class="govuk-table__row">
-					<td class="govuk-table__cell">{{ data['facility-500-ukef-id'] }}</td>
+					<td class="govuk-table__cell govuk-!-padding-top-1 govuk-!-padding-bottom-1">
+						<div class="govuk-checkboxes__item govuk-checkboxes--small">
+							<input type="checkbox" class="govuk-checkboxes__input" id="{{ data['facility-500-ukef-id'] }}">
+							<label class="govuk-label govuk-checkboxes__label" for="{{ data['facility-500-ukef-id'] }}">
+							  {{ data['facility-500-ukef-id'] }}
+							</label>
+						  </div>
+						</td>
 					<td class="govuk-table__cell">{{ data['facility-500-name'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-500-currency'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-500-currency'] }} {{ data['facility-500-paid'] }}</td>
 				</tr>
 				<tr class="govuk-table__row">
-					<td class="govuk-table__cell">{{ data['facility-600-ukef-id'] }}</td>
+					<td class="govuk-table__cell govuk-!-padding-top-1 govuk-!-padding-bottom-1">
+						<div class="govuk-checkboxes__item govuk-checkboxes--small">
+							<input type="checkbox" class="govuk-checkboxes__input" id="{{ data['facility-600-ukef-id'] }}">
+							<label class="govuk-label govuk-checkboxes__label" for="{{ data['facility-600-ukef-id'] }}">
+							  {{ data['facility-600-ukef-id'] }}
+							</label>
+						  </div>
+						</td>
 					<td class="govuk-table__cell">{{ data['facility-600-name'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-600-currency'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-600-currency'] }} {{ data['facility-600-paid'] }}</td>
 				</tr>
 				<tr class="govuk-table__row">
-					<td class="govuk-table__cell">{{ data['facility-700-ukef-id'] }}</td>
+					<td class="govuk-table__cell govuk-!-padding-top-1 govuk-!-padding-bottom-1">
+						<div class="govuk-checkboxes__item govuk-checkboxes--small">
+							<input type="checkbox" class="govuk-checkboxes__input" id="{{ data['facility-700-ukef-id'] }}">
+							<label class="govuk-label govuk-checkboxes__label" for="{{ data['facility-700-ukef-id'] }}">
+							  {{ data['facility-700-ukef-id'] }}
+							</label>
+						  </div>
+						</td>
 					<td class="govuk-table__cell">{{ data['facility-700-name'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-700-currency'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-700-currency'] }} {{ data['facility-700-paid'] }}</td>
 				</tr>
 				<tr class="govuk-table__row">
-					<td class="govuk-table__cell">{{ data['facility-900-ukef-id'] }}</td>
+					<td class="govuk-table__cell govuk-!-padding-top-1 govuk-!-padding-bottom-1">
+						<div class="govuk-checkboxes__item govuk-checkboxes--small">
+							<input type="checkbox" class="govuk-checkboxes__input" id="{{ data['facility-900-ukef-id'] }}">
+							<label class="govuk-label govuk-checkboxes__label" for="{{ data['facility-900-ukef-id'] }}">
+							  {{ data['facility-900-ukef-id'] }}
+							</label>
+						  </div>
+						</td>
 					<td class="govuk-table__cell">{{ data['facility-900-name'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-900-currency'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-900-currency'] }} {{ data['facility-900-paid'] }}</td>
@@ -89,11 +131,14 @@ Add a payment - {{ data['bank-100-name'] }} – {{ serviceName }} – GOV.UK Pro
 			  </tfoot>   
 			</table>
 
-
+			{{ govukButton({
+				text: "Remove selected facilities",
+				classes: "govuk-button--secondary govuk-!-margin-bottom-7"
+			  }) }}
 
 
         <fieldset class="govuk-fieldset">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">New payment details</legend>
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Payment details</legend>
                 
                 <div class="govuk-form-group">
 
@@ -217,9 +262,17 @@ Add a payment - {{ data['bank-100-name'] }} – {{ serviceName }} – GOV.UK Pro
                   </fieldset>
                 </div>
                   
-                  {{ govukButton({
-                    text: "Continue"
-                  }) }}
+				<div class="govuk-button-group">
+					<button class="govuk-button" data-module="govuk-button">
+					  Save changes
+					</button>
+					<button class="govuk-button  govuk-button--warning" data-module="govuk-button">
+					  Delete payment
+					</button>
+					<a class="govuk-link" href="href="javascript:window.history.back()">Cancel</a>
+				  </div>
+
+                  
             </fieldset>   
   </form>
 </div>

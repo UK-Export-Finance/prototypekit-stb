@@ -20,14 +20,6 @@ router.use((req, res, next) => {
 })
 
 // Run this code when a form is submitted to '/tfm/index' form on bank-1-check.html
-router.get('/tfm3/bank-100#keying-sheet', (req, res) => {
-  const data = req.session.data
-  let showBannerKey1 = (data.showBannerKey1) ? true : false
-  delete data.showBannerKey1
-  res.render('/tfm3/bank-100#keying-sheet', { showBannerKey1 })
-}) 
-
-// Run this code when a form is submitted to '/tfm/index' form on bank-1-check.html
 router.get('/tfm/index', (req, res) => {
   const data = req.session.data
   let showBanner = (data.showBanner) ? true : false
@@ -43,6 +35,13 @@ router.get('/tfm/index2', (req, res) => {
   res.render('/tfm/index', { showBanner2 })
 })
 
+// Run this code when a form is submitted to '/tfm3/bank-100#keying-sheet' form on bank-100-check-key1.html
+router.get('/tfm3/bank-100', (req, res) => {
+  const data = req.session.data
+  let showBanner = (data.showBanner) ? true : false
+  delete data.showBanner
+  res.render('/tfm3/bank-100', { showBanner })
+}) 
 
 
 // Run this code when a form is submitted to '/tfm2/bank-3a' form on bank-3-task4a.html

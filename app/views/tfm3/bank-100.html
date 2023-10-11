@@ -17,7 +17,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    
+  
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
       {{ data['bank-100-name'] }}
     </h1>
@@ -600,7 +600,7 @@
           {% if data['bank-100-checkboxes'] == 'hide' %}
 
           {% elif data['bank-100-checkboxes'] == 'show' %}
-          <th class="govuk-table__header govuk-!-padding-top-0" scope="col">
+          <th class="govuk-table__header govuk-!-padding-top-1" scope="col">
             <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
               
               <input type="checkbox" class="govuk-checkboxes__input" id="facility-id-check" onclick="javascript:checkAll(this)">
@@ -682,7 +682,7 @@
           
           <td class="govuk-table__cell">
             <!--Payment received-->
-            <a href="#" class="govuk-link">GBP&nbsp;8,731.00</a>
+            <a href="bank-100-task1-edit" class="govuk-link govuk-link--no-visited-state">GBP&nbsp;8,731.00</a>
           </td>
           
           <td class="govuk-table__cell">
@@ -924,7 +924,7 @@
             
             <td class="govuk-table__cell">
               <!--Payment received-->
-              <a href="#" class="govuk-link">GBP&nbsp;8,731.00</a>
+              <a href="bank-100-task1-edit" class="govuk-link govuk-link--no-visited-state">GBP&nbsp;8,731.00</a>
             </td>
             
             <td class="govuk-table__cell">
@@ -1059,7 +1059,7 @@
       {% if data['bank-100-checkboxes'] == 'hide' %}
 
       {% elif data['bank-100-checkboxes'] == 'show' %}
-      <th class="govuk-table__header govuk-!-padding-top-0" scope="col">
+      <th class="govuk-table__header govuk-!-padding-top-1" scope="col">
         <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
           
           <input type="checkbox" class="govuk-checkboxes__input" id="facility-id-check" onclick="javascript:checkAll(this)">
@@ -1141,7 +1141,7 @@
       
       <td class="govuk-table__cell">
         <!--Payment received-->
-        <a href="#" class="govuk-link">GBP&nbsp;8,731.00</a>
+        <a href="bank-100-task1-edit" class="govuk-link govuk-link--no-visited-state">GBP&nbsp;8,731.00</a>
       </td>
       
       <td class="govuk-table__cell">
@@ -1982,9 +1982,11 @@ GBP&nbsp;3,260.00
 
           <div class="govuk-grid-row">
             <div class="govuk-grid-column-full">
-              
-              
-                {% if showBannerKey1 %}
+            
+              {% if (data['generate-keying-sheet'] == 'generated1') %}
+              <!--Banner here-->              
+
+              {% if showBanner %}
                 <!-- Keying sheet Generate1 - show the banner -->
                 <div class="moj-banner moj-banner--success" role="region" aria-label="Success">
                   <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
@@ -1995,8 +1997,6 @@ GBP&nbsp;3,260.00
               {% endif %}
 
             <h2 class="govuk-heading-l">Keying sheet</h2>
-
-              {% if (data['generate-keying-sheet'] == 'generated1') %}
 
               <!-- Generate1 -->
               
@@ -2178,7 +2178,20 @@ GBP&nbsp;3,260.00
               <p class="govuk-body">If required, this keying sheet can be <a class="govuk-link govuk-link--no-visited-state" href="#" rel="noreferrer noopener" target="_blank">downloaded as an Excel spreadsheet</a>.</p>
               
               {% elif (data['generate-keying-sheet'] == 'generated2') %}
+              
+              <!--Banner here-->              
 
+              {% if showBanner %}
+                <!-- Keying sheet Generate1 - show the banner -->
+                <div class="moj-banner moj-banner--success" role="region" aria-label="Success">
+                  <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+                    <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" />
+                  </svg>
+                  <div class="moj-banner__message">Keying sheet data generated &ndash; 6 payments added</div>
+                </div>
+              {% endif %}
+
+            <h2 class="govuk-heading-l">Keying sheet</h2>
               <!-- Generate2 -->
               
               <!-- Generate2 buttons -->  
@@ -2195,26 +2208,6 @@ GBP&nbsp;3,260.00
                           </button>
                         </div>
                     </div>
-
-                  <!-- Generate1 hide done -->  
-                    <!--<div class="govuk-grid-column-one-half govuk-!-text-align-right govuk-!-margin-top-3">
-                      <div class="filter-wrap">
-                        <div class="govuk-form-group govuk-!-text-align-left govuk-!-display-inline-block">
-                              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                                <div class="govuk-checkboxes__item govuk-!-margin-top-4">
-                                  <input class="govuk-checkboxes__input" id="hide" name="hide" type="checkbox" value="hide">
-                                  <label class="govuk-label govuk-checkboxes__label" for="hide">
-                                    Hide done payments
-                                  </label>
-                                </div>
-                              </div>
-                        </div>  
-                        <div class="govuk-form-group govuk-!-display-inline-block">    
-                                <input type="hidden" name="hideDone" value="yes">
-                                <button class="govuk-button govuk-!-margin-left-2 ukef-hide-button" data-module="govuk-button">Apply</button>
-                        </div> 
-                        </div>   
-                    </div>-->
 
               </div>
               <!-- End Generate2 buttons --> 
