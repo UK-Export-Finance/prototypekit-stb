@@ -145,16 +145,15 @@ module.exports = {
 
 'facility-1000-name': 'Precision Engineering Ltd',
 'facility-1000-ukef-id': '0020003209',
-'facility-1000-currency': 'GBP',
-'facility-1000-limit': '400,000.00',
+'facility-1000-currency': 'USD',
+'facility-1000-limit': '550,000.00',
 'facility-1000-cover': '80%',
-'facility-1000-max': '320,000.00',
-'facility-1000-utilisation': '300,000.00',
-'facility-1000-exposure': '240,000.00',
-'facility-1000-accrued': '830.00',
-'facility-1000-paid': '830.00',
-'facility-1000-paid-total': '830.00',
-
+'facility-1000-max': '440,000.00',
+'facility-1000-utilisation': '430,000.00',
+'facility-1000-exposure': '340,000.00',
+'facility-1000-accrued': '790.00',
+'facility-1000-paid': '790.00',
+'facility-1000-paid-total': '790.00',
 
 
   // TFM 2 banks

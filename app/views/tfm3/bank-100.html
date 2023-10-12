@@ -42,13 +42,13 @@
             </a>
           </li>
           <li class="govuk-tabs__list-item">
-            <a class="govuk-tabs__tab" href="#summary">
-              Reconciliation summary
+            <a class="govuk-tabs__tab" href="#keying-sheet">
+              Keying sheet
             </a>
           </li>
           <li class="govuk-tabs__list-item">
-            <a class="govuk-tabs__tab" href="#keying-sheet">
-              Keying sheet
+            <a class="govuk-tabs__tab" href="#summary">
+              Reconciliation summary
             </a>
           </li>
         </ul>
@@ -173,6 +173,7 @@
                 <td class="govuk-table__cell" data-sort-value="1020">{{ data['facility-900-currency'] }} {{ data['facility-900-accrued'] }} </td>
                 <td class="govuk-table__cell" data-sort-value="1020">{{ data['facility-900-currency'] }} {{ data['facility-900-paid'] }} </td>
               </tr>
+
             </tbody>
           </table>
 
@@ -1939,8 +1940,139 @@ GBP&nbsp;3,260.00
             <div class="govuk-grid-column-full">
               <h2 class="govuk-heading-l govuk-!-margin-bottom-4">Reconciliation summary</h2>
               
-              [Leave blank]
+              {% if (data['bank-100-status'] == 'completed') %} 
+
+              <table class="govuk-table stb-table" data-module="moj-sortable-table">
+                <caption class="govuk-table__caption govuk-table__caption--s govuk-visually-hidden">All payments</caption>
+                <thead class="govuk-table__head">
+
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="descending">Amount</th>
+                    <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Payment reference</th>
+                    <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Facility ID</th>
+                    <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Exporter</th>
+                    <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Date received</th>
+                    <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Reconciled by</th>
+                    <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Date reconciled</th>
+                  </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+
+                  <tr class="govuk-table__row">
+                    
+                    <td class="govuk-table__cell">GBP&nbsp;8,731.00</td>
+
+                    <td class="govuk-table__cell">GEF/LLOYDS/RFND GBP</td>
+                    
+                    <td class="govuk-table__cell">
+                      {{ data['facility-100-ukef-id'] }}<br>
+                      {{ data['facility-400-ukef-id'] }}<br>
+                      {{ data['facility-500-ukef-id'] }}<br>
+                      {{ data['facility-600-ukef-id'] }}<br>
+                      {{ data['facility-700-ukef-id'] }}<br>
+                      {{ data['facility-900-ukef-id'] }}
+                    </td>
+                    
+                    <td class="govuk-table__cell">
+                      {{ data['facility-100-name'] }}<br>
+                      {{ data['facility-400-name'] }}<br>
+                      {{ data['facility-500-name'] }}<br>
+                      {{ data['facility-600-name'] }}<br>
+                      {{ data['facility-700-name'] }}<br>
+                      {{ data['facility-900-name'] }}
+                    </td>
+
+                    <td class="govuk-table__cell">{{ ( data['bank-100-task1-year'] + "-" + data['bank-100-task1-month'] + "-" + data['bank-100-task1-day'] ) | govukDate }}</td>
+
+                    <td class="govuk-table__cell">{{ data['signed-in-name'] }}</td>
+
+                    <td class="govuk-table__cell">{{ "today" | govukDate }} at {{ "09:26" | govukTime }}</td>
+
+                  </tr>
+
+                  <tr class="govuk-table__row">
+                    
+                    <td class="govuk-table__cell">GBP&nbsp;10.00</td>
+
+                    <td class="govuk-table__cell">GEF/LLOYDS/RFND GBP 10</td>
+                    
+                    <td class="govuk-table__cell">
+                      {{ data['facility-100-ukef-id'] }}<br>
+                      {{ data['facility-400-ukef-id'] }}<br>
+                      {{ data['facility-500-ukef-id'] }}<br>
+                      {{ data['facility-600-ukef-id'] }}<br>
+                      {{ data['facility-700-ukef-id'] }}<br>
+                      {{ data['facility-900-ukef-id'] }}
+                    </td>
+                    
+                    <td class="govuk-table__cell">
+                      {{ data['facility-100-name'] }}<br>
+                      {{ data['facility-400-name'] }}<br>
+                      {{ data['facility-500-name'] }}<br>
+                      {{ data['facility-600-name'] }}<br>
+                      {{ data['facility-700-name'] }}<br>
+                      {{ data['facility-900-name'] }}
+                    </td>
+
+                    <td class="govuk-table__cell">{{ ( data['bank-100-task5-year'] + "-" + data['bank-100-task5-month'] + "-" + data['bank-100-task5-day'] ) | govukDate }}</td>
+
+                    <td class="govuk-table__cell">{{ data['signed-in-name'] }}</td>
+
+                    <td class="govuk-table__cell">{{ "today" | govukDate }} at {{ "15:14" | govukTime }}</td>
+
+                  </tr>
+
+                  <tr class="govuk-table__row">
+                    
+                    <td class="govuk-table__cell">EUR&nbsp;3,260.00</td>
+
+                    <td class="govuk-table__cell">GEF/LLOYDS/RFND EUR</td>
+                    
+                    <td class="govuk-table__cell">
+                      {{ data['facility-300-ukef-id'] }}<br>
+                      {{ data['facility-800-ukef-id'] }}
+                    </td>
+                    
+                    <td class="govuk-table__cell">
+                      {{ data['facility-300-name'] }}<br>
+                      {{ data['facility-800-name'] }}
+                    </td>
+
+                    <td class="govuk-table__cell">{{ ( data['bank-100-task2-year'] + "-" + data['bank-100-task2-month'] + "-" + data['bank-100-task2-day'] ) | govukDate }}</td>
+
+                    <td class="govuk-table__cell">{{ data['signed-in-name'] }}</td>
+
+                    <td class="govuk-table__cell">{{ "today" | govukDate }} at {{ "09:47" | govukTime }}</td>
+
+                  </tr>
+                  
+                  <tr class="govuk-table__row">
+                    
+                    <td class="govuk-table__cell">USD&nbsp;1,000.00</td>
+
+                    <td class="govuk-table__cell">GEF/LLOYDS/RFND USD</td>
+                    
+                    <td class="govuk-table__cell">
+                      {{ data['facility-200-ukef-id'] }}
+                    </td>
+                    
+                    <td class="govuk-table__cell">
+                      {{ data['facility-200-name'] }}
+                    </td>
+
+                    <td class="govuk-table__cell">{{ ( data['bank-100-task3-year'] + "-" + data['bank-100-task3-month'] + "-" + data['bank-100-task3-day'] ) | govukDate }}</td>
+
+                    <td class="govuk-table__cell">{{ data['signed-in-name'] }}</td>
+
+                    <td class="govuk-table__cell">{{ "today" | govukDate }} at {{ "10:02" | govukTime }}</td>
+
+                  </tr>
+                  
+
+                  </tbody>
+                  </table>
               
+              {% endif %}
               </div>
             </div>
         </div>
