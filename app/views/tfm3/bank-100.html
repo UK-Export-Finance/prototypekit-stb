@@ -186,37 +186,39 @@
 
           <!-- Start of premium payments buttons and tables grouped as tasks -->
 
-          
-            
             <h2 class="govuk-heading-l govuk-!-margin-bottom-4">Premium payments</h2>
-              <div class="govuk-grid-row">
-                <div class="govuk-grid-column-one-half">
-                    
 
-            <!-- Start of Task 1  -->
-            {% if data['bank-100-show-task'] == 'one' %} 
-            <p class="govuk-body">{{ data['bank-100-task-content'] }}</p>       
-                    <form class="form" action="/tfm3/bank-100-task1" method="post">
-                      <div class="govuk-button-group">
-                        {{ govukButton({
-                        text: "Add a payment",
-                        name: "addaPayment",
-                        value: true
-                      }) }}
-    
-                      {{ govukButton({
-                        text: "Generate keying sheet data with matched facilities",
-                        classes: "govuk-button--secondary",
-                        name: "addaPayment",
-                        value: false
-                      }) }}
-                    </div>
-                </form>
-              </div>
+              
+            <div class="govuk-grid-row">
                 
-                {% include "includes/filter-premium-payments.html" %}
+                <div class="govuk-grid-column-one-half">
 
-              </div>  
+                    <!-- Start of Task 1  -->
+                    {% if data['bank-100-show-task'] == 'one' %} 
+                    <p class="govuk-body">{{ data['bank-100-task-content'] }}</p>       
+                            <form class="form" action="/tfm3/bank-100-task1" method="post">
+                              <div class="govuk-button-group">
+                                {{ govukButton({
+                                text: "Add a payment",
+                                name: "addaPayment",
+                                value: true
+                              }) }}
+            
+                              {{ govukButton({
+                                text: "Generate keying sheet data with matched facilities",
+                                classes: "govuk-button--secondary",
+                                name: "addaPayment",
+                                value: false
+                              }) }}
+                            </div>
+                        </form>
+                      </div>
+                
+      
+              
+              {% include "includes/filter-premium-payments.html" %}
+
+            </div>  
 
             <table class="govuk-table" data-module="moj-sortable-table">
               <thead class="govuk-table__head">

@@ -24,8 +24,8 @@ Search for a report – {{ serviceName }} – GOV.UK Prototype Kit
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-	<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Search for a report</h1>
-    
+	<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">View reports by year</h1>
+    <form class="form" action="view-reports-by-year-results" method="get">
 
     <div class="govuk-form-group">
 
@@ -74,7 +74,7 @@ Search for a report – {{ serviceName }} – GOV.UK Prototype Kit
 		</div>
 	  </fieldset>
 	</div>
-
+	
 	{{ govukInput({
 		label: {
 		  text: "Year",
@@ -82,10 +82,10 @@ Search for a report – {{ serviceName }} – GOV.UK Prototype Kit
 		  isPageHeading: false
 		},
 		classes: "govuk-!-width-one-quarter",
-		id: "Year",
-		name: "Year"
+		id: "view-year",
+		name: "view-year"
 	}) }}
-	<form class="form" action="search-results" method="get">
+	
 	{{ govukButton({
 		text: "Search"
 	  }) }}

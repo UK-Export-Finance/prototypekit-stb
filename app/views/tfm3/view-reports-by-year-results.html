@@ -1,0 +1,176 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+{% set containerClasses = "app-width-container" %}
+
+{% block stylesheets %}
+  {{ super() }}
+  <link href="/public/css/settings.scss" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block pageTitle %}
+Search results – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/head2.html" %}
+  {% include "includes/primary-nav-banks-main.html" %}
+{% endblock %}
+
+{% block pageScripts %}
+  {% include "includes/scripts.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+	<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">{{ data['search-bank'] }} {{ data['view-year'] }} reports</h1>
+	
+	<table class="govuk-table">
+		<thead class="govuk-table__head">
+		  <tr class="govuk-table__row">
+			<th scope="col" class="govuk-table__header" aria-sort="ascending">Reporting period</th>
+			<th scope="col" class="govuk-table__header" aria-sort="none">Status</th>
+			<th scope="col" class="govuk-table__header" aria-sort="none">Date report received</th>
+				<th scope="col" class="govuk-table__header" aria-sort="none">Total facilities reported</th>
+			<th scope="col" class="govuk-table__header" aria-sort="none">Facilities left to reconcile</th>
+		  </tr>
+		</thead>
+  
+		<tbody class="govuk-table__body">
+		  <tr class="govuk-table__row">
+			<th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="1"><a class="govuk-link govuk-link--no-visited-state" href="#">January {{ data['view-year'] }}</a></th>
+			<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Report completed</strong></td>
+			<td class="govuk-table__cell" data-sort-value="230708">7 February {{ data['view-year'] }}</td>
+			<td class="govuk-table__cell">32</td>
+			<td class="govuk-table__cell">0</td>
+		  </tr>
+		  <tr class="govuk-table__row">
+			<th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="1"><a class="govuk-link govuk-link--no-visited-state" href="#">February {{ data['view-year'] }}</a></th>
+			<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Report completed</strong></td>
+			<td class="govuk-table__cell" data-sort-value="230708">6 March {{ data['view-year'] }}</td>
+			<td class="govuk-table__cell">33</td>
+			<td class="govuk-table__cell">0</td>
+		  </tr>
+		  <tr class="govuk-table__row">
+			<th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="1"><a class="govuk-link govuk-link--no-visited-state" href="#">March {{ data['view-year'] }}</a></th>
+			<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Report completed</strong></td>
+			<td class="govuk-table__cell" data-sort-value="230708">8 April {{ data['view-year'] }}</td>
+			<td class="govuk-table__cell">33</td>
+			<td class="govuk-table__cell">0</td>
+		  </tr>
+		  <tr class="govuk-table__row">
+			<th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="1"><a class="govuk-link govuk-link--no-visited-state" href="#">April {{ data['view-year'] }}</a></th>
+			<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Report completed</strong></td>
+			<td class="govuk-table__cell" data-sort-value="230708">9 May {{ data['view-year'] }}</td>
+			<td class="govuk-table__cell">34</td>
+			<td class="govuk-table__cell">0</td>
+		  </tr>
+		  <tr class="govuk-table__row">
+			<th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="1"><a class="govuk-link govuk-link--no-visited-state" href="#">May {{ data['view-year'] }}</a></th>
+			<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Report completed</strong></td>
+			<td class="govuk-table__cell" data-sort-value="230708">8 June {{ data['view-year'] }}</td>
+			<td class="govuk-table__cell">34</td>
+			<td class="govuk-table__cell">0</td>
+		  </tr>
+		  <tr class="govuk-table__row">
+			<th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="1"><a class="govuk-link govuk-link--no-visited-state" href="#">June {{ data['view-year'] }}</a></th>
+			<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Report completed</strong></td>
+			<td class="govuk-table__cell" data-sort-value="230708">6 July {{ data['view-year'] }}</td>
+			<td class="govuk-table__cell">34</td>
+			<td class="govuk-table__cell">0</td>
+		  </tr>
+		  <tr class="govuk-table__row">
+			<th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="1"><a class="govuk-link govuk-link--no-visited-state" href="#">July {{ data['view-year'] }}</a></th>
+			<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Report completed</strong></td>
+			<td class="govuk-table__cell" data-sort-value="230708">8 August {{ data['view-year'] }}</td>
+			<td class="govuk-table__cell">34</td>
+			<td class="govuk-table__cell">0</td>
+		  </tr>
+		  <tr class="govuk-table__row">
+			<th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="1"><a class="govuk-link govuk-link--no-visited-state" href="#">August {{ data['view-year'] }}</a></th>
+			<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Report completed</strong></td>
+			<td class="govuk-table__cell" data-sort-value="230708">9 September {{ data['view-year'] }}</td>
+			<td class="govuk-table__cell">34</td>
+			<td class="govuk-table__cell">0</td>
+		  </tr>
+		  <tr class="govuk-table__row">
+			<th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="1"><a class="govuk-link govuk-link--no-visited-state" href="#">September {{ data['view-year'] }}</a></th>
+			<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Report completed</strong></td>
+			<td class="govuk-table__cell" data-sort-value="230708">8 October {{ data['view-year'] }}</td>
+			<td class="govuk-table__cell">34</td>
+			<td class="govuk-table__cell">0</td>
+		  </tr>
+		  <tr class="govuk-table__row">
+			<th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="1"><a class="govuk-link govuk-link--no-visited-state" href="#">October {{ data['view-year'] }}</a></th>
+			<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Report completed</strong></td>
+			<td class="govuk-table__cell" data-sort-value="230708">6 November {{ data['view-year'] }}</td>
+			<td class="govuk-table__cell">34</td>
+			<td class="govuk-table__cell">0</td>
+		  </tr>
+		  <tr class="govuk-table__row">
+			<th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="1"><a class="govuk-link govuk-link--no-visited-state" href="#">November {{ data['view-year'] }}</a></th>
+			<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Report completed</strong></td>
+			<td class="govuk-table__cell" data-sort-value="230708">8 December {{ data['view-year'] }}</td>
+			<td class="govuk-table__cell" >35</td>
+			<td class="govuk-table__cell">0</td>
+		  </tr>
+		  <tr class="govuk-table__row">
+			<th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="1"><a class="govuk-link govuk-link--no-visited-state" href="#">December {{ data['view-year'] }}</a></th>
+			<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Report completed</strong></td>
+			<td class="govuk-table__cell" data-sort-value="230708">9 January {{ data['view-year'] }}</td>
+			<td class="govuk-table__cell" >35</td>
+			<td class="govuk-table__cell">0</td>
+		  </tr>
+		 
+		</tbody>
+	  </table>
+<!--
+	<ul class="govuk-list">
+		<li>
+		  <a class="govuk-link" href="#" rel="noreferrer noopener" target="_blank">Barclays January {{ data['view-year'] }}</a>
+		</li>
+		<li>
+		  <a class="govuk-link" href="#" rel="noreferrer noopener" target="_blank">Barclays February {{ data['view-year'] }}</a>
+		</li>
+		<li>
+		  <a class="govuk-link" href="#" rel="noreferrer noopener" target="_blank">Barclays March {{ data['view-year'] }}</a>
+		</li>
+		<li>
+		  <a class="govuk-link" href="#" rel="noreferrer noopener" target="_blank">Barclays April {{ data['view-year'] }}</a>
+		</li>
+		<li>
+			<a class="govuk-link" href="#" rel="noreferrer noopener" target="_blank">Barclays May {{ data['view-year'] }}</a>
+		</li>
+		<li>
+			<a class="govuk-link" href="#" rel="noreferrer noopener" target="_blank">Barclays June {{ data['view-year'] }}</a>
+		  </li>
+		  <li>
+			<a class="govuk-link" href="#" rel="noreferrer noopener" target="_blank">Barclays July {{ data['view-year'] }}</a>
+		  </li>
+		  <li>
+			<a class="govuk-link" href="#" rel="noreferrer noopener" target="_blank">Barclays August {{ data['view-year'] }}</a>
+		  </li>
+		  <li>
+			<a class="govuk-link" href="#" rel="noreferrer noopener" target="_blank">Barclays September {{ data['view-year'] }}</a>
+		  </li>
+		  <li>
+			  <a class="govuk-link" href="#" rel="noreferrer noopener" target="_blank">Barclays October {{ data['view-year'] }}</a>
+		  </li>
+		  <li>
+			<a class="govuk-link" href="#" rel="noreferrer noopener" target="_blank">Barclays November {{ data['view-year'] }}</a>
+		</li>
+		<li>
+			<a class="govuk-link" href="#" rel="noreferrer noopener" target="_blank">Barclays December {{ data['view-year'] }}</a>
+		</li>
+
+	  </ul>-->
+
+
+  </div>
+</div>
+{% endblock %}
