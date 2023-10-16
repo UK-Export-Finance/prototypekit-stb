@@ -68,7 +68,37 @@ Fee reconciliation tool – {{serviceName}} – GOV.UK Prototype Kit
 
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" style="border-bottom: 1px solid #b1b4b6 !important">
 
-<p class="govuk-body"><a href="/tfm3/" class="govuk-link">Version 3</a></p>
+<h2 class="govuk-heading-m">Version 3</a></h2>
+
+<h3 class="govuk-heading-s">Bulk payments</h3>
+
+<p class="govuk-body">The Lloyds Bank report can be reconciled with these received bulk payments:</p>
+
+<ul class="govuk-list">
+<li>GBP 8,731.00</li>
+<li>EUR 3,260.00</li>
+<li>USD 1,000.00</li>
+</ul>
+
+<ul class="govuk-list govuk-list--bullet">
+<li>Complete them in that order: first the GBP facilities, then the EUR facilities and finish with the USD facility.</li>
+<li>The GBP payment will not match.</li>
+<li>Whilst waiting for the extra GBP 10 from the bank, work can continue on the matched EUR and USD facilities by generating keying sheet data and marking as done, once the data has been keyed into ACBS to reconcile them.</li>
+<li>Once the GBP 10.00 has been received from the bank it can be added and matched, and the data then keyed for the report to be completed. </li>
+</ul>
+
+<p class="govuk-body"><a href="/tfm3/" class="govuk-link">Start here</a></p>
+
+
+<p class="govuk-body">The prototype also shows:</p>
+
+<ul class="govuk-list govuk-list--bullet">
+<li>Updated Bank reports screen with an open report from a previous reporting period.</li>
+<li>Total facilities reported and facilities left to reconcile on the Bank reports screen.</li>
+<li>Previous reports are now accessed from the 'View reports by year' link on the Bank reports screen.</li>
+<li>The edit a payment screen allows facilities to be removed from a payment and the payment itself to be deleted (once the GBP 8,731.00 has been entered it's edit screen can be viewed).</li>
+<li>Facilities can be added to existing payments demonstrated when adding a payment for the USD facility (the button is functional but go back once the screen has been viewed).</li>
+</ul>
 
     <!--{% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}-->
   </div>
