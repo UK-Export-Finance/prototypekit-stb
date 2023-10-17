@@ -11,7 +11,7 @@
     "@ministryofjustice/frontend": "1.8.0",
     "govuk-frontend": "4.7.0",
     "govuk-prototype-filters": "^0.1.0",
-    "govuk-prototype-kit": "13.13.3",
+    "govuk-prototype-kit": "13.13.5",
     "jquery": "3.7.1",
     "notifications-node-client": "7.0.3"
   }
