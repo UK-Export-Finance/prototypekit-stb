@@ -937,12 +937,7 @@
         <tr class="govuk-table__row govuk-table__row--selected">
           {% if data['bank-100-checkboxes'] == 'show' %}
           <td class="govuk-table__cell govuk-!-padding-top-1 govuk-!-padding-bottom-0">
-            <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-              <input type="checkbox" class="govuk-checkboxes__input" id="{{ data['facility-300-ukef-id'] }}">
-              <label class="govuk-label govuk-checkboxes__label" for="{{ data['facility-300-ukef-id'] }}">
-                <span class="govuk-visually-hidden">{{ data['facility-300-ukef-id'] }}</span>
-              </label>
-            </div>
+            
           </td>
           {% endif %}
           <!--Facility ID-->
@@ -1148,12 +1143,7 @@
   <tr class="govuk-table__row govuk-table__row--selected">
     {% if data['bank-100-checkboxes'] == 'show' %}
     <td class="govuk-table__cell govuk-!-padding-top-1 govuk-!-padding-bottom-0">
-      <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-        <input type="checkbox" class="govuk-checkboxes__input" id="{{ data['facility-300-ukef-id'] }}">
-        <label class="govuk-label govuk-checkboxes__label" for="{{ data['facility-300-ukef-id'] }}">
-          <span class="govuk-visually-hidden">{{ data['facility-300-ukef-id'] }}</span>
-        </label>
-      </div>
+      
     </td>
     {% endif %}
     <!--Facility ID-->
@@ -1183,7 +1173,9 @@
       GBP&nbsp;3,260.00
     </td>
     <td class="govuk-table__cell">
+
       <strong class="govuk-tag govuk-tag--green">Match</strong>
+      
     </td>
   </tr>
 <!--end facility 300 row-->
@@ -1193,12 +1185,7 @@
 <tr class="govuk-table__row govuk-table__row--selected">
 {% if data['bank-100-checkboxes'] == 'show' %}
 <td class="govuk-table__cell govuk-!-padding-top-1 govuk-!-padding-bottom-0">
-  <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-    <input type="checkbox" class="govuk-checkboxes__input" id="{{ data['facility-200-ukef-id'] }}">
-    <label class="govuk-label govuk-checkboxes__label" for="{{ data['facility-200-ukef-id'] }}">
-      <span class="govuk-visually-hidden">{{ data['facility-200-ukef-id'] }}</span>
-    </label>
-  </div>
+  
 </td>
 {% endif %}
 <!--Facility ID-->
@@ -1343,7 +1330,7 @@
 
 <td class="govuk-table__cell">
   <!--Payment received-->
-  <a href="#" class="govuk-link">GBP&nbsp;8,731.00</a>
+  <a href="bank-100-task1-edit" class="govuk-link govuk-link--no-visited-state">GBP&nbsp;8,731.00</a>
 </td>
 
 <td class="govuk-table__cell">
@@ -1410,7 +1397,7 @@ GBP&nbsp;3,260.00
   {% if (data['gen1-checks'] == '0020003073') %}
   <strong class="govuk-tag govuk-tag--grey">Reconciled</strong>
   {% elif (data['gen1-checks'] =='') or (data['gen1-checks'] =='0020002193') or (data['gen1-checks'] =='0020002167') %}
-  <strong class="govuk-tag govuk-tag--green">Match</strong>
+  <strong class="govuk-tag govuk-tag--yellow">Ready&nbsp;to&nbsp;key</strong>
   {% endif %}
 </td>
 </tr>
@@ -1468,7 +1455,7 @@ GBP&nbsp;3,260.00
   {% if (data['gen1-checks'] == '0020002167') or (data['gen1-checks'] == '0020002193') or (data['gen1-checks'] == '0020003073')  %}
   <strong class="govuk-tag govuk-tag--grey">Reconciled</strong>
   {% elif (data['gen1-checks'] =='') %}
-  <strong class="govuk-tag govuk-tag--green">Match</strong>
+  <strong class="govuk-tag govuk-tag--yellow">Ready&nbsp;to&nbsp;key</strong>
   {% endif %}
 </td>
 </tr>
@@ -1526,14 +1513,7 @@ GBP&nbsp;3,260.00
  <!--Report not yet completed-->
  {% if (data['gen2-checks'] == '') or (data['gen2-checks'] == '0020002154') or (data['gen2-checks'] == '0020002198') or (data['gen2-checks'] == '0020002565') or (data['gen2-checks'] == '0020002896') or (data['gen2-checks'] == '0020002983') %}
 
- <th class="govuk-table__header govuk-!-padding-top-1" scope="col">
-  <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-    <input type="checkbox" class="govuk-checkboxes__input" id="facility-id-check" onclick="javascript:checkAll(this)">
-    <label class="govuk-label govuk-checkboxes__label" for="facility-id-check">
-      <span class="govuk-visually-hidden">Facility ID</span>
-    </label>
-  </div> 
-</th>
+
 
  <!--Report completed-->
  {% elif (data['gen2-checks'] == '0020003182') %}
@@ -1561,14 +1541,7 @@ GBP&nbsp;3,260.00
 <!--Report not yet completed-->
 {% if (data['gen2-checks'] == '') or (data['gen2-checks'] == '0020002154') or (data['gen2-checks'] == '0020002198') or (data['gen2-checks'] == '0020002565') or (data['gen2-checks'] == '0020002896') or (data['gen2-checks'] == '0020002983') %}
 
-<td class="govuk-table__cell govuk-!-padding-top-1 govuk-!-padding-bottom-0">
-  <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-    <input type="checkbox" class="govuk-checkboxes__input" id="{{ data['facility-100-ukef-id'] }}">
-    <label class="govuk-label govuk-checkboxes__label" for="{{ data['facility-100-ukef-id'] }}">
-      <span class="govuk-visually-hidden">{{ data['facility-100-ukef-id'] }}</span>
-    </label>
-  </div>
-</td>
+
 
 <!--Report completed-->
 {% elif (data['gen2-checks'] == '0020003182') %}
@@ -1623,7 +1596,7 @@ GBP&nbsp;3,260.00
   <!--Report not yet completed-->
   {% if (data['gen2-checks'] == '') or (data['gen2-checks'] == '0020002154') or (data['gen2-checks'] == '0020002198') or (data['gen2-checks'] == '0020002565') or (data['gen2-checks'] == '0020002896') or (data['gen2-checks'] == '0020002983') %}
 
-  <a href="#" class="govuk-link">GBP&nbsp;8,731.00</a><br>
+  <a href="bank-100-task1-edit" class="govuk-link govuk-link--no-visited-state">GBP&nbsp;8,731.00</a><br>
   <a href="#" class="govuk-link">GBP&nbsp;10.00</a>
 
   <!--Report completed-->
@@ -1645,7 +1618,7 @@ GBP&nbsp;3,260.00
 
   {% if (data['gen2-checks'] == '') or (data['gen2-checks'] == '0020002154') or (data['gen2-checks'] == '0020002198') or (data['gen2-checks'] == '0020002565') or (data['gen2-checks'] == '0020002896') or (data['gen2-checks'] == '0020002983') %}
 
-  <strong class="govuk-tag govuk-tag--green">Match</strong>
+  <strong class="govuk-tag govuk-tag--yellow">Ready&nbsp;to&nbsp;key</strong>
 
   {% elif (data['gen2-checks'] == '0020003182') %}
 
@@ -1663,9 +1636,7 @@ GBP&nbsp;3,260.00
 <!--Report not yet completed-->
 {% if (data['gen2-checks'] == '') or (data['gen2-checks'] == '0020002154') or (data['gen2-checks'] == '0020002198') or (data['gen2-checks'] == '0020002565') or (data['gen2-checks'] == '0020002896') or (data['gen2-checks'] == '0020002983') %}
 
-<td class="govuk-table__cell govuk-!-padding-top-1 govuk-!-padding-bottom-0">
 
-</td>
 
 <!--Report completed-->
 {% elif (data['gen2-checks'] == '0020003182') %}
@@ -1713,9 +1684,7 @@ GBP&nbsp;3,260.00
 <!--Report not yet completed-->
 {% if (data['gen2-checks'] == '') or (data['gen2-checks'] == '0020002154') or (data['gen2-checks'] == '0020002198') or (data['gen2-checks'] == '0020002565') or (data['gen2-checks'] == '0020002896') or (data['gen2-checks'] == '0020002983') %}
 
-<td class="govuk-table__cell govuk-!-padding-top-1 govuk-!-padding-bottom-0">
 
-</td>
 
 <!--Report completed-->
 {% elif (data['gen2-checks'] == '0020003182') %}
