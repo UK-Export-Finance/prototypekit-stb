@@ -109,7 +109,11 @@ caption,
 .govuk-link,
 .govuk-button-group .govuk-link,
 .govuk-hint.govuk-radios__hint,
-.govuk-checkboxes__item label.govuk-label.govuk-checkboxes__label  {
+.govuk-checkboxes__item label.govuk-label.govuk-checkboxes__label,
+
+.moj-filter__options .govuk-label.govuk-label--s,
+.moj-filter__options .govuk-fieldset__legend--s,
+.moj-filter__options .govuk-radios--small .govuk-radios__label {
   font-size: 1rem;
 }
 
@@ -449,3 +453,22 @@ caption,
 }
 
 .govuk-table.stb-table {line-height: 2}
+
+@media (min-width: 48.0625em) {
+.moj-action-bar__filter:after {
+    content: "";
+    background-color: #fff;
+    height: 40px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 2px;
+}
+.moj-filter-layout__filter {
+  float: left;
+  margin-right: 40px;
+  max-width: 260px;
+  min-width: 240px;
+  width: 100%;
+}
+}
