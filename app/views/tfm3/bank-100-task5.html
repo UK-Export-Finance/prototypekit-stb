@@ -22,9 +22,7 @@ Add a payment - {{ data['bank-100-name'] }} – {{ serviceName }} – GOV.UK Pro
 
   <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="bank-100#reconciliation" method="get">
-      <input type="hidden" name="bank-100-task5" value="done">
-      <input type="hidden" name="bank-100-show-task" value="six">
+      
       
     <h1 class="govuk-heading-l govuk-!-margin-bottom-6">
         <span class="govuk-caption-l">{{ data['bank-100-name'] }}, {{ data['report-month'] }}</span>
@@ -96,6 +94,9 @@ Add a payment - {{ data['bank-100-name'] }} – {{ serviceName }} – GOV.UK Pro
         value: false
       }) }}
 
+      <form class="form" action="bank-100#reconciliation" method="get">
+        <input type="hidden" name="bank-100-task5" value="done">
+        <input type="hidden" name="bank-100-show-task" value="six">
 
       {% set accordianHtml %}
     <h3 class="govuk-heading-m">Payment 1 details</h3>
