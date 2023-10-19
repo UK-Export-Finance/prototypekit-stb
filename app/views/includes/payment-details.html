@@ -1,240 +1,162 @@
+{% if data['bank-100-status'] == 'pending' %}
+
+<p class="govuk-body">Payment details will be displayed when payments have been entered on the premium payments tab.</p>
+
+{% elif data['bank-100-status'] == 'inprogress' or 'completed' %}
 <div class="moj-filter-layout">
 
-                <div class="moj-filter-layout__filter">
-              
-                  <div class="moj-filter">
-              
-                    <div class="moj-filter__header">
-              
-                      <div class="moj-filter__header-title">
-                        <h2 class="govuk-heading-s">Filter</h2>
-                      </div>
-              
-                      <div class="moj-filter__header-action">
-              
-                      </div>
-              
-                    </div>
-              
-                    <div class="moj-filter__content">
+    <div class="moj-filter-layout__filter">
+  
+      <div class="moj-filter">
+  
+        <div class="moj-filter__header">
+  
+          <div class="moj-filter__header-title">
+            <h2 class="govuk-heading-s">Filter</h2>
+          </div>
+  
+          <div class="moj-filter__header-action">
+  
+          </div>
+  
+        </div>
+  
+        <div class="moj-filter__content">
 
-                      <div class="moj-filter__options">
-              
-                        {{ govukRadios({
-                          classes: "govuk-radios--small",
-                          name: "currency",
-                          fieldset: {
-                            legend: {
-                              text: "Currency",
-                              isPageHeading: false,
-                              classes: "govuk-fieldset__legend--s"
-                            }
-                          },
-                          items: [
-                            {
-                              value: "GBP",
-                              text: "GBP"
-                            },
-                            {
-                              value: "EUR",
-                              text: "EUR"
-                            },
-                            {
-                              value: "USD",
-                              text: "USD"
-                            },
-                            {
-                              value: "JPY",
-                              text: "JPY"
-                            }
-                          ]
-                        }) }}
-              
-                        {{ govukInput({
-                          id: 'paymentref',
-                          name: 'paymentref',
-						  autocomplete: 'false',
-                          label: {
-                            text: 'Payment reference',
-                            classes: 'govuk-label--s'
-                          }
-                        }) }}
+          <div class="moj-filter__options">
+  
+            {{ govukRadios({
+              classes: "govuk-radios--small",
+              name: "currency",
+              fieldset: {
+                legend: {
+                  text: "Currency",
+                  isPageHeading: false,
+                  classes: "govuk-fieldset__legend--s"
+                }
+              },
+              items: [
+                {
+                  value: "GBP",
+                  text: "GBP"
+                },
+                {
+                  value: "EUR",
+                  text: "EUR"
+                },
+                {
+                  value: "USD",
+                  text: "USD"
+                },
+                {
+                  value: "JPY",
+                  text: "JPY"
+                }
+              ]
+            }) }}
+  
+            {{ govukInput({
+              id: 'paymentref',
+              name: 'paymentref',
+  autocomplete: 'false',
+              label: {
+                text: 'Payment reference',
+                classes: 'govuk-label--s'
+              }
+            }) }}
 
-                        {{ govukInput({
-                          id: 'facilityid',
-                          name: 'facilityid',
-						  autocomplete: 'false',
-                          label: {
-                            text: 'Facility ID',
-                            classes: 'govuk-label--s'
-                          }
-                        }) }}
-              
-                        <div class="govuk-button-group">
-                          {{ govukButton({
-                            text: "Apply filter"
-                          }) }}
-                        
-                          {{ govukButton({
-                            text: "Clear filter",
-                            classes: "govuk-button--secondary"
-                          }) }}
-                        </div>
+            {{ govukInput({
+              id: 'facilityid',
+              name: 'facilityid',
+  autocomplete: 'false',
+              label: {
+                text: 'Facility ID',
+                classes: 'govuk-label--s'
+              }
+            }) }}
+  
+            <div class="govuk-button-group">
+              {{ govukButton({
+                text: "Apply filter"
+              }) }}
+            
+              {{ govukButton({
+                text: "Clear filter",
+                classes: "govuk-button--secondary"
+              }) }}
+            </div>
 
-                      </div>
-              
-                    </div>
-              
-                  </div>
-              
-                </div>
-              
-                <div class="moj-filter-layout__content">
-              
-                  <div class="moj-action-bar">
-              
-                    <div class="moj-action-bar__filter"></div>
-              
-                    <div class="moj-button-menu">
-                      <div class="moj-button-menu__wrapper">
-                      </div>
-                    </div>
-              
-                  </div>
-              
-                  
-                    <!-- table start-->
-                    <table class="govuk-table stb-table" data-module="moj-sortable-table">
-                      <caption class="govuk-table__caption govuk-table__caption--s govuk-visually-hidden">All payments</caption>
-                      <thead class="govuk-table__head">
+          </div>
+  
+        </div>
+  
+      </div>
+  
+    </div>
+  
+    <div class="moj-filter-layout__content">
+  
+      <div class="moj-action-bar">
+  
+        <div class="moj-action-bar__filter"></div>
+  
+        <div class="moj-button-menu">
+          <div class="moj-button-menu__wrapper">
+          </div>
+        </div>
+  
+      </div>
+  
       
-                        <tr class="govuk-table__row">
-                          <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="descending">Amount</th>
-                          <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Payment reference</th>
-                          <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Facility ID</th>
-                          <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Exporter</th>
-                          <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Date received</th>
-                          <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Reconciled by</th>
-                          <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Date reconciled</th>
-                        </tr>
-                      </thead>
-                      <tbody class="govuk-table__body">
-      
-                        <tr class="govuk-table__row">
-                          
-                          <td class="govuk-table__cell">GBP&nbsp;8,731.00</td>
-      
-                          <td class="govuk-table__cell">GEF/LLOYDS/RFND GBP</td>
-                          
-                          <td class="govuk-table__cell">
-                            {{ data['facility-100-ukef-id'] }}<br>
-                            {{ data['facility-400-ukef-id'] }}<br>
-                            {{ data['facility-500-ukef-id'] }}<br>
-                            {{ data['facility-600-ukef-id'] }}<br>
-                            {{ data['facility-700-ukef-id'] }}<br>
-                            {{ data['facility-900-ukef-id'] }}
-                          </td>
-                          
-                          <td class="govuk-table__cell">
-                            {{ data['facility-100-name'] }}<br>
-                            {{ data['facility-400-name'] }}<br>
-                            {{ data['facility-500-name'] }}<br>
-                            {{ data['facility-600-name'] }}<br>
-                            {{ data['facility-700-name'] }}<br>
-                            {{ data['facility-900-name'] }}
-                          </td>
-      
-                          <td class="govuk-table__cell">{{ "2023-09-10" | govukDate("truncate") }}</td>
-      
-                          <td class="govuk-table__cell">{{ data['signed-in-name'] }}</td>
-      
-                          <td class="govuk-table__cell">{{ "today" | govukDate("truncate") }} at {{ "09:26" | govukTime }}</td>
-      
-                        </tr>
-      
-                        <tr class="govuk-table__row">
-                          
-                          <td class="govuk-table__cell">GBP&nbsp;10.00</td>
-      
-                          <td class="govuk-table__cell">GEF/LLOYDS/RFND GBP 10</td>
-                          
-                          <td class="govuk-table__cell">
-                            {{ data['facility-100-ukef-id'] }}<br>
-                            {{ data['facility-400-ukef-id'] }}<br>
-                            {{ data['facility-500-ukef-id'] }}<br>
-                            {{ data['facility-600-ukef-id'] }}<br>
-                            {{ data['facility-700-ukef-id'] }}<br>
-                            {{ data['facility-900-ukef-id'] }}
-                          </td>
-                          
-                          <td class="govuk-table__cell">
-                            {{ data['facility-100-name'] }}<br>
-                            {{ data['facility-400-name'] }}<br>
-                            {{ data['facility-500-name'] }}<br>
-                            {{ data['facility-600-name'] }}<br>
-                            {{ data['facility-700-name'] }}<br>
-                            {{ data['facility-900-name'] }}
-                          </td>
-      
-                          <td class="govuk-table__cell">{{ "2023-10-09" | govukDate("truncate") }}</td>
-      
-                          <td class="govuk-table__cell">{{ data['signed-in-name'] }}</td>
-      
-                          <td class="govuk-table__cell">{{ "today" | govukDate("truncate") }} at {{ "15:14" | govukTime }}</td>
-      
-                        </tr>
-      
-                        <tr class="govuk-table__row">
-                          
-                          <td class="govuk-table__cell">EUR&nbsp;3,260.00</td>
-      
-                          <td class="govuk-table__cell">GEF/LLOYDS/RFND EUR</td>
-                          
-                          <td class="govuk-table__cell">
-                            {{ data['facility-300-ukef-id'] }}<br>
-                            {{ data['facility-800-ukef-id'] }}
-                          </td>
-                          
-                          <td class="govuk-table__cell">
-                            {{ data['facility-300-name'] }}<br>
-                            {{ data['facility-800-name'] }}
-                          </td>
-      
-                          <td class="govuk-table__cell">{{ "2023-09-10" | govukDate("truncate") }}</td>
-      
-                          <td class="govuk-table__cell">{{ data['signed-in-name'] }}</td>
-      
-                          <td class="govuk-table__cell">{{ "today" | govukDate("truncate") }} at {{ "09:47" | govukTime }}</td>
-      
-                        </tr>
-                        
-                        <tr class="govuk-table__row">
-                          
-                          <td class="govuk-table__cell">USD&nbsp;1,000.00</td>
-      
-                          <td class="govuk-table__cell">GEF/LLOYDS/RFND USD</td>
-                          
-                          <td class="govuk-table__cell">
-                            {{ data['facility-200-ukef-id'] }}
-                          </td>
-                          
-                          <td class="govuk-table__cell">
-                            {{ data['facility-200-name'] }}
-                          </td>
-      
-                          <td class="govuk-table__cell">{{ "2023-09-10" | govukDate("truncate") }}</td>
-      
-                          <td class="govuk-table__cell">{{ data['signed-in-name'] }}</td>
-      
-                          <td class="govuk-table__cell">{{ "today" | govukDate("truncate") }} at {{ "10:02" | govukTime }}</td>
-      
-                        </tr>
-                        
-      
-                        </tbody>
-                        </table>
+        <!-- table start-->
+        <table class="govuk-table stb-table" data-module="moj-sortable-table">
+          <caption class="govuk-table__caption govuk-table__caption--s govuk-visually-hidden">All payments</caption>
+          <thead class="govuk-table__head">
 
-                    <!-- table end-->
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="descending">Amount</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Payment reference</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Facility ID</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Exporter</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Date received</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Reconciled by</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Date reconciled</th>
+            </tr>
+          </thead>
 
-                </div>
-              </div>
+          <tbody class="govuk-table__body">
+            
+            {% if data['bank-100-show-task'] == 'two' %}
+              {% include "includes/payments-table-show-task-two.html" %}
+
+            {% elif data['bank-100-show-task'] == 'three' %}
+              {% include "includes/payments-table-show-task-two.html" %}
+              {% include "includes/payments-table-show-task-three.html" %}
+
+            {% elif data['bank-100-show-task'] == 'four' %}
+              {% include "includes/payments-table-show-task-two.html" %}
+              {% include "includes/payments-table-show-task-three.html" %}
+              {% include "includes/payments-table-show-task-four.html" %}
+
+            {% elif data['bank-100-show-task'] == 'five' %}
+              {% include "includes/payments-table-show-task-two.html" %}
+              {% include "includes/payments-table-show-task-three.html" %}
+              {% include "includes/payments-table-show-task-four.html" %}
+
+            {% elif data['bank-100-show-task'] == 'six' %}
+              {% include "includes/payments-table-show-task-two.html" %}
+              {% include "includes/payments-table-show-task-three.html" %}
+              {% include "includes/payments-table-show-task-four.html" %}
+              {% include "includes/payments-table-show-task-six.html" %}
+
+            {% elif data['bank-100-show-task'] == 'seven' %}
+
+            {% endif %}
+
+            </tbody>
+            </table>
+        <!-- table end-->
+
+    </div>
+  </div>
+  {%  endif %}

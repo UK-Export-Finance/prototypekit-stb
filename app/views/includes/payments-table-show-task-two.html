@@ -1,0 +1,40 @@
+<!-- bank-100-show-task two-->
+<tr class="govuk-table__row">
+  
+  <td class="govuk-table__cell"><a href="bank-100-task1-edit" class="govuk-link govuk-link--no-visited-state">GBP&nbsp;8,731.00</a></td>
+
+  <td class="govuk-table__cell">GEF/LLOYDS/RFND GBP</td>
+  
+  <td class="govuk-table__cell">
+    {{ data['facility-100-ukef-id'] }}<br>
+    {{ data['facility-400-ukef-id'] }}<br>
+    {{ data['facility-500-ukef-id'] }}<br>
+    {{ data['facility-600-ukef-id'] }}<br>
+    {{ data['facility-700-ukef-id'] }}<br>
+    {{ data['facility-900-ukef-id'] }}
+  </td>
+  
+  <td class="govuk-table__cell">
+    {{ data['facility-100-name'] }}<br>
+    {{ data['facility-400-name'] }}<br>
+    {{ data['facility-500-name'] }}<br>
+    {{ data['facility-600-name'] }}<br>
+    {{ data['facility-700-name'] }}<br>
+    {{ data['facility-900-name'] }}
+  </td>
+
+  <td class="govuk-table__cell">{{ "2023-09-10" | govukDate("truncate") }}</td>
+
+  <td class="govuk-table__cell">{{ data['signed-in-name'] }}</td>
+
+  <td class="govuk-table__cell">
+    {% if (data['gen1-checks'] == '0020003073') %}
+    
+    {{ "today" | govukDate("truncate") }} at {{ "09:26" | govukTime }}
+  
+    {% elif (data['gen1-checks'] =='' or '0020002193' or '0020002167') %}
+    -
+    {% endif %}
+  </td>
+
+</tr>

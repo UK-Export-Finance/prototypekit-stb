@@ -3,37 +3,6 @@ module.exports = {
  // Insert values here
   
 
-// TFM BULK PROTOTYPE VALUES
-// BANK
-'bank-100-name': 'Lloyds Bank',
-'bank-100-report-received': '9 July 2023',
-'bank-100-start': 'yes',
-'bank-100-payment': '', 
-'bank-100-reconciliation': '',
-'bank-100-show-task': 'one',
-'bank-100-task1': '',
-'bank-100-task2': '',
-'bank-100-task3': '',
-'bank-100-task4a': '',
-'bank-100-task4b': '',
-'bank-100-task4c': '',
-'bank-100-accepted': '',
-'bank-100-checkboxes': 'show',
-'from-summary-bank-100-task1-change': 'no',
-'from-summary-bank-100-task2-change': 'no',
-'from-summary-bank-100-task3-change': 'no',
-'from-summary-bank-100-task4a-change': 'no',
-'from-summary-bank-100-task4b-change': 'no',
-'from-summary-bank-100-task4c-change': 'no',   
-'bank-100-filter': 'no',
-'older-report-show': 'no',
-'bank-100-status': 'pending',
-'bank-100-task-content': 'Select one or more facilities to add received payments to.',
-'generate-keying-sheet': 'not-generated',
-'gen1-checks': '',
-'gen2-checks': '',
-'plusOne': '1',
-
 // FACILITIES
 
 'facility-100-name': 'Direct Engineering Solutions Ltd',
@@ -764,6 +733,36 @@ module.exports = {
     'from-summary-bank-3-task4c-change': 'no',   
     'bank-13-filter': 'no',
     'older-report-show': 'no',
+
+    // TFM BULK PROTOTYPE VALUES
+// BANK
+'bank-100-name': 'Lloyds Bank',
+'bank-100-report-received': '9 July 2023',
+'bank-100-start': 'yes',
+'bank-100-payment': '', 
+'bank-100-reconciliation': '',
+'bank-100-show-task': 'one',
+'bank-100-task1': '',
+'bank-100-task2': '',
+'bank-100-task3': '',
+'bank-100-task4a': '',
+'bank-100-task4b': '',
+'bank-100-task4c': '',
+'bank-100-accepted': '',
+'bank-100-checkboxes': 'show',
+'from-summary-bank-100-task1-change': 'no',
+'from-summary-bank-100-task2-change': 'no',
+'from-summary-bank-100-task3-change': 'no',
+'from-summary-bank-100-task4a-change': 'no',
+'from-summary-bank-100-task4b-change': 'no',
+'from-summary-bank-100-task4c-change': 'no',   
+'bank-100-filter': 'no',
+'older-report-show': 'no',
+'bank-100-status': 'pending',
+'generate-keying-sheet': 'not-generated',
+'gen1-checks': '',
+'gen2-checks': '',
+'plusOne': '1',
 }
 
 

@@ -1,0 +1,40 @@
+<!-- bank-100-show-task four-->
+<tr class="govuk-table__row">
+  
+  {% if data['bank-100-show-task'] == 'five' or 'six' %}
+
+  <td class="govuk-table__cell">USD&nbsp;1,000.00</td>
+
+  {% elif data['bank-100-show-task'] == 'four' or 'three' or 'two' %}
+  <td class="govuk-table__cell"><a href="bank-100-task3-edit" class="govuk-link govuk-link--no-visited-state">USD&nbsp;1,000.00</a></td>
+  {% endif %}
+
+
+  
+
+  <td class="govuk-table__cell">GEF/LLOYDS/RFND USD</td>
+  
+  <td class="govuk-table__cell">
+    {{ data['facility-200-ukef-id'] }}
+  </td>
+  
+  <td class="govuk-table__cell">
+    {{ data['facility-200-name'] }}
+  </td>
+
+  <td class="govuk-table__cell">{{ "2023-09-10" | govukDate("truncate") }}</td>
+
+  <td class="govuk-table__cell">{{ data['signed-in-name'] }}</td>
+
+  <td class="govuk-table__cell">
+    {% if (data['gen1-checks'] == '0020003073') %}
+    
+    {{ "today" | govukDate("truncate") }} at {{ "10:02" | govukTime }}</td>
+  
+    {% elif (data['gen1-checks'] =='' or '0020002193' or '0020002167') %}
+    -
+    {% endif %}
+    
+    </td>
+
+</tr>

@@ -1,0 +1,32 @@
+<!-- bank-100-show-task six-->
+<tr class="govuk-table__row">
+  
+  <td class="govuk-table__cell"><a href="bank-100-task5-edit" class="govuk-link govuk-link--no-visited-state">GBP&nbsp;10.00</td>
+
+  <td class="govuk-table__cell">GEF/LLOYDS/RFND GBP 10</td>
+  
+  <td class="govuk-table__cell">
+    {{ data['facility-100-ukef-id'] }}<br>
+    {{ data['facility-400-ukef-id'] }}<br>
+    {{ data['facility-500-ukef-id'] }}<br>
+    {{ data['facility-600-ukef-id'] }}<br>
+    {{ data['facility-700-ukef-id'] }}<br>
+    {{ data['facility-900-ukef-id'] }}
+  </td>
+  
+  <td class="govuk-table__cell">
+    {{ data['facility-100-name'] }}<br>
+    {{ data['facility-400-name'] }}<br>
+    {{ data['facility-500-name'] }}<br>
+    {{ data['facility-600-name'] }}<br>
+    {{ data['facility-700-name'] }}<br>
+    {{ data['facility-900-name'] }}
+  </td>
+
+  <td class="govuk-table__cell">{{ "2023-10-09" | govukDate("truncate") }}</td>
+
+  <td class="govuk-table__cell">{{ data['signed-in-name'] }}</td>
+
+  <td class="govuk-table__cell">{{ "today" | govukDate("truncate") }} at {{ "15:14" | govukTime }}</td>
+
+</tr>

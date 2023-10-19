@@ -1,7 +1,7 @@
 {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
 
 {% block pageTitle %}
-Edit a payment - {{ data['bank-100-name'] }} – {{ serviceName }} – GOV.UK Prototype Kit
+Edit payment - {{ data['bank-100-name'] }} – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block header %}
@@ -23,6 +23,7 @@ Edit a payment - {{ data['bank-100-name'] }} – {{ serviceName }} – GOV.UK Pr
   <div class="govuk-grid-column-two-thirds">
 
       
+      
     <h1 class="govuk-heading-l govuk-!-margin-bottom-6">
         <span class="govuk-caption-l">{{ data['bank-100-name'] }}, {{ data['report-month'] }}</span>
         Edit payment
@@ -30,7 +31,7 @@ Edit a payment - {{ data['bank-100-name'] }} – {{ serviceName }} – GOV.UK Pr
           <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
             Added facilities details
           </h2>
-            <table class="govuk-table stb-table" data-module="moj-sortable-table">
+		  <table class="govuk-table stb-table" data-module="moj-sortable-table">
 			<thead class="govuk-table__head">
 				<tr class="govuk-table__row">
 				<th scope="col" class="govuk-table__header" aria-sort="ascending">Facility ID</th>
@@ -145,22 +146,22 @@ Edit a payment - {{ data['bank-100-name'] }} – {{ serviceName }} – GOV.UK Pr
                     <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
 
                           <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="GBP" name="bank-100-task1-currency" type="radio" value="GBP" {{ checked('bank-100-task1-currency','GBP') }}>
+                            <input class="govuk-radios__input" id="GBP" name="bank-100-task5-currency" type="radio" value="GBP" {{ checked('bank-100-task5-currency','GBP') }}>
                             <label class="govuk-label govuk-radios__label" for="GBP">GBP</label>
                           </div>
 
                           <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="EUR" name="bank-100-task1-currency" type="radio" value="EUR" {{ checked('bank-100-task1-currency','EUR') }}>
+                            <input class="govuk-radios__input" id="EUR" name="bank-100-task5-currency" type="radio" value="EUR" {{ checked('bank-100-task5-currency','EUR') }}>
                             <label class="govuk-label govuk-radios__label" for="bank-100-currency1-2">EUR</label>
                           </div>
 
                           <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="USD" name="bank-100-task1-currency" type="radio" value="USD" {{ checked('bank-100-task1-currency','USD') }}>
+                            <input class="govuk-radios__input" id="USD" name="bank-100-task5-currency" type="radio" value="USD" {{ checked('bank-100-task5-currency','USD') }}>
                             <label class="govuk-label govuk-radios__label" for="USD">USD</label>
                           </div>
    
                           <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="JPY" name="bank-100-task1-currency" type="radio" value="JPY" {{ checked('bank-100-task1-currency','JPY') }}>
+                            <input class="govuk-radios__input" id="JPY" name="bank-100-task5-currency" type="radio" value="JPY" {{ checked('bank-100-task5-currency','JPY') }}>
                             <label class="govuk-label govuk-radios__label" for="bank-100-currency1-4">JPY</label>
                           </div>
                     </div>
@@ -178,8 +179,8 @@ Edit a payment - {{ data['bank-100-name'] }} – {{ serviceName }} – GOV.UK Pr
                     },
                     classes: "govuk-!-width-one-half",
                     id: "amount1",
-                    name: "bank-100-task1-amount",
-                    value: data ['bank-100-task1-amount']
+                    name: "bank-100-task5-amount",
+                    value: data ['bank-100-task5-amount']
                 }) }}
 
                 <div class="govuk-form-group">
@@ -192,31 +193,31 @@ Edit a payment - {{ data['bank-100-name'] }} – {{ serviceName }} – GOV.UK Pr
                           For example, 27 03 2023
                         </div>
                       
-                        <div class="govuk-date-input" id="bank-100-task1-date">
+                        <div class="govuk-date-input" id="bank-100-task5-date">
                           <div class="govuk-date-input__item">
                             <div class="govuk-form-group">
-                              <label class="govuk-label govuk-date-input__label" for="bank-100-task1-day">
+                              <label class="govuk-label govuk-date-input__label" for="bank-100-task5-day">
                                 Day
                               </label>
-                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="bank-100-task1-day" name="bank-100-task1-day" type="text" inputmode="numeric" value="{{ data['bank-100-task1-day'] }}">
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="bank-100-task5-day" name="bank-100-task5-day" type="text" inputmode="numeric" value="{{ data['bank-100-task5-day'] }}">
                             </div>
                           </div>
                         
                           <div class="govuk-date-input__item">
                             <div class="govuk-form-group">
-                              <label class="govuk-label govuk-date-input__label" for="bank-100-task1-month">
+                              <label class="govuk-label govuk-date-input__label" for="bank-100-task5-month">
                                 Month
                               </label>
-                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="bank-100-task1-month" name="bank-100-task1-month" type="text" inputmode="numeric" value="{{ data['bank-100-task1-month'] }}">
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="bank-100-task5-month" name="bank-100-task5-month" type="text" inputmode="numeric" value="{{ data['bank-100-task5-month'] }}">
                             </div>
                           </div>
                         
                           <div class="govuk-date-input__item">
                             <div class="govuk-form-group">
-                              <label class="govuk-label govuk-date-input__label" for="bank-100-task1-year">
+                              <label class="govuk-label govuk-date-input__label" for="bank-100-task5-year">
                                 Year
                               </label>
-                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="bank-100-task1-year" name="bank-100-task1-year" type="text" inputmode="numeric" value="{{ data['bank-100-task1-year'] }}">
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="bank-100-task5-year" name="bank-100-task5-year" type="text" inputmode="numeric" value="{{ data['bank-100-task5-year'] }}">
                             </div>
                           </div>
                         </div>
@@ -230,13 +231,13 @@ Edit a payment - {{ data['bank-100-name'] }} – {{ serviceName }} – GOV.UK Pr
                         isPageHeading: false
                       },
                       classes: "govuk-!-width-one-half",
-                      id: "bank-100-task1-reference",
-                      name: "bank-100-task1-reference",
-                      value: data ['bank-100-task1-reference']
+                      id: "bank-100-task5-reference",
+                      name: "bank-100-task5-reference",
+                      value: data ['bank-100-task5-reference']
                   }) }}
 
                   
-				<div class="govuk-button-group">
+                  <div class="govuk-button-group">
 					<button class="govuk-button" data-module="govuk-button">
 					  Save changes
 					</button>
@@ -246,8 +247,8 @@ Edit a payment - {{ data['bank-100-name'] }} – {{ serviceName }} – GOV.UK Pr
 					<a class="govuk-link" href="javascript:window.history.back()">Cancel</a>
 				  </div>
  
+            </fieldset>  
             </fieldset>   
-  </form>
 </div>
 
 </div>
