@@ -8,7 +8,7 @@ window.GOVUKPrototypeKit.documentReady(() => {
 });
 new MOJFrontend.FilterToggleButton({
   bigModeMediaQuery: "(min-width: 48.063em)",
-  startHidden: false,
+  startHidden: true,
   toggleButton: {
     container: $(".moj-action-bar__filter"),
     showText: "Show filter",

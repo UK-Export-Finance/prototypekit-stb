@@ -449,7 +449,6 @@ caption,
 
 .govuk-table__cell.stb-no-border {
 
-
 }
 
 .govuk-table.stb-table {line-height: 2}
@@ -471,4 +470,9 @@ caption,
   min-width: 240px;
   width: 100%;
 }
+}
+
+.moj-filter__header {
+  background-color: #f3f2f1;
+  border: 1px solid #b1b4b6;
 }

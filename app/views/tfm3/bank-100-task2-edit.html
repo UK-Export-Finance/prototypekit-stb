@@ -26,10 +26,10 @@ Add a payment - {{ data['bank-100-name'] }} – {{ serviceName }} – GOV.UK Pro
       
     <h1 class="govuk-heading-l govuk-!-margin-bottom-6">
         <span class="govuk-caption-l">{{ data['bank-100-name'] }}, {{ data['report-month'] }}</span>
-        Add a payment
+        Edit a payment
       </h1>
           <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
-            Selected facilities details
+            Added facilities
           </h2>
             <table class="govuk-table" data-module="moj-sortable-table">
 			<thead class="govuk-table__head">
@@ -42,13 +42,27 @@ Add a payment - {{ data['bank-100-name'] }} – {{ serviceName }} – GOV.UK Pro
 			</thead>
 			<tbody class="govuk-table__body">
 				<tr class="govuk-table__row">
-					<td class="govuk-table__cell">{{ data['facility-300-ukef-id'] }}</td>
+					<td class="govuk-table__cell govuk-!-padding-top-1 govuk-!-padding-bottom-1">
+						<div class="govuk-checkboxes__item govuk-checkboxes--small">
+							<input type="checkbox" class="govuk-checkboxes__input" id="{{ data['facility-300-ukef-id'] }}">
+							<label class="govuk-label govuk-checkboxes__label" for="{{ data['facility-300-ukef-id'] }}">
+							  {{ data['facility-300-ukef-id'] }}
+							</label>
+						  </div>
+						</td>
 					<td class="govuk-table__cell">{{ data['facility-300-name'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-300-currency'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-300-currency'] }} {{ data['facility-300-paid'] }}</td>
 				</tr>
 				<tr class="govuk-table__row">
-					<td class="govuk-table__cell">{{ data['facility-800-ukef-id'] }}</td>
+					<td class="govuk-table__cell govuk-!-padding-top-1 govuk-!-padding-bottom-1">
+						<div class="govuk-checkboxes__item govuk-checkboxes--small">
+							<input type="checkbox" class="govuk-checkboxes__input" id="{{ data['facility-800-ukef-id'] }}">
+							<label class="govuk-label govuk-checkboxes__label" for="{{ data['facility-800-ukef-id'] }}">
+							  {{ data['facility-800-ukef-id'] }}
+							</label>
+						  </div>
+						</td>
 					<td class="govuk-table__cell">{{ data['facility-800-name'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-800-currency'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-800-currency'] }} {{ data['facility-800-paid'] }}</td>
@@ -64,18 +78,15 @@ Add a payment - {{ data['bank-100-name'] }} – {{ serviceName }} – GOV.UK Pro
 
 
 			{{ govukButton({
-                text: "Add to an existing payment",
+                text: "Remove selected facilities",
                 classes: "govuk-button--secondary govuk-!-margin-bottom-7",
                 name: "addexistingPayment",
                 value: false
               }) }}
 
-              <form class="form" action="bank-100#reconciliation" method="get">
-                <input type="hidden" name="bank-100-task2" value="done">
-                <input type="hidden" name="bank-100-show-task" value="three">
                 
         <fieldset class="govuk-fieldset">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">New payment details</legend>
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Payment details</legend>
                 
                 <div class="govuk-form-group">
 
@@ -175,35 +186,18 @@ Add a payment - {{ data['bank-100-name'] }} – {{ serviceName }} – GOV.UK Pro
                       name: "bank-100-task2-reference",
                       value: data ['bank-100-task2-reference']
                   }) }}
-
-                  <div class="govuk-form-group">
-                  <fieldset class="govuk-fieldset">
-  
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                      Add another payment for these facilities?
-                    </legend>
-                    <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
-                          <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="yes" name="bank-100-task2-another" type="radio" value="yes" {{ checked('bank-100-task2-another','yes') }}>
-                            <label class="govuk-label govuk-radios__label" for="yes">
-                          Yes
-                        </label>
-                          </div>
-                          <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="no" name="bank-100-task2-another" type="radio" value="no" {{ checked('bank-100-task2-another','no') }}>
-                            <label class="govuk-label govuk-radios__label" for="no">
-                          No
-                        </label>
-                          </div>
-                    </div>
-                  </fieldset>
-                </div>
                   
-                  {{ govukButton({
-                    text: "Continue"
-                  }) }}
+				  <div class="govuk-button-group">
+					<button class="govuk-button" data-module="govuk-button">
+					  Save changes
+					</button>
+					<button class="govuk-button  govuk-button--warning" data-module="govuk-button">
+					  Delete payment
+					</button>
+					<a class="govuk-link" href="javascript:window.history.back()">Cancel</a>
+				  </div>
             </fieldset>   
-  </form>
+
 </div>
 
 </div>
