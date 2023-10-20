@@ -1,7 +1,7 @@
 {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
 
 {% block pageTitle %}
-Check before generating keying sheet data - {{ data['bank-100-name'] }} – {{ serviceName }} – GOV.UK Prototype Kit
+Add to an existing payment - {{ data['bank-100-name'] }} – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block header %}
@@ -20,22 +20,14 @@ Check before generating keying sheet data - {{ data['bank-100-name'] }} – {{ s
 {% block content %}
 <div class="govuk-grid-row">
 
-  <div class="govuk-grid-column-full">
-		
-      <form class="form" action="/tfm3/bank-100#keying-sheet" method="post">
-		<input type="hidden" name="bank-100-task6" value="done">
-		<input type="hidden" name="bank-100-show-task" value="seven">
-		<input type="hidden" name="generate-keying-sheet" value="generated2">
+  <div class="govuk-grid-column-two-thirds">
 
-		<input type="hidden" name="showBanner" value="true">
-		<input type="hidden" name="bank-100-status" value="completed">
-		
     <h1 class="govuk-heading-l govuk-!-margin-bottom-6">
         <span class="govuk-caption-l">{{ data['bank-100-name'] }}, {{ data['report-month'] }}</span>
-        Check before generating keying data 
+        Add to an existing payment
       </h1>
           <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
-            6 matched facilities
+            Selected facilities details
           </h2>
             <table class="govuk-table" data-module="moj-sortable-table">
 			<thead class="govuk-table__head">
@@ -43,9 +35,7 @@ Check before generating keying sheet data - {{ data['bank-100-name'] }} – {{ s
 				<th scope="col" class="govuk-table__header" aria-sort="ascending">Facility ID</th>
 				<th scope="col" class="govuk-table__header" aria-sort="none">Exporter</th>
 				<th scope="col" class="govuk-table__header" aria-sort="none">Facility base currency</th>
-				<th scope="col" class="govuk-table__header" aria-sort="none">Reported fee payable (reported currency)</th>
-				<th scope="col" class="govuk-table__header" aria-sort="none">Payments received</th>
-				<th scope="col" class="govuk-table__header" aria-sort="none">Status</th>
+				<th scope="col" class="govuk-table__header" aria-sort="none">Reported fee payable</th>
 				</tr>
 			</thead>
 			<tbody class="govuk-table__body">
@@ -54,66 +44,89 @@ Check before generating keying sheet data - {{ data['bank-100-name'] }} – {{ s
 					<td class="govuk-table__cell">{{ data['facility-100-name'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-100-currency'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-100-currency'] }} {{ data['facility-100-paid'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-100-currency'] }} {{ data['facility-100-paid'] }}</td>
-					<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Match</strong></td>
 				</tr>
 				<tr class="govuk-table__row">
 					<td class="govuk-table__cell">{{ data['facility-400-ukef-id'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-400-name'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-400-currency'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-400-currency'] }} {{ data['facility-400-paid'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-400-currency'] }} {{ data['facility-400-paid'] }}</td>
-					<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Match</strong></td>
 				</tr>
 				<tr class="govuk-table__row">
 					<td class="govuk-table__cell">{{ data['facility-500-ukef-id'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-500-name'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-500-currency'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-500-currency'] }} {{ data['facility-500-paid'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-500-currency'] }} {{ data['facility-500-paid'] }}</td>
-					<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Match</strong></td>
 				</tr>
-
 				<tr class="govuk-table__row">
 					<td class="govuk-table__cell">{{ data['facility-600-ukef-id'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-600-name'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-600-currency'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-600-currency'] }} {{ data['facility-600-paid'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-600-currency'] }} {{ data['facility-600-paid'] }}</td>
-					<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Match</strong></td>
 				</tr>
-
 				<tr class="govuk-table__row">
 					<td class="govuk-table__cell">{{ data['facility-700-ukef-id'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-700-name'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-700-currency'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-700-currency'] }} {{ data['facility-700-paid'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-700-currency'] }} {{ data['facility-700-paid'] }}</td>
-					<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Match</strong></td>
 				</tr>
-				
 				<tr class="govuk-table__row">
 					<td class="govuk-table__cell">{{ data['facility-900-ukef-id'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-900-name'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-900-currency'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-900-currency'] }} {{ data['facility-900-paid'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-900-currency'] }} {{ data['facility-900-paid'] }}</td>
-					<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Match</strong></td>
 				</tr>
-
-			</tbody> 
+			</tbody>
+			<tfoot> 
+				<tr class="govuk-table__row">
+				  <td class="govuk-table__cell govuk-!-font-weight-bold govuk-!-text-align-right" colspan="3">Total reported fee:</td>
+				  <td class="govuk-table__cell govuk-!-font-weight-bold">GBP 8,741.00</td>
+				</tr>    
+			  </tfoot>   
 			</table>
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Which payment do you want to add the facility to?</legend>
+            
+            <div class="govuk-form-group">
 
-			<div class="govuk-button-group">
+                <fieldset class="govuk-fieldset">
 
+                <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
 
-			{{ govukButton({
-				text: "Generate keying data"
-			  }) }}
-			  <a class="govuk-link" href="javascript:window.history.back()">Cancel</a>
-			  </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="GBP" name="bank-100-task3-edit-currency" type="radio" value="GBP">
+                        <label class="govuk-label govuk-radios__label" for="GBP">{{ data['bank-100-task1-currency'] }} {{ data['bank-100-task1-amount'] }}</label>
+                      <div id="GB-hint" class="govuk-hint govuk-radios__hint">
+                        Payment reference: {{ data['bank-100-task1-reference'] }} 
+                      </div>
+                      </div>
 
-  </form>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="EUR" name="bank-100-task3-edit-currency" type="radio" value="EUR">
+                        <label class="govuk-label govuk-radios__label" for="EUR">{{ data['bank-100-task2-currency'] }} {{ data['bank-100-task2-amount'] }}</label>
+                        <div id="EUR-hint" class="govuk-hint govuk-radios__hint">
+                          Payment reference: {{ data['bank-100-task2-reference'] }}  
+                        </div>
+                      </div>
+
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="USD" name="bank-100-task3-edit-currency" type="radio" value="USD">
+                        <label class="govuk-label govuk-radios__label" for="USD">{{ data['bank-100-task3-currency'] }} {{ data['bank-100-task3-amount'] }}</label>
+                        <div id="USD-hint" class="govuk-hint govuk-radios__hint">
+                          Payment reference: {{ data['bank-100-task3-reference'] }}  
+                        </div>
+                      </div>
+
+                </div>
+              </fieldset>
+            </div>
+    <div class="govuk-button-group">
+              {{ govukButton({
+                text: "Continue"
+              }) }}
+      <a class="govuk-link" href="javascript:window.history.back()">Cancel</a>
+    </div>
+        </fieldset>   
+
 </div>
 
 </div>

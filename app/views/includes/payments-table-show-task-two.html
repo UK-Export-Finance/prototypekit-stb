@@ -1,7 +1,18 @@
 <!-- bank-100-show-task two-->
 <tr class="govuk-table__row">
   
+  {% if data['bank-100-show-task'] == 'seven' %}
+
+  <td class="govuk-table__cell">GBP&nbsp;8,731.00</td>
+
+  {% elif data['bank-100-show-task'] == 'five' or data['bank-100-show-task'] == 'six' or data['bank-100-show-task'] == 'four' or data['bank-100-show-task'] == 'three' or data['bank-100-show-task'] == 'two' %}
+
+  
   <td class="govuk-table__cell"><a href="bank-100-task1-edit" class="govuk-link govuk-link--no-visited-state">GBP&nbsp;8,731.00</a></td>
+
+  {% endif %}
+
+  
 
   <td class="govuk-table__cell">GEF/LLOYDS/RFND GBP</td>
   
@@ -28,11 +39,16 @@
   <td class="govuk-table__cell">{{ data['signed-in-name'] }}</td>
 
   <td class="govuk-table__cell">
-    {% if (data['gen1-checks'] == '0020003073') %}
+    {% if (data['gen2-checks'] == '0020003182') %}
     
-    {{ "today" | govukDate("truncate") }} at {{ "09:26" | govukTime }}
+    {{ "today" | govukDate("truncate") }} at {{ "09:26" | govukTime }}</td>
   
-    {% elif (data['gen1-checks'] =='' or '0020002193' or '0020002167') %}
+    {% elif data['gen2-checks'] == '' 
+    or data['gen2-checks'] == '0020002154' 
+    or data['gen2-checks'] == '0020002198'
+    or data['gen2-checks'] == '0020002565'
+    or data['gen2-checks'] == '0020002896'
+    or data['gen2-checks'] == '0020002983' %}
     -
     {% endif %}
   </td>

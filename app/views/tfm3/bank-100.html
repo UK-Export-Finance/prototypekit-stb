@@ -6,7 +6,7 @@
 
 {% block header %}
   {% include "includes/head3.html" %}
-  {% include "includes/primary-nav-banks-main.html" %}
+  {% include "includes/primary-nav-banks-main-v3.html" %}
 {% endblock %}
 
 {% block pageScripts %}
@@ -1437,7 +1437,6 @@ EUR&nbsp;3,260.00
 <!-- Start of Task 6  --> 
 {% elif data['bank-100-show-task'] == 'six' %}
 
-{% if (data['gen2-checks'] == '') or (data['gen2-checks'] == '0020002154') or (data['gen2-checks'] == '0020002198') or (data['gen2-checks'] == '0020002565') or (data['gen2-checks'] == '0020002896') or (data['gen2-checks'] == '0020002983') %}
 
 {% include "includes/help-text.html" %}
 <form class="form" action="/tfm3/bank-100-task6" method="post">
@@ -1458,12 +1457,6 @@ EUR&nbsp;3,260.00
 </form>
 
 
-  {% elif (data['gen2-checks'] == '0020003182') %}
-
-  <strong class="govuk-tag govuk-tag--green">Report completed</strong>
-
-  {% endif %}
-
 </div>
 
 {% include "includes/filter-premium-payments.html" %}
@@ -1475,21 +1468,7 @@ EUR&nbsp;3,260.00
 <!--<table class="govuk-table">-->
 <thead class="govuk-table__head">
 <tr class="govuk-table__row">
-
-
- <!--Report not yet completed-->
- {% if (data['gen2-checks'] == '') or (data['gen2-checks'] == '0020002154') or (data['gen2-checks'] == '0020002198') or (data['gen2-checks'] == '0020002565') or (data['gen2-checks'] == '0020002896') or (data['gen2-checks'] == '0020002983') %}
-
-
-
- <!--Report completed-->
- {% elif (data['gen2-checks'] == '0020003182') %}
-
-
-
- {% endif %}
  
-
 <th scope="col" class="govuk-table__header" aria-sort="ascending">Facility ID</th>
 <th scope="col" class="govuk-table__header govuk-!-width-one-quarter" aria-sort="none">Exporter</th>
 <th scope="col" class="govuk-table__header" aria-sort="none">Base currency</th>
@@ -1504,14 +1483,6 @@ EUR&nbsp;3,260.00
 
 <!--facility 100 row-->  
 <tr class="govuk-table__row govuk-table__row--selected">
-
-<!--Report not yet completed-->
-{% if (data['gen2-checks'] == '') or (data['gen2-checks'] == '0020002154') or (data['gen2-checks'] == '0020002198') or (data['gen2-checks'] == '0020002565') or (data['gen2-checks'] == '0020002896') or (data['gen2-checks'] == '0020002983') %}
-
-<!--Report completed-->
-{% elif (data['gen2-checks'] == '0020003182') %}
-
-{% endif %}
 
 <!--Facility ID-->
 <td class="govuk-table__cell stb-no-border" data-sort-value="{{ data['facility-100-ukef-id'] }}">
@@ -1590,6 +1561,7 @@ EUR&nbsp;3,260.00
 
   <strong class="govuk-tag govuk-tag--grey">Reconciled</strong>
 
+
   {% endif %}
 </td>
 </tr>
@@ -1598,19 +1570,6 @@ EUR&nbsp;3,260.00
 
 <!--facility 300 row-->  
 <tr class="govuk-table__row govuk-table__row--selected">
-
-<!--Report not yet completed-->
-{% if (data['gen2-checks'] == '') or (data['gen2-checks'] == '0020002154') or (data['gen2-checks'] == '0020002198') or (data['gen2-checks'] == '0020002565') or (data['gen2-checks'] == '0020002896') or (data['gen2-checks'] == '0020002983') %}
-
-
-
-<!--Report completed-->
-{% elif (data['gen2-checks'] == '0020003182') %}
-
-
-{% endif %}
-
-
 
 <!--Facility ID-->
 <td class="govuk-table__cell" data-sort-value="{{ data['facility-300-ukef-id'] }}">
@@ -1647,16 +1606,6 @@ EUR&nbsp;3,260.00
 
 <!--facility 200 row-->  
 <tr class="govuk-table__row govuk-table__row--selected">
-<!--Report not yet completed-->
-{% if (data['gen2-checks'] == '') or (data['gen2-checks'] == '0020002154') or (data['gen2-checks'] == '0020002198') or (data['gen2-checks'] == '0020002565') or (data['gen2-checks'] == '0020002896') or (data['gen2-checks'] == '0020002983') %}
-
-
-
-<!--Report completed-->
-{% elif (data['gen2-checks'] == '0020003182') %}
-
-
-{% endif %}
 
 <!--Facility ID-->
 <td class="govuk-table__cell" data-sort-value="{{ data['facility-200-ukef-id'] }}">{{ data['facility-200-ukef-id'] }}</td>
@@ -1693,6 +1642,205 @@ EUR&nbsp;3,260.00
 
 <!-- Start of Task 7  --> 
 {% elif data['bank-100-show-task'] == 'seven' %}
+
+{% if (data['gen2-checks'] == '') or (data['gen2-checks'] == '0020002154') or (data['gen2-checks'] == '0020002198') or (data['gen2-checks'] == '0020002565') or (data['gen2-checks'] == '0020002896') or (data['gen2-checks'] == '0020002983') %}
+
+{% include "includes/help-text.html" %}
+
+  <div class="govuk-button-group">
+    {{ govukButton({
+    text: "Add a payment",
+    name: "generate",
+    value: false
+  }) }}
+
+  {{ govukButton({
+    text: "Generate keying data",
+    classes: "govuk-button--secondary",
+    name: "generate",
+    value: true
+  }) }}
+</div>
+
+  {% elif (data['gen2-checks'] == '0020003182') %}
+
+  <strong class="govuk-tag govuk-tag--green">Report completed</strong>
+
+  {% endif %}
+
+</div>
+
+{% include "includes/filter-premium-payments2.html" %}
+
+</div> 
+
+<!--<table class="govuk-table" data-module="moj-sortable-table">-->
+<table class="govuk-table stb-table" data-module="moj-sortable-table">
+<!--<table class="govuk-table">-->
+<thead class="govuk-table__head">
+<tr class="govuk-table__row">
+ 
+<th scope="col" class="govuk-table__header" aria-sort="ascending">Facility ID</th>
+<th scope="col" class="govuk-table__header govuk-!-width-one-quarter" aria-sort="none">Exporter</th>
+<th scope="col" class="govuk-table__header" aria-sort="none">Base currency</th>
+<th scope="col" class="govuk-table__header" aria-sort="none">Reported fees payable (reported currency)</th>
+<th scope="col" class="govuk-table__header" aria-sort="none">Total reported (base currency)</th>
+<th scope="col" class="govuk-table__header" aria-sort="none">Payments received</th>
+<th scope="col" class="govuk-table__header" aria-sort="none">Total received (base currency)</th>
+<th scope="col" class="govuk-table__header" aria-sort="none">Status</th>            
+</tr>
+</thead>
+<tbody class="govuk-table__body">
+
+<!--facility 100 row-->  
+<tr class="govuk-table__row govuk-table__row--selected">
+
+<!--Facility ID-->
+<td class="govuk-table__cell stb-no-border" data-sort-value="{{ data['facility-100-ukef-id'] }}">
+  {{ data['facility-100-ukef-id'] }}<br>
+  {{ data['facility-400-ukef-id'] }}<br>
+  {{ data['facility-500-ukef-id'] }}<br>
+  {{ data['facility-600-ukef-id'] }}<br>
+  {{ data['facility-700-ukef-id'] }}<br>
+  {{ data['facility-900-ukef-id'] }}
+</td>
+<!--Exporter-->
+<td class="govuk-table__cell stb-no-border">
+  {{ data['facility-100-name'] }}<br>
+  {{ data['facility-400-name'] }}<br>
+  {{ data['facility-500-name'] }}<br>
+  {{ data['facility-600-name'] }}<br>
+  {{ data['facility-700-name'] }}<br>
+  {{ data['facility-900-name'] }}
+</td>
+<!--Base currency-->
+<td class="govuk-table__cell stb-no-border">
+  {{ data['facility-100-currency'] }}<br>
+  {{ data['facility-400-currency'] }}<br>
+  {{ data['facility-500-currency'] }}<br>
+  {{ data['facility-600-currency'] }}<br>
+  {{ data['facility-700-currency'] }}<br>
+  {{ data['facility-900-currency'] }}
+</td>
+<!--Fee payable-->
+<td class="govuk-table__cell stb-no-border">
+  {{ data['facility-100-currency'] }}&nbsp;{{ data['facility-100-paid'] }}<br>
+  {{ data['facility-100-currency'] }}&nbsp;{{ data['facility-400-paid'] }}<br>
+  {{ data['facility-100-currency'] }}&nbsp;{{ data['facility-500-paid'] }}<br>
+  {{ data['facility-100-currency'] }}&nbsp;{{ data['facility-600-paid'] }}<br>
+  {{ data['facility-100-currency'] }}&nbsp;{{ data['facility-700-paid'] }}<br>
+  {{ data['facility-100-currency'] }}&nbsp;{{ data['facility-900-paid'] }}
+</td>
+<!--Fee payable - total-->
+<td class="govuk-table__cell">GBP&nbsp;8,741.00</td>
+
+<td class="govuk-table__cell">
+  <!--Payment received-->
+
+  GBP&nbsp;8,731.00<br>
+  GBP&nbsp;10.00
+
+</td>
+
+<td class="govuk-table__cell">
+  <!--Total received-->
+  GBP&nbsp;8,741.00
+</td>
+
+<td class="govuk-table__cell">
+
+  {% if (data['gen2-checks'] == '') %}
+
+  <strong class="govuk-tag govuk-tag--yellow">Ready&nbsp;to&nbsp;key</strong>
+
+  {% elif (data['gen2-checks'] == '0020002154') or (data['gen2-checks'] == '0020002198') or (data['gen2-checks'] == '0020002565') or (data['gen2-checks'] == '0020002896') or (data['gen2-checks'] == '0020002983') %}
+
+  <strong class="govuk-tag govuk-tag--yellow">Ready&nbsp;to&nbsp;key</strong>
+
+  {% elif (data['gen2-checks'] == '0020003182') %}
+
+  <strong class="govuk-tag govuk-tag--grey">Reconciled</strong>
+
+  {% endif %}
+</td>
+</tr>
+<!--end facility 100 row-->
+
+
+<!--facility 300 row-->  
+<tr class="govuk-table__row govuk-table__row--selected">
+
+<!--Facility ID-->
+<td class="govuk-table__cell" data-sort-value="{{ data['facility-300-ukef-id'] }}">
+{{ data['facility-300-ukef-id'] }}<br>
+{{ data['facility-800-ukef-id'] }}</td>
+<!--Exporter-->
+<td class="govuk-table__cell">
+{{ data['facility-300-name'] }}<br>
+{{ data['facility-800-name'] }}
+</td>
+<!--Base currency-->
+<td class="govuk-table__cell">{{ data['facility-300-currency'] }}<br>{{ data['facility-800-currency'] }}</td>
+<!--Fee payable-->
+<td class="govuk-table__cell">
+{{ data['facility-300-currency'] }}&nbsp;{{ data['facility-300-paid'] }}<br>
+{{ data['facility-800-currency'] }}&nbsp;{{ data['facility-800-paid'] }}</td>
+<td class="govuk-table__cell">
+<!--Fee payable - total-->
+EUR&nbsp;3,260.00</td>
+<td class="govuk-table__cell">
+<!--Payment received-->
+  EUR&nbsp;3,260.00
+</td>
+<td class="govuk-table__cell">
+<!--Total received-->
+EUR&nbsp;3,260.00
+</td>
+<td class="govuk-table__cell">
+  <strong class="govuk-tag govuk-tag--grey">Reconciled</strong> 
+</td>
+</tr>
+<!--end facility 300 row-->
+
+
+<!--facility 200 row-->  
+<tr class="govuk-table__row govuk-table__row--selected">
+
+<!--Facility ID-->
+<td class="govuk-table__cell" data-sort-value="{{ data['facility-200-ukef-id'] }}">{{ data['facility-200-ukef-id'] }}</td>
+<!--Exporter-->
+<td class="govuk-table__cell">{{ data['facility-200-name'] }}</td>
+<!--Base currency-->
+<td class="govuk-table__cell">{{ data['facility-200-currency'] }}</td>
+<!--Fee payable-->
+<td class="govuk-table__cell">{{ data['facility-200-currency'] }}&nbsp;{{ data['facility-200-paid'] }}</td>
+<!--Fee payable - total-->
+<td class="govuk-table__cell">{{ data['facility-200-currency'] }}&nbsp;{{ data['facility-200-paid-total'] }}</td>
+
+<td class="govuk-table__cell">
+<!--Payment received-->
+{{ data['facility-200-currency'] }}&nbsp;{{ data['facility-200-paid'] }}
+</td>
+
+<td class="govuk-table__cell">
+<!--Total received-->
+{{ data['facility-200-currency'] }}&nbsp;{{ data['facility-200-paid'] }}
+</td>
+
+<td class="govuk-table__cell">
+  <strong class="govuk-tag govuk-tag--grey">Reconciled</strong>
+</td>
+</tr>
+<!--end facility 200 row-->
+
+</tbody>
+</table>         
+
+<!-- End of Task 7  -->
+
+
+<!-- Start of Task 8  --> 
+{% elif data['bank-100-show-task'] == 'eight' %}
 <strong class="govuk-tag govuk-tag--green">Report completed</strong>
 </div>
 
@@ -1862,7 +2010,7 @@ EUR&nbsp;3,260.00
 </tbody>
 </table>         
 
-<!-- End of Task 7 / All reconciled  -->
+<!-- End of Task 8 / All reconciled  -->
 
       {% endif %} 
       <!-- End of premium payments buttons and tables grouped as tasks -->
@@ -1898,7 +2046,7 @@ EUR&nbsp;3,260.00
                   <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
                     <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" />
                   </svg>
-                  <div class="moj-banner__message">Keying sheet data generated &ndash; 3 payments added</div>
+                  <div class="moj-banner__message">Keying data generated &ndash; 3 payments added</div>
                 </div>
               {% endif %}
 
@@ -2072,7 +2220,7 @@ EUR&nbsp;3,260.00
                   <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
                     <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" />
                   </svg>
-                  <div class="moj-banner__message">Keying sheet data generated &ndash; 6 payments added</div>
+                  <div class="moj-banner__message">Keying data generated &ndash; 6 payments added</div>
                 </div>
               {% endif %}
 
@@ -2519,7 +2667,7 @@ EUR&nbsp;3,260.00
                           <strong class="govuk-tag">To&nbsp;do</strong>
                         </td>
 
-                        {% elif (data['gen2-checks'] == '0020002154') or (data['gen2-checks'] == '0020002198') or (data['gen2-checks'] == '0020002565') or (data['gen2-checks'] == '0020002896') or (data['gen2-checks'] == '0020002983') or (data['gen2-checks'] == '0020003182') %}
+                        {% elif (data['gen2-checks'] == '0020002154' or '0020002198' or '0020002565' or '0020002896' or '0020002983' or '0020003182') %}
                           <td class="govuk-table__cell" data-sort-value="1">
                             <strong class="govuk-tag govuk-tag--green">Done</strong>
                           </td>
@@ -2551,7 +2699,8 @@ EUR&nbsp;3,260.00
                       </td>
                       <td class="govuk-table__cell">0020002198</td>
 
-                        {% if (data['gen2-checks'] == '') or (data['gen2-checks'] == '0020002154') %}
+                        {% if (data['gen2-checks'] == '') or 
+                        (data['gen2-checks'] == '0020002154') %}
                         <td class="govuk-table__cell" data-sort-value="2">
                           <strong class="govuk-tag">To&nbsp;do</strong>
                         </td>
@@ -2587,7 +2736,9 @@ EUR&nbsp;3,260.00
                       </td>
                       <td class="govuk-table__cell">0020002565</td>
                         
-                        {% if (data['gen2-checks'] == '') or (data['gen2-checks'] == '0020002154') or (data['gen2-checks'] == '0020002198') %}
+                        {% if (data['gen2-checks'] == '') or 
+                        (data['gen2-checks'] == '0020002154') or 
+                        (data['gen2-checks'] == '0020002198') %}
                         <td class="govuk-table__cell" data-sort-value="2">
                           <strong class="govuk-tag">To&nbsp;do</strong>
                         </td>
@@ -2623,7 +2774,11 @@ EUR&nbsp;3,260.00
                       </td>
                       <td class="govuk-table__cell">0020002896</td>
                         
-                        {% if (data['gen2-checks'] == '') or (data['gen2-checks'] == '0020002154') or (data['gen2-checks'] == '0020002198') or (data['gen2-checks'] == '0020002565') %}
+                        {% if (data['gen2-checks'] == '') or 
+                        (data['gen2-checks'] == '0020002154') or 
+                        (data['gen2-checks'] == '0020002198') or 
+                        (data['gen2-checks'] == '0020002565') %}
+
                         <td class="govuk-table__cell" data-sort-value="2">
                           <strong class="govuk-tag">To&nbsp;do</strong>
                         </td>
@@ -2659,7 +2814,11 @@ EUR&nbsp;3,260.00
                       </td>
                       <td class="govuk-table__cell">0020002983</td>
 
-                        {% if (data['gen2-checks'] == '') or (data['gen2-checks'] == '0020002154') or (data['gen2-checks'] == '0020002198') or (data['gen2-checks'] == '0020002565') or (data['gen2-checks'] == '0020002896')%}
+                        {% if (data['gen2-checks'] == '') or 
+                        (data['gen2-checks'] == '0020002154') or 
+                        (data['gen2-checks'] == '0020002198') or 
+                        (data['gen2-checks'] == '0020002565') or 
+                        (data['gen2-checks'] == '0020002896') %}
                         <td class="govuk-table__cell" data-sort-value="2">
                           <strong class="govuk-tag">To&nbsp;do</strong>
                         </td>
@@ -2695,7 +2854,12 @@ EUR&nbsp;3,260.00
                       </td>
                       <td class="govuk-table__cell">0020003182</td>
 
-                        {% if (data['gen2-checks'] == '') or (data['gen2-checks'] == '0020002154') or (data['gen2-checks'] == '0020002198') or (data['gen2-checks'] == '0020002565') or (data['gen2-checks'] == '0020002896') or (data['gen2-checks'] == '0020002983') %}
+                        {% if (data['gen2-checks'] == '') or 
+                        (data['gen2-checks'] == '0020002154') or 
+                        (data['gen2-checks'] == '0020002198') or 
+                        (data['gen2-checks'] == '0020002565') or 
+                        (data['gen2-checks'] == '0020002896') or 
+                        (data['gen2-checks'] == '0020002983') %}
                         <td class="govuk-table__cell" data-sort-value="2">
                           <strong class="govuk-tag">To&nbsp;do</strong>
                         </td>
@@ -2726,7 +2890,7 @@ EUR&nbsp;3,260.00
               <!-- End Generate2 -->     
 
               {% elif (data['generate-keying-sheet'] == 'not-generated') %}
-              <h2 class="govuk-heading-l">Keying sheet</h2>
+              <h2 class="govuk-heading-l  govuk-!-margin-bottom-4">Keying sheet</h2>
               <p class="govuk-body">No data to display. Keying sheet data can be generated for matched facilities on the premium payments tab.</p>
 
               {% endif %}

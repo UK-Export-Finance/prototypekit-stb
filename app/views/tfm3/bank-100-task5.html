@@ -6,7 +6,7 @@ Add a payment - {{ data['bank-100-name'] }} – {{ serviceName }} – GOV.UK Pro
 
 {% block header %}
   {% include "includes/head3.html" %}
-  {% include "includes/primary-nav-banks-main.html" %}
+  {% include "includes/primary-nav-banks-main-v3.html" %}
 {% endblock %}
 
 {% block pageScripts %}
@@ -91,7 +91,8 @@ Add a payment - {{ data['bank-100-name'] }} – {{ serviceName }} – GOV.UK Pro
         text: "Add to an existing payment",
         classes: "govuk-button--secondary govuk-!-margin-bottom-7",
         name: "addexistingPayment",
-        value: false
+        value: false,
+        href: 'bank-100-task5-existing-payment'
       }) }}
 
       <form class="form" action="bank-100#reconciliation" method="get">
@@ -107,7 +108,7 @@ Add a payment - {{ data['bank-100-name'] }} – {{ serviceName }} – GOV.UK Pro
         Amount received
       </dt>
       <dd class="govuk-summary-list__value">
-        GBP 8,731.00
+        {{ data['bank-100-task1-currency'] }} {{ data['bank-100-task1-amount'] }}
       </dd>
     </div> 
   
@@ -116,8 +117,7 @@ Add a payment - {{ data['bank-100-name'] }} – {{ serviceName }} – GOV.UK Pro
         Date received
       </dt>
       <dd class="govuk-summary-list__value">
-        6 September 2023
-        <!--{{ ( data['bank-100-task1-year'] + "-" + data['bank-100-task1-month'] + "-" + data['bank-100-task1-day'] ) | govukDate }}-->
+        {{ ( data['bank-100-task1-year'] + "-" + data['bank-100-task1-month'] + "-" + data['bank-100-task1-day'] ) | govukDate }}
       </dd>
       <dd class="govuk-summary-list__actions">
       </dd>
@@ -278,9 +278,12 @@ Add a payment - {{ data['bank-100-name'] }} – {{ serviceName }} – GOV.UK Pro
                   </fieldset>
                 </div>
                   
+                <div class="govuk-button-group">
                   {{ govukButton({
                     text: "Continue"
                   }) }}
+                  <a class="govuk-link" href="javascript:window.history.back()">Cancel</a>
+                </div>
             </fieldset>   
   </form>
 </div>

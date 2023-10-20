@@ -12,19 +12,23 @@ Search for a report – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block header %}
-  {% include "includes/head2.html" %}
-  {% include "includes/primary-nav-banks-main.html" %}
+  {% include "includes/head3.html" %}
+  {% include "includes/primary-nav-banks-main-v3.html" %}
 {% endblock %}
 
 {% block pageScripts %}
   {% include "includes/scripts.html" %}
 {% endblock %}
 
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-	<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">View reports by year</h1>
+	<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Find reports by year</h1>
     <form class="form" action="view-reports-by-year-results" method="get">
 
     <div class="govuk-form-group">

@@ -32,7 +32,7 @@ router.get('/tfm/index2', (req, res) => {
   const data = req.session.data
   let showBanner2 = (data.showBanner2) ? true : false
   delete data.showBanner
-  res.render('/tfm/index', { showBanner2 })
+  res.render('/tfm/inde/tfm3/bank-100-task6x', { showBanner2 })
 })
 
 // Run this code when a form is submitted to '/tfm3/bank-100#keying-sheet' form on bank-100-check-key1.html

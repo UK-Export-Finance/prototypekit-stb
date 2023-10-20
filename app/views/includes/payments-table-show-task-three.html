@@ -1,12 +1,16 @@
 <!-- bank-100-show-task three-->
 <tr class="govuk-table__row">
   
-  {% if data['bank-100-show-task'] == 'five' or 'six' %}
+  {% if data['bank-100-show-task'] == 'five' or data['bank-100-show-task'] == 'six' or data['bank-100-show-task'] == 'seven' %}
+
 
   <td class="govuk-table__cell">EUR&nbsp;3,260.00</td>
 
-  {% elif data['bank-100-show-task'] == 'four' or 'three' or 'two' %}
+  {% elif data['bank-100-show-task'] == 'four' or data['bank-100-show-task'] == 'three' or data['bank-100-show-task'] == 'two' %}
+
+  
   <td class="govuk-table__cell"><a href="bank-100-task2-edit" class="govuk-link govuk-link--no-visited-state">EUR&nbsp;3,260.00</a></td>
+  
   {% endif %}
   
   <td class="govuk-table__cell">GEF/LLOYDS/RFND EUR</td>
@@ -30,7 +34,8 @@
     
     {{ "today" | govukDate("truncate") }} at {{ "09:47" | govukTime }}</td>
   
-    {% elif (data['gen1-checks'] =='' or '0020002193' or '0020002167') %}
+    {% elif data['gen1-checks'] == '' or data['gen1-checks'] == '0020002193' or data['gen1-checks'] == '0020002167' %}
+
     -
     {% endif %}
     

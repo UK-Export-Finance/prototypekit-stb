@@ -6,7 +6,7 @@ Check before generating keying sheet data - {{ data['bank-100-name'] }} – {{ s
 
 {% block header %}
   {% include "includes/head3.html" %}
-  {% include "includes/primary-nav-banks-main.html" %}
+  {% include "includes/primary-nav-banks-main-v3.html" %}
 {% endblock %}
 
 {% block pageScripts %}
@@ -31,7 +31,7 @@ Check before generating keying sheet data - {{ data['bank-100-name'] }} – {{ s
 		
     <h1 class="govuk-heading-l govuk-!-margin-bottom-6">
         <span class="govuk-caption-l">{{ data['bank-100-name'] }}, {{ data['report-month'] }}</span>
-        Check before generating keying sheet data 
+        Check before generating keying data 
       </h1>
           <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
             3 matched facilities
@@ -77,7 +77,7 @@ Check before generating keying sheet data - {{ data['bank-100-name'] }} – {{ s
 
 			<div class="govuk-button-group">
 			{{ govukButton({
-				text: "Generate keying sheet data"
+				text: "Generate keying data"
 			  }) }}
 			  <a class="govuk-link" href="javascript:window.history.back()">Cancel</a>
 			  </div>

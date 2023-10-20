@@ -1,0 +1,85 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+{% block pageTitle %}
+Add to an existing payment - {{ data['bank-100-name'] }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/head3.html" %}
+  {% include "includes/primary-nav-banks-main-v3.html" %}
+{% endblock %}
+
+{% block pageScripts %}
+  {% include "includes/scripts.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+      
+      
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-6">
+        <span class="govuk-caption-l">{{ data['bank-100-name'] }}, {{ data['report-month'] }}</span>
+        Add to an existing payment
+      </h1>
+          <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+            Selected facilities details
+          </h2>
+            <table class="govuk-table" data-module="moj-sortable-table">
+			<thead class="govuk-table__head">
+				<tr class="govuk-table__row">
+				<th scope="col" class="govuk-table__header" aria-sort="ascending">Facility ID</th>
+				<th scope="col" class="govuk-table__header" aria-sort="none">Exporter</th>
+				<th scope="col" class="govuk-table__header" aria-sort="none">Facility base currency</th>
+				<th scope="col" class="govuk-table__header" aria-sort="none">Reported fee payable</th>
+				</tr>
+			</thead>
+			<tbody class="govuk-table__body">
+				<tr class="govuk-table__row">
+					<td class="govuk-table__cell">{{ data['facility-300-ukef-id'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-300-name'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-300-currency'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-300-currency'] }} {{ data['facility-300-paid'] }}</td>
+				</tr>
+				<tr class="govuk-table__row">
+					<td class="govuk-table__cell">{{ data['facility-800-ukef-id'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-800-name'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-800-currency'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-800-currency'] }} {{ data['facility-800-paid'] }}</td>
+				</tr>
+			</tbody>
+			<tfoot> 
+				<tr class="govuk-table__row">
+				  <td class="govuk-table__cell govuk-!-font-weight-bold govuk-!-text-align-right" colspan="3">Total reported fee:</td>
+				  <td class="govuk-table__cell govuk-!-font-weight-bold">EUR 3,260.00</td>
+				</tr>    
+			  </tfoot>   
+			</table>
+
+			<h2 class="govuk-heading-m">There is one existing payment the facility will be added to</h2>
+
+			<div class="govuk-inset-text">
+				<p class="govuk">{{ data['bank-100-task1-currency'] }} {{ data['bank-100-task1-amount'] }}</p> 
+
+				<p class="govuk-hint">Payment reference: {{ data['bank-100-task1-reference'] }}</p>
+			  </div>
+			
+                  
+                <div class="govuk-button-group">
+                  {{ govukButton({
+                    text: "Continue"
+                  }) }}
+                  <a class="govuk-link" href="javascript:window.history.back()">Cancel</a>
+                </div>
+            </fieldset>   
+  </form>
+</div>
+
+</div>
+{% endblock %}

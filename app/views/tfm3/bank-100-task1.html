@@ -6,7 +6,7 @@ Add a payment - {{ data['bank-100-name'] }} – {{ serviceName }} – GOV.UK Pro
 
 {% block header %}
   {% include "includes/head3.html" %}
-  {% include "includes/primary-nav-banks-main.html" %}
+  {% include "includes/primary-nav-banks-main-v3.html" %}
 {% endblock %}
 
 {% block pageScripts %}
@@ -216,10 +216,16 @@ Add a payment - {{ data['bank-100-name'] }} – {{ serviceName }} – GOV.UK Pro
                     </div>
                   </fieldset>
                 </div>
-                  
+                <div class="govuk-button-group">
                   {{ govukButton({
                     text: "Continue"
                   }) }}
+                  <a class="govuk-link" href="javascript:window.history.back()">Cancel</a>
+                </div>
+
+
+                  
+                    
             </fieldset>   
   </form>
 </div>

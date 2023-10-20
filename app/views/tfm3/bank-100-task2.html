@@ -6,7 +6,7 @@ Add a payment - {{ data['bank-100-name'] }} – {{ serviceName }} – GOV.UK Pro
 
 {% block header %}
   {% include "includes/head3.html" %}
-  {% include "includes/primary-nav-banks-main.html" %}
+  {% include "includes/primary-nav-banks-main-v3.html" %}
 {% endblock %}
 
 {% block pageScripts %}
@@ -67,7 +67,8 @@ Add a payment - {{ data['bank-100-name'] }} – {{ serviceName }} – GOV.UK Pro
                 text: "Add to an existing payment",
                 classes: "govuk-button--secondary govuk-!-margin-bottom-7",
                 name: "addexistingPayment",
-                value: false
+                value: false,
+                href: 'bank-100-task2-existing-payment'
               }) }}
 
               <form class="form" action="bank-100#reconciliation" method="get">
@@ -199,9 +200,12 @@ Add a payment - {{ data['bank-100-name'] }} – {{ serviceName }} – GOV.UK Pro
                   </fieldset>
                 </div>
                   
+                <div class="govuk-button-group">
                   {{ govukButton({
                     text: "Continue"
                   }) }}
+                  <a class="govuk-link" href="javascript:window.history.back()">Cancel</a>
+                </div>
             </fieldset>   
   </form>
 </div>
