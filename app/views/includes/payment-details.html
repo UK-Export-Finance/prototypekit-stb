@@ -3,6 +3,7 @@
 <p class="govuk-body">Payment details will be displayed when payments have been entered on the premium payments tab.</p>
 
 {% elif data['bank-100-status'] == 'inprogress' or 'completed' %}
+<form >
 <div class="moj-filter-layout">
 
     <div class="moj-filter-layout__filter">
@@ -127,7 +128,10 @@
           <tbody class="govuk-table__body">
             
             {% if data['bank-100-show-task'] == 'two' %}
-              {% include "includes/payments-table-show-task-two.html" %}
+            
+              {% if data['bank-100-filter'] == 'gbp-currency' or data['bank-100-filter'] == '' %}
+                {% include "includes/payments-table-show-task-two.html" %}
+              {% endif %}
 
             {% elif data['bank-100-show-task'] == 'three' %}
               {% include "includes/payments-table-show-task-two.html" %}
@@ -162,4 +166,5 @@
 
     </div>
   </div>
+</form>
   {%  endif %}
