@@ -762,7 +762,7 @@ module.exports = {
 'generate-keying-sheet': 'not-generated',
 'gen1-checks': '',
 'gen2-checks': '',
-'bank-100-filter': '',
+'bank-100-currency-filter': '',
 }
 
 

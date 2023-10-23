@@ -25,19 +25,16 @@
     {{ data['facility-200-name'] }}
   </td>
 
-  <td class="govuk-table__cell">{{ "2023-09-10" | govukDate("truncate") }}</td>
+  <td class="govuk-table__cell">{{ ( data['bank-100-task3-year'] + "-" + data['bank-100-task3-month'] + "-" + data['bank-100-task3-day'] ) | govukDate("truncate") }}
+  </td></td>
 
-  <td class="govuk-table__cell">{{ data['signed-in-name'] }}</td>
-
-  <td class="govuk-table__cell">
-    {% if (data['gen1-checks'] == '0020003073') %}
-    
-    {{ "today" | govukDate("truncate") }} at {{ "10:02" | govukTime }}</td>
-  
-    {% elif (data['gen1-checks'] =='' or '0020002193' or '0020002167') %}
-    -
+  {% if data['gen1-checks'] == '' 
+    or data['gen1-checks'] == '0020002193' 
+    or data['gen1-checks'] == '0020002167' %}
+      <td class="govuk-table__cell">-</td>
+      <td class="govuk-table__cell">-</td>
+    {% elif (data['gen1-checks'] == '0020003073') %}
+      <td class="govuk-table__cell">{{ data['signed-in-name'] }}</td>
+      <td class="govuk-table__cell">{{ "today" | govukDate("truncate") }} at {{ "09:16" | govukTime }}</td>
     {% endif %}
-    
-    </td>
-
 </tr>

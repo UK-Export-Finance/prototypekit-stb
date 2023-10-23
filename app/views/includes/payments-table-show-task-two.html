@@ -12,8 +12,6 @@
 
   {% endif %}
 
-  
-
   <td class="govuk-table__cell">GEF/LLOYDS/RFND GBP</td>
   
   <td class="govuk-table__cell">
@@ -34,23 +32,20 @@
     {{ data['facility-900-name'] }}
   </td>
 
-  <td class="govuk-table__cell">{{ "2023-09-10" | govukDate("truncate") }}</td>
-
-  <td class="govuk-table__cell">{{ data['signed-in-name'] }}</td>
-
   <td class="govuk-table__cell">
-    {% if (data['gen2-checks'] == '0020003182') %}
-    
-    {{ "today" | govukDate("truncate") }} at {{ "09:26" | govukTime }}</td>
-  
-    {% elif data['gen2-checks'] == '' 
-    or data['gen2-checks'] == '0020002154' 
-    or data['gen2-checks'] == '0020002198'
-    or data['gen2-checks'] == '0020002565'
-    or data['gen2-checks'] == '0020002896'
-    or data['gen2-checks'] == '0020002983' %}
-    -
-    {% endif %}
+    {{ ( data['bank-100-task1-year'] + "-" + data['bank-100-task1-month'] + "-" + data['bank-100-task1-day'] ) | govukDate("truncate") }}
   </td>
 
+  {% if data['gen2-checks'] == '' 
+  or data['gen2-checks'] == '0020002154' 
+  or data['gen2-checks'] == '0020002198'
+  or data['gen2-checks'] == '0020002565'
+  or data['gen2-checks'] == '0020002896'
+  or data['gen2-checks'] == '0020002983' %}
+    <td class="govuk-table__cell">-</td>
+    <td class="govuk-table__cell">-</td>
+  {% elif (data['gen2-checks'] == '0020003182') %}
+    <td class="govuk-table__cell">{{ data['signed-in-name'] }}</td>
+    <td class="govuk-table__cell">{{ "today" | govukDate("truncate") }} at {{ "09:47" | govukTime }}</td>
+  {% endif %}
 </tr>

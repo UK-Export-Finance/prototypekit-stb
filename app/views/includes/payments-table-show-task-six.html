@@ -32,24 +32,19 @@
     {{ data['facility-900-name'] }}
   </td>
 
-  <td class="govuk-table__cell">{{ "2023-10-09" | govukDate("truncate") }}</td>
+  <td class="govuk-table__cell">{{ ( data['bank-100-task5-year'] + "-" + data['bank-100-task5-month'] + "-" + data['bank-100-task5-day'] ) | govukDate("truncate") }}
+  </td></td>
 
-  <td class="govuk-table__cell">{{ data['signed-in-name'] }}</td>
-
-  <td class="govuk-table__cell">
-    {% if (data['gen2-checks'] == '0020003182') %}
-    
-    {{ "today" | govukDate("truncate") }} at {{ "15:14" | govukTime }}</td>
-  
-    {% elif data['gen2-checks'] == '' 
-    or data['gen2-checks'] == '0020002154' 
-    or data['gen2-checks'] == '0020002198'
-    or data['gen2-checks'] == '0020002565'
-    or data['gen2-checks'] == '0020002896'
-    or data['gen2-checks'] == '0020002983' %}
-    -
-    {% endif %}
-    
-    </td>
-
+  {% if data['gen2-checks'] == '' 
+  or data['gen2-checks'] == '0020002154' 
+  or data['gen2-checks'] == '0020002198'
+  or data['gen2-checks'] == '0020002565'
+  or data['gen2-checks'] == '0020002896'
+  or data['gen2-checks'] == '0020002983' %}
+    <td class="govuk-table__cell">-</td>
+    <td class="govuk-table__cell">-</td>
+  {% elif (data['gen2-checks'] == '0020003182') %}
+    <td class="govuk-table__cell">{{ data['signed-in-name'] }}</td>
+    <td class="govuk-table__cell">{{ "today" | govukDate("truncate") }} at {{ "09:47" | govukTime }}</td>
+  {% endif %}
 </tr>
