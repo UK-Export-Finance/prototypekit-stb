@@ -1,0 +1,99 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+{% set containerClasses = "app-width-container" %}
+
+{% block stylesheets %}
+  {{ super() }}
+  <link href="/public/css/settings.scss" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block pageTitle %}
+Search for a report – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/head3b.html" %}
+  {% include "includes/primary-nav-banks-main-v3.html" %}
+{% endblock %}
+
+{% block pageScripts %}
+  {% include "includes/scripts.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+	<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Find reports by year</h1>
+    <form class="form" action="view-reports-by-year-results" method="get">
+
+    <div class="govuk-form-group">
+
+		<fieldset class="govuk-fieldset">
+		
+		<legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Bank</legend>
+
+		<div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+
+			<div class="govuk-radios__item">
+				<input class="govuk-radios__input" id="Barclays" name="search-bank" type="radio" value="Barclays">
+				<label class="govuk-label govuk-radios__label" for="Barclays">Barclays</label>
+			</div>
+
+			<div class="govuk-radios__item">
+				<input class="govuk-radios__input" id="Clydesdale" name="search-bank" type="radio" value="Clydesdale">
+				<label class="govuk-label govuk-radios__label" for="Clydesdale">Clydesdale</label>
+			</div>
+
+			<div class="govuk-radios__item">
+				<input class="govuk-radios__input" id="HSBC" name="search-bank" type="radio" value="HSBC">
+				<label class="govuk-label govuk-radios__label" for="HSBC">HSBC</label>
+			</div>
+
+			<div class="govuk-radios__item">
+				<input class="govuk-radios__input" id="Lloyds Bank" name="search-bank" type="radio" value="Lloyds Bank">
+				<label class="govuk-label govuk-radios__label" for="Lloyds Bank">Lloyds Bank</label>
+			</div>
+
+			<div class="govuk-radios__item">
+				<input class="govuk-radios__input" id="Natwest" name="search-bank" type="radio" value="Natwest">
+				<label class="govuk-label govuk-radios__label" for="Natwest">Natwest</label>
+			</div>
+
+			<div class="govuk-radios__item">
+				<input class="govuk-radios__input" id="Newable" name="search-bank" type="radio" value="Newable">
+				<label class="govuk-label govuk-radios__label" for="Newable">Newable</label>
+			</div>
+
+			<div class="govuk-radios__item">
+				<input class="govuk-radios__input" id="Santander" name="search-bank" type="radio" value="Santander">
+				<label class="govuk-label govuk-radios__label" for="Santander">Santander</label>
+			</div>
+
+			
+		</div>
+	  </fieldset>
+	</div>
+	
+	{{ govukInput({
+		label: {
+		  text: "Year",
+		  classes: "govuk-label--s",
+		  isPageHeading: false
+		},
+		classes: "govuk-!-width-one-quarter",
+		id: "view-year",
+		name: "view-year"
+	}) }}
+	
+	{{ govukButton({
+		text: "Continue"
+	  }) }}
+</form>
+  </div>
+</div>
+{% endblock %}

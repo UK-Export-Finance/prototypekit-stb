@@ -186,5 +186,105 @@ router.post('/tfm3/bank-100-task6', function (req, res) {
 })
 
 
+/////VERSION 3B
+
+// Run this code when a form is submitted to '/tfm3b/bank-100-task1' form on /tfm3b/bank-100.html
+// This is for when there are 2 buttons on a form that need to go to different pages
+router.post('/tfm3b/bank-100-task1', function (req, res) {
+
+  // We initialise a new constant and make it equal the current value of addaPayment.
+  const addaPayment = req.session.data['addaPayment']
+  
+  //Then we use some logic to decide what page to load next.
+  if (addaPayment == 'true'){
+    res.redirect('bank-100-task1')
+  } else {
+    res.redirect('bank-100#reconciliation')
+  }
+})
+
+/////MORE VERSION 3B
+
+// Run this code when a form is submitted to '/tfm3b/bank-100-task2' form on /tfm3b/bank-100.html
+// This is for when there are 2 buttons on a form that need to go to different pages
+router.post('/tfm3b/bank-100-task2', function (req, res) {
+
+  // We initialise a new constant and make it equal the current value of addaPayment.
+  const addaPayment = req.session.data['addaPayment']
+  
+  //Then we use some logic to decide what page to load next.
+  if (addaPayment == 'true'){
+    res.redirect('bank-100-task2')
+  } else {
+    res.redirect('bank-100#reconciliation')
+  }
+})
+
+/////MORE VERSION 3B
+
+// Run this code when a form is submitted to '/tfm3b/bank-100-task3' form on /tfm3b/bank-100.html
+// This is for when there are 2 buttons on a form that need to go to different pages
+router.post('/tfm3b/bank-100-task3', function (req, res) {
+
+  // We initialise a new constant and make it equal the current value of addaPayment.
+  const addaPayment = req.session.data['addaPayment']
+  
+  //Then we use some logic to decide what page to load next.
+  if (addaPayment == 'true'){
+    res.redirect('bank-100-task3')
+  } else {
+    res.redirect('bank-100#reconciliation')
+  }
+})
+
+/////MORE VERSION 3B
+
+// Run this code when a form is submitted to '/tfm3b/bank-100-task4' form on /tfm3b/bank-100.html
+// This is for when there are 2 buttons on a form that need to go to different pages
+router.post('/tfm3b/bank-100-task4', function (req, res) {
+
+  // We initialise a new constant and make it equal the current value of addaPayment.
+  const generate = req.session.data['generate']
+  
+  //Then we use some logic to decide what page to load next.
+  if (generate == 'true'){
+    res.redirect('bank-100-check-key1')
+  } else {
+    res.redirect('bank-100#reconciliation')
+  }
+})
 
 
+/////MORE VERSION 3B
+
+// Run this code when a form is submitted to '/tfm3b/bank-100-task5' form on /tfm3b/bank-100.html
+// This is for when there are 2 buttons on a form that need to go to different pages
+router.post('/tfm3b/bank-100-task5', function (req, res) {
+
+  // We initialise a new constant and make it equal the current value of addaPayment.
+  const addaPayment = req.session.data['addaPayment']
+  
+  //Then we use some logic to decide what page to load next.
+  if (addaPayment == 'true'){
+    res.redirect('bank-100-task5')
+  } else {
+    res.redirect('bank-100#reconciliation')
+  }
+})
+
+/////MORE VERSION 3B
+
+// Run this code when a form is submitted to '/tfm3b/bank-100-task6' form on /tfm3b/bank-100.html
+// This is for when there are 2 buttons on a form that need to go to different pages
+router.post('/tfm3b/bank-100-task6', function (req, res) {
+
+  // We initialise a new constant and make it equal the current value of addaPayment.
+  const generate = req.session.data['generate']
+  
+  //Then we use some logic to decide what page to load next.
+  if (generate == 'true'){
+    res.redirect('bank-100-check-key2')
+  } else {
+    res.redirect('bank-100#reconciliation')
+  }
+})

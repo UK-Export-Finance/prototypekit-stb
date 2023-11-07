@@ -1,0 +1,254 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+{% block pageTitle %}
+Edit a payment - {{ data['bank-100-name'] }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/head3b.html" %}
+  {% include "includes/primary-nav-banks-main-v3.html" %}
+{% endblock %}
+
+{% block pageScripts %}
+  {% include "includes/scripts.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+      
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-6">
+        <span class="govuk-caption-l">{{ data['bank-100-name'] }}, {{ data['report-month'] }}</span>
+        Edit payment
+      </h1>
+          <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+            Added facilities details
+          </h2>
+            <table class="govuk-table stb-table" data-module="moj-sortable-table">
+			<thead class="govuk-table__head">
+				<tr class="govuk-table__row">
+				<th scope="col" class="govuk-table__header" aria-sort="ascending">Facility ID</th>
+				<th scope="col" class="govuk-table__header" aria-sort="none">Exporter</th>
+				<th scope="col" class="govuk-table__header" aria-sort="none">Facility base currency</th>
+				<th scope="col" class="govuk-table__header" aria-sort="none">Reported fee payable</th>
+				</tr>
+			</thead>
+			<tbody class="govuk-table__body">
+				<tr class="govuk-table__row">
+					<td class="govuk-table__cell govuk-!-padding-top-1 govuk-!-padding-bottom-1">
+						<div class="govuk-checkboxes__item govuk-checkboxes--small">
+							<input type="checkbox" class="govuk-checkboxes__input" id="{{ data['facility-100-ukef-id'] }}">
+							<label class="govuk-label govuk-checkboxes__label" for="{{ data['facility-100-ukef-id'] }}">
+							  {{ data['facility-100-ukef-id'] }}
+							</label>
+						  </div>
+						</td>
+					<td class="govuk-table__cell">{{ data['facility-100-name'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-100-currency'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-100-currency'] }} {{ data['facility-100-paid'] }}</td>
+				</tr>
+				<tr class="govuk-table__row">
+					<td class="govuk-table__cell govuk-!-padding-top-1 govuk-!-padding-bottom-1">
+						<div class="govuk-checkboxes__item govuk-checkboxes--small">
+							<input type="checkbox" class="govuk-checkboxes__input" id="{{ data['facility-400-ukef-id'] }}">
+							<label class="govuk-label govuk-checkboxes__label" for="{{ data['facility-400-ukef-id'] }}">
+							  {{ data['facility-400-ukef-id'] }}
+							</label>
+						  </div>
+						</td>
+					<td class="govuk-table__cell">{{ data['facility-400-name'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-400-currency'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-400-currency'] }} {{ data['facility-400-paid'] }}</td>
+				</tr>
+				<tr class="govuk-table__row">
+					<td class="govuk-table__cell govuk-!-padding-top-1 govuk-!-padding-bottom-1">
+						<div class="govuk-checkboxes__item govuk-checkboxes--small">
+							<input type="checkbox" class="govuk-checkboxes__input" id="{{ data['facility-500-ukef-id'] }}">
+							<label class="govuk-label govuk-checkboxes__label" for="{{ data['facility-500-ukef-id'] }}">
+							  {{ data['facility-500-ukef-id'] }}
+							</label>
+						  </div>
+						</td>
+					<td class="govuk-table__cell">{{ data['facility-500-name'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-500-currency'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-500-currency'] }} {{ data['facility-500-paid'] }}</td>
+				</tr>
+				<tr class="govuk-table__row">
+					<td class="govuk-table__cell govuk-!-padding-top-1 govuk-!-padding-bottom-1">
+						<div class="govuk-checkboxes__item govuk-checkboxes--small">
+							<input type="checkbox" class="govuk-checkboxes__input" id="{{ data['facility-600-ukef-id'] }}">
+							<label class="govuk-label govuk-checkboxes__label" for="{{ data['facility-600-ukef-id'] }}">
+							  {{ data['facility-600-ukef-id'] }}
+							</label>
+						  </div>
+						</td>
+					<td class="govuk-table__cell">{{ data['facility-600-name'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-600-currency'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-600-currency'] }} {{ data['facility-600-paid'] }}</td>
+				</tr>
+				<tr class="govuk-table__row">
+					<td class="govuk-table__cell govuk-!-padding-top-1 govuk-!-padding-bottom-1">
+						<div class="govuk-checkboxes__item govuk-checkboxes--small">
+							<input type="checkbox" class="govuk-checkboxes__input" id="{{ data['facility-700-ukef-id'] }}">
+							<label class="govuk-label govuk-checkboxes__label" for="{{ data['facility-700-ukef-id'] }}">
+							  {{ data['facility-700-ukef-id'] }}
+							</label>
+						  </div>
+						</td>
+					<td class="govuk-table__cell">{{ data['facility-700-name'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-700-currency'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-700-currency'] }} {{ data['facility-700-paid'] }}</td>
+				</tr>
+				<tr class="govuk-table__row">
+					<td class="govuk-table__cell govuk-!-padding-top-1 govuk-!-padding-bottom-1">
+						<div class="govuk-checkboxes__item govuk-checkboxes--small">
+							<input type="checkbox" class="govuk-checkboxes__input" id="{{ data['facility-900-ukef-id'] }}">
+							<label class="govuk-label govuk-checkboxes__label" for="{{ data['facility-900-ukef-id'] }}">
+							  {{ data['facility-900-ukef-id'] }}
+							</label>
+						  </div>
+						</td>
+					<td class="govuk-table__cell">{{ data['facility-900-name'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-900-currency'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-900-currency'] }} {{ data['facility-900-paid'] }}</td>
+				</tr>
+			</tbody>
+			<tfoot> 
+				<tr class="govuk-table__row">
+				  <td class="govuk-table__cell govuk-!-font-weight-bold govuk-!-text-align-right" colspan="3">Total reported fee:</td>
+				  <td class="govuk-table__cell govuk-!-font-weight-bold">GBP 8,741.00</td>
+				</tr>    
+			  </tfoot>   
+			</table>
+
+			{{ govukButton({
+				text: "Remove selected facilities",
+				classes: "govuk-button--secondary govuk-!-margin-bottom-7"
+			  }) }}
+
+
+        <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Payment details</legend>
+                
+                <div class="govuk-form-group">
+
+                    <fieldset class="govuk-fieldset">
+                    
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Currency payment was in</legend>
+
+                    <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="GBP" name="bank-100-task1-currency" type="radio" value="GBP" {{ checked('bank-100-task1-currency','GBP') }}>
+                            <label class="govuk-label govuk-radios__label" for="GBP">GBP</label>
+                          </div>
+
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="EUR" name="bank-100-task1-currency" type="radio" value="EUR" {{ checked('bank-100-task1-currency','EUR') }}>
+                            <label class="govuk-label govuk-radios__label" for="bank-100-currency1-2">EUR</label>
+                          </div>
+
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="USD" name="bank-100-task1-currency" type="radio" value="USD" {{ checked('bank-100-task1-currency','USD') }}>
+                            <label class="govuk-label govuk-radios__label" for="USD">USD</label>
+                          </div>
+   
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="JPY" name="bank-100-task1-currency" type="radio" value="JPY" {{ checked('bank-100-task1-currency','JPY') }}>
+                            <label class="govuk-label govuk-radios__label" for="bank-100-currency1-4">JPY</label>
+                          </div>
+                    </div>
+                  </fieldset>
+                </div>
+
+                {{ govukInput({
+                    label: {
+                      text: "Amount received",
+                      classes: "govuk-label--s",
+                      isPageHeading: false
+                    },
+                    hint: {
+                      text: "Enter the amount without the currency"
+                    },
+                    classes: "govuk-!-width-one-half",
+                    id: "amount1",
+                    name: "bank-100-task1-amount",
+                    value: data ['bank-100-task1-amount']
+                }) }}
+
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" role="group" aria-describedby="date1-hint">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                          Date payment received
+                        </legend>
+                        
+                        <div id="date1-hint" class="govuk-hint">
+                          For example, 27 03 2023
+                        </div>
+                      
+                        <div class="govuk-date-input" id="bank-100-task1-date">
+                          <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                              <label class="govuk-label govuk-date-input__label" for="bank-100-task1-day">
+                                Day
+                              </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="bank-100-task1-day" name="bank-100-task1-day" type="text" inputmode="numeric" value="{{ data['bank-100-task1-day'] }}">
+                            </div>
+                          </div>
+                        
+                          <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                              <label class="govuk-label govuk-date-input__label" for="bank-100-task1-month">
+                                Month
+                              </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="bank-100-task1-month" name="bank-100-task1-month" type="text" inputmode="numeric" value="{{ data['bank-100-task1-month'] }}">
+                            </div>
+                          </div>
+                        
+                          <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                              <label class="govuk-label govuk-date-input__label" for="bank-100-task1-year">
+                                Year
+                              </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="bank-100-task1-year" name="bank-100-task1-year" type="text" inputmode="numeric" value="{{ data['bank-100-task1-year'] }}">
+                            </div>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                
+                    {{ govukInput({
+                      label: {
+                        text: "Payment reference (optional)",
+                        classes: "govuk-label--s",
+                        isPageHeading: false
+                      },
+                      classes: "govuk-!-width-one-half",
+                      id: "bank-100-task1-reference",
+                      name: "bank-100-task1-reference",
+                      value: data ['bank-100-task1-reference']
+                  }) }}
+
+                  
+				<div class="govuk-button-group">
+					<button class="govuk-button" data-module="govuk-button">
+					  Save changes
+					</button>
+					<button class="govuk-button  govuk-button--warning" data-module="govuk-button">
+					  Delete payment
+					</button>
+					<a class="govuk-link" href="javascript:window.history.back()">Cancel</a>
+				  </div>
+ 
+            </fieldset>   
+  </form>
+</div>
+
+</div>
+{% endblock %}

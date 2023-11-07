@@ -12,7 +12,7 @@ Bank reports – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block header %}
-  {% include "includes/head3.html" %}
+  {% include "includes/head3b.html" %}
   {% include "includes/primary-nav-banks-main-v3.html" %}
 {% endblock %}
 
@@ -37,7 +37,7 @@ Bank reports – {{ serviceName }} – GOV.UK Prototype Kit
 
     <h2 class="govuk-heading-m">Current reporting period {{ data['report-month'] }}</h2>
 
-    <p class="govuk-body">Reports due to be received by {{ data['this-month-report-due'] }}.</p>
+    <p class="govuk-body">{{ data['report-month'] }} reports due to be received by {{ data['this-month-report-due'] }}.</p>
 
     <table class="govuk-table" data-module="moj-sortable-table">
       <thead class="govuk-table__head">
@@ -45,8 +45,9 @@ Bank reports – {{ serviceName }} – GOV.UK Prototype Kit
           <th scope="col" class="govuk-table__header" aria-sort="ascending">Bank</th>
           <th scope="col" class="govuk-table__header" aria-sort="none">Status</th>
           <th scope="col" class="govuk-table__header" aria-sort="none">Date report received</th>
-		      <th scope="col" class="govuk-table__header" aria-sort="none">Total facilities reported</th>
-          <th scope="col" class="govuk-table__header" aria-sort="none">Facilities left to reconcile</th>
+		  <th scope="col" class="govuk-table__header" aria-sort="none">Total facilities reported</th>
+		  <th scope="col" class="govuk-table__header" aria-sort="none">Total fees reported</th>
+          <th scope="col" class="govuk-table__header" aria-sort="none">Fees left to reconcile</th>
         </tr>
       </thead>
 
@@ -56,6 +57,7 @@ Bank reports – {{ serviceName }} – GOV.UK Prototype Kit
           <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Reconciliation in progress</strong></td>
           <td class="govuk-table__cell" data-sort-value="230708">8 July 2023</td>
           <td class="govuk-table__cell" data-sort-value="35">35</td>
+		  <td class="govuk-table__cell" data-sort-value="43">43</td>
           <td class="govuk-table__cell" data-sort-value="14">14</td>
         </tr>
         <tr class="govuk-table__row">
@@ -63,6 +65,7 @@ Bank reports – {{ serviceName }} – GOV.UK Prototype Kit
           <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">Reconciliation in progress</strong></td>
           <td class="govuk-table__cell" data-sort-value="230706">6 July 2023</td>
           <td class="govuk-table__cell" data-sort-value="14">14</td>
+		  <td class="govuk-table__cell" data-sort-value="14">14</td>
           <td class="govuk-table__cell" data-sort-value="1">1</td>
         </tr>
         <tr class="govuk-table__row">
@@ -70,22 +73,16 @@ Bank reports – {{ serviceName }} – GOV.UK Prototype Kit
           <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Report completed</strong></td>
           <td class="govuk-table__cell" data-sort-value="230708">8 July 2023</td>
           <td class="govuk-table__cell" data-sort-value="68">68</td>
+		  <td class="govuk-table__cell" data-sort-value="84">84</td>
           <td class="govuk-table__cell" data-sort-value="0">0</td>
         </tr>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="4"><a class="govuk-link govuk-link--no-visited-state" href="bank-100">{{ data['bank-100-name'] }}</a></th>
           <td class="govuk-table__cell">
             
-            {% if (data['bank-100-status'] == 'pending') %} 
+
             <strong class="govuk-tag">Pending reconciliation</strong> 
 
-            {% elif (data['bank-100-status'] == 'inprogress') %} 
-            <strong class="govuk-tag govuk-tag--blue">Reconciliation in progress</strong>
-
-            {% elif (data['bank-100-status'] == 'completed') %} 
-            <strong class="govuk-tag govuk-tag--green">Report completed</strong>
-            
-            {% endif %}  
 
           </td>
           <td class="govuk-table__cell" data-sort-value="230709">{{ data['bank-100-report-received'] }}</td>
@@ -93,13 +90,10 @@ Bank reports – {{ serviceName }} – GOV.UK Prototype Kit
             9
           </td>
           <td class="govuk-table__cell">
-            {% if (data['generate-keying-sheet'] == 'not-generated') %} 
             9
-            {% elif (data['generate-keying-sheet'] == 'generated1') %} 
-            6
-            {% elif (data['generate-keying-sheet'] == 'generated2') %} 
-            0
-            {% endif %}
+          </td>
+		  <td class="govuk-table__cell">
+            9
           </td>
         </tr>
 
@@ -108,6 +102,7 @@ Bank reports – {{ serviceName }} – GOV.UK Prototype Kit
           <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Not received</strong></td>
           <td class="govuk-table__cell" data-sort-value=""></td>
           <td class="govuk-table__cell" data-sort-value=""></td>
+		  <td class="govuk-table__cell" data-sort-value=""></td>
           <td class="govuk-table__cell" data-sort-value=""></td>
         </tr>
         <tr class="govuk-table__row">
@@ -115,6 +110,7 @@ Bank reports – {{ serviceName }} – GOV.UK Prototype Kit
           <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Not received</strong></td>
           <td class="govuk-table__cell" data-sort-value=""></td>
           <td class="govuk-table__cell" data-sort-value=""></td>
+		  <td class="govuk-table__cell" data-sort-value=""></td>
           <td class="govuk-table__cell" data-sort-value=""></td>
         </tr>
         <tr class="govuk-table__row">
@@ -123,6 +119,7 @@ Bank reports – {{ serviceName }} – GOV.UK Prototype Kit
           <td class="govuk-table__cell" data-sort-value=""></td>
           <td class="govuk-table__cell" data-sort-value=""></td>
           <td class="govuk-table__cell" data-sort-value=""></td>
+		  <td class="govuk-table__cell" data-sort-value=""></td>
         </tr>
       </tbody>
     </table>
@@ -133,20 +130,21 @@ Bank reports – {{ serviceName }} – GOV.UK Prototype Kit
           <th scope="col" class="govuk-table__header" aria-sort="ascending">Bank</th>
           <th scope="col" class="govuk-table__header" aria-sort="none">Status</th>
           <th scope="col" class="govuk-table__header" aria-sort="none">Date report received</th>
-		      <th scope="col" class="govuk-table__header" aria-sort="none">Total facilities reported</th>
-          <th scope="col" class="govuk-table__header" aria-sort="none">Facilities left to reconcile</th>
+		  <th scope="col" class="govuk-table__header" aria-sort="none">Total facilities reported</th>
+		  <th scope="col" class="govuk-table__header" aria-sort="none">Total fees reported</th>
+          <th scope="col" class="govuk-table__header" aria-sort="none">Fees left to reconcile</th>
         </tr>
       </thead>
 
       <h2 class="govuk-heading-m">{{ data['last-month'] }} open reports</h2>
 
-      <p class="govuk-body">Reports were due to be received by 14 June 2023.</p>
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="1"><a class="govuk-link govuk-link--no-visited-state" href="#">Barclays</a></th>
           <td class="govuk-table__cell" data-sort-value=""><strong class="govuk-tag govuk-tag--blue">Reconciliation in progress</strong></td>
           <td class="govuk-table__cell" data-sort-value="">1 July 2023</td>
           <td class="govuk-table__cell" data-sort-value="">35</td>
+		  <td class="govuk-table__cell" data-sort-value="">44</td>
           <td class="govuk-table__cell" data-sort-value="">1</td>
         </tr>
       </tbody>
