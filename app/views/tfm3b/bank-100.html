@@ -1,7 +1,7 @@
 {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
 
 {% block pageTitle %}
-{{ data['bank-100-name'] }} – {{ data['report-month'] }} report – {{ serviceName }} – GOV.UK Prototype Kit
+{{ data['bank-100-name'] }} – {{ data['report-quarter-v3b'] }} report – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block header %}
@@ -23,7 +23,7 @@
     </h1>
 
     <h2 class="govuk-heading-l">
-      {{ data['report-month'] }}
+      {{ data['report-quarter-v3b'] }}
     </h2> 
 
     <div class="govuk-tabs" data-module="govuk-tabs">
@@ -36,11 +36,6 @@
               Premium payments
             </a>
           </li>
-          <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-            <a class="govuk-tabs__tab" href="#report">
-              Utilisation
-            </a>
-          </li>
           <li class="govuk-tabs__list-item">
             <a class="govuk-tabs__tab" href="#keying-sheet">
               Keying sheet
@@ -49,6 +44,11 @@
           <li class="govuk-tabs__list-item">
             <a class="govuk-tabs__tab" href="#summary" id="payment-details-tab">
               Payment details
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+            <a class="govuk-tabs__tab" href="#report">
+              Utilisation
             </a>
           </li>
         </ul>
@@ -195,7 +195,7 @@
 
                     <!-- Start of Task 1  -->
                     {% if data['bank-100-show-task'] == 'one' %} 
-                    {% include "includes/help-text.html" %}
+                    {% include "includes/help-text3b.html" %}
                             <form class="form" action="/tfm3b/bank-100-task1" method="post">
                               <div class="govuk-button-group">
                                 {{ govukButton({
@@ -216,7 +216,7 @@
                 
       
               
-              {% include "includes/filter-premium-payments3a.html" %}
+              {% include "includes/filter-premium-payments3ba.html" %}
 
             </div>  
 
@@ -573,7 +573,7 @@
 
             <!-- Start of Task 2  --> 
             {% elif data['bank-100-show-task'] == 'two' %}
-            {% include "includes/help-text.html" %}
+            {% include "includes/help-text3b.html" %}
             <form class="form" action="/tfm3b/bank-100-task2" method="post">
               <div class="govuk-button-group">
                 {{ govukButton({
@@ -592,7 +592,7 @@
         </form>
       </div>
         
-        {% include "includes/filter-premium-payments3a.html" %}
+        {% include "includes/filter-premium-payments3ba.html" %}
 
       </div>  
 
@@ -810,7 +810,7 @@
 
       <!-- Start of Task 3  --> 
             {% elif data['bank-100-show-task'] == 'three' %}
-            {% include "includes/help-text.html" %}
+            {% include "includes/help-text3b.html" %}
             <form class="form" action="/tfm3b/bank-100-task3" method="post">
               <div class="govuk-button-group">
                 {{ govukButton({
@@ -829,7 +829,7 @@
         </form>
       </div>
         
-        {% include "includes/filter-premium-payments3a.html" %}
+        {% include "includes/filter-premium-payments3ba.html" %}
 
       </div>  
 
@@ -1017,7 +1017,7 @@
       
       <!-- Start of Task 4  --> 
       {% elif data['bank-100-show-task'] == 'four' %}
-      {% include "includes/help-text.html" %}
+      {% include "includes/help-text3b.html" %}
       <form class="form" action="/tfm3b/bank-100-task4" method="post">
         <div class="govuk-button-group">
           {{ govukButton({
@@ -1036,7 +1036,7 @@
   </form>
 </div>
   
-  {% include "includes/filter-premium-payments3a.html" %}
+  {% include "includes/filter-premium-payments3ba.html" %}
 
 </div>  
 
@@ -1223,7 +1223,7 @@
 
 <!-- Start of Task 5  --> 
 {% elif data['bank-100-show-task'] == 'five' %}
-{% include "includes/help-text.html" %}
+{% include "includes/help-text3b.html" %}
 <form class="form" action="/tfm3b/bank-100-task5" method="post">
   <div class="govuk-button-group">
     {{ govukButton({
@@ -1242,7 +1242,7 @@
 </form>
 </div>
 
-{% include "includes/filter-premium-payments3a.html" %}
+{% include "includes/filter-premium-payments3ba.html" %}
 
 </div>  
 
@@ -1438,7 +1438,7 @@ EUR&nbsp;3,260.00
 {% elif data['bank-100-show-task'] == 'six' %}
 
 
-{% include "includes/help-text.html" %}
+{% include "includes/help-text3b.html" %}
 <form class="form" action="/tfm3b/bank-100-task6" method="post">
   <div class="govuk-button-group">
     {{ govukButton({
@@ -1459,7 +1459,7 @@ EUR&nbsp;3,260.00
 
 </div>
 
-{% include "includes/filter-premium-payments3a.html" %}
+{% include "includes/filter-premium-payments3ba.html" %}
 
 </div> 
 
@@ -1645,7 +1645,7 @@ EUR&nbsp;3,260.00
 
 {% if (data['gen2-checks'] == '') or (data['gen2-checks'] == '0020002154') or (data['gen2-checks'] == '0020002198') or (data['gen2-checks'] == '0020002565') or (data['gen2-checks'] == '0020002896') or (data['gen2-checks'] == '0020002983') %}
 
-{% include "includes/help-text.html" %}
+{% include "includes/help-text3b.html" %}
 
   <div class="govuk-button-group">
     {{ govukButton({
@@ -1670,7 +1670,7 @@ EUR&nbsp;3,260.00
 
 </div>
 
-{% include "includes/filter-premium-payments3b.html" %}
+{% include "includes/filter-premium-payments3bb.html" %}
 
 </div> 
 
@@ -1844,7 +1844,7 @@ EUR&nbsp;3,260.00
 <strong class="govuk-tag govuk-tag--green">Report completed</strong>
 </div>
 
-{% include "includes/filter-premium-payments3a.html" %}
+{% include "includes/filter-premium-payments3ba.html" %}
 
 </div>  
 

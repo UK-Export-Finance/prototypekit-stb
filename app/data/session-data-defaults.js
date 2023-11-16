@@ -180,6 +180,10 @@ module.exports = {
   'this-month-report-due': '14 July 2023',
   'next-month-report-due': '14 August 2023',
   'payment-date': '4 July 2023',
+
+  'report-month-v3b': 'November 2023',
+  'report-quarter-v3b': 'September to November 2023',
+  'this-month-report-due-v3b': '14 December 2023',
   // using filters now
   //'todays-date': '7 July 2023',
   //'todays-date-full': '7 July 2023',
