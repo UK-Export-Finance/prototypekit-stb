@@ -47,6 +47,12 @@ Add a payment - {{ data['bank-100-name'] }} – {{ serviceName }} – GOV.UK Pro
 					<td class="govuk-table__cell">{{ data['facility-301-currency'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-301-currency'] }} {{ data['facility-301-paid'] }}</td>
 				</tr>
+        <tr class="govuk-table__row">
+					<td class="govuk-table__cell">{{ data['facility-401-ukef-id'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-401-name'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-401-currency'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-402-currency'] }} {{ data['facility-402-paid'] }}</td>
+				</tr>
 				<tr class="govuk-table__row">
 					<td class="govuk-table__cell">{{ data['facility-800-ukef-id'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-800-name'] }}</td>
@@ -57,7 +63,7 @@ Add a payment - {{ data['bank-100-name'] }} – {{ serviceName }} – GOV.UK Pro
 			<tfoot> 
 				<tr class="govuk-table__row">
 				  <td class="govuk-table__cell govuk-!-font-weight-bold govuk-!-text-align-right" colspan="3">Total reported fee:</td>
-				  <td class="govuk-table__cell govuk-!-font-weight-bold">EUR 3,260.00</td>
+				  <td class="govuk-table__cell govuk-!-font-weight-bold">{{ data['v3b-EUR-total'] }}</td>
 				</tr>    
 			  </tfoot>   
 			</table>

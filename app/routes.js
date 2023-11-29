@@ -235,15 +235,16 @@ router.post('/tfm3b/bank-100-task2', function (req, res) {
 router.post('/tfm3b/bank-100-task3', function (req, res) {
 
   // We initialise a new constant and make it equal the current value of addaPayment.
-  const addaPayment = req.session.data['addaPayment']
+  const generate = req.session.data['generate']
   
   //Then we use some logic to decide what page to load next.
-  if (addaPayment == 'true'){
-    res.redirect('bank-100-task3')
+  if (generate == 'true'){
+    res.redirect('bank-100-check-key1')
   } else {
     res.redirect('bank-100#reconciliation')
   }
 })
+
 
 /////MORE VERSION 3B
 

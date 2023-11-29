@@ -56,15 +56,15 @@ Edit a payment - {{ data['bank-100-name'] }} – {{ serviceName }} – GOV.UK Pr
 				<tr class="govuk-table__row">
 					<td class="govuk-table__cell govuk-!-padding-top-1 govuk-!-padding-bottom-1">
 						<div class="govuk-checkboxes__item govuk-checkboxes--small">
-							<input type="checkbox" class="govuk-checkboxes__input" id="{{ data['facility-400-ukef-id'] }}">
-							<label class="govuk-label govuk-checkboxes__label" for="{{ data['facility-400-ukef-id'] }}">
-							  {{ data['facility-400-ukef-id'] }}
+							<input type="checkbox" class="govuk-checkboxes__input" id="{{ data['facility-401-ukef-id'] }}">
+							<label class="govuk-label govuk-checkboxes__label" for="{{ data['facility-401-ukef-id'] }}">
+							  {{ data['facility-401-ukef-id'] }}
 							</label>
 						  </div>
 						</td>
-					<td class="govuk-table__cell">{{ data['facility-400-name'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-400-currency'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-400-currency'] }} {{ data['facility-400-paid'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-401-name'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-401-currency'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-401-currency'] }} {{ data['facility-401-paid'] }}</td>
 				</tr>
 				<tr class="govuk-table__row">
 					<td class="govuk-table__cell govuk-!-padding-top-1 govuk-!-padding-bottom-1">
@@ -122,7 +122,7 @@ Edit a payment - {{ data['bank-100-name'] }} – {{ serviceName }} – GOV.UK Pr
 			<tfoot> 
 				<tr class="govuk-table__row">
 				  <td class="govuk-table__cell govuk-!-font-weight-bold govuk-!-text-align-right" colspan="3">Total reported fee:</td>
-				  <td class="govuk-table__cell govuk-!-font-weight-bold">GBP 8,741.00</td>
+				  <td class="govuk-table__cell govuk-!-font-weight-bold">{{ data['v3b-GBP-total'] }}</td>
 				</tr>    
 			  </tfoot>   
 			</table>

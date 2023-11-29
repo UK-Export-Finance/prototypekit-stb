@@ -41,7 +41,8 @@ Edit ayment - {{ data['bank-100-name'] }} – {{ serviceName }} – GOV.UK Proto
 				</tr>
 			</thead>
 			<tbody class="govuk-table__body">
-				<tr class="govuk-table__row">
+				
+        <tr class="govuk-table__row">
 					<td class="govuk-table__cell govuk-!-padding-top-1 govuk-!-padding-bottom-1">
 						<div class="govuk-checkboxes__item govuk-checkboxes--small">
 							<input type="checkbox" class="govuk-checkboxes__input" id="{{ data['facility-301-ukef-id'] }}">
@@ -54,7 +55,22 @@ Edit ayment - {{ data['bank-100-name'] }} – {{ serviceName }} – GOV.UK Proto
 					<td class="govuk-table__cell">{{ data['facility-301-currency'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-301-currency'] }} {{ data['facility-301-paid'] }}</td>
 				</tr>
-				<tr class="govuk-table__row">
+
+        <tr class="govuk-table__row">
+					<td class="govuk-table__cell govuk-!-padding-top-1 govuk-!-padding-bottom-1">
+						<div class="govuk-checkboxes__item govuk-checkboxes--small">
+							<input type="checkbox" class="govuk-checkboxes__input" id="{{ data['facility-301-ukef-id'] }}">
+							<label class="govuk-label govuk-checkboxes__label" for="{{ data['facility-301-ukef-id'] }}">
+							  {{ data['facility-401-ukef-id'] }}
+							</label>
+						  </div>
+						</td>
+					<td class="govuk-table__cell">{{ data['facility-401-name'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-401-currency'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-402-currency'] }} {{ data['facility-402-paid'] }}</td>
+				</tr>
+				
+        <tr class="govuk-table__row">
 					<td class="govuk-table__cell govuk-!-padding-top-1 govuk-!-padding-bottom-1">
 						<div class="govuk-checkboxes__item govuk-checkboxes--small">
 							<input type="checkbox" class="govuk-checkboxes__input" id="{{ data['facility-800-ukef-id'] }}">
@@ -71,7 +87,7 @@ Edit ayment - {{ data['bank-100-name'] }} – {{ serviceName }} – GOV.UK Proto
 			<tfoot> 
 				<tr class="govuk-table__row">
 				  <td class="govuk-table__cell govuk-!-font-weight-bold govuk-!-text-align-right" colspan="3">Total reported fee:</td>
-				  <td class="govuk-table__cell govuk-!-font-weight-bold">EUR 3,260.00</td>
+				  <td class="govuk-table__cell govuk-!-font-weight-bold">{{ data['v3b-EUR-total'] }}</td>
 				</tr>    
 			  </tfoot>   
 			</table>
