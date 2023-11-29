@@ -29,6 +29,7 @@ module.exports = {
 'facility-200-paid': '1,000.00',
 'facility-200-paid-total': '1,000.00',
 
+// changed 300 to 301 in version 3b
 'facility-300-name': 'British Tech Innovators Ltd',
 'facility-300-ukef-id': '0020002193',
 'facility-300-currency': 'EUR',
@@ -41,6 +42,20 @@ module.exports = {
 'facility-300-paid': '1,500.00',
 'facility-300-paid-total': '1,500.00',
 
+// changed 300 to 301 in version 3b
+'facility-301-name': 'Lumina Tech Ltd',
+'facility-301-ukef-id': '0020002193',
+'facility-301-currency': 'EUR',
+'facility-301-limit': '1,200,000.00',
+'facility-301-cover': '80%',
+'facility-301-max': '960,000.00',
+'facility-301-utilisation': '550,000.00',
+'facility-301-exposure': '440,000.00',
+'facility-301-accrued': '1,500.00',
+'facility-301-paid': '1,500.00',
+'facility-301-paid-total': '1,500.00',
+
+// split 400 into 401 402 and 403 for version 3b
 'facility-400-name': 'Innovate Solutions Ltd',
 'facility-400-ukef-id': '0020002198',
 'facility-400-currency': 'GBP',
@@ -52,6 +67,25 @@ module.exports = {
 'facility-400-accrued': '1,100.00',
 'facility-400-paid': '1,100.00',
 'facility-400-paid-total': '1,100.00',
+
+// split 400 into 401 402 and 403 for version 3b
+'facility-401-name': 'Innovate Solutions Ltd',
+'facility-401-ukef-id': '0020002198',
+'facility-401-currency': 'GBP',
+'facility-402-currency': 'EUR',
+'facility-403-currency': 'USD',
+'facility-401-limit': '900,000.00',
+'facility-401-cover': '80%',
+'facility-401-max': '720,000.00',
+'facility-401-utilisation': '710,000.00',
+'facility-401-exposure': '568,000.00',
+'facility-401-accrued': '1,100.00',
+'facility-401-paid': '600.00',
+'facility-401-paid-total': '600.00',
+'facility-402-paid': '550.00',
+'facility-402-paid-total': '480.00',
+'facility-403-paid': '740.00',
+'facility-403-paid-total': '645.00',
 
 'facility-500-name': 'Britannia Energy Ltd',
 'facility-500-ukef-id': '0020002565',
