@@ -43,6 +43,14 @@ router.get('/tfm3/bank-100', (req, res) => {
   res.render('/tfm3/bank-100', { showBanner })
 }) 
 
+// Run this code when a form is submitted to '/tfm3b/bank-100#keying-sheet' form on bank-100-check-key1.html
+router.get('/tfm3b/bank-100', (req, res) => {
+  const data = req.session.data
+  let showBanner = (data.showBanner) ? true : false
+  delete data.showBanner
+  res.render('/tfm3b/bank-100', { showBanner })
+}) 
+
 
 // Run this code when a form is submitted to '/tfm2/bank-3a' form on bank-3-task4a.html
 router.post('/tfm2/bank-3a', function (req, res) {
