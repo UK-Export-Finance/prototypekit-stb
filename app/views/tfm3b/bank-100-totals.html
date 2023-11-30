@@ -251,10 +251,10 @@
                   <th scope="col" class="govuk-table__header" aria-sort="ascending">Facility ID</th>
                   <th scope="col" class="govuk-table__header" aria-sort="none">Exporter</th>
                   <th scope="col" class="govuk-table__header" aria-sort="none">Base currency</th>
-                  <th scope="col" class="govuk-table__header" aria-sort="none">Reported fees (reported currency)</th>
-                  <th scope="col" class="govuk-table__header" aria-sort="none">Total reported (base currency)</th>
+                  <th scope="col" class="govuk-table__header" aria-sort="none">Reported fees</th>
+                  <th scope="col" class="govuk-table__header" aria-sort="none">Total reported</th>
                   <th scope="col" class="govuk-table__header" aria-sort="none">Payments received</th>
-                  <th scope="col" class="govuk-table__header" aria-sort="none">Total received (base currency)</th>
+                  <th scope="col" class="govuk-table__header" aria-sort="none">Total received</th>
                   <th scope="col" class="govuk-table__header" aria-sort="none">Status</th>            
                 </tr>
               </thead>
@@ -886,13 +886,13 @@
             <form class="form" action="/tfm3b/bank-100-task3" method="post">
               <div class="govuk-button-group">
                 {{ govukButton({
-                text: "Add a payment 3",
+                text: "Add a payment",
                 name: "generate",
                 value: false
               }) }}
 
               {{ govukButton({
-                text: "Generate keying data 3",
+                text: "Generate keying data",
                 classes: "govuk-button--secondary",
                 name: "generate",
                 value: true
@@ -927,10 +927,10 @@
             <th scope="col" class="govuk-table__header" aria-sort="ascending">Facility ID</th>
             <th scope="col" class="govuk-table__header govuk-!-width-one-quarter" aria-sort="none">Exporter</th>
             <th scope="col" class="govuk-table__header" aria-sort="none">Base currency</th>
-            <th scope="col" class="govuk-table__header" aria-sort="none">Reported fees (reported currency)</th>
-            <th scope="col" class="govuk-table__header" aria-sort="none">Total reported (base currency)</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none">Reported fees </th>
+            <th scope="col" class="govuk-table__header" aria-sort="none">Total reported</th>
             <th scope="col" class="govuk-table__header" aria-sort="none">Payments received</th>
-            <th scope="col" class="govuk-table__header" aria-sort="none">Total received (base currency)</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none">Total received</th>
             <th scope="col" class="govuk-table__header" aria-sort="none">Status</th>            
           </tr>
         </thead>
@@ -1093,15 +1093,15 @@
         <div class="govuk-button-group">
           {{ govukButton({
           text: "Add a payment 4",
-          name: "addaPayment",
-          value: true
+          name: "generate",
+          value: false
         }) }}
 
         {{ govukButton({
           text: "Generate keying data",
           classes: "govuk-button--secondary",
           name: "generate",
-          value: false
+          value: true
         }) }}
       </div>
   </form>
@@ -1328,16 +1328,16 @@
 <form class="form" action="/tfm3b/bank-100-task5" method="post">
   <div class="govuk-button-group">
     {{ govukButton({
-    text: "Add a payment 5",
-    name: "generate",
-    value: false
+    text: "Add a payment",
+    name: "addaPayment",
+    value: true
   }) }}
 
   {{ govukButton({
     text: "Generate keying data",
     classes: "govuk-button--secondary",
-    name: "generate",
-    value: true
+    name: "addaPayment",
+    value: false
   }) }}
 </div>
 </form>
@@ -1347,154 +1347,152 @@
 
 </div>  
 
+<!--<table class="govuk-table" data-module="moj-sortable-table">-->
 <table class="govuk-table stb-table" data-module="moj-sortable-table">
-  <!--<table class="govuk-table">-->
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header" aria-sort="ascending">Facility ID</th>
-      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter" aria-sort="none">Exporter</th>
-      <th scope="col" class="govuk-table__header" aria-sort="none">Base currency</th>
-      <th scope="col" class="govuk-table__header" aria-sort="none">Reported fees (reported currency)</th>
-      <th scope="col" class="govuk-table__header" aria-sort="none">Total reported (base currency)</th>
-      <th scope="col" class="govuk-table__header" aria-sort="none">Payments received</th>
-      <th scope="col" class="govuk-table__header" aria-sort="none">Total received (base currency)</th>
-      <th scope="col" class="govuk-table__header" aria-sort="none">Status</th>            
-    </tr>
-  </thead>
-  <tbody class="govuk-table__body">
+<!--<table class="govuk-table">-->
+<thead class="govuk-table__head">
+<tr class="govuk-table__row">
+{% if data['bank-100-checkboxes'] == 'hide' %}
 
-  <!--facility 100 row-->  
-    <tr class="govuk-table__row govuk-table__row--selected">
-      
-      <!--Facility ID-->
-      <td class="govuk-table__cell stb-no-border" data-sort-value="{{ data['facility-100-ukef-id'] }}">
-        {{ data['facility-100-ukef-id'] }}<br>
-        {{ data['facility-401-ukef-id'] }}<br>
-        {{ data['facility-500-ukef-id'] }}<br>
-        {{ data['facility-600-ukef-id'] }}<br>
-        {{ data['facility-700-ukef-id'] }}<br>
-        {{ data['facility-900-ukef-id'] }}
-      </td>
-      <!--Exporter-->
-      <td class="govuk-table__cell stb-no-border">
-        {{ data['facility-100-name'] }}<br>
-        {{ data['facility-401-name'] }}<br>
-        {{ data['facility-500-name'] }}<br>
-        {{ data['facility-600-name'] }}<br>
-        {{ data['facility-700-name'] }}<br>
-        {{ data['facility-900-name'] }}
-      
-      </td>
-      <!--Base currency-->
-      <td class="govuk-table__cell stb-no-border">
-        {{ data['facility-100-currency'] }}<br>
-        {{ data['facility-401-currency'] }}<br>
-        {{ data['facility-500-currency'] }}<br>
-        {{ data['facility-600-currency'] }}<br>
-        {{ data['facility-700-currency'] }}<br>
-        {{ data['facility-900-currency'] }}
-      </td>
-      <!--Fee payable-->
-      <td class="govuk-table__cell stb-no-border">
-        {{ data['facility-100-currency'] }}&nbsp;{{ data['facility-100-paid'] }}<br>
-        {{ data['facility-100-currency'] }}&nbsp;{{ data['facility-401-paid'] }}<br>
-        {{ data['facility-100-currency'] }}&nbsp;{{ data['facility-500-paid'] }}<br>
-        {{ data['facility-100-currency'] }}&nbsp;{{ data['facility-600-paid'] }}<br>
-        {{ data['facility-100-currency'] }}&nbsp;{{ data['facility-700-paid'] }}<br>
-        {{ data['facility-100-currency'] }}&nbsp;{{ data['facility-900-paid'] }}
-      </td>
-      <!--Fee payable - total-->
-      <td class="govuk-table__cell">{{ data['v3b-GBP-total'] | safe }}</td>
-      
-      <td class="govuk-table__cell">
-        <!--Payment received-->
-        {{ data['v3b-GBP-total'] | safe }}
-      </td>
-      
-      <td class="govuk-table__cell">
-        <!--Total received-->
-        {{ data['v3b-GBP-total'] | safe }}
-      </td>
+{% elif data['bank-100-checkboxes'] == 'show' %}
+<th class="govuk-table__header govuk-!-padding-top-1" scope="col">
+  <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+    
+    <input type="checkbox" class="govuk-checkboxes__input" id="facility-id-check" onclick="javascript:checkAll(this)">
+    <label class="govuk-label govuk-checkboxes__label" for="facility-id-check">
+      <span class="govuk-visually-hidden">Facility ID</span>
+    </label>
+  </div> 
+</th>
+{% endif %}
 
-      <td class="govuk-table__cell">
-        <strong class="govuk-tag govuk-tag--grey">Reconciled</strong>
-    </td>
-    </tr>
-  <!--end facility 100 row-->
+<th scope="col" class="govuk-table__header" aria-sort="ascending">Facility ID</th>
+<th scope="col" class="govuk-table__header govuk-!-width-one-quarter" aria-sort="none">Exporter</th>
+<th scope="col" class="govuk-table__header" aria-sort="none">Base currency</th>
+<th scope="col" class="govuk-table__header" aria-sort="none">Reported fees (reported currency)</th>
+<th scope="col" class="govuk-table__header" aria-sort="none">Total reported (base currency)</th>
+<th scope="col" class="govuk-table__header" aria-sort="none">Payments received</th>
+<th scope="col" class="govuk-table__header" aria-sort="none">Total received (base currency)</th>
+<th scope="col" class="govuk-table__header" aria-sort="none">Status</th>            
+</tr>
+</thead>
+<tbody class="govuk-table__body">
+
+<!--facility 100 row-->  
+<tr class="govuk-table__row govuk-table__row--selected">
+{% if data['bank-100-checkboxes'] == 'show' %}
+<td class="govuk-table__cell govuk-!-padding-top-1 govuk-!-padding-bottom-0">
+  <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+    <input type="checkbox" class="govuk-checkboxes__input" id="{{ data['facility-100-ukef-id'] }}">
+    <label class="govuk-label govuk-checkboxes__label" for="{{ data['facility-100-ukef-id'] }}">
+      <span class="govuk-visually-hidden">{{ data['facility-100-ukef-id'] }}</span>
+    </label>
+  </div>
+</td>
+{% endif %}
+<!--Facility ID-->
+<td class="govuk-table__cell stb-no-border" data-sort-value="{{ data['facility-100-ukef-id'] }}">
+  {{ data['facility-100-ukef-id'] }}<br>
+  {{ data['facility-401-ukef-id'] }}<br>
+  {{ data['facility-500-ukef-id'] }}<br>
+  {{ data['facility-600-ukef-id'] }}<br>
+  {{ data['facility-700-ukef-id'] }}<br>
+  {{ data['facility-900-ukef-id'] }}
+</td>
+<!--Exporter-->
+<td class="govuk-table__cell stb-no-border">
+  {{ data['facility-100-name'] }}<br>
+  {{ data['facility-401-name'] }}<br>
+  {{ data['facility-500-name'] }}<br>
+  {{ data['facility-600-name'] }}<br>
+  {{ data['facility-700-name'] }}<br>
+  {{ data['facility-900-name'] }}
+</td>
+<!--Base currency-->
+<td class="govuk-table__cell stb-no-border">
+  {{ data['facility-100-currency'] }}<br>
+  {{ data['facility-401-currency'] }}<br>
+  {{ data['facility-500-currency'] }}<br>
+  {{ data['facility-600-currency'] }}<br>
+  {{ data['facility-700-currency'] }}<br>
+  {{ data['facility-900-currency'] }}
+</td>
+<!--Fee payable-->
+<td class="govuk-table__cell stb-no-border">
+  {{ data['facility-100-currency'] }}&nbsp;{{ data['facility-100-paid'] }}<br>
+  {{ data['facility-100-currency'] }}&nbsp;{{ data['facility-401-paid'] }}<br>
+  {{ data['facility-100-currency'] }}&nbsp;{{ data['facility-500-paid'] }}<br>
+  {{ data['facility-100-currency'] }}&nbsp;{{ data['facility-600-paid'] }}<br>
+  {{ data['facility-100-currency'] }}&nbsp;{{ data['facility-700-paid'] }}<br>
+  {{ data['facility-100-currency'] }}&nbsp;{{ data['facility-900-paid'] }}
+</td>
+<!--Fee payable - total-->
+<td class="govuk-table__cell">GBP&nbsp;8,741.00</td>
+
+<td class="govuk-table__cell">
+  <!--Payment received-->
+  <a href="bank-100-task1-edit" class="govuk-link govuk-link--no-visited-state">GBP&nbsp;8,731.00</a>
+</td>
+
+<td class="govuk-table__cell">
+  <!--Total received-->
+  GBP&nbsp;8,731.00
+</td>
+
+<td class="govuk-table__cell">
+  <strong class="govuk-tag govuk-tag--red">Does&nbsp;not&nbsp;match</strong>
+</td>
+</tr>
+<!--end facility 100 row-->
 
 
 <!--facility 300 row-->  
-  <tr class="govuk-table__row govuk-table__row--selected">
-    
-    <!--Facility ID-->
-    <td class="govuk-table__cell" data-sort-value="{{ data['facility-301-ukef-id'] }}">
-      {{ data['facility-301-ukef-id'] }}<br>
-      {{ data['facility-401-ukef-id'] }}<br>
-      {{ data['facility-800-ukef-id'] }}</td>
-    <!--Exporter-->
-    <td class="govuk-table__cell">
-      {{ data['facility-301-name'] }}<br>
-      {{ data['facility-401-name'] }}<br>
-      {{ data['facility-800-name'] }}
-    </td>
-    <!--Base currency-->
-    <td class="govuk-table__cell">
-      {{ data['facility-301-currency'] }}<br>
-      {{ data['facility-401-currency'] }}<br>
-      {{ data['facility-800-currency'] }}</td>
-    <!--Fee payable-->
-    <td class="govuk-table__cell">
-      {{ data['facility-301-currency'] }}&nbsp;{{ data['facility-301-paid'] }}<br>
-      {{ data['facility-402-currency'] }}&nbsp;{{ data['facility-402-paid'] }}<br>
-      {{ data['facility-800-currency'] }}&nbsp;{{ data['facility-800-paid'] }}</td>
-    <td class="govuk-table__cell">
-      <!--Fee payable - total-->
-      {{ data['v3b-EUR-total'] | safe }}</td>
-    <td class="govuk-table__cell">
-      <!--Payment received-->
-      {{ data['v3b-EUR-total'] | safe }}
-    </td>
-    <td class="govuk-table__cell">
-      <!--Total received-->
-      {{ data['v3b-EUR-total'] | safe }}
-    </td>
-    <td class="govuk-table__cell">
-      <strong class="govuk-tag govuk-tag--grey">Reconciled</strong>
-    </td>
-  </tr>
+<tr class="govuk-table__row govuk-table__row--selected">
+{% if data['bank-100-checkboxes'] == 'show' %}
+<td class="govuk-table__cell govuk-!-padding-top-1 govuk-!-padding-bottom-0">
+
+</td>
+{% endif %}
+<!--Facility ID-->
+<td class="govuk-table__cell" data-sort-value="{{ data['facility-301-ukef-id'] }}">
+{{ data['facility-301-ukef-id'] }}<br>
+{{ data['facility-800-ukef-id'] }}</td>
+<!--Exporter-->
+<td class="govuk-table__cell">
+{{ data['facility-301-name'] }}<br>
+{{ data['facility-800-name'] }}
+</td>
+<!--Base currency-->
+<td class="govuk-table__cell">{{ data['facility-301-currency'] }}<br>{{ data['facility-800-currency'] }}</td>
+<!--Fee payable-->
+<td class="govuk-table__cell">
+{{ data['facility-301-currency'] }}&nbsp;{{ data['facility-301-paid'] }}<br>
+{{ data['facility-800-currency'] }}&nbsp;{{ data['facility-800-paid'] }}</td>
+<td class="govuk-table__cell">
+  <!--Fee payable - total-->
+    EUR&nbsp;3,260.00
+</td>
+<td class="govuk-table__cell">
+  <!--Payment received-->
+    EUR&nbsp;3,260.00
+</td>
+<td class="govuk-table__cell">
+<!--Total received-->
+EUR&nbsp;3,260.00
+</td>
+<td class="govuk-table__cell">
+  {% if (data['gen1-checks'] == '0020003073') %}
+  <strong class="govuk-tag govuk-tag--grey">Reconciled</strong>
+  {% elif (data['gen1-checks'] =='' or '0020002193' or '0020002167') %}
+  <strong class="govuk-tag govuk-tag--yellow">Ready&nbsp;to&nbsp;key</strong>
+  {% endif %}
+</td>
+</tr>
 <!--end facility 300 row-->
 
-<!--facility 403 row-->  
-<tr class="govuk-table__row govuk-table__row--selected">
-  
-  <!--Facility ID-->
-  <td class="govuk-table__cell" data-sort-value="{{ data['facility-401-ukef-id'] }}">{{ data['facility-401-ukef-id'] }}</td>
-  <!--Exporter-->
-  <td class="govuk-table__cell">{{ data['facility-401-name'] }}</td>
-  <!--Base currency-->
-  <td class="govuk-table__cell">{{ data['facility-401-currency'] }}</td>
-  <!--Fee payable-->
-  <td class="govuk-table__cell">{{ data['facility-403-currency'] }} {{ data['facility-403-paid'] }}</td>
-  <!--Fee payable - total-->
-  <td class="govuk-table__cell">{{ data['facility-401-currency'] }} {{ data['facility-403-paid-total'] }}</td>
-  
-  <td class="govuk-table__cell">
-    <!--Payment received-->
-    <a href="bank-100-task4-edit.html">{{ data['v3b-USD-total'] | safe }}</a>
-  </td>
-  <td class="govuk-table__cell">
-    <!--Total received-->
-    {{ data['v3b-USD-total'] | safe }}
-  </td>
-  <td class="govuk-table__cell">
-    <strong class="govuk-tag govuk-tag--green">Match</strong>
-  </td>
-</tr>
-<!--end facility 403 row-->
 
-
-  </tbody>
-  </table>        
+</tbody>
+</table>         
 
 <!-- End of Task 5  -->
 
@@ -1503,14 +1501,11 @@
 {% elif data['bank-100-show-task'] == 'six' %}
 
 
-
-{% if (data['gen2-checks'] == '') %}
-
-{% include "includes/help-text.html" %}
+{% include "includes/help-text3b.html" %}
 <form class="form" action="/tfm3b/bank-100-task6" method="post">
   <div class="govuk-button-group">
     {{ govukButton({
-    text: "Add a payment 6",
+    text: "Add a payment",
     name: "generate",
     value: false
   }) }}
@@ -1524,172 +1519,156 @@
 </div>
 </form>
 
-  {% elif (data['gen2-checks'] == '0020002198C') %}
-
-  <strong class="govuk-tag govuk-tag--green">Report completed</strong>
-
-  {% endif %}
 
 </div>
 
-{% include "includes/filter-premium-payments3bb.html" %}
+{% include "includes/filter-premium-payments3ba.html" %}
 
 </div> 
 
-
-
+<!--<table class="govuk-table" data-module="moj-sortable-table">-->
 <table class="govuk-table stb-table" data-module="moj-sortable-table">
-  <!--<table class="govuk-table">-->
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header" aria-sort="ascending">Facility ID</th>
-      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter" aria-sort="none">Exporter</th>
-      <th scope="col" class="govuk-table__header" aria-sort="none">Base currency</th>
-      <th scope="col" class="govuk-table__header" aria-sort="none">Reported fees (reported currency)</th>
-      <th scope="col" class="govuk-table__header" aria-sort="none">Total reported (base currency)</th>
-      <th scope="col" class="govuk-table__header" aria-sort="none">Payments received</th>
-      <th scope="col" class="govuk-table__header" aria-sort="none">Total received (base currency)</th>
-      <th scope="col" class="govuk-table__header" aria-sort="none">Status</th>            
-    </tr>
-  </thead>
-  <tbody class="govuk-table__body">
+<!--<table class="govuk-table">-->
+<thead class="govuk-table__head">
+<tr class="govuk-table__row">
+ 
+<th scope="col" class="govuk-table__header" aria-sort="ascending">Facility ID</th>
+<th scope="col" class="govuk-table__header govuk-!-width-one-quarter" aria-sort="none">Exporter</th>
+<th scope="col" class="govuk-table__header" aria-sort="none">Base currency</th>
+<th scope="col" class="govuk-table__header" aria-sort="none">Reported fees (reported currency)</th>
+<th scope="col" class="govuk-table__header" aria-sort="none">Total reported (base currency)</th>
+<th scope="col" class="govuk-table__header" aria-sort="none">Payments received</th>
+<th scope="col" class="govuk-table__header" aria-sort="none">Total received (base currency)</th>
+<th scope="col" class="govuk-table__header" aria-sort="none">Status</th>            
+</tr>
+</thead>
+<tbody class="govuk-table__body">
 
-  <!--facility 100 row-->  
-    <tr class="govuk-table__row govuk-table__row--selected">
-      <!--Facility ID-->
-      <td class="govuk-table__cell stb-no-border" data-sort-value="{{ data['facility-100-ukef-id'] }}">
-        {{ data['facility-100-ukef-id'] }}<br>
-        {{ data['facility-401-ukef-id'] }}<br>
-        {{ data['facility-500-ukef-id'] }}<br>
-        {{ data['facility-600-ukef-id'] }}<br>
-        {{ data['facility-700-ukef-id'] }}<br>
-        {{ data['facility-900-ukef-id'] }}
-      </td>
-      <!--Exporter-->
-      <td class="govuk-table__cell stb-no-border">
-        {{ data['facility-100-name'] }}<br>
-        {{ data['facility-401-name'] }}<br>
-        {{ data['facility-500-name'] }}<br>
-        {{ data['facility-600-name'] }}<br>
-        {{ data['facility-700-name'] }}<br>
-        {{ data['facility-900-name'] }}
-      
-      </td>
-      <!--Base currency-->
-      <td class="govuk-table__cell stb-no-border">
-        {{ data['facility-100-currency'] }}<br>
-        {{ data['facility-401-currency'] }}<br>
-        {{ data['facility-500-currency'] }}<br>
-        {{ data['facility-600-currency'] }}<br>
-        {{ data['facility-700-currency'] }}<br>
-        {{ data['facility-900-currency'] }}
-      </td>
-      <!--Fee payable-->
-      <td class="govuk-table__cell stb-no-border">
-        {{ data['facility-100-currency'] }}&nbsp;{{ data['facility-100-paid'] }}<br>
-        {{ data['facility-100-currency'] }}&nbsp;{{ data['facility-401-paid'] }}<br>
-        {{ data['facility-100-currency'] }}&nbsp;{{ data['facility-500-paid'] }}<br>
-        {{ data['facility-100-currency'] }}&nbsp;{{ data['facility-600-paid'] }}<br>
-        {{ data['facility-100-currency'] }}&nbsp;{{ data['facility-700-paid'] }}<br>
-        {{ data['facility-100-currency'] }}&nbsp;{{ data['facility-900-paid'] }}
-      </td>
-      <!--Fee payable - total-->
-      <td class="govuk-table__cell">{{ data['v3b-GBP-total'] | safe }}</td>
-      
-      <td class="govuk-table__cell">
-        <!--Payment received-->
-        {{ data['v3b-GBP-total'] | safe }}
-      </td>
-      
-      <td class="govuk-table__cell">
-        <!--Total received-->
-        {{ data['v3b-GBP-total'] | safe }}
-      </td>
+<!--facility 100 row-->  
+<tr class="govuk-table__row govuk-table__row--selected">
 
-      <td class="govuk-table__cell">
-        <strong class="govuk-tag govuk-tag--grey">Reconciled</strong>
-    </td>
-    </tr>
-  <!--end facility 100 row-->
+<!--Facility ID-->
+<td class="govuk-table__cell stb-no-border" data-sort-value="{{ data['facility-100-ukef-id'] }}">
+  {{ data['facility-100-ukef-id'] }}<br>
+  {{ data['facility-401-ukef-id'] }}<br>
+  {{ data['facility-500-ukef-id'] }}<br>
+  {{ data['facility-600-ukef-id'] }}<br>
+  {{ data['facility-700-ukef-id'] }}<br>
+  {{ data['facility-900-ukef-id'] }}
+</td>
+<!--Exporter-->
+<td class="govuk-table__cell stb-no-border">
+  {{ data['facility-100-name'] }}<br>
+  {{ data['facility-401-name'] }}<br>
+  {{ data['facility-500-name'] }}<br>
+  {{ data['facility-600-name'] }}<br>
+  {{ data['facility-700-name'] }}<br>
+  {{ data['facility-900-name'] }}
+</td>
+<!--Base currency-->
+<td class="govuk-table__cell stb-no-border">
+  {{ data['facility-100-currency'] }}<br>
+  {{ data['facility-401-currency'] }}<br>
+  {{ data['facility-500-currency'] }}<br>
+  {{ data['facility-600-currency'] }}<br>
+  {{ data['facility-700-currency'] }}<br>
+  {{ data['facility-900-currency'] }}
+</td>
+<!--Fee payable-->
+<td class="govuk-table__cell stb-no-border">
+  {{ data['facility-100-currency'] }}&nbsp;{{ data['facility-100-paid'] }}<br>
+  {{ data['facility-100-currency'] }}&nbsp;{{ data['facility-401-paid'] }}<br>
+  {{ data['facility-100-currency'] }}&nbsp;{{ data['facility-500-paid'] }}<br>
+  {{ data['facility-100-currency'] }}&nbsp;{{ data['facility-600-paid'] }}<br>
+  {{ data['facility-100-currency'] }}&nbsp;{{ data['facility-700-paid'] }}<br>
+  {{ data['facility-100-currency'] }}&nbsp;{{ data['facility-900-paid'] }}
+</td>
+<!--Fee payable - total-->
+<td class="govuk-table__cell">GBP&nbsp;8,741.00</td>
+
+<td class="govuk-table__cell">
+  <!--Payment received-->
+
+  <!--Report not yet completed-->
+  {% if (data['gen2-checks'] == '') or (data['gen2-checks'] == '0020002154') or (data['gen2-checks'] == '0020002198') or (data['gen2-checks'] == '0020002565') or (data['gen2-checks'] == '0020002896') or (data['gen2-checks'] == '0020002983') %}
+
+  <a href="bank-100-task1-edit" class="govuk-link govuk-link--no-visited-state">GBP&nbsp;8,731.00</a><br>
+  <a href="bank-100-task5-edit" class="govuk-link govuk-link--no-visited-state">GBP&nbsp;10.00</a>
+
+  <!--Report completed-->
+  {% elif (data['gen2-checks'] == '0020003182') %}
+
+  GBP&nbsp;8,731.00<br>
+  GBP&nbsp;10.00
+
+  {% endif %}
+
+</td>
+
+<td class="govuk-table__cell">
+  <!--Total received-->
+  GBP&nbsp;8,741.00
+</td>
+
+<td class="govuk-table__cell">
+
+  {% if (data['gen2-checks'] == '') %}
+
+  <strong class="govuk-tag govuk-tag--green">Match</strong>
+
+  {% elif (data['gen2-checks'] == '0020002154') or (data['gen2-checks'] == '0020002198') or (data['gen2-checks'] == '0020002565') or (data['gen2-checks'] == '0020002896') or (data['gen2-checks'] == '0020002983') %}
+
+  <strong class="govuk-tag govuk-tag--yellow">Ready&nbsp;to&nbsp;key</strong>
+
+  {% elif (data['gen2-checks'] == '0020003182') %}
+
+  <strong class="govuk-tag govuk-tag--grey">Reconciled</strong>
+
+
+  {% endif %}
+</td>
+</tr>
+<!--end facility 100 row-->
 
 
 <!--facility 300 row-->  
-  <tr class="govuk-table__row govuk-table__row--selected">
-    <!--Facility ID-->
-    <td class="govuk-table__cell" data-sort-value="{{ data['facility-301-ukef-id'] }}">
-      {{ data['facility-301-ukef-id'] }}<br>
-      {{ data['facility-401-ukef-id'] }}<br>
-      {{ data['facility-800-ukef-id'] }}</td>
-    <!--Exporter-->
-    <td class="govuk-table__cell">
-      {{ data['facility-301-name'] }}<br>
-      {{ data['facility-401-name'] }}<br>
-      {{ data['facility-800-name'] }}
-    </td>
-    <!--Base currency-->
-    <td class="govuk-table__cell">
-      {{ data['facility-301-currency'] }}<br>
-      {{ data['facility-401-currency'] }}<br>
-      {{ data['facility-800-currency'] }}</td>
-    <!--Fee payable-->
-    <td class="govuk-table__cell">
-      {{ data['facility-301-currency'] }}&nbsp;{{ data['facility-301-paid'] }}<br>
-      {{ data['facility-402-currency'] }}&nbsp;{{ data['facility-402-paid'] }}<br>
-      {{ data['facility-800-currency'] }}&nbsp;{{ data['facility-800-paid'] }}</td>
-    <td class="govuk-table__cell">
-      <!--Fee payable - total-->
-      {{ data['v3b-EUR-total'] | safe }}</td>
-    <td class="govuk-table__cell">
-      <!--Payment received-->
-      {{ data['v3b-EUR-total'] | safe }}
-    </td>
-    <td class="govuk-table__cell">
-      <!--Total received-->
-      {{ data['v3b-EUR-total'] | safe }}
-    </td>
-    <td class="govuk-table__cell">
-      <strong class="govuk-tag govuk-tag--grey">Reconciled</strong>
-    </td>
-  </tr>
+<tr class="govuk-table__row govuk-table__row--selected">
+
+<!--Facility ID-->
+<td class="govuk-table__cell" data-sort-value="{{ data['facility-301-ukef-id'] }}">
+{{ data['facility-301-ukef-id'] }}<br>
+{{ data['facility-800-ukef-id'] }}</td>
+<!--Exporter-->
+<td class="govuk-table__cell">
+{{ data['facility-301-name'] }}<br>
+{{ data['facility-800-name'] }}
+</td>
+<!--Base currency-->
+<td class="govuk-table__cell">{{ data['facility-301-currency'] }}<br>{{ data['facility-800-currency'] }}</td>
+<!--Fee payable-->
+<td class="govuk-table__cell">
+{{ data['facility-301-currency'] }}&nbsp;{{ data['facility-301-paid'] }}<br>
+{{ data['facility-800-currency'] }}&nbsp;{{ data['facility-800-paid'] }}</td>
+<td class="govuk-table__cell">
+<!--Fee payable - total-->
+EUR&nbsp;3,260.00</td>
+<td class="govuk-table__cell">
+<!--Payment received-->
+  EUR&nbsp;3,260.00
+</td>
+<td class="govuk-table__cell">
+<!--Total received-->
+EUR&nbsp;3,260.00
+</td>
+<td class="govuk-table__cell">
+  <strong class="govuk-tag govuk-tag--grey">Reconciled</strong> 
+</td>
+</tr>
 <!--end facility 300 row-->
 
-<!--facility 403 row-->  
-<tr class="govuk-table__row govuk-table__row--selected">
-  <!--Facility ID-->
-  <td class="govuk-table__cell" data-sort-value="{{ data['facility-401-ukef-id'] }}">{{ data['facility-401-ukef-id'] }}</td>
-  <!--Exporter-->
-  <td class="govuk-table__cell">{{ data['facility-401-name'] }}</td>
-  <!--Base currency-->
-  <td class="govuk-table__cell">{{ data['facility-401-currency'] }}</td>
-  <!--Fee payable-->
-  <td class="govuk-table__cell">{{ data['facility-403-currency'] }} {{ data['facility-403-paid'] }}</td>
-  <!--Fee payable - total-->
-  <td class="govuk-table__cell">{{ data['facility-401-currency'] }} {{ data['facility-403-paid-total'] }}</td>
-  
-  <td class="govuk-table__cell">
-    <!--Payment received-->
-    {{ data['v3b-USD-total'] | safe }}
-  </td>
-  <td class="govuk-table__cell">
-    <!--Total received-->
-    {{ data['v3b-USD-total'] | safe }}
-  </td>
-  <td class="govuk-table__cell">
 
-    {% if (data['gen2-checks'] == '') %}
-    <strong class="govuk-tag govuk-tag--yellow">Ready&nbsp;to&nbsp;key</strong>
-    {% elif (data['gen2-checks'] == '0020002198C') %}
-    <strong class="govuk-tag govuk-tag--grey">Reconciled</strong>
-    {% endif %}
-
-    
-  </td>
-</tr>
-<!--end facility 403 row-->
-
-
-  </tbody>
-  </table>           
+</tbody>
+</table>         
 
 <!-- End of Task 6  -->
 
@@ -2501,7 +2480,7 @@ EUR&nbsp;3,260.00
                   <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
                     <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" />
                   </svg>
-                  <div class="moj-banner__message">Keying data generated &ndash; 1 payment added</div>
+                  <div class="moj-banner__message">Keying data generated &ndash; 6 payments added</div>
                 </div>
               {% endif %}
 
@@ -2526,8 +2505,10 @@ EUR&nbsp;3,260.00
               </div>
               <!-- End Generate2 buttons --> 
 
-                  <!-- Table with status as 2nd column-->
-                  <table class="govuk-table" data-module="moj-sortable-table">
+                  
+                  <!-- Table with STATUS on the end but doesn't work
+                    
+                    <table class="govuk-table" data-module="moj-sortable-table">
                     <col>
                     <col>
                     <col>
@@ -2548,17 +2529,15 @@ EUR&nbsp;3,260.00
                           </label>
                         </div>
                       </th>
-                      <th scope="col" class="govuk-table__header" aria-sort="ascending" rowspan="2">Facility ID</th>
-                      <th scope="col" class="govuk-table__header" aria-sort="none" rowspan="2">Status</th>
+                      <th scope="col" class="govuk-table__header" aria-sort="none" rowspan="2">Facility ID</th>
                       <th scope="col" class="govuk-table__header" aria-sort="none" rowspan="2">Exporter</th>
                       <th scope="col" class="govuk-table__header" aria-sort="none" rowspan="2">Base currency</th>
                       <th scope="col" class="govuk-table__header" aria-sort="none" rowspan="2">Fee currency</th>
-                      <th scope="col" class="govuk-table__header" rowspan="2">Fee payment</th>
-                      <th scope="col" class="govuk-table__header" colspan="2">Fixed fee adjustment</th>
-                      <th scope="col" class="govuk-table__header" colspan="2">Premium accrual balance adjustment</th>
-                      <th scope="col" class="govuk-table__header" colspan="2">Principal balance adjustment</th>
-                      
-                      
+                      <th scope="col" class="govuk-table__header" aria-sort="none" rowspan="2">Fee payment</th>
+                      <th scope="col" class="govuk-table__header" aria-sort="none" colspan="2">Premium accrual balance adjustment</th>
+                      <th scope="col" class="govuk-table__header" aria-sort="none" colspan="2">Principal balance adjustment</th>
+                      <th scope="col" class="govuk-table__header" aria-sort="none" colspan="2">Fee adjustment</th>
+                      <th scope="col" class="govuk-table__header" aria-sort="ascending" rowspan="2">Status</th>
                     </tr>
                     <tr class="govuk-table__row">
                       <th scope="col" class="govuk-table__header">Decrease</th>
@@ -2570,32 +2549,28 @@ EUR&nbsp;3,260.00
                     </tr>
                   </thead>
                   <tbody class="govuk-table__body">
-                    
                     <tr class="govuk-table__row">
                       <td class="govuk-table__cell govuk-!-padding-top-0 govuk-!-padding-bottom-0">
                         <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-                          <input type="checkbox" class="govuk-checkboxes__input" id="key-0020002154" name="gen1-checks" value="0020002154">
-                          <label class="govuk-label govuk-checkboxes__label" for="key-0020002154">
+                          <input type="checkbox" class="govuk-checkboxes__input" id="key-0020002167" name="gen1-checks" value="0020002167">
+                          <label class="govuk-label govuk-checkboxes__label" for="key-0020002167">
                           <span class="govuk-visually-hidden"></span>
                           </label>
                         </div>
                       </td>
-                      <td class="govuk-table__cell">{{ data['facility-100-ukef-id'] }}</td>
-                      <td class="govuk-table__cell" data-sort-value="1">
-                        <strong class="govuk-tag govuk-tag--green">Done</strong>
-                      </td>
-                      <td class="govuk-table__cell">{{ data['facility-100-name'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-100-currency'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-100-currency'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-100-paid'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-100-feeAdjustment'] }}</td>
+                      <td class="govuk-table__cell">0020002167</td>
+                      <td class="govuk-table__cell">Meridian Manufacturing Ltd</td>
+                      <td class="govuk-table__cell">USD</td>
+                      <td class="govuk-table__cell">USD</td>
+                      <td class="govuk-table__cell">1,000.00</td>
+                      <td class="govuk-table__cell">205.00</td>
                       <td class="govuk-table__cell">-</td>
-                      <td class="govuk-table__cell">{{ data['facility-100-accrualAdjustment'] }}</td>
+                      <td class="govuk-table__cell">195,000.00</td>
                       <td class="govuk-table__cell">-</td>
-                      <td class="govuk-table__cell">{{ data['facility-100-principalAdjustment'] }}</td>
+                      <td class="govuk-table__cell">705.00</td>
                       <td class="govuk-table__cell">-</td>
+                      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Done</strong></td>
                     </tr>
-
                     <tr class="govuk-table__row">
                       <td class="govuk-table__cell govuk-!-padding-top-0 govuk-!-padding-bottom-0">
                         <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
@@ -2605,182 +2580,20 @@ EUR&nbsp;3,260.00
                           </label>
                         </div>
                       </td>
-                      <td class="govuk-table__cell">{{ data['facility-301-ukef-id'] }}</td>
-                      <td class="govuk-table__cell" data-sort-value="1">
-                        <strong class="govuk-tag govuk-tag--green">Done</strong>
-                      </td>
-                      <td class="govuk-table__cell">{{ data['facility-301-name'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-301-currency'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-301-currency'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-301-paid'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-301-feeAdjustment'] }}</td>
+                      <td class="govuk-table__cell">0020002193</td>
+                      <td class="govuk-table__cell">British Tech Innovators Ltd</td>
+                      <td class="govuk-table__cell">EUR</td>
+                      <td class="govuk-table__cell">EUR</td>
+                      <td class="govuk-table__cell">1,500.00</td>
+                      <td class="govuk-table__cell">175.00</td>
                       <td class="govuk-table__cell">-</td>
-                      <td class="govuk-table__cell">{{ data['facility-301-accrualAdjustment'] }}</td>
+                      <td class="govuk-table__cell">215,000.00</td>
                       <td class="govuk-table__cell">-</td>
-                      <td class="govuk-table__cell">{{ data['facility-301-principalAdjustment'] }}</td>
+                      <td class="govuk-table__cell">655.00</td>
                       <td class="govuk-table__cell">-</td>
-                    </tr>
-
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell govuk-!-padding-top-0 govuk-!-padding-bottom-0">
-                        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-                          <input type="checkbox" class="govuk-checkboxes__input" id="key-0020002198" name="gen1-checks" value="0020002198">
-                          <label class="govuk-label govuk-checkboxes__label" for="key-0020002198">
-                          <span class="govuk-visually-hidden"></span>
-                          </label>
-                        </div>
-                      </td>
-                      <td class="govuk-table__cell">{{ data['facility-401-ukef-id'] }}</td>
-                      <td class="govuk-table__cell" data-sort-value="1">
-                        <strong class="govuk-tag govuk-tag--green">Done</strong>
-                      </td>
-                      <td class="govuk-table__cell">{{ data['facility-401-name'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-401-currency'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-401-currency'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-401-paid'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-401-feeAdjustment'] }}</td>
-                      <td class="govuk-table__cell">-</td>
-                      <td class="govuk-table__cell">{{ data['facility-401-accrualAdjustment'] }}</td>
-                      <td class="govuk-table__cell">-</td>
-                      <td class="govuk-table__cell">{{ data['facility-401-principalAdjustment'] }}</td>
-                      <td class="govuk-table__cell">-</td>
-                    </tr>
-
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell govuk-!-padding-top-0 govuk-!-padding-bottom-0">
-                        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-                          <input type="checkbox" class="govuk-checkboxes__input" id="key-0020002198B" name="gen1-checks" value="0020002198B">
-                          <label class="govuk-label govuk-checkboxes__label" for="key-0020002198B">
-                          <span class="govuk-visually-hidden"></span>
-                          </label>
-                        </div>
-                      </td>
-                      <td class="govuk-table__cell">{{ data['facility-401-ukef-id'] }}</td>
-                      <td class="govuk-table__cell" data-sort-value="1">
-                        <strong class="govuk-tag govuk-tag--green">Done</strong>
-                      </td>
-                      <td class="govuk-table__cell">{{ data['facility-401-name'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-401-currency'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-402-currency'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-402-paid'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-402-feeAdjustment'] }}</td>
-                      <td class="govuk-table__cell">-</td>
-                      <td class="govuk-table__cell">{{ data['facility-402-accrualAdjustment'] }}</td>
-                      <td class="govuk-table__cell">-</td>
-                      <td class="govuk-table__cell">{{ data['facility-402-principalAdjustment'] }}</td>
-                      <td class="govuk-table__cell">-</td>
-                    </tr>
-
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell govuk-!-padding-top-0 govuk-!-padding-bottom-0">
-                        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-                          <input type="checkbox" class="govuk-checkboxes__input" id="key-0020002198C" name="gen2-checks" value="0020002198C">
-                          <label class="govuk-label govuk-checkboxes__label" for="key-0020002198C">
-                          <span class="govuk-visually-hidden"></span>
-                          </label>
-                        </div>
-                      </td>
-                      <td class="govuk-table__cell">{{ data['facility-401-ukef-id'] }}</td>
-                      
-                      {% if (data['gen2-checks'] == '') %}
-                      <td class="govuk-table__cell" data-sort-value="2">
-                        <strong class="govuk-tag">To&nbsp;do</strong>
-                      </td>
-                      {% elif 
-                      ( data['gen2-checks'] == '0020002198C' ) 
-                        %}
-                      <td class="govuk-table__cell" data-sort-value="1">
-                        <strong class="govuk-tag govuk-tag--green">Done</strong>
-                      </td> 
-                      {% endif %}
-
-                      <td class="govuk-table__cell">{{ data['facility-401-name'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-401-currency'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-403-currency'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-403-paid'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-403-feeAdjustment'] }}</td>
-                      <td class="govuk-table__cell">-</td>
-                      <td class="govuk-table__cell">{{ data['facility-403-accrualAdjustment'] }}</td>
-                      <td class="govuk-table__cell">-</td>
-                      <td class="govuk-table__cell">{{ data['facility-403-principalAdjustment'] }}</td>
-                      <td class="govuk-table__cell">-</td>
-                    </tr>
-                    
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell govuk-!-padding-top-0 govuk-!-padding-bottom-0">
-                        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-                          <input type="checkbox" class="govuk-checkboxes__input" id="key-0020002565" name="gen1-checks" value="0020002565">
-                          <label class="govuk-label govuk-checkboxes__label" for="key-0020002565">
-                          <span class="govuk-visually-hidden"></span>
-                          </label>
-                        </div>
-                      </td>
-                      <td class="govuk-table__cell">{{ data['facility-500-ukef-id'] }}</td>
-                      <td class="govuk-table__cell" data-sort-value="1">
-                        <strong class="govuk-tag govuk-tag--green">Done</strong>
-                      </td>
-                      <td class="govuk-table__cell">{{ data['facility-500-name'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-500-currency'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-500-currency'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-500-paid'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-500-feeAdjustment'] }}</td>
-                      <td class="govuk-table__cell">-</td>
-                      <td class="govuk-table__cell">{{ data['facility-500-accrualAdjustment'] }}</td>
-                      <td class="govuk-table__cell">-</td>
-                      <td class="govuk-table__cell">{{ data['facility-500-principalAdjustment'] }}</td>
-                      <td class="govuk-table__cell">-</td>
-                    </tr>
-
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell govuk-!-padding-top-0 govuk-!-padding-bottom-0">
-                        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-                          <input type="checkbox" class="govuk-checkboxes__input" id="key-0020002896" name="gen1-checks" value="0020002896">
-                          <label class="govuk-label govuk-checkboxes__label" for="key-0020002896">
-                          <span class="govuk-visually-hidden"></span>
-                          </label>
-                        </div>
-                      </td>
-                      <td class="govuk-table__cell">{{ data['facility-600-ukef-id'] }}</td>
-                      <td class="govuk-table__cell" data-sort-value="1">
-                        <strong class="govuk-tag govuk-tag--green">Done</strong>
-                      </td>
-                      <td class="govuk-table__cell">{{ data['facility-600-name'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-600-currency'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-600-currency'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-600-paid'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-600-feeAdjustment'] }}</td>
-                      <td class="govuk-table__cell">-</td>
-                      <td class="govuk-table__cell">{{ data['facility-600-accrualAdjustment'] }}</td>
-                      <td class="govuk-table__cell">-</td>
-                      <td class="govuk-table__cell">{{ data['facility-600-principalAdjustment'] }}</td>
-                      <td class="govuk-table__cell">-</td>
-                    </tr>
-
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell govuk-!-padding-top-0 govuk-!-padding-bottom-0">
-                        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-                          <input type="checkbox" class="govuk-checkboxes__input" id="key-0020002983" name="gen1-checks" value="0020002983">
-                          <label class="govuk-label govuk-checkboxes__label" for="key-0020002983">
-                          <span class="govuk-visually-hidden"></span>
-                          </label>
-                        </div>
-                      </td>
-                      <td class="govuk-table__cell">{{ data['facility-700-ukef-id'] }}</td>
-                      <td class="govuk-table__cell" data-sort-value="1">
-                        <strong class="govuk-tag govuk-tag--green">Done</strong>
-                      </td>
-                      <td class="govuk-table__cell">{{ data['facility-700-name'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-700-currency'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-700-currency'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-700-paid'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-700-feeAdjustment'] }}</td>
-                      <td class="govuk-table__cell">-</td>
-                      <td class="govuk-table__cell">{{ data['facility-700-accrualAdjustment'] }}</td>
-                      <td class="govuk-table__cell">-</td>
-                      <td class="govuk-table__cell">{{ data['facility-700-principalAdjustment'] }}</td>
-                      <td class="govuk-table__cell">-</td>
-                    </tr>
-
+                      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Done</strong></td>
+                    </tr> 
+    
                     <tr class="govuk-table__row">
                       <td class="govuk-table__cell govuk-!-padding-top-0 govuk-!-padding-bottom-0">
                         <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
@@ -2790,23 +2603,147 @@ EUR&nbsp;3,260.00
                           </label>
                         </div>
                       </td>
-                      <td class="govuk-table__cell">{{ data['facility-800-ukef-id'] }}</td>
-                      <td class="govuk-table__cell" data-sort-value="1">
-                        <strong class="govuk-tag govuk-tag--green">Done</strong>
-                      </td>
-                      <td class="govuk-table__cell">{{ data['facility-800-name'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-800-currency'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-800-currency'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-800-paid'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-800-feeAdjustment'] }}</td>
+                      <td class="govuk-table__cell">0020003073</td>
+                      <td class="govuk-table__cell">Automation Solutions Ltd</td>
+                      <td class="govuk-table__cell">EUR</td>
+                      <td class="govuk-table__cell">EUR</td>
+                      <td class="govuk-table__cell">1,760.00</td>
+                      <td class="govuk-table__cell">340.00</td>
                       <td class="govuk-table__cell">-</td>
-                      <td class="govuk-table__cell">{{ data['facility-800-accrualAdjustment'] }}</td>
+                      <td class="govuk-table__cell">565,000.00</td>
                       <td class="govuk-table__cell">-</td>
-                      <td class="govuk-table__cell">{{ data['facility-800-principalAdjustment'] }}</td>
+                      <td class="govuk-table__cell">1,120.00</td>
                       <td class="govuk-table__cell">-</td>
+                      <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Done</strong></td>
                     </tr>
 
                     <tr class="govuk-table__row">
+                      <td class="govuk-table__cell govuk-!-padding-top-0 govuk-!-padding-bottom-0">
+                        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                          <input type="checkbox" class="govuk-checkboxes__input" id="key-0020002154" name="gen1-checks" value="0020002154">
+                          <label class="govuk-label govuk-checkboxes__label" for="key-0020002154">
+                          <span class="govuk-visually-hidden"></span>
+                          </label>
+                        </div>
+                      </td>
+                      <td class="govuk-table__cell">0020002154</td>
+                      
+                      <td class="govuk-table__cell">Direct Engineering Solutions Ltd</td>
+                      <td class="govuk-table__cell">GBP</td>
+                      <td class="govuk-table__cell">GBP</td>
+                      <td class="govuk-table__cell">2,500.00</td>
+                      <td class="govuk-table__cell">560.00</td>
+                      <td class="govuk-table__cell">-</td>
+                      <td class="govuk-table__cell">240,000.00</td>
+                      <td class="govuk-table__cell">-</td>
+                      <td class="govuk-table__cell">920.00</td>
+                      <td class="govuk-table__cell">-</td>
+                      <td class="govuk-table__cell"><strong class="govuk-tag">To&nbsp;do</strong></td>
+                    </tr>
+    
+                    <tr class="govuk-table__row">
+
+                      <td class="govuk-table__cell govuk-!-padding-top-0 govuk-!-padding-bottom-0">
+                        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                          <input type="checkbox" class="govuk-checkboxes__input" id="key-0020002198" name="gen1-checks" value="0020002198">
+                          <label class="govuk-label govuk-checkboxes__label" for="key-0020002198">
+                          <span class="govuk-visually-hidden"></span>
+                          </label>
+                        </div>
+                      </td>
+                      <td class="govuk-table__cell">0020002198</td>
+
+                      <td class="govuk-table__cell">Innovate Solutions Ltd</td>
+                      <td class="govuk-table__cell">GBP</td>
+                      <td class="govuk-table__cell">GBP</td>
+                      <td class="govuk-table__cell">1,100.00</td>
+                      <td class="govuk-table__cell">210.00</td>
+                      <td class="govuk-table__cell">-</td>
+                      <td class="govuk-table__cell">435,000.00</td>
+                      <td class="govuk-table__cell">-</td>
+                      <td class="govuk-table__cell">540.00</td>
+                      <td class="govuk-table__cell">-</td>
+                      <td class="govuk-table__cell"><strong class="govuk-tag">To&nbsp;do</strong></td>
+                    </tr>
+    
+                    <tr class="govuk-table__row">
+
+                      <td class="govuk-table__cell govuk-!-padding-top-0 govuk-!-padding-bottom-0">
+                        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                          <input type="checkbox" class="govuk-checkboxes__input" id="key-0020002565" name="gen1-checks" value="0020002565">
+                          <label class="govuk-label govuk-checkboxes__label" for="key-0020002565">
+                          <span class="govuk-visually-hidden"></span>
+                          </label>
+                        </div>
+                      </td>
+                      <td class="govuk-table__cell">0020002565</td>
+
+                      <td class="govuk-table__cell">Britannia Energy Ltd</td>
+                      <td class="govuk-table__cell">GBP</td>
+                      <td class="govuk-table__cell">GBP</td>
+                      <td class="govuk-table__cell">945.00</td>
+                      <td class="govuk-table__cell">85.00</td>
+                      <td class="govuk-table__cell">-</td>
+                      <td class="govuk-table__cell">110,000.00</td>
+                      <td class="govuk-table__cell">-</td>
+                      <td class="govuk-table__cell">2,010.00</td>
+                      <td class="govuk-table__cell">-</td>
+                      <td class="govuk-table__cell"><strong class="govuk-tag">To&nbsp;do</strong></td>
+                    </tr>
+    
+                    <tr class="govuk-table__row">
+
+                      <td class="govuk-table__cell govuk-!-padding-top-0 govuk-!-padding-bottom-0">
+                        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                          <input type="checkbox" class="govuk-checkboxes__input" id="key-0020002896" name="gen1-checks" value="0020002896">
+                          <label class="govuk-label govuk-checkboxes__label" for="key-0020002896">
+                          <span class="govuk-visually-hidden"></span>
+                          </label>
+                        </div>
+                      </td>
+                      <td class="govuk-table__cell">0020002896</td>
+
+                      <td class="govuk-table__cell">Marine Equipment Ltd</td>
+                      <td class="govuk-table__cell">GBP</td>
+                      <td class="govuk-table__cell">GBP</td>
+                      <td class="govuk-table__cell">1,026.00</td>
+                      <td class="govuk-table__cell">220.00</td>
+                      <td class="govuk-table__cell">-</td>
+                      <td class="govuk-table__cell">724,000.00</td>
+                      <td class="govuk-table__cell">-</td>
+                      <td class="govuk-table__cell">980.00</td>
+                      <td class="govuk-table__cell">-</td>
+                      <td class="govuk-table__cell"><strong class="govuk-tag">To&nbsp;do</strong></td>
+                    </tr>
+    
+                    <tr class="govuk-table__row">
+
+                      <td class="govuk-table__cell govuk-!-padding-top-0 govuk-!-padding-bottom-0">
+                        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                          <input type="checkbox" class="govuk-checkboxes__input" id="key-0020002983" name="gen1-checks" value="0020002983">
+                          <label class="govuk-label govuk-checkboxes__label" for="key-0020002983">
+                          <span class="govuk-visually-hidden"></span>
+                          </label>
+                        </div>
+                      </td>
+                      <td class="govuk-table__cell">0020002983</td>
+
+
+                      <td class="govuk-table__cell">Able Robotics Ltd</td>
+                      <td class="govuk-table__cell">GBP</td>
+                      <td class="govuk-table__cell">GBP</td>
+                      <td class="govuk-table__cell">2,150.00</td>
+                      <td class="govuk-table__cell">435.00</td>
+                      <td class="govuk-table__cell">-</td>
+                      <td class="govuk-table__cell">638,000.00</td>
+                      <td class="govuk-table__cell">-</td>
+                      <td class="govuk-table__cell">620.00</td>
+                      <td class="govuk-table__cell">-</td>
+                      <td class="govuk-table__cell"><strong class="govuk-tag">To&nbsp;do</strong></td>
+                    </tr>
+    
+                    <tr class="govuk-table__row">
+
                       <td class="govuk-table__cell govuk-!-padding-top-0 govuk-!-padding-bottom-0">
                         <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
                           <input type="checkbox" class="govuk-checkboxes__input" id="key-0020003182" name="gen1-checks" value="0020003182">
@@ -2815,22 +2752,397 @@ EUR&nbsp;3,260.00
                           </label>
                         </div>
                       </td>
-                      <td class="govuk-table__cell">{{ data['facility-900-ukef-id'] }}</td>
-                      <td class="govuk-table__cell" data-sort-value="1">
-                        <strong class="govuk-tag govuk-tag--green">Done</strong>
+                      <td class="govuk-table__cell">0020003182</td>
+
+                      <td class="govuk-table__cell">AirTech Ltd</td>
+                      <td class="govuk-table__cell">GBP</td>
+                      <td class="govuk-table__cell">GBP</td>
+                      <td class="govuk-table__cell">1,020.00</td>
+                      <td class="govuk-table__cell">240.00</td>
+                      <td class="govuk-table__cell">-</td>
+                      <td class="govuk-table__cell">225,000.00</td>
+                      <td class="govuk-table__cell">-</td>
+                      <td class="govuk-table__cell">1,115.00</td>
+                      <td class="govuk-table__cell">-</td>
+                      <td class="govuk-table__cell"><strong class="govuk-tag">To&nbsp;do</strong></td>
+                    </tr>
+                  
+                    <tr class="govuk-table__row">
+
+                      <td class="govuk-table__cell govuk-!-padding-top-0 govuk-!-padding-bottom-0">
+                        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                          <input type="checkbox" class="govuk-checkboxes__input" id="key-0020003209" name="gen1-checks" value="0020003209">
+                          <label class="govuk-label govuk-checkboxes__label" for="key-0020003209">
+                          <span class="govuk-visually-hidden"></span>
+                          </label>
+                        </div>
                       </td>
-                      <td class="govuk-table__cell">{{ data['facility-900-name'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-900-currency'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-900-currency'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-900-paid'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-900-feeAdjustment'] }}</td>
+                      <td class="govuk-table__cell">0020003209</td>
+
+                      <td class="govuk-table__cell">Precision Engineering Ltd</td>
+                      <td class="govuk-table__cell">GBP</td>
+                      <td class="govuk-table__cell">GBP</td>
+                      <td class="govuk-table__cell">830.00</td>
+                      <td class="govuk-table__cell">190.00</td>
                       <td class="govuk-table__cell">-</td>
-                      <td class="govuk-table__cell">{{ data['facility-900-accrualAdjustment'] }}</td>
+                      <td class="govuk-table__cell">155,000.00</td>
                       <td class="govuk-table__cell">-</td>
-                      <td class="govuk-table__cell">{{ data['facility-900-principalAdjustment'] }}</td>
+                      <td class="govuk-table__cell">915.00</td>
                       <td class="govuk-table__cell">-</td>
+                      <td class="govuk-table__cell"><strong class="govuk-tag">To&nbsp;do</strong></td>
                     </tr>
 
+                    
+                  </tbody>
+                  </table>-->
+
+                  <!-- Table with status as 2nd column-->
+                  <table class="govuk-table" data-module="moj-sortable-table">
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <colgroup span="2"></colgroup>
+                    <colgroup span="2"></colgroup>
+                    <colgroup span="2"></colgroup>
+                    
+                    <thead class="govuk-table__head">  
+                    <tr class="govuk-table__row">
+                      <th class="govuk-table__header govuk-!-padding-top-0" rowspan="2">
+                        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                          <input type="checkbox" class="govuk-checkboxes__input" id="facilityId">
+                          <label class="govuk-label govuk-checkboxes__label" for="facilityId">
+                          <span class="govuk-visually-hidden"></span>
+                          </label>
+                        </div>
+                      </th>
+                      <th scope="col" class="govuk-table__header" aria-sort="none" rowspan="2">Facility ID</th>
+                      <th scope="col" class="govuk-table__header" aria-sort="descending" rowspan="2">Status</th>
+                      <th scope="col" class="govuk-table__header" aria-sort="none" rowspan="2">Exporter</th>
+                      <th scope="col" class="govuk-table__header" aria-sort="none" rowspan="2">Base currency</th>
+                      <th scope="col" class="govuk-table__header" aria-sort="none" rowspan="2">Fee currency</th>
+                      <th scope="col" class="govuk-table__header" rowspan="2">Fee payment</th>
+
+                      <th scope="col" class="govuk-table__header" colspan="2">Premium accrual balance adjustment</th>
+                      <th scope="col" class="govuk-table__header" colspan="2">Principal balance adjustment</th>
+                      <th scope="col" class="govuk-table__header" colspan="2">Fee adjustment</th>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <th scope="col" class="govuk-table__header">Decrease</th>
+                      <th scope="col" class="govuk-table__header">Increase</th>
+                      <th scope="col" class="govuk-table__header">Decrease</th>
+                      <th scope="col" class="govuk-table__header">Increase</th>
+                      <th scope="col" class="govuk-table__header">Decrease</th>
+                      <th scope="col" class="govuk-table__header">Increase</th>
+                    </tr>
+                  </thead>
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell govuk-!-padding-top-0 govuk-!-padding-bottom-0">
+                        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                          <input type="checkbox" class="govuk-checkboxes__input" id="key-0020002167" name="gen-checks" value="0020002167">
+                          <label class="govuk-label govuk-checkboxes__label" for="key-0020002167">
+                          <span class="govuk-visually-hidden"></span>
+                          </label>
+                        </div>
+                      </td>
+                      <td class="govuk-table__cell">0020002167</td>
+                      <td class="govuk-table__cell" data-sort-value="1"><strong class="govuk-tag govuk-tag--green">Done</strong></td>
+                      <td class="govuk-table__cell">Meridian Manufacturing Ltd</td>
+                      <td class="govuk-table__cell">USD</td>
+                      <td class="govuk-table__cell">USD</td>
+                      <td class="govuk-table__cell">1,000.00</td>
+
+                      <td class="govuk-table__cell">205.00</td>
+                      <td class="govuk-table__cell">-</td>
+                      <td class="govuk-table__cell">195,000.00</td>
+                      <td class="govuk-table__cell">-</td>
+                      <td class="govuk-table__cell">705.00</td>
+                      <td class="govuk-table__cell">-</td>
+                      
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell govuk-!-padding-top-0 govuk-!-padding-bottom-0">
+                        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                          <input type="checkbox" class="govuk-checkboxes__input" id="key-0020002193" name="gen-checks" value="0020002193">
+                          <label class="govuk-label govuk-checkboxes__label" for="key-0020002193">
+                          <span class="govuk-visually-hidden"></span>
+                          </label>
+                        </div>
+                      </td>
+                      <td class="govuk-table__cell">0020002193</td>
+                      <td class="govuk-table__cell" data-sort-value="1"><strong class="govuk-tag govuk-tag--green">Done</strong></td>
+                      <td class="govuk-table__cell">British Tech Innovators Ltd</td>
+                      <td class="govuk-table__cell">EUR</td>
+                      <td class="govuk-table__cell">EUR</td>
+                      <td class="govuk-table__cell">1,500.00</td>
+                      <td class="govuk-table__cell">175.00</td>
+                      <td class="govuk-table__cell">-</td>
+                      <td class="govuk-table__cell">215,000.00</td>
+                      <td class="govuk-table__cell">-</td>
+                      <td class="govuk-table__cell">655.00</td>
+                      <td class="govuk-table__cell">-</td>
+                    </tr> 
+    
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell govuk-!-padding-top-0 govuk-!-padding-bottom-0">
+                        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                          <input type="checkbox" class="govuk-checkboxes__input" id="key-0020003073" name="gen-checks" value="0020003073">
+                          <label class="govuk-label govuk-checkboxes__label" for="key-0020003073">
+                          <span class="govuk-visually-hidden"></span>
+                          </label>
+                        </div>
+                      </td>
+                      <td class="govuk-table__cell">0020003073</td>
+                      <td class="govuk-table__cell" data-sort-value="1"><strong class="govuk-tag govuk-tag--green">Done</strong></td>
+                      <td class="govuk-table__cell">Automation Solutions Ltd</td>
+                      <td class="govuk-table__cell">EUR</td>
+                      <td class="govuk-table__cell">EUR</td>
+                      <td class="govuk-table__cell">1,760.00</td>
+                      <td class="govuk-table__cell">340.00</td>
+                      <td class="govuk-table__cell">-</td>
+                      <td class="govuk-table__cell">565,000.00</td>
+                      <td class="govuk-table__cell">-</td>
+                      <td class="govuk-table__cell">1,120.00</td>
+                      <td class="govuk-table__cell">-</td>
+
+                    </tr>
+
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell govuk-!-padding-top-0 govuk-!-padding-bottom-0">
+                        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                          <input type="checkbox" class="govuk-checkboxes__input" id="key-0020002154" name="gen2-checks" value="0020002154">
+                          <label class="govuk-label govuk-checkboxes__label" for="key-0020002154">
+                          <span class="govuk-visually-hidden"></span>
+                          </label>
+                        </div>
+                      </td>
+                      <td class="govuk-table__cell">0020002154</td>
+                      
+                        {% if (data['gen2-checks'] == '') %}
+                        <td class="govuk-table__cell" data-sort-value="2">
+                          <strong class="govuk-tag">To&nbsp;do</strong>
+                        </td>
+
+                        {% elif (data['gen2-checks'] == '0020002154' or '0020002198' or '0020002565' or '0020002896' or '0020002983' or '0020003182') %}
+                          <td class="govuk-table__cell" data-sort-value="1">
+                            <strong class="govuk-tag govuk-tag--green">Done</strong>
+                          </td>
+                        {% endif %}
+
+                      <td class="govuk-table__cell">Direct Engineering Solutions Ltd</td>
+                      <td class="govuk-table__cell">GBP</td>
+                      <td class="govuk-table__cell">GBP</td>
+                      <td class="govuk-table__cell">2,500.00</td>
+
+                      <td class="govuk-table__cell">560.00</td>
+                      <td class="govuk-table__cell">-</td>
+                      <td class="govuk-table__cell">240,000.00</td>
+                      <td class="govuk-table__cell">-</td>
+                      <td class="govuk-table__cell">920.00</td>
+                      <td class="govuk-table__cell">-</td>
+
+                    </tr>
+    
+                    <tr class="govuk-table__row">
+
+                      <td class="govuk-table__cell govuk-!-padding-top-0 govuk-!-padding-bottom-0">
+                        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                          <input type="checkbox" class="govuk-checkboxes__input" id="key-0020002198" name="gen2-checks" value="0020002198">
+                          <label class="govuk-label govuk-checkboxes__label" for="key-0020002198">
+                          <span class="govuk-visually-hidden"></span>
+                          </label>
+                        </div>
+                      </td>
+                      <td class="govuk-table__cell">0020002198</td>
+
+                        {% if (data['gen2-checks'] == '') or 
+                        (data['gen2-checks'] == '0020002154') %}
+                        <td class="govuk-table__cell" data-sort-value="2">
+                          <strong class="govuk-tag">To&nbsp;do</strong>
+                        </td>
+
+                        {% elif (data['gen2-checks'] == '0020002198') or (data['gen2-checks'] == '0020002565') or (data['gen2-checks'] == '0020002896') or (data['gen2-checks'] == '0020002983') or (data['gen2-checks'] == '0020003182') %}
+                        <td class="govuk-table__cell" data-sort-value="1">
+                          <strong class="govuk-tag govuk-tag--green">Done</strong>
+                        </td>
+                        {% endif %}
+
+                      <td class="govuk-table__cell">Innovate Solutions Ltd</td>
+                      <td class="govuk-table__cell">GBP</td>
+                      <td class="govuk-table__cell">GBP</td>
+                      <td class="govuk-table__cell">1,100.00</td>
+                      <td class="govuk-table__cell">210.00</td>
+                      <td class="govuk-table__cell">-</td>
+                      <td class="govuk-table__cell">435,000.00</td>
+                      <td class="govuk-table__cell">-</td>
+                      <td class="govuk-table__cell">540.00</td>
+                      <td class="govuk-table__cell">-</td>
+
+                    </tr>
+    
+                    <tr class="govuk-table__row">
+
+                      <td class="govuk-table__cell govuk-!-padding-top-0 govuk-!-padding-bottom-0">
+                        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                          <input type="checkbox" class="govuk-checkboxes__input" id="key-0020002565" name="gen2-checks" value="0020002565">
+                          <label class="govuk-label govuk-checkboxes__label" for="key-0020002565">
+                          <span class="govuk-visually-hidden"></span>
+                          </label>
+                        </div>
+                      </td>
+                      <td class="govuk-table__cell">0020002565</td>
+                        
+                        {% if (data['gen2-checks'] == '') or 
+                        (data['gen2-checks'] == '0020002154') or 
+                        (data['gen2-checks'] == '0020002198') %}
+                        <td class="govuk-table__cell" data-sort-value="2">
+                          <strong class="govuk-tag">To&nbsp;do</strong>
+                        </td>
+
+                        {% elif (data['gen2-checks'] == '0020002565') or (data['gen2-checks'] == '0020002896') or (data['gen2-checks'] == '0020002983') or (data['gen2-checks'] == '0020003182') %}
+                        <td class="govuk-table__cell" data-sort-value="1">
+                          <strong class="govuk-tag govuk-tag--green">Done</strong>
+                        </td>
+                        {% endif %}
+
+                      <td class="govuk-table__cell">Britannia Energy Ltd</td>
+                      <td class="govuk-table__cell">GBP</td>
+                      <td class="govuk-table__cell">GBP</td>
+                      <td class="govuk-table__cell">945.00</td>
+                      <td class="govuk-table__cell">85.00</td>
+                      <td class="govuk-table__cell">-</td>
+                      <td class="govuk-table__cell">110,000.00</td>
+                      <td class="govuk-table__cell">-</td>
+                      <td class="govuk-table__cell">2,010.00</td>
+                      <td class="govuk-table__cell">-</td>
+
+                    </tr>
+    
+                    <tr class="govuk-table__row">
+
+                      <td class="govuk-table__cell govuk-!-padding-top-0 govuk-!-padding-bottom-0">
+                        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                          <input type="checkbox" class="govuk-checkboxes__input" id="key-0020002896" name="gen2-checks" value="0020002896">
+                          <label class="govuk-label govuk-checkboxes__label" for="key-0020002896">
+                          <span class="govuk-visually-hidden"></span>
+                          </label>
+                        </div>
+                      </td>
+                      <td class="govuk-table__cell">0020002896</td>
+                        
+                        {% if (data['gen2-checks'] == '') or 
+                        (data['gen2-checks'] == '0020002154') or 
+                        (data['gen2-checks'] == '0020002198') or 
+                        (data['gen2-checks'] == '0020002565') %}
+
+                        <td class="govuk-table__cell" data-sort-value="2">
+                          <strong class="govuk-tag">To&nbsp;do</strong>
+                        </td>
+
+                        {% elif (data['gen2-checks'] == '0020002896') or (data['gen2-checks'] == '0020002983') or (data['gen2-checks'] == '0020003182') %}
+                        <td class="govuk-table__cell" data-sort-value="1">
+                          <strong class="govuk-tag govuk-tag--green">Done</strong>
+                        </td>
+                        {% endif %}
+
+                      <td class="govuk-table__cell">Marine Equipment Ltd</td>
+                      <td class="govuk-table__cell">GBP</td>
+                      <td class="govuk-table__cell">GBP</td>
+                      <td class="govuk-table__cell">1,026.00</td>
+                      <td class="govuk-table__cell">220.00</td>
+                      <td class="govuk-table__cell">-</td>
+                      <td class="govuk-table__cell">724,000.00</td>
+                      <td class="govuk-table__cell">-</td>
+                      <td class="govuk-table__cell">980.00</td>
+                      <td class="govuk-table__cell">-</td>
+
+                    </tr>
+    
+                    <tr class="govuk-table__row">
+
+                      <td class="govuk-table__cell govuk-!-padding-top-0 govuk-!-padding-bottom-0">
+                        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                          <input type="checkbox" class="govuk-checkboxes__input" id="key-0020002983" name="gen2-checks" value="0020002983">
+                          <label class="govuk-label govuk-checkboxes__label" for="key-0020002983">
+                          <span class="govuk-visually-hidden"></span>
+                          </label>
+                        </div>
+                      </td>
+                      <td class="govuk-table__cell">0020002983</td>
+
+                        {% if (data['gen2-checks'] == '') or 
+                        (data['gen2-checks'] == '0020002154') or 
+                        (data['gen2-checks'] == '0020002198') or 
+                        (data['gen2-checks'] == '0020002565') or 
+                        (data['gen2-checks'] == '0020002896') %}
+                        <td class="govuk-table__cell" data-sort-value="2">
+                          <strong class="govuk-tag">To&nbsp;do</strong>
+                        </td>
+
+                        {% elif (data['gen2-checks'] == '0020002983') or (data['gen2-checks'] == '0020003182') %}
+                        <td class="govuk-table__cell" data-sort-value="1">
+                          <strong class="govuk-tag govuk-tag--green">Done</strong>
+                        </td>
+                        {% endif %}
+
+                      <td class="govuk-table__cell">Able Robotics Ltd</td>
+                      <td class="govuk-table__cell">GBP</td>
+                      <td class="govuk-table__cell">GBP</td>
+                      <td class="govuk-table__cell">2,150.00</td>
+                      <td class="govuk-table__cell">435.00</td>
+                      <td class="govuk-table__cell">-</td>
+                      <td class="govuk-table__cell">638,000.00</td>
+                      <td class="govuk-table__cell">-</td>
+                      <td class="govuk-table__cell">620.00</td>
+                      <td class="govuk-table__cell">-</td>
+
+                    </tr>
+    
+                    <tr class="govuk-table__row">
+
+                      <td class="govuk-table__cell govuk-!-padding-top-0 govuk-!-padding-bottom-0">
+                        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                          <input type="checkbox" class="govuk-checkboxes__input" id="key-0020003182" name="gen2-checks" value="0020003182">
+                          <label class="govuk-label govuk-checkboxes__label" for="key-0020003182">
+                          <span class="govuk-visually-hidden"></span>
+                          </label>
+                        </div>
+                      </td>
+                      <td class="govuk-table__cell">0020003182</td>
+
+                        {% if (data['gen2-checks'] == '') or 
+                        (data['gen2-checks'] == '0020002154') or 
+                        (data['gen2-checks'] == '0020002198') or 
+                        (data['gen2-checks'] == '0020002565') or 
+                        (data['gen2-checks'] == '0020002896') or 
+                        (data['gen2-checks'] == '0020002983') %}
+                        <td class="govuk-table__cell" data-sort-value="2">
+                          <strong class="govuk-tag">To&nbsp;do</strong>
+                        </td>
+                        {% elif (data['gen2-checks'] == '0020003182') %}
+                        <td class="govuk-table__cell" data-sort-value="1">
+                          <strong class="govuk-tag govuk-tag--green">Done</strong>
+                        </td>
+                        {% endif %}
+
+                      <td class="govuk-table__cell">AirTech Ltd</td>
+                      <td class="govuk-table__cell">GBP</td>
+                      <td class="govuk-table__cell">GBP</td>
+                      <td class="govuk-table__cell">1,020.00</td>
+                      <td class="govuk-table__cell">240.00</td>
+                      <td class="govuk-table__cell">-</td>
+                      <td class="govuk-table__cell">225,000.00</td>
+                      <td class="govuk-table__cell">-</td>
+                      <td class="govuk-table__cell">1,115.00</td>
+                      <td class="govuk-table__cell">-</td>
+
+                    </tr>
+
+                    
                   </tbody>
                   </table>
 

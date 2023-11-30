@@ -846,7 +846,8 @@ module.exports = {
 
     // version 3b extras
     'v3b-GBP-total': 'GBP&nbsp;8,241.00',
-    'v3b-EUR-total': 'GBP&nbsp;3,810.00',
+    'v3b-EUR-total': 'EUR&nbsp;3,810.00',
+    'v3b-USD-total': 'USD&nbsp;740.00',
     }
 
 

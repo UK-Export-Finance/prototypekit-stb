@@ -22,20 +22,21 @@ Check before generating keying sheet data - {{ data['bank-100-name'] }} – {{ s
 
   <div class="govuk-grid-column-full">
 		
-      <form class="form" action="/tfm3b/bank-100#keying-sheet" method="post">
-		<input type="hidden" name="bank-100-task6" value="done">
-		<input type="hidden" name="bank-100-show-task" value="seven">
+      <form class="form" method="post" action="/tfm3b/bank-100#keying-sheet">
+		<input type="hidden" name="showBanner" value="true">
+		<input type="hidden" name="bank-100-task5" value="done">
+		<input type="hidden" name="bank-100-show-task" value="six">
 		<input type="hidden" name="generate-keying-sheet" value="generated2">
-
 		<input type="hidden" name="showBanner" value="true">
 		<input type="hidden" name="bank-100-status" value="completed">
+		
 		
     <h1 class="govuk-heading-l govuk-!-margin-bottom-6">
         <span class="govuk-caption-l">{{ data['bank-100-name'] }}, {{ data['report-quarter-v3b'] }}</span>
         Check before generating keying data 
       </h1>
           <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
-            6 matched fees
+            1 matched fee record
           </h2>
             <table class="govuk-table" data-module="moj-sortable-table">
 			<thead class="govuk-table__head">
@@ -43,61 +44,18 @@ Check before generating keying sheet data - {{ data['bank-100-name'] }} – {{ s
 				<th scope="col" class="govuk-table__header" aria-sort="ascending">Facility ID</th>
 				<th scope="col" class="govuk-table__header" aria-sort="none">Exporter</th>
 				<th scope="col" class="govuk-table__header" aria-sort="none">Facility base currency</th>
-				<th scope="col" class="govuk-table__header" aria-sort="none">Reported fee payable (reported currency)</th>
+				<th scope="col" class="govuk-table__header" aria-sort="none">Reported fee</th>
 				<th scope="col" class="govuk-table__header" aria-sort="none">Payments received</th>
 				<th scope="col" class="govuk-table__header" aria-sort="none">Status</th>
 				</tr>
 			</thead>
 			<tbody class="govuk-table__body">
 				<tr class="govuk-table__row">
-					<td class="govuk-table__cell">{{ data['facility-100-ukef-id'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-100-name'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-100-currency'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-100-currency'] }} {{ data['facility-100-paid'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-100-currency'] }} {{ data['facility-100-paid'] }}</td>
-					<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Match</strong></td>
-				</tr>
-				<tr class="govuk-table__row">
-					<td class="govuk-table__cell">{{ data['facility-400-ukef-id'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-400-name'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-400-currency'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-400-currency'] }} {{ data['facility-400-paid'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-400-currency'] }} {{ data['facility-400-paid'] }}</td>
-					<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Match</strong></td>
-				</tr>
-				<tr class="govuk-table__row">
-					<td class="govuk-table__cell">{{ data['facility-500-ukef-id'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-500-name'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-500-currency'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-500-currency'] }} {{ data['facility-500-paid'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-500-currency'] }} {{ data['facility-500-paid'] }}</td>
-					<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Match</strong></td>
-				</tr>
-
-				<tr class="govuk-table__row">
-					<td class="govuk-table__cell">{{ data['facility-600-ukef-id'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-600-name'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-600-currency'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-600-currency'] }} {{ data['facility-600-paid'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-600-currency'] }} {{ data['facility-600-paid'] }}</td>
-					<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Match</strong></td>
-				</tr>
-
-				<tr class="govuk-table__row">
-					<td class="govuk-table__cell">{{ data['facility-700-ukef-id'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-700-name'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-700-currency'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-700-currency'] }} {{ data['facility-700-paid'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-700-currency'] }} {{ data['facility-700-paid'] }}</td>
-					<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Match</strong></td>
-				</tr>
-				
-				<tr class="govuk-table__row">
-					<td class="govuk-table__cell">{{ data['facility-900-ukef-id'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-900-name'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-900-currency'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-900-currency'] }} {{ data['facility-900-paid'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-900-currency'] }} {{ data['facility-900-paid'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-401-ukef-id'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-401-name'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-401-currency'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-403-currency'] }} {{ data['facility-403-paid'] }}</td>
+					<td class="govuk-table__cell">{{ data['facility-403-currency'] }} {{ data['facility-403-paid'] }}</td>
 					<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Match</strong></td>
 				</tr>
 
@@ -105,8 +63,6 @@ Check before generating keying sheet data - {{ data['bank-100-name'] }} – {{ s
 			</table>
 
 			<div class="govuk-button-group">
-
-
 			{{ govukButton({
 				text: "Generate keying data"
 			  }) }}

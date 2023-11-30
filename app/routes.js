@@ -228,7 +228,7 @@ router.post('/tfm3b/bank-100-task2', function (req, res) {
   }
 })
 
-/////MORE VERSION 3B
+/////MORE VERSION 3B - GENERATE1
 
 // Run this code when a form is submitted to '/tfm3b/bank-100-task3' form on /tfm3b/bank-100.html
 // This is for when there are 2 buttons on a form that need to go to different pages
@@ -246,23 +246,22 @@ router.post('/tfm3b/bank-100-task3', function (req, res) {
 })
 
 
-/////MORE VERSION 3B
+/////MORE VERSION 3B - TASK 4 - ADD USD PAYMENT
 
 // Run this code when a form is submitted to '/tfm3b/bank-100-task4' form on /tfm3b/bank-100.html
 // This is for when there are 2 buttons on a form that need to go to different pages
 router.post('/tfm3b/bank-100-task4', function (req, res) {
 
   // We initialise a new constant and make it equal the current value of addaPayment.
-  const generate = req.session.data['generate']
+  const addaPayment = req.session.data['addaPayment']
   
   //Then we use some logic to decide what page to load next.
-  if (generate == 'true'){
-    res.redirect('bank-100-check-key1')
+  if (addaPayment == 'true'){
+    res.redirect('bank-100-task4')
   } else {
     res.redirect('bank-100#reconciliation')
   }
 })
-
 
 /////MORE VERSION 3B
 
@@ -271,11 +270,11 @@ router.post('/tfm3b/bank-100-task4', function (req, res) {
 router.post('/tfm3b/bank-100-task5', function (req, res) {
 
   // We initialise a new constant and make it equal the current value of addaPayment.
-  const addaPayment = req.session.data['addaPayment']
+  const generate = req.session.data['generate']
   
   //Then we use some logic to decide what page to load next.
-  if (addaPayment == 'true'){
-    res.redirect('bank-100-task5')
+  if (generate == 'true'){
+    res.redirect('bank-100-check-key2')
   } else {
     res.redirect('bank-100#reconciliation')
   }

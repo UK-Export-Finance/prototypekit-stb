@@ -27,46 +27,46 @@ Edit a payment - {{ data['bank-100-name'] }} – {{ serviceName }} – GOV.UK Pr
         Edit payment
       </h1>
           <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
-            Added facility details
+            Added reported fee details
           </h2>
-		  <dl class="govuk-summary-list">
-			<div class="govuk-summary-list__row">
-			  <dt class="govuk-summary-list__key govuk-!-width-one-half">
-			  Facility ID
-			  </dt>
-			  <dd class="govuk-summary-list__value">
-				{{ data['facility-200-ukef-id'] }}
-			  </dd>
-			</div>
-
-			<div class="govuk-summary-list__row">
-			  <dt class="govuk-summary-list__key govuk-!-width-one-half">
-			  Exporter
-			  </dt>
-			  <dd class="govuk-summary-list__value">
-				{{ data['facility-200-name'] }}
-			  </dd>
-			</div>
-
-			<div class="govuk-summary-list__row">
-			  <dt class="govuk-summary-list__key govuk-!-width-one-half">
-			  Facility base currency
-			  </dt>
-			  <dd class="govuk-summary-list__value">
-				{{ data['facility-200-currency'] }}
-			  </dd>
-			</div>
-
-
-		  <div class="govuk-summary-list__row">
-		  <dt class="govuk-summary-list__key govuk-!-width-one-half">
-		  Reported fee payable
-		  </dt>
-		  <dd class="govuk-summary-list__value">
-			  {{ data['facility-200-currency'] }} {{ data['facility-200-paid'] }}
-		  </dd>
-	  </div>
-  </dl>
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key govuk-!-width-one-half">
+              Facility ID
+              </dt>
+              <dd class="govuk-summary-list__value">
+              {{ data['facility-401-ukef-id'] }}
+              </dd>
+            </div>
+      
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key govuk-!-width-one-half">
+              Exporter
+              </dt>
+              <dd class="govuk-summary-list__value">
+              {{ data['facility-401-name'] }}
+              </dd>
+            </div>
+      
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key govuk-!-width-one-half">
+              Facility base currency
+              </dt>
+              <dd class="govuk-summary-list__value">
+              {{ data['facility-401-currency'] }}
+              </dd>
+            </div>
+      
+      
+            <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-half">
+            Reported fee
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['facility-403-currency'] }} {{ data['facility-403-paid'] }}
+            </dd>
+          </div>
+        </dl>
 
 
         <fieldset class="govuk-fieldset">
