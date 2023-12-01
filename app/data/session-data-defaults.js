@@ -5,7 +5,7 @@ module.exports = {
 
 // FACILITIES
 
-'facility-100-name': 'Direct Engineering Solutions Ltd',
+'facility-100-name': 'Direct Engineering Ltd',
 'facility-100-ukef-id': '0020002154',
 'facility-100-currency': 'GBP',
 'facility-100-limit': '600,000.00',

@@ -250,11 +250,11 @@
                   
                   <th scope="col" class="govuk-table__header" aria-sort="ascending">Facility ID</th>
                   <th scope="col" class="govuk-table__header" aria-sort="none">Exporter</th>
-                  <th scope="col" class="govuk-table__header" aria-sort="none">Base currency</th>
                   <th scope="col" class="govuk-table__header" aria-sort="none">Reported fees</th>
-                  <th scope="col" class="govuk-table__header" aria-sort="none">Total reported</th>
+                  <th scope="col" class="govuk-table__header" aria-sort="none">Reported payments</th>
+                  <th scope="col" class="govuk-table__header" aria-sort="none">Total reported payments</th>
                   <th scope="col" class="govuk-table__header" aria-sort="none">Payments received</th>
-                  <th scope="col" class="govuk-table__header" aria-sort="none">Total received</th>
+                  <th scope="col" class="govuk-table__header" aria-sort="none">Total payments received</th>
                   <th scope="col" class="govuk-table__header" aria-sort="none">Status</th>            
                 </tr>
               </thead>
@@ -277,7 +277,7 @@
                   <!--Exporter-->
                   <td class="govuk-table__cell">{{ data['facility-100-name'] }}</td>
                   <!--Base currency-->
-                  <td class="govuk-table__cell">{{ data['facility-100-currency'] }}</td>
+                  <td class="govuk-table__cell">{{ data['facility-100-currency'] }} {{ data['facility-100-paid'] }}</td>
                   <!--Fee payable-->
                   <td class="govuk-table__cell">{{ data['facility-100-currency'] }} {{ data['facility-100-paid'] }}</td>
                   <!--Fee payable - total-->
@@ -314,7 +314,7 @@
                   <!--Exporter-->
                   <td class="govuk-table__cell">{{ data['facility-301-name'] }}</td>
                   <!--Base currency-->
-                  <td class="govuk-table__cell">{{ data['facility-301-currency'] }}</td>
+                  <td class="govuk-table__cell">{{ data['facility-301-currency'] }} {{ data['facility-301-paid'] }}</td>
                   <!--Fee payable-->
                   <td class="govuk-table__cell">{{ data['facility-301-currency'] }} {{ data['facility-301-paid'] }}</td>
                   <!--Fee payable - total-->
@@ -349,7 +349,7 @@
                   <!--Exporter-->
                   <td class="govuk-table__cell">{{ data['facility-401-name'] }}</td>
                   <!--Base currency-->
-                  <td class="govuk-table__cell">{{ data['facility-401-currency'] }}</td>
+                  <td class="govuk-table__cell">{{ data['facility-401-currency'] }} {{ data['facility-401-paid'] }}</td>
                   <!--Fee payable-->
                   <td class="govuk-table__cell">{{ data['facility-401-currency'] }} {{ data['facility-401-paid'] }}</td>
                   <!--Fee payable - total-->
@@ -384,11 +384,11 @@
                 <!--Exporter-->
                 <td class="govuk-table__cell">{{ data['facility-401-name'] }}</td>
                 <!--Base currency-->
-                <td class="govuk-table__cell">{{ data['facility-401-currency'] }}</td>
+                <td class="govuk-table__cell">{{ data['facility-402-currency'] }} {{ data['facility-402-paid'] }}</td>
                 <!--Fee payable-->
                 <td class="govuk-table__cell">{{ data['facility-402-currency'] }} {{ data['facility-402-paid'] }}</td>
                 <!--Fee payable - total-->
-                <td class="govuk-table__cell">{{ data['facility-401-currency'] }} {{ data['facility-402-paid-total'] }}</td>
+                <td class="govuk-table__cell">{{ data['facility-402-currency'] }} {{ data['facility-402-paid'] }}</td>
                 
                 <td class="govuk-table__cell">
                   <!--Payment received-->
@@ -419,11 +419,11 @@
               <!--Exporter-->
               <td class="govuk-table__cell">{{ data['facility-401-name'] }}</td>
               <!--Base currency-->
-              <td class="govuk-table__cell">{{ data['facility-401-currency'] }}</td>
+              <td class="govuk-table__cell">{{ data['facility-403-currency'] }} {{ data['facility-403-paid'] }}</td>
               <!--Fee payable-->
               <td class="govuk-table__cell">{{ data['facility-403-currency'] }} {{ data['facility-403-paid'] }}</td>
               <!--Fee payable - total-->
-              <td class="govuk-table__cell">{{ data['facility-401-currency'] }} {{ data['facility-403-paid-total'] }}</td>
+              <td class="govuk-table__cell">{{ data['facility-403-currency'] }} {{ data['facility-403-paid'] }}</td>
               
               <td class="govuk-table__cell">
                 <!--Payment received-->
@@ -454,7 +454,7 @@
                   <!--Exporter-->
                   <td class="govuk-table__cell">{{ data['facility-500-name'] }}</td>
                   <!--Base currency-->
-                  <td class="govuk-table__cell">{{ data['facility-500-currency'] }}</td>
+                  <td class="govuk-table__cell">{{ data['facility-500-currency'] }} {{ data['facility-500-paid'] }}</td>
                   <!--Fee payable-->
                   <td class="govuk-table__cell">{{ data['facility-500-currency'] }} {{ data['facility-500-paid'] }}</td>
                   <!--Fee payable - total-->
@@ -489,7 +489,7 @@
                   <!--Exporter-->
                   <td class="govuk-table__cell">{{ data['facility-600-name'] }}</td>
                   <!--Base currency-->
-                  <td class="govuk-table__cell">{{ data['facility-600-currency'] }}</td>
+                  <td class="govuk-table__cell">{{ data['facility-600-currency'] }} {{ data['facility-600-paid'] }}</td>
                   <!--Fee payable-->
                   <td class="govuk-table__cell">{{ data['facility-600-currency'] }} {{ data['facility-600-paid'] }}</td>
                   <!--Fee payable - total-->
@@ -524,7 +524,7 @@
                   <!--Exporter-->
                   <td class="govuk-table__cell">{{ data['facility-700-name'] }}</td>
                   <!--Base currency-->
-                  <td class="govuk-table__cell">{{ data['facility-700-currency'] }}</td>
+                  <td class="govuk-table__cell">{{ data['facility-700-currency'] }} {{ data['facility-700-paid'] }}</td>
                   <!--Fee payable-->
                   <td class="govuk-table__cell">{{ data['facility-700-currency'] }} {{ data['facility-700-paid'] }}</td>
                   <!--Fee payable - total-->
@@ -559,7 +559,7 @@
                   <!--Exporter-->
                   <td class="govuk-table__cell">{{ data['facility-800-name'] }}</td>
                   <!--Base currency-->
-                  <td class="govuk-table__cell">{{ data['facility-800-currency'] }}</td>
+                  <td class="govuk-table__cell">{{ data['facility-800-currency'] }} {{ data['facility-800-paid'] }}</td>
                   <!--Fee payable-->
                   <td class="govuk-table__cell">{{ data['facility-800-currency'] }} {{ data['facility-800-paid'] }}</td>
                   <!--Fee payable - total-->
@@ -594,7 +594,7 @@
                   <!--Exporter-->
                   <td class="govuk-table__cell">{{ data['facility-900-name'] }}</td>
                   <!--Base currency-->
-                  <td class="govuk-table__cell">{{ data['facility-900-currency'] }}</td>
+                  <td class="govuk-table__cell">{{ data['facility-900-currency'] }} {{ data['facility-900-paid'] }}</td>
                   <!--Fee payable-->
                   <td class="govuk-table__cell">{{ data['facility-900-currency'] }} {{ data['facility-900-paid'] }}</td>
                   <!--Fee payable - total-->
@@ -621,7 +621,7 @@
             <form class="form" action="/tfm3b/bank-100-task2" method="post">
               <div class="govuk-button-group">
                 {{ govukButton({
-                text: "Add a payment 2",
+                text: "Add a payment",
                 name: "addaPayment",
                 value: true
               }) }}
@@ -659,13 +659,13 @@
           {% endif %}
           
           <th scope="col" class="govuk-table__header" aria-sort="ascending">Facility ID</th>
-          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter" aria-sort="none">Exporter</th>
-          <th scope="col" class="govuk-table__header" aria-sort="none">Base currency</th>
-          <th scope="col" class="govuk-table__header" aria-sort="none">Reported fees (reported currency)</th>
-          <th scope="col" class="govuk-table__header" aria-sort="none">Total reported (base currency)</th>
+          <th scope="col" class="govuk-table__header" aria-sort="none">Exporter</th>
+          <th scope="col" class="govuk-table__header" aria-sort="none">Reported fees</th>
+          <th scope="col" class="govuk-table__header" aria-sort="none">Reported payments</th>
+          <th scope="col" class="govuk-table__header" aria-sort="none">Total reported payments</th>
           <th scope="col" class="govuk-table__header" aria-sort="none">Payments received</th>
-          <th scope="col" class="govuk-table__header" aria-sort="none">Total received (base currency)</th>
-          <th scope="col" class="govuk-table__header" aria-sort="none">Status</th>            
+          <th scope="col" class="govuk-table__header" aria-sort="none">Total payments received</th>
+          <th scope="col" class="govuk-table__header" aria-sort="none">Status</th>              
         </tr>
       </thead>
       <tbody class="govuk-table__body">
@@ -696,17 +696,17 @@
             {{ data['facility-900-name'] }}
           
           </td>
-          <!--Base currency-->
+          <!--Reported fees-->
           <td class="govuk-table__cell stb-no-border">
-            {{ data['facility-100-currency'] }}<br>
-            {{ data['facility-401-currency'] }}<br>
-            {{ data['facility-500-currency'] }}<br>
-            {{ data['facility-600-currency'] }}<br>
-            {{ data['facility-700-currency'] }}<br>
-            {{ data['facility-900-currency'] }}
+            {{ data['facility-100-currency'] }}&nbsp;{{ data['facility-100-paid'] }}<br>
+            {{ data['facility-100-currency'] }}&nbsp;{{ data['facility-401-paid'] }}<br>
+            {{ data['facility-100-currency'] }}&nbsp;{{ data['facility-500-paid'] }}<br>
+            {{ data['facility-100-currency'] }}&nbsp;{{ data['facility-600-paid'] }}<br>
+            {{ data['facility-100-currency'] }}&nbsp;{{ data['facility-700-paid'] }}<br>
+            {{ data['facility-100-currency'] }}&nbsp;{{ data['facility-900-paid'] }}
           
           </td>
-          <!--Fee payable-->
+          <!--Reported payments-->
           <td class="govuk-table__cell stb-no-border">
             {{ data['facility-100-currency'] }}&nbsp;{{ data['facility-100-paid'] }}<br>
             {{ data['facility-100-currency'] }}&nbsp;{{ data['facility-401-paid'] }}<br>
@@ -715,16 +715,16 @@
             {{ data['facility-100-currency'] }}&nbsp;{{ data['facility-700-paid'] }}<br>
             {{ data['facility-100-currency'] }}&nbsp;{{ data['facility-900-paid'] }}
           </td>
-          <!--Fee payable - total-->
+          <!--Total reported payments-->
           <td class="govuk-table__cell">{{ data['v3b-GBP-total'] | safe }}</td>
           
           <td class="govuk-table__cell">
-            <!--Payment received-->
+            <!--Payments received-->
             <a href="bank-100-task1-edit" class="govuk-link govuk-link--no-visited-state">{{ data['v3b-GBP-total'] | safe }}</a>
           </td>
           
           <td class="govuk-table__cell">
-            <!--Total received-->
+            <!--Total payments eceived-->
             {{ data['v3b-GBP-total'] | safe }}
           </td>
 
@@ -752,7 +752,7 @@
         <!--Exporter-->
         <td class="govuk-table__cell">{{ data['facility-301-name'] }}</td>
         <!--Base currency-->
-        <td class="govuk-table__cell">{{ data['facility-301-currency'] }}</td>
+        <td class="govuk-table__cell">{{ data['facility-301-currency'] }}&nbsp;{{ data['facility-301-paid'] }}</td>
         <!--Fee payable-->
         <td class="govuk-table__cell">{{ data['facility-301-currency'] }}&nbsp;{{ data['facility-301-paid'] }}</td>
         <!--Fee payable - total-->
@@ -787,11 +787,11 @@
       <!--Exporter-->
       <td class="govuk-table__cell">{{ data['facility-401-name'] }}</td>
       <!--Base currency-->
-      <td class="govuk-table__cell">{{ data['facility-401-currency'] }}</td>
+      <td class="govuk-table__cell">{{ data['facility-402-currency'] }}&nbsp;{{ data['facility-402-paid'] }}</td>
       <!--Fee payable-->
       <td class="govuk-table__cell">{{ data['facility-402-currency'] }}&nbsp;{{ data['facility-402-paid'] }}</td>
       <!--Fee payable - total-->
-      <td class="govuk-table__cell">{{ data['facility-401-currency'] }}&nbsp;{{ data['facility-402-paid-total'] }}</td>
+      <td class="govuk-table__cell">{{ data['facility-402-currency'] }}&nbsp;{{ data['facility-402-paid'] }}</td>
       
       <td class="govuk-table__cell">
         <!--Payment received-->
@@ -822,11 +822,11 @@
     <!--Exporter-->
     <td class="govuk-table__cell">{{ data['facility-401-name'] }}</td>
     <!--Base currency-->
-    <td class="govuk-table__cell">{{ data['facility-401-currency'] }}</td>
+    <td class="govuk-table__cell">{{ data['facility-403-currency'] }}&nbsp;{{ data['facility-403-paid'] }}</td>
     <!--Fee payable-->
     <td class="govuk-table__cell">{{ data['facility-403-currency'] }}&nbsp;{{ data['facility-403-paid'] }}</td>
     <!--Fee payable - total-->
-    <td class="govuk-table__cell">{{ data['facility-401-currency'] }}&nbsp;{{ data['facility-403-paid-total'] }}</td>
+    <td class="govuk-table__cell">{{ data['facility-403-currency'] }}&nbsp;{{ data['facility-403-paid'] }}</td>
     
     <td class="govuk-table__cell">
       <!--Payment received-->
@@ -857,7 +857,7 @@
       <!--Exporter-->
       <td class="govuk-table__cell">{{ data['facility-800-name'] }}</td>
       <!--Base currency-->
-      <td class="govuk-table__cell">{{ data['facility-800-currency'] }}</td>
+      <td class="govuk-table__cell">{{ data['facility-800-currency'] }}&nbsp;{{ data['facility-800-paid'] }}</td>
       <!--Fee payable-->
       <td class="govuk-table__cell">{{ data['facility-800-currency'] }}&nbsp;{{ data['facility-800-paid'] }}</td>
       <!--Fee payable - total-->
@@ -923,15 +923,14 @@
               </div> 
             </th>
             {% endif %}
-            
             <th scope="col" class="govuk-table__header" aria-sort="ascending">Facility ID</th>
-            <th scope="col" class="govuk-table__header govuk-!-width-one-quarter" aria-sort="none">Exporter</th>
-            <th scope="col" class="govuk-table__header" aria-sort="none">Base currency</th>
-            <th scope="col" class="govuk-table__header" aria-sort="none">Reported fees </th>
-            <th scope="col" class="govuk-table__header" aria-sort="none">Total reported</th>
-            <th scope="col" class="govuk-table__header" aria-sort="none">Payments received</th>
-            <th scope="col" class="govuk-table__header" aria-sort="none">Total received</th>
-            <th scope="col" class="govuk-table__header" aria-sort="none">Status</th>            
+          <th scope="col" class="govuk-table__header" aria-sort="none">Exporter</th>
+          <th scope="col" class="govuk-table__header" aria-sort="none">Reported fees</th>
+          <th scope="col" class="govuk-table__header" aria-sort="none">Reported payments</th>
+          <th scope="col" class="govuk-table__header" aria-sort="none">Total reported payments</th>
+          <th scope="col" class="govuk-table__header" aria-sort="none">Payments received</th>
+          <th scope="col" class="govuk-table__header" aria-sort="none">Total payments received</th>
+          <th scope="col" class="govuk-table__header" aria-sort="none">Status</th>            
           </tr>
         </thead>
         <tbody class="govuk-table__body">
@@ -964,12 +963,12 @@
             </td>
             <!--Base currency-->
             <td class="govuk-table__cell stb-no-border">
-              {{ data['facility-100-currency'] }}<br>
-              {{ data['facility-401-currency'] }}<br>
-              {{ data['facility-500-currency'] }}<br>
-              {{ data['facility-600-currency'] }}<br>
-              {{ data['facility-700-currency'] }}<br>
-              {{ data['facility-900-currency'] }}
+              {{ data['facility-100-currency'] }}&nbsp;{{ data['facility-100-paid'] }}<br>
+              {{ data['facility-100-currency'] }}&nbsp;{{ data['facility-401-paid'] }}<br>
+              {{ data['facility-100-currency'] }}&nbsp;{{ data['facility-500-paid'] }}<br>
+              {{ data['facility-100-currency'] }}&nbsp;{{ data['facility-600-paid'] }}<br>
+              {{ data['facility-100-currency'] }}&nbsp;{{ data['facility-700-paid'] }}<br>
+              {{ data['facility-100-currency'] }}&nbsp;{{ data['facility-900-paid'] }}
             </td>
             <!--Fee payable-->
             <td class="govuk-table__cell stb-no-border">
@@ -1020,9 +1019,9 @@
           </td>
           <!--Base currency-->
           <td class="govuk-table__cell">
-            {{ data['facility-301-currency'] }}<br>
-            {{ data['facility-401-currency'] }}<br>
-            {{ data['facility-800-currency'] }}</td>
+            {{ data['facility-301-currency'] }}&nbsp;{{ data['facility-301-paid'] }}<br>
+            {{ data['facility-402-currency'] }}&nbsp;{{ data['facility-402-paid'] }}<br>
+            {{ data['facility-800-currency'] }}&nbsp;{{ data['facility-800-paid'] }}</td>
           <!--Fee payable-->
           <td class="govuk-table__cell">
             {{ data['facility-301-currency'] }}&nbsp;{{ data['facility-301-paid'] }}<br>
@@ -1062,11 +1061,11 @@
         <!--Exporter-->
         <td class="govuk-table__cell">{{ data['facility-401-name'] }}</td>
         <!--Base currency-->
-        <td class="govuk-table__cell">{{ data['facility-401-currency'] }}</td>
+        <td class="govuk-table__cell">{{ data['facility-403-currency'] }} {{ data['facility-403-paid'] }}</td>
         <!--Fee payable-->
         <td class="govuk-table__cell">{{ data['facility-403-currency'] }} {{ data['facility-403-paid'] }}</td>
         <!--Fee payable - total-->
-        <td class="govuk-table__cell">{{ data['facility-401-currency'] }} {{ data['facility-403-paid-total'] }}</td>
+        <td class="govuk-table__cell">{{ data['facility-403-currency'] }} {{ data['facility-403-paid'] }}</td>
         
         <td class="govuk-table__cell">
           <!--Payment received-->
@@ -1129,16 +1128,15 @@
               </div> 
             </th>
             {% endif %}
-            
             <th scope="col" class="govuk-table__header" aria-sort="ascending">Facility ID</th>
-            <th scope="col" class="govuk-table__header govuk-!-width-one-quarter" aria-sort="none">Exporter</th>
-            <th scope="col" class="govuk-table__header" aria-sort="none">Base currency</th>
-            <th scope="col" class="govuk-table__header" aria-sort="none">Reported fees (reported currency)</th>
-            <th scope="col" class="govuk-table__header" aria-sort="none">Total reported (base currency)</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none">Exporter</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none">Reported fees</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none">Reported payments</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none">Total reported payments</th>
             <th scope="col" class="govuk-table__header" aria-sort="none">Payments received</th>
-            <th scope="col" class="govuk-table__header" aria-sort="none">Total received (base currency)</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none">Total payments received</th>
             <th scope="col" class="govuk-table__header" aria-sort="none">Status</th>            
-          </tr>
+            </tr>
         </thead>
         <tbody class="govuk-table__body">
   
@@ -2052,7 +2050,6 @@ EUR&nbsp;3,260.00
                     <col>
                     <col>
                     <col>
-                    <col>
                     <colgroup span="2"></colgroup>
                     <colgroup span="2"></colgroup>
                     <colgroup span="2"></colgroup>
@@ -2070,9 +2067,8 @@ EUR&nbsp;3,260.00
                       <th scope="col" class="govuk-table__header" aria-sort="ascending" rowspan="2">Facility ID</th>
                       <th scope="col" class="govuk-table__header" aria-sort="none" rowspan="2">Status</th>
                       <th scope="col" class="govuk-table__header" aria-sort="none" rowspan="2">Exporter</th>
-                      <th scope="col" class="govuk-table__header" aria-sort="none" rowspan="2">Base currency</th>
-                      <th scope="col" class="govuk-table__header" aria-sort="none" rowspan="2">Fee currency</th>
                       <th scope="col" class="govuk-table__header" rowspan="2">Fee payment</th>
+                      <th scope="col" class="govuk-table__header govuk-!-text-align-right" rowspan="2">Base currency</th>
                       <th scope="col" class="govuk-table__header" colspan="2">Fixed fee adjustment</th>
                       <th scope="col" class="govuk-table__header" colspan="2">Premium accrual balance adjustment</th>
                       <th scope="col" class="govuk-table__header" colspan="2">Principal balance adjustment</th>
@@ -2120,9 +2116,8 @@ EUR&nbsp;3,260.00
 
                         </td>
                       <td class="govuk-table__cell">{{ data['facility-100-name'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-100-currency'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-100-currency'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-100-paid'] }}</td>
+                      <td class="govuk-table__cell">{{ data['facility-100-currency'] }}&nbsp;{{ data['facility-100-paid'] }}</td>
+                      <td class="govuk-table__cell govuk-!-text-align-right">{{ data['facility-100-currency'] }}</td>
                       <td class="govuk-table__cell">{{ data['facility-100-feeAdjustment'] }}</td>
                       <td class="govuk-table__cell">-</td>
                       <td class="govuk-table__cell">{{ data['facility-100-accrualAdjustment'] }}</td>
@@ -2161,9 +2156,8 @@ EUR&nbsp;3,260.00
 
                         </td>
                       <td class="govuk-table__cell">{{ data['facility-301-name'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-301-currency'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-301-currency'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-301-paid'] }}</td>
+                      <td class="govuk-table__cell">{{ data['facility-301-currency'] }}&nbsp;{{ data['facility-301-paid'] }}</td>
+                      <td class="govuk-table__cell govuk-!-text-align-right">{{ data['facility-301-currency'] }}</td>
                       <td class="govuk-table__cell">{{ data['facility-301-feeAdjustment'] }}</td>
                       <td class="govuk-table__cell">-</td>
                       <td class="govuk-table__cell">{{ data['facility-301-accrualAdjustment'] }}</td>
@@ -2202,9 +2196,8 @@ EUR&nbsp;3,260.00
 
                         </td>
                       <td class="govuk-table__cell">{{ data['facility-401-name'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-401-currency'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-401-currency'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-401-paid'] }}</td>
+                      <td class="govuk-table__cell">{{ data['facility-401-currency'] }}&nbsp;{{ data['facility-401-paid'] }}</td>
+                      <td class="govuk-table__cell govuk-!-text-align-right">{{ data['facility-401-currency'] }}</td>
                       <td class="govuk-table__cell">{{ data['facility-401-feeAdjustment'] }}</td>
                       <td class="govuk-table__cell">-</td>
                       <td class="govuk-table__cell">{{ data['facility-401-accrualAdjustment'] }}</td>
@@ -2244,9 +2237,8 @@ EUR&nbsp;3,260.00
 
                         </td>
                       <td class="govuk-table__cell">{{ data['facility-401-name'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-401-currency'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-402-currency'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-402-paid'] }}</td>
+                      <td class="govuk-table__cell">{{ data['facility-402-currency'] }}&nbsp;{{ data['facility-402-paid'] }}</td>
+                      <td class="govuk-table__cell govuk-!-text-align-right">{{ data['facility-401-currency'] }}</td>
                       <td class="govuk-table__cell">{{ data['facility-402-feeAdjustment'] }}</td>
                       <td class="govuk-table__cell">-</td>
                       <td class="govuk-table__cell">{{ data['facility-402-accrualAdjustment'] }}</td>
@@ -2286,9 +2278,8 @@ EUR&nbsp;3,260.00
 
                         </td>
                       <td class="govuk-table__cell">{{ data['facility-500-name'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-500-currency'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-500-currency'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-500-paid'] }}</td>
+                      <td class="govuk-table__cell">{{ data['facility-500-currency'] }}&nbsp;{{ data['facility-500-paid'] }}</td>
+                      <td class="govuk-table__cell govuk-!-text-align-right">{{ data['facility-500-currency'] }}</td>
                       <td class="govuk-table__cell">{{ data['facility-500-feeAdjustment'] }}</td>
                       <td class="govuk-table__cell">-</td>
                       <td class="govuk-table__cell">{{ data['facility-500-accrualAdjustment'] }}</td>
@@ -2328,9 +2319,8 @@ EUR&nbsp;3,260.00
 
                         </td>
                       <td class="govuk-table__cell">{{ data['facility-600-name'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-600-currency'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-600-currency'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-600-paid'] }}</td>
+                      <td class="govuk-table__cell">{{ data['facility-600-currency'] }}&nbsp;{{ data['facility-600-paid'] }}</td>
+                      <td class="govuk-table__cell govuk-!-text-align-right">{{ data['facility-600-currency'] }}</td>
                       <td class="govuk-table__cell">{{ data['facility-600-feeAdjustment'] }}</td>
                       <td class="govuk-table__cell">-</td>
                       <td class="govuk-table__cell">{{ data['facility-600-accrualAdjustment'] }}</td>
@@ -2370,9 +2360,8 @@ EUR&nbsp;3,260.00
 
                         </td>
                       <td class="govuk-table__cell">{{ data['facility-700-name'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-700-currency'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-700-currency'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-700-paid'] }}</td>
+                      <td class="govuk-table__cell">{{ data['facility-700-currency'] }}&nbsp;{{ data['facility-700-paid'] }}</td>
+                      <td class="govuk-table__cell govuk-!-text-align-right">{{ data['facility-700-currency'] }}</td>
                       <td class="govuk-table__cell">{{ data['facility-700-feeAdjustment'] }}</td>
                       <td class="govuk-table__cell">-</td>
                       <td class="govuk-table__cell">{{ data['facility-700-accrualAdjustment'] }}</td>
@@ -2412,9 +2401,8 @@ EUR&nbsp;3,260.00
 
                         </td>
                       <td class="govuk-table__cell">{{ data['facility-800-name'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-800-currency'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-800-currency'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-800-paid'] }}</td>
+                      <td class="govuk-table__cell">{{ data['facility-800-currency'] }}&nbsp;{{ data['facility-800-paid'] }}</td>
+                      <td class="govuk-table__cell govuk-!-text-align-right">{{ data['facility-800-currency'] }}</td>
                       <td class="govuk-table__cell">{{ data['facility-800-feeAdjustment'] }}</td>
                       <td class="govuk-table__cell">-</td>
                       <td class="govuk-table__cell">{{ data['facility-800-accrualAdjustment'] }}</td>
@@ -2454,9 +2442,8 @@ EUR&nbsp;3,260.00
 
                         </td>
                       <td class="govuk-table__cell">{{ data['facility-900-name'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-900-currency'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-900-currency'] }}</td>
-                      <td class="govuk-table__cell">{{ data['facility-900-paid'] }}</td>
+                      <td class="govuk-table__cell">{{ data['facility-900-currency'] }}&nbsp;{{ data['facility-900-paid'] }}</td>
+                      <td class="govuk-table__cell govuk-!-text-align-right">{{ data['facility-900-currency'] }}</td>
                       <td class="govuk-table__cell">{{ data['facility-900-feeAdjustment'] }}</td>
                       <td class="govuk-table__cell">-</td>
                       <td class="govuk-table__cell">{{ data['facility-900-accrualAdjustment'] }}</td>
