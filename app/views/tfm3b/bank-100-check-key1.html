@@ -41,8 +41,7 @@ Check before generating keying sheet data - {{ data['bank-100-name'] }} – {{ s
 				<tr class="govuk-table__row">
 				<th scope="col" class="govuk-table__header" aria-sort="ascending">Facility ID</th>
 				<th scope="col" class="govuk-table__header" aria-sort="none">Exporter</th>
-				<th scope="col" class="govuk-table__header" aria-sort="none">Facility base currency</th>
-				<th scope="col" class="govuk-table__header" aria-sort="none">Reported fee</th>
+				<th scope="col" class="govuk-table__header" aria-sort="none">Reported fees</th>
 				<th scope="col" class="govuk-table__header" aria-sort="none">Payments received</th>
 				<th scope="col" class="govuk-table__header" aria-sort="none">Status</th>
 				</tr>
@@ -51,7 +50,6 @@ Check before generating keying sheet data - {{ data['bank-100-name'] }} – {{ s
 				<tr class="govuk-table__row">
 					<td class="govuk-table__cell">{{ data['facility-100-ukef-id'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-100-name'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-100-currency'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-100-currency'] }} {{ data['facility-100-paid'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-100-currency'] }} {{ data['facility-100-paid'] }}</td>
 					<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Match</strong></td>
@@ -59,7 +57,6 @@ Check before generating keying sheet data - {{ data['bank-100-name'] }} – {{ s
 				<tr class="govuk-table__row">
 					<td class="govuk-table__cell">{{ data['facility-301-ukef-id'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-301-name'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-301-currency'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-301-currency'] }} {{ data['facility-301-paid'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-301-currency'] }} {{ data['facility-301-paid'] }}</td>
 					<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Match</strong></td>
@@ -68,7 +65,6 @@ Check before generating keying sheet data - {{ data['bank-100-name'] }} – {{ s
 				<tr class="govuk-table__row">
 					<td class="govuk-table__cell">{{ data['facility-401-ukef-id'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-401-name'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-401-currency'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-401-currency'] }} {{ data['facility-401-paid'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-401-currency'] }} {{ data['facility-401-paid'] }}</td>
 					<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Match</strong></td>
@@ -77,7 +73,6 @@ Check before generating keying sheet data - {{ data['bank-100-name'] }} – {{ s
 				<tr class="govuk-table__row">
 					<td class="govuk-table__cell">{{ data['facility-401-ukef-id'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-401-name'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-401-currency'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-403-currency'] }} {{ data['facility-403-paid'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-403-currency'] }} {{ data['facility-403-paid'] }}</td>
 					<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Match</strong></td>
@@ -86,7 +81,6 @@ Check before generating keying sheet data - {{ data['bank-100-name'] }} – {{ s
 				<tr class="govuk-table__row">
 					<td class="govuk-table__cell">{{ data['facility-500-ukef-id'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-500-name'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-500-currency'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-500-currency'] }} {{ data['facility-500-paid'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-500-currency'] }} {{ data['facility-500-paid'] }}</td>
 					<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Match</strong></td>
@@ -95,7 +89,6 @@ Check before generating keying sheet data - {{ data['bank-100-name'] }} – {{ s
 				<tr class="govuk-table__row">
 					<td class="govuk-table__cell">{{ data['facility-600-ukef-id'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-600-name'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-600-currency'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-600-currency'] }} {{ data['facility-600-paid'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-600-currency'] }} {{ data['facility-600-paid'] }}</td>
 					<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Match</strong></td>
@@ -104,7 +97,6 @@ Check before generating keying sheet data - {{ data['bank-100-name'] }} – {{ s
 				<tr class="govuk-table__row">
 					<td class="govuk-table__cell">{{ data['facility-700-ukef-id'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-700-name'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-700-currency'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-700-currency'] }} {{ data['facility-700-paid'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-700-currency'] }} {{ data['facility-700-paid'] }}</td>
 					<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Match</strong></td>
@@ -113,7 +105,6 @@ Check before generating keying sheet data - {{ data['bank-100-name'] }} – {{ s
 				<tr class="govuk-table__row">
 					<td class="govuk-table__cell">{{ data['facility-800-ukef-id'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-800-name'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-800-currency'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-800-currency'] }} {{ data['facility-800-paid'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-800-currency'] }} {{ data['facility-800-paid'] }}</td>
 					<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Match</strong></td>
@@ -122,7 +113,6 @@ Check before generating keying sheet data - {{ data['bank-100-name'] }} – {{ s
 				<tr class="govuk-table__row">
 					<td class="govuk-table__cell">{{ data['facility-900-ukef-id'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-900-name'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-900-currency'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-900-currency'] }} {{ data['facility-900-paid'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-900-currency'] }} {{ data['facility-900-paid'] }}</td>
 					<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Match</strong></td>

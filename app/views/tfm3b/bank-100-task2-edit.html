@@ -36,7 +36,6 @@ Edit ayment - {{ data['bank-100-name'] }} – {{ serviceName }} – GOV.UK Proto
 				<tr class="govuk-table__row">
 				<th scope="col" class="govuk-table__header" aria-sort="ascending">Facility ID</th>
 				<th scope="col" class="govuk-table__header" aria-sort="none">Exporter</th>
-				<th scope="col" class="govuk-table__header" aria-sort="none">Facility base currency</th>
 				<th scope="col" class="govuk-table__header" aria-sort="none">Reported fee</th>
 				</tr>
 			</thead>
@@ -52,7 +51,6 @@ Edit ayment - {{ data['bank-100-name'] }} – {{ serviceName }} – GOV.UK Proto
 						  </div>
 						</td>
 					<td class="govuk-table__cell">{{ data['facility-301-name'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-301-currency'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-301-currency'] }} {{ data['facility-301-paid'] }}</td>
 				</tr>
 
@@ -66,7 +64,6 @@ Edit ayment - {{ data['bank-100-name'] }} – {{ serviceName }} – GOV.UK Proto
 						  </div>
 						</td>
 					<td class="govuk-table__cell">{{ data['facility-401-name'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-401-currency'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-402-currency'] }} {{ data['facility-402-paid'] }}</td>
 				</tr>
 				
@@ -80,13 +77,12 @@ Edit ayment - {{ data['bank-100-name'] }} – {{ serviceName }} – GOV.UK Proto
 						  </div>
 						</td>
 					<td class="govuk-table__cell">{{ data['facility-800-name'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-800-currency'] }}</td>
 					<td class="govuk-table__cell">{{ data['facility-800-currency'] }} {{ data['facility-800-paid'] }}</td>
 				</tr>
 			</tbody>
 			<tfoot> 
 				<tr class="govuk-table__row">
-				  <td class="govuk-table__cell govuk-!-font-weight-bold govuk-!-text-align-right" colspan="3">Total reported fee:</td>
+				  <td class="govuk-table__cell govuk-!-font-weight-bold govuk-!-text-align-right" colspan="2">Total reported fee:</td>
 				  <td class="govuk-table__cell govuk-!-font-weight-bold">{{ data['v3b-EUR-total'] | safe }}</td>
 				</tr>    
 			  </tfoot>   

@@ -1,0 +1,57 @@
+<!-- bank-100-show-task two-->
+<tr class="govuk-table__row">
+  
+  {% if data['bank-100-show-task'] == 'six' or data['bank-100-show-task'] == 'five' or data['bank-100-show-task'] == 'four' %}
+
+  <td class="govuk-table__cell">{{ data['bank-100-task1-currency'] }}&nbsp;{{ data['bank-100-task1-amount'] }}</td>
+
+  {% elif data['bank-100-show-task'] == 'three' or data['bank-100-show-task'] == 'two' %}
+
+  
+  <td class="govuk-table__cell"><a href="bank-100-task1-edit" class="govuk-link govuk-link--no-visited-state">{{ data['bank-100-task1-currency'] }}&nbsp;{{ data['bank-100-task1-amount'] }}</a></td>
+
+  {% endif %}
+
+  <td class="govuk-table__cell">{{ data['bank-100-task1-reference'] }}</td>
+  
+  <td class="govuk-table__cell">
+    {{ data['facility-100-ukef-id'] }}<br>
+    {{ data['facility-400-ukef-id'] }}<br>
+    {{ data['facility-500-ukef-id'] }}<br>
+    {{ data['facility-600-ukef-id'] }}<br>
+    {{ data['facility-700-ukef-id'] }}<br>
+    {{ data['facility-900-ukef-id'] }}
+  </td>
+  
+  <td class="govuk-table__cell">
+    {{ data['facility-100-name'] }}<br>
+    {{ data['facility-400-name'] }}<br>
+    {{ data['facility-500-name'] }}<br>
+    {{ data['facility-600-name'] }}<br>
+    {{ data['facility-700-name'] }}<br>
+    {{ data['facility-900-name'] }}
+  </td>
+
+  <td class="govuk-table__cell">
+    {{ ( data['bank-100-task1-year'] + "-" + data['bank-100-task1-month'] + "-" + data['bank-100-task1-day'] ) | govukDate("truncate") }}
+  </td>
+
+  {% if data['gen1-checks'] == '' 
+  or data['gen1-checks'] == '0020002154' 
+  or data['gen1-checks'] == '0020002198'
+  or data['gen1-checks'] == '0020002198B'
+  or data['gen1-checks'] == '0020002565'
+  or data['gen1-checks'] == '0020002896'
+  or data['gen1-checks'] == '0020002983'
+  
+  
+  or data['gen1-checks'] == '0020002193' 
+  or data['gen1-checks'] == '0020002198'
+  %}
+    <td class="govuk-table__cell">-</td>
+    <td class="govuk-table__cell">-</td>
+  {% elif (data['gen1-checks'] == '0020003182') %}
+    <td class="govuk-table__cell">{{ data['signed-in-name'] }}</td>
+    <td class="govuk-table__cell">{{ "today" | govukDate("truncate") }} at {{ "09:47" | govukTime }}</td>
+  {% endif %}
+</tr>

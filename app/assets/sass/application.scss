@@ -125,9 +125,6 @@ caption,
   font-size: 1rem;
 }
 
-
-
-
 @media (min-width: 40.0625em) {
 .govuk-accordion__section-button {
    // font-size: 2rem;
@@ -473,3 +470,8 @@ caption,
   border: 1px solid #b1b4b6;
 }
 
+@media (min-width: 48.0625em) {
+  .ukef-margin-top-filter {
+    margin-top: 95px;
+  }
+  }

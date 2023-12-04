@@ -1,0 +1,238 @@
+{% if data['bank-100-status'] == 'pending' %}
+
+<p class="govuk-body">Payment details will be displayed when payments have been entered on the premium payments tab.</p>
+
+{% elif data['bank-100-status'] == 'inprogress' or 'completed' %}
+
+  <form action="bank-100#summary" method="get">
+
+  <div class="moj-filter-layout">
+
+    <div class="moj-filter-layout__filter">
+  
+      <div class="moj-filter">
+  
+        <div class="moj-filter__header">
+  
+          <div class="moj-filter__header-title">
+            <h2 class="govuk-heading-s">Filter</h2>
+          </div>
+  
+          <div class="moj-filter__header-action">
+  
+          </div>
+  
+        </div>
+  
+        <div class="moj-filter__content">
+
+          <div class="moj-filter__options">
+            
+            <div class="govuk-form-group">
+
+              <fieldset class="govuk-fieldset">
+              
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Currency</legend>
+
+              <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="filter-gbp" name="bank-100-currency-filter" type="radio" value="GBP" {{ checked('bank-100-currency-filter','GBP') }}>
+                  <label class="govuk-label govuk-radios__label" for="filter-gbp">GBP</label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="filter-eur" name="bank-100-currency-filter" type="radio" value="EUR" {{ checked('bank-100-currency-filter','EUR') }}>
+                  <label class="govuk-label govuk-radios__label" for="filter-eur">EUR</label>
+                </div>
+                    
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="filter-usd" name="bank-100-currency-filter" type="radio" value="USD" {{ checked('bank-100-currency-filter','USD') }}>
+                  <label class="govuk-label govuk-radios__label" for="filter-usd">USD</label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="filter-jpy" name="bank-100-currency-filter" type="radio" value="JPY" {{ checked('bank-100-currency-filter','JPY') }}>
+                  <label class="govuk-label govuk-radios__label" for="filter-jpy">JPY</label>
+                </div>
+
+              </div>
+            </fieldset>
+          </div>
+
+  
+            {{ govukInput({
+              id: 'paymentref',
+              name: 'paymentref',
+              autocomplete: 'no',
+              label: {
+                text: 'Payment reference',
+                classes: 'govuk-label--s'
+              }
+            }) }}
+
+            {{ govukInput({
+              id: 'facilityid',
+              name: 'facilityid',
+              autocomplete: 'no',
+              label: {
+                text: 'Facility ID',
+                classes: 'govuk-label--s'
+              }
+            }) }}
+  
+            <div class="govuk-button-group">
+              {{ govukButton({
+                text: "Apply filter",
+                name: "paymentFilter"
+              }) }}
+           
+              <a href="bank-100?bank-100-currency-filter=#summary" class="govuk-link--no-visited-state">Clear filter</a>
+
+            </div>
+
+          </div>
+  
+        </div>
+  
+      </div>
+  
+    </div>
+  
+    <div class="moj-filter-layout__content">
+  
+      <div class="moj-action-bar">
+  
+        <div class="moj-action-bar__filter"></div>
+  
+        <div class="moj-button-menu">
+          <div class="moj-button-menu__wrapper">
+          </div>
+        </div>
+  
+      </div>
+  
+      
+        <!-- table start-->
+        <table class="govuk-table stb-table" data-module="moj-sortable-table">
+          <caption class="govuk-table__caption govuk-table__caption--s govuk-visually-hidden">All payments</caption>
+          <thead class="govuk-table__head">
+
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="descending">Amount</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Payment reference</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Facility ID</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Exporter</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Date received</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Reconciled by</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-fifth" aria-sort="none">Date reconciled</th>
+            </tr>
+          </thead>
+
+          <tbody class="govuk-table__body">
+            
+            {% if data['bank-100-show-task'] == 'two' %}
+            
+            <!--///// After enetering GBP amount-->
+              {% if (data['bank-100-currency-filter'] == 'GBP' or data['bank-100-currency-filter'] == '') or (data['bank-100-currency-filter'] == 'GBP' and data['bank-100-currency-filter'] == '') %}
+                {% include "includes/payments-table-show-task-two-3b.html" %}
+              {% elif data['bank-100-currency-filter'] == 'EUR' or data['bank-100-currency-filter'] == 'USD' or data['bank-100-currency-filter'] == 'JPY' %}
+                <!--display nothing-->
+              {% endif %}
+            <!--///// End: After enetering GBP amount-->
+
+
+
+
+            <!--///// After enetering EUR amount-->  
+            {% elif data['bank-100-show-task'] == 'three' or data['bank-100-show-task'] == 'four' %}
+              <!--filter GBP-->
+                {% if data['bank-100-currency-filter'] == 'GBP' or data['bank-100-currency-filter'] == '' %}
+                  {% include "includes/payments-table-show-task-two-3b.html" %}
+                {% elif data['bank-100-currency-filter'] == 'EUR' or data['bank-100-currency-filter'] == 'USD' or data['bank-100-currency-filter'] == 'JPY' %}
+                  <!--display nothing-->
+                {% endif %}
+              <!--end filter GBP-->
+
+              <!--filter EUR-->
+                {% if data['bank-100-currency-filter'] == 'EUR' or data['bank-100-currency-filter'] == '' %}
+                  {% include "includes/payments-table-show-task-three-3b.html" %}
+                {% elif data['bank-100-currency-filter'] == 'GBP' or data['bank-100-currency-filter'] == 'USD' or data['bank-100-currency-filter'] == 'JPY' %}
+                  <!--display nothing-->
+                {% endif %}
+              <!--end filter EUR-->
+            <!--///// End: After enetering EUR amount-->  
+
+
+
+
+            <!--///// After enetering USD amount-->
+              {% elif data['bank-100-show-task'] == 'five' %}
+                <!--filter GBP-->
+                  {% if data['bank-100-currency-filter'] == 'GBP' or data['bank-100-currency-filter'] == '' %}
+                    {% include "includes/payments-table-show-task-two-3b.html" %}
+                  {% elif data['bank-100-currency-filter'] == 'EUR' or data['bank-100-currency-filter'] == 'USD' or data['bank-100-currency-filter'] == 'JPY' %}
+                    <!--display nothing-->
+                  {% endif %}
+                <!--end filter GBP-->
+
+                <!--filter EUR-->
+                  {% if data['bank-100-currency-filter'] == 'EUR' or data['bank-100-currency-filter'] == '' %}
+                    {% include "includes/payments-table-show-task-three-3b.html" %}
+                  {% elif data['bank-100-currency-filter'] == 'GBP' or data['bank-100-currency-filter'] == 'USD' or data['bank-100-currency-filter'] == 'JPY' %}
+                    <!--display nothing-->
+                  {% endif %}
+                <!--end filter EUR-->
+
+                <!--filter USD-->
+                  {% if data['bank-100-currency-filter'] == 'USD' or data['bank-100-currency-filter'] == '' %}
+                    {% include "includes/payments-table-show-task-four-3b.html" %}
+                  {% elif data['bank-100-currency-filter'] == 'GBP' or data['bank-100-currency-filter'] == 'EUR' or data['bank-100-currency-filter'] == 'JPY' %}
+                    <!--display nothing-->
+                  {% endif %}
+                <!--end filter USD-->
+            <!--///// End: After enetering USD amount-->
+
+
+
+          
+
+
+            <!--///// Report completed-->
+              {% elif data['bank-100-show-task'] == 'six' %}
+              <!--filter GBP-->
+                {% if data['bank-100-currency-filter'] == 'GBP' or data['bank-100-currency-filter'] == '' %}
+                  {% include "includes/payments-table-show-task-two-3b.html" %}
+
+                {% elif data['bank-100-currency-filter'] == 'EUR' or data['bank-100-currency-filter'] == 'USD' or data['bank-100-currency-filter'] == 'JPY' %}
+                  <!--display nothing-->
+                {% endif %}
+              <!--end filter GBP-->
+              
+              <!--filter EUR-->
+                {% if data['bank-100-currency-filter'] == 'EUR' or data['bank-100-currency-filter'] == '' %}
+                  {% include "includes/payments-table-show-task-three-3b.html" %}
+                {% elif data['bank-100-currency-filter'] == 'GBP' or data['bank-100-currency-filter'] == 'USD' or data['bank-100-currency-filter'] == 'JPY' %}
+                  <!--display nothing-->
+                {% endif %}
+              <!--end filter EUR-->
+
+              <!--filter USD-->
+                {% if data['bank-100-currency-filter'] == 'USD' or data['bank-100-currency-filter'] == '' %}
+                  {% include "includes/payments-table-show-task-four-3b.html" %}
+                {% elif data['bank-100-currency-filter'] == 'GBP' or data['bank-100-currency-filter'] == 'EUR' or data['bank-100-currency-filter'] == 'JPY' %}
+                  <!--display nothing-->
+                {% endif %}
+              <!--end filter USD-->
+            <!--///// End:Report completed-->
+
+            {% endif %}
+
+            </tbody>
+            </table>
+        <!-- table end-->
+
+    </div>
+  </div>
+</form>
+  {%  endif %}

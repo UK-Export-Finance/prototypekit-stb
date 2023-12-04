@@ -87,7 +87,7 @@ module.exports = {
 'facility-401-max': '720,000.00',
 'facility-401-utilisation': '710,000.00',
 'facility-401-exposure': '568,000.00',
-'facility-401-accrued': '1,100.00',
+'facility-401-accrued': '600.00',
 'facility-401-paid': '600.00',
 'facility-401-paid-total': '600.00',
 'facility-402-paid': '550.00',
@@ -257,6 +257,9 @@ module.exports = {
   'next-month-report-due': '14 August 2023',
   'payment-date': '4 July 2023',
 
+  'report-month-v3b-short': 'Nov 2023',
+  'report-quarter-v3b-short': 'Sep to Nov 2023',
+  'this-month-report-due-v3b-short': '14 Dec 2023',
   'report-month-v3b': 'November 2023',
   'report-quarter-v3b': 'September to November 2023',
   'this-month-report-due-v3b': '14 December 2023',
