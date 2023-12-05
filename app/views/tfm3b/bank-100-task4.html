@@ -29,34 +29,29 @@ Add a payment - {{ data['bank-100-name'] }} – {{ serviceName }} – GOV.UK Pro
           <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
             Selected reported fee details
           </h2>
-		  <dl class="govuk-summary-list">
-			<div class="govuk-summary-list__row">
-			  <dt class="govuk-summary-list__key govuk-!-width-one-half">
-			  Facility ID
-			  </dt>
-			  <dd class="govuk-summary-list__value">
-				{{ data['facility-401-ukef-id'] }}
-			  </dd>
-			</div>
 
-			<div class="govuk-summary-list__row">
-			  <dt class="govuk-summary-list__key govuk-!-width-one-half">
-			  Exporter
-			  </dt>
-			  <dd class="govuk-summary-list__value">
-				{{ data['facility-401-name'] }}
-			  </dd>
-			</div>
-
-		  <div class="govuk-summary-list__row">
-		  <dt class="govuk-summary-list__key govuk-!-width-one-half">
-		  Reported fee
-		  </dt>
-		  <dd class="govuk-summary-list__value">
-			  {{ data['facility-403-currency'] }} {{ data['facility-403-paid'] }}
-		  </dd>
-	  </div>
-  </dl>
+          <table class="govuk-table" data-module="moj-sortable-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header" aria-sort="ascending">Facility ID</th>
+              <th scope="col" class="govuk-table__header" aria-sort="none">Exporter</th>
+              <th scope="col" class="govuk-table__header" aria-sort="none">Reported fee</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">{{ data['facility-401-ukef-id'] }}</td>
+                <td class="govuk-table__cell">{{ data['facility-401-name'] }}</td>
+                <td class="govuk-table__cell">{{ data['facility-403-currency'] }} {{ data['facility-403-paid'] }}</td>
+              </tr>
+            </tbody>
+            <tfoot> 
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell govuk-!-font-weight-bold govuk-!-text-align-right" colspan="2">Total reported fee:</td>
+                <td class="govuk-table__cell govuk-!-font-weight-bold">{{ data['v3b-USD-total'] | safe }}</td>
+              </tr>    
+              </tfoot>   
+            </table>
 
 
 			<!--{{ govukButton({

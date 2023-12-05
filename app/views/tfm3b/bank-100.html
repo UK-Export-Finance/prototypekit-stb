@@ -210,7 +210,7 @@
                             <form class="form" action="/tfm3b/bank-100-task1" method="post">
                               <div class="govuk-button-group">
                                 {{ govukButton({
-                                text: "Add a payment 1",
+                                text: "Add a payment",
                                 name: "addaPayment",
                                 value: true
                               }) }}
@@ -609,7 +609,7 @@
             <form class="form" action="/tfm3b/bank-100-task2" method="post">
               <div class="govuk-button-group">
                 {{ govukButton({
-                text: "Add a payment 2",
+                text: "Add a payment",
                 name: "addaPayment",
                 value: true
               }) }}
@@ -866,7 +866,7 @@
               }) }}
 
               {{ govukButton({
-                text: "Generate keying data 3",
+                text: "Generate keying data",
                 classes: "govuk-button--secondary",
                 name: "generate",
                 value: true
@@ -1049,7 +1049,7 @@
       <form class="form" action="/tfm3b/bank-100-task4" method="post">
         <div class="govuk-button-group">
           {{ govukButton({
-          text: "Add a payment 4",
+          text: "Add a payment",
           name: "generate",
           value: true
         }) }}
@@ -1273,7 +1273,7 @@
   }) }}
 
   {{ govukButton({
-    text: "Generate keying data 5",
+    text: "Generate keying data",
     classes: "govuk-button--secondary",
     name: "generate",
     value: true
@@ -1424,15 +1424,13 @@
 <!-- Start of Task 6  --> 
 {% elif data['bank-100-show-task'] == 'six' %}
 
-
-
 {% if (data['gen2-checks'] == '') %}
 
 {% include "includes/help-text.html" %}
 <form class="form" action="/tfm3b/bank-100-task6" method="post">
   <div class="govuk-button-group">
     {{ govukButton({
-    text: "Add a payment 6",
+    text: "Add a payment",
     name: "generate",
     value: false
   }) }}
@@ -1457,8 +1455,6 @@
 {% include "includes/filter-premium-payments3bb.html" %}
 
 </div> 
-
-
 
 <table class="govuk-table stb-table" data-module="moj-sortable-table">
   <!--<table class="govuk-table">-->

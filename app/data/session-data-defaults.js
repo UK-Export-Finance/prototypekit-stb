@@ -16,7 +16,7 @@ module.exports = {
 'facility-100-accrued': '2,500.00',
 'facility-100-paid': '2,500.00',
 'facility-100-paid-total': '2,500.00',
-'facility-100-feeAdjustment': '705.00',
+'facility-100-feeAdjustment': '4705.00',
 'facility-100-accrualAdjustment': '205.00',
 'facility-100-principalAdjustment': '195,000.00',
 
@@ -57,9 +57,9 @@ module.exports = {
 'facility-301-accrued': '1,500.00',
 'facility-301-paid': '1,500.00',
 'facility-301-paid-total': '1,500.00',
-'facility-301-feeAdjustment': '705.00',
-'facility-301-accrualAdjustment': '205.00',
-'facility-301-principalAdjustment': '195,000.00',
+'facility-301-feeAdjustment': '3,350.00',
+'facility-301-accrualAdjustment': '145.00',
+'facility-301-principalAdjustment': '124,000.00',
 
 // split 400 into 401 402 and 403 for version 3b
 'facility-400-name': 'Innovate Solutions Ltd',
@@ -105,9 +105,9 @@ module.exports = {
 'facility-402-accrualAdjustment': '-',
 'facility-402-principalAdjustment': '-',
 
-'facility-403-feeAdjustment': '705.00',
-'facility-403-accrualAdjustment': '205.00',
-'facility-403-principalAdjustment': '195,000.00',
+'facility-403-feeAdjustment': '6,705.00',
+'facility-403-accrualAdjustment': '280.00',
+'facility-403-principalAdjustment': '211,000.00',
 
 'facility-500-name': 'Britannia Energy Ltd',
 'facility-500-ukef-id': '0020002565',
@@ -121,9 +121,9 @@ module.exports = {
 'facility-500-paid': '945.00',
 'facility-500-paid-total': '945.00',
 
-'facility-500-feeAdjustment': '705.00',
-'facility-500-accrualAdjustment': '205.00',
-'facility-500-principalAdjustment': '195,000.00',
+'facility-500-feeAdjustment': '4,860.00',
+'facility-500-accrualAdjustment': '540.00',
+'facility-500-principalAdjustment': '217,000.00',
 
 'facility-600-name': 'Marine Equipment Ltd',
 'facility-600-ukef-id': '0020002896',
@@ -137,9 +137,9 @@ module.exports = {
 'facility-600-paid': '1,026.00',
 'facility-600-paid-total': '1,026.00',
 
-'facility-600-feeAdjustment': '705.00',
-'facility-600-accrualAdjustment': '205.00',
-'facility-600-principalAdjustment': '195,000.00',
+'facility-600-feeAdjustment': '5,430.00',
+'facility-600-accrualAdjustment': '425.00',
+'facility-600-principalAdjustment': '120,000.00',
 
 'facility-700-name': 'Able Robotics Ltd',
 'facility-700-ukef-id': '0020002983',
@@ -153,9 +153,9 @@ module.exports = {
 'facility-700-paid': '2,150.00',
 'facility-700-paid-total': '2,150.00',
 
-'facility-700-feeAdjustment': '705.00',
-'facility-700-accrualAdjustment': '205.00',
-'facility-700-principalAdjustment': '195,000.00',
+'facility-700-feeAdjustment': '6,290.00',
+'facility-700-accrualAdjustment': '475.00',
+'facility-700-principalAdjustment': '210,000.00',
 
 'facility-800-name': 'Automation Ltd',
 'facility-800-ukef-id': '0020003073',
@@ -169,9 +169,9 @@ module.exports = {
 'facility-800-paid': '1,760.00',
 'facility-800-paid-total': '1,760.00',
 
-'facility-800-feeAdjustment': '705.00',
-'facility-800-accrualAdjustment': '205.00',
-'facility-800-principalAdjustment': '195,000.00',
+'facility-800-feeAdjustment': '5,200.00',
+'facility-800-accrualAdjustment': '670.00',
+'facility-800-principalAdjustment': '145,000.00',
 
 'facility-900-name': 'AirTech Ltd',
 'facility-900-ukef-id': '0020003182',
@@ -185,9 +185,9 @@ module.exports = {
 'facility-900-paid': '1,020.00',
 'facility-900-paid-total': '1,020.00',
 
-'facility-900-feeAdjustment': '705.00',
-'facility-900-accrualAdjustment': '205.00',
-'facility-900-principalAdjustment': '195,000.00',
+'facility-900-feeAdjustment': '8,654.00',
+'facility-900-accrualAdjustment': '335.00',
+'facility-900-principalAdjustment': '229,000.00',
 
 'facility-1000-name': 'Precision Engineering Ltd',
 'facility-1000-ukef-id': '0020003209',

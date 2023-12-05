@@ -31,43 +31,45 @@ Add to an existing payment - {{ data['bank-100-name'] }} â€“ {{ serviceName }} â
           <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
             Selected reported fees details
           </h2>
-            <table class="govuk-table" data-module="moj-sortable-table">
-			<thead class="govuk-table__head">
-				<tr class="govuk-table__row">
-				<th scope="col" class="govuk-table__header" aria-sort="ascending">Facility ID</th>
-				<th scope="col" class="govuk-table__header" aria-sort="none">Exporter</th>
-				<th scope="col" class="govuk-table__header" aria-sort="none">Facility base currency</th>
-				<th scope="col" class="govuk-table__header" aria-sort="none">Reported fee</th>
-				</tr>
-			</thead>
-			<tbody class="govuk-table__body">
-				<tr class="govuk-table__row">
-					<td class="govuk-table__cell">{{ data['facility-301-ukef-id'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-301-name'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-301-currency'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-301-currency'] }} {{ data['facility-301-paid'] }}</td>
-				</tr>
-				<tr class="govuk-table__row">
-					<td class="govuk-table__cell">{{ data['facility-800-ukef-id'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-800-name'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-800-currency'] }}</td>
-					<td class="govuk-table__cell">{{ data['facility-800-currency'] }} {{ data['facility-800-paid'] }}</td>
-				</tr>
-			</tbody>
-			<tfoot> 
-				<tr class="govuk-table__row">
-				  <td class="govuk-table__cell govuk-!-font-weight-bold govuk-!-text-align-right" colspan="3">Total reported fee:</td>
-				  <td class="govuk-table__cell govuk-!-font-weight-bold">EUR 3,260.00</td>
-				</tr>    
-			  </tfoot>   
-			</table>
+		  <table class="govuk-table" data-module="moj-sortable-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header" aria-sort="ascending">Facility ID</th>
+              <th scope="col" class="govuk-table__header" aria-sort="none">Exporter</th>
+              <th scope="col" class="govuk-table__header" aria-sort="none">Reported fee</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">{{ data['facility-301-ukef-id'] }}</td>
+                <td class="govuk-table__cell">{{ data['facility-301-name'] }}</td>
+                <td class="govuk-table__cell">{{ data['facility-301-currency'] }} {{ data['facility-301-paid'] }}</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">{{ data['facility-401-ukef-id'] }}</td>
+                <td class="govuk-table__cell">{{ data['facility-401-name'] }}</td>
+                <td class="govuk-table__cell">{{ data['facility-402-currency'] }} {{ data['facility-402-paid'] }}</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">{{ data['facility-800-ukef-id'] }}</td>
+                <td class="govuk-table__cell">{{ data['facility-800-name'] }}</td>
+                <td class="govuk-table__cell">{{ data['facility-800-currency'] }} {{ data['facility-800-paid'] }}</td>
+              </tr>
+            </tbody>
+            <tfoot> 
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell govuk-!-font-weight-bold govuk-!-text-align-right" colspan="2">Total reported fee:</td>
+                <td class="govuk-table__cell govuk-!-font-weight-bold">{{ data['v3b-EUR-total'] | safe }}</td>
+              </tr>    
+              </tfoot>   
+            </table>
 
-			<h2 class="govuk-heading-m">There is one existing payment the facilities will be added to</h2>
+			<h2 class="govuk-heading-m">There is one existing payment the reported fees will be added to</h2>
 
 			<div class="govuk-inset-text">
-				<p class="govuk">{{ data['bank-100-task1-currency'] }} {{ data['bank-100-task1-amount'] }}</p> 
+				<p class="govuk">EUR 10,190.00</p> 
 
-				<p class="govuk-hint">Payment reference: {{ data['bank-100-task1-reference'] }}</p>
+				<p class="govuk-hint" >Payment reference: {{ data['bank-100-name'] | upper}}/GEF/EUR/10190</p>
 			  </div>
 			
                   
