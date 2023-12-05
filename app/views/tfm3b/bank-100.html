@@ -64,12 +64,12 @@
               <tr class="govuk-table__row">
                 <th scope="col" class="govuk-table__header" aria-sort="ascending">Facility ID</th>
                 <th scope="col" class="govuk-table__header" aria-sort="none">Exporter</th>
-                <th scope="col" class="govuk-table__header" aria-sort="none">Base currency</th>
+                <th scope="col" class="govuk-table__header govuk-!-text-align-right" aria-sort="none">Base currency</th>
                 <th scope="col" class="govuk-table__header" aria-sort="none">Value</th>  
                 <th scope="col" class="govuk-table__header" aria-sort="none">Utilisation</th>
                 <th scope="col" class="govuk-table__header" aria-sort="none">UKEF cover</th>
                 <th scope="col" class="govuk-table__header" aria-sort="none">UKEF exposure</th>
-                <th scope="col" class="govuk-table__header" aria-sort="none">Fees accrued (reported currency)</th>
+                <th scope="col" class="govuk-table__header" aria-sort="none">Fees accrued</th>
                 <th scope="col" class="govuk-table__header" aria-sort="none">Fee payable to UKEF (reported currency)</th>
               </tr>
             </thead>
@@ -77,111 +77,111 @@
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="{{ data['facility-100-ukef-id'] }}"><a href="#" class="govuk-link govuk-link--no-visited-state">{{ data['facility-100-ukef-id'] }}</a></th>
                 <td class="govuk-table__cell">{{ data['facility-100-name'] }}</td>
-                <td class="govuk-table__cell">{{ data['facility-100-currency'] }}</td>
+                <td class="govuk-table__cell govuk-!-text-align-right">{{ data['facility-100-currency'] }}</td>
                 <td class="govuk-table__cell" data-sort-value="600000">{{ data['facility-100-limit'] }}</td>
                 <td class="govuk-table__cell" data-sort-value="400000">{{ data['facility-100-utilisation'] }}</td>
                 <td class="govuk-table__cell">{{ data['facility-100-cover'] }}</td>
                 <td class="govuk-table__cell" data-sort-value="320000">{{ data['facility-100-exposure'] }}</td>
-                <td class="govuk-table__cell" data-sort-value="">{{ data['facility-100-currency'] }} {{ data['facility-100-accrued'] }} </td>
+                <td class="govuk-table__cell" data-sort-value="">{{ data['facility-100-accrued'] }} </td>
                 <td class="govuk-table__cell" data-sort-value="">{{ data['facility-100-currency'] }} {{ data['facility-16-paid'] }} </td>
               </tr>
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="{{ data['facility-301-ukef-id'] }}"><a href="#" class="govuk-link govuk-link--no-visited-state">{{ data['facility-301-ukef-id'] }}</a></th>
                 <td class="govuk-table__cell">{{ data['facility-301-name'] }}</td>
-                <td class="govuk-table__cell">USD</td>
+                <td class="govuk-table__cell govuk-!-text-align-right">USD</td>
                 <td class="govuk-table__cell" data-sort-value="1200000">{{ data['facility-301-limit'] }}</td>
                 <td class="govuk-table__cell" data-sort-value="550000">{{ data['facility-301-utilisation'] }}</td>
                 <td class="govuk-table__cell">{{ data['facility-301-cover'] }}</td>
                 <td class="govuk-table__cell" data-sort-value="400000">{{ data['facility-301-exposure'] }}</td>
-                <td class="govuk-table__cell" data-sort-value="">EUR {{ data['facility-301-accrued'] }} </td>
+                <td class="govuk-table__cell" data-sort-value="">{{ data['facility-301-accrued'] }} </td>
                 <td class="govuk-table__cell" data-sort-value="">EUR {{ data['facility-301-paid'] }} </td>
               </tr>
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="{{ data['facility-401-ukef-id'] }}"><a href="#" class="govuk-link govuk-link--no-visited-state">{{ data['facility-401-ukef-id'] }}</a></th>
                 <td class="govuk-table__cell">{{ data['facility-401-name'] }}</td>
-                <td class="govuk-table__cell">{{ data['facility-401-currency'] }}</td>
+                <td class="govuk-table__cell govuk-!-text-align-right">{{ data['facility-401-currency'] }}</td>
                 <td class="govuk-table__cell" data-sort-value="900000">{{ data['facility-401-limit'] }}</td>
                 <td class="govuk-table__cell" data-sort-value="710000">{{ data['facility-401-utilisation'] }}</td>
                 <td class="govuk-table__cell">{{ data['facility-401-cover'] }}</td>
                 <td class="govuk-table__cell" data-sort-value="568000">{{ data['facility-401-exposure'] }}</td>
-                <td class="govuk-table__cell" data-sort-value="">{{ data['facility-401-currency'] }} {{ data['facility-401-accrued'] }} </td>
+                <td class="govuk-table__cell" data-sort-value="">{{ data['facility-401-accrued'] }} </td>
                 <td class="govuk-table__cell" data-sort-value="">{{ data['facility-401-currency'] }} {{ data['facility-401-paid'] }} </td>
               </tr>
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="{{ data['facility-401-ukef-id'] }}"><a href="#" class="govuk-link govuk-link--no-visited-state">{{ data['facility-401-ukef-id'] }}</a></th>
                 <td class="govuk-table__cell">{{ data['facility-401-name'] }}</td>
-                <td class="govuk-table__cell">{{ data['facility-401-currency'] }}</td>
+                <td class="govuk-table__cell govuk-!-text-align-right">{{ data['facility-401-currency'] }}</td>
                 <td class="govuk-table__cell" data-sort-value="900000">{{ data['facility-401-limit'] }}</td>
                 <td class="govuk-table__cell" data-sort-value="710000">{{ data['facility-401-utilisation'] }}</td>
                 <td class="govuk-table__cell">{{ data['facility-401-cover'] }}</td>
                 <td class="govuk-table__cell" data-sort-value="568000">{{ data['facility-401-exposure'] }}</td>
-                <td class="govuk-table__cell" data-sort-value="">{{ data['facility-402-currency'] }} {{ data['facility-402-accrued'] }} </td>
+                <td class="govuk-table__cell" data-sort-value="">{{ data['facility-402-accrued'] }} </td>
                 <td class="govuk-table__cell" data-sort-value="">{{ data['facility-402-currency'] }} {{ data['facility-402-paid'] }} </td>
               </tr>
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="{{ data['facility-401-ukef-id'] }}"><a href="#" class="govuk-link govuk-link--no-visited-state">{{ data['facility-401-ukef-id'] }}</a></th>
                 <td class="govuk-table__cell">{{ data['facility-401-name'] }}</td>
-                <td class="govuk-table__cell">{{ data['facility-401-currency'] }}</td>
+                <td class="govuk-table__cell govuk-!-text-align-right">{{ data['facility-401-currency'] }}</td>
                 <td class="govuk-table__cell" data-sort-value="900000">{{ data['facility-401-limit'] }}</td>
                 <td class="govuk-table__cell" data-sort-value="710000">{{ data['facility-401-utilisation'] }}</td>
                 <td class="govuk-table__cell">{{ data['facility-401-cover'] }}</td>
                 <td class="govuk-table__cell" data-sort-value="568000">{{ data['facility-401-exposure'] }}</td>
-                <td class="govuk-table__cell" data-sort-value="">{{ data['facility-403-currency'] }} {{ data['facility-403-accrued'] }} </td>
+                <td class="govuk-table__cell" data-sort-value="">{{ data['facility-403-accrued'] }} </td>
                 <td class="govuk-table__cell" data-sort-value="">{{ data['facility-403-currency'] }} {{ data['facility-403-paid'] }} </td>
               </tr>
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="{{ data['facility-500-ukef-id'] }}"><a href="#" class="govuk-link govuk-link--no-visited-state">{{ data['facility-500-ukef-id'] }}</a></th>
                 <td class="govuk-table__cell">{{ data['facility-500-name'] }}</td>
-                <td class="govuk-table__cell">{{ data['facility-500-currency'] }}</td>
+                <td class="govuk-table__cell govuk-!-text-align-right">{{ data['facility-500-currency'] }}</td>
                 <td class="govuk-table__cell" data-sort-value="700000">{{ data['facility-500-limit'] }}</td>
                 <td class="govuk-table__cell" data-sort-value="550000">{{ data['facility-500-utilisation'] }}</td>
                 <td class="govuk-table__cell">{{ data['facility-500-cover'] }}</td>
                 <td class="govuk-table__cell" data-sort-value="440000">{{ data['facility-500-exposure'] }}</td>
-                <td class="govuk-table__cell" data-sort-value="">{{ data['facility-500-currency'] }} {{ data['facility-500-accrued'] }} </td>
+                <td class="govuk-table__cell" data-sort-value="">{{ data['facility-500-accrued'] }} </td>
                 <td class="govuk-table__cell" data-sort-value="">{{ data['facility-500-currency'] }} {{ data['facility-500-paid'] }} </td>
               </tr>
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="{{ data['facility-600-ukef-id'] }}"><a href="#" class="govuk-link govuk-link--no-visited-state">{{ data['facility-600-ukef-id'] }}</a></th>
                 <td class="govuk-table__cell">{{ data['facility-600-name'] }}</td>
-                <td class="govuk-table__cell">{{ data['facility-600-currency'] }}</td>
+                <td class="govuk-table__cell govuk-!-text-align-right">{{ data['facility-600-currency'] }}</td>
                 <td class="govuk-table__cell" data-sort-value="1100000">{{ data['facility-600-limit'] }}</td>
                 <td class="govuk-table__cell" data-sort-value="870000">{{ data['facility-600-utilisation'] }}</td>
                 <td class="govuk-table__cell">{{ data['facility-600-cover'] }}</td>
                 <td class="govuk-table__cell" data-sort-value="696000">{{ data['facility-600-exposure'] }}</td>
-                <td class="govuk-table__cell" data-sort-value="">{{ data['facility-600-currency'] }} {{ data['facility-600-accrued'] }} </td>
+                <td class="govuk-table__cell" data-sort-value="">{{ data['facility-600-accrued'] }} </td>
                 <td class="govuk-table__cell" data-sort-value="">{{ data['facility-600-currency'] }} {{ data['facility-600-paid'] }} </td>
               </tr>
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="{{ data['facility-700-ukef-id'] }}"><a href="#" class="govuk-link govuk-link--no-visited-state">{{ data['facility-700-ukef-id'] }}</a></th>
                 <td class="govuk-table__cell">{{ data['facility-700-name'] }}</td>
-                <td class="govuk-table__cell">{{ data['facility-700-currency'] }}</td>
+                <td class="govuk-table__cell govuk-!-text-align-right">{{ data['facility-700-currency'] }}</td>
                 <td class="govuk-table__cell" data-sort-value="650000">{{ data['facility-700-limit'] }}</td>
                 <td class="govuk-table__cell" data-sort-value="200000">{{ data['facility-700-utilisation'] }}</td>
                 <td class="govuk-table__cell">{{ data['facility-700-cover'] }}</td>
                 <td class="govuk-table__cell" data-sort-value="160000">{{ data['facility-700-exposure'] }}</td>
-                <td class="govuk-table__cell" data-sort-value="">{{ data['facility-700-currency'] }} {{ data['facility-700-accrued'] }} </td>
+                <td class="govuk-table__cell" data-sort-value="">{{ data['facility-700-accrued'] }} </td>
                 <td class="govuk-table__cell" data-sort-value="">{{ data['facility-700-currency'] }} {{ data['facility-700-paid'] }} </td>
               </tr>
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="{{ data['facility-800-ukef-id'] }}"><a href="#" class="govuk-link govuk-link--no-visited-state">{{ data['facility-800-ukef-id'] }}</a></th>
                 <td class="govuk-table__cell">{{ data['facility-800-name'] }}</td>
-                <td class="govuk-table__cell">{{ data['facility-800-currency'] }}</td>
+                <td class="govuk-table__cell govuk-!-text-align-right">{{ data['facility-800-currency'] }}</td>
                 <td class="govuk-table__cell" data-sort-value="1000000">{{ data['facility-800-limit'] }}</td>
                 <td class="govuk-table__cell" data-sort-value="756000">{{ data['facility-800-utilisation'] }}</td>
                 <td class="govuk-table__cell">{{ data['facility-800-cover'] }}</td>
                 <td class="govuk-table__cell" data-sort-value="604800">{{ data['facility-800-exposure'] }}</td>
-                <td class="govuk-table__cell" data-sort-value="">{{ data['facility-800-currency'] }} {{ data['facility-800-accrued'] }} </td>
+                <td class="govuk-table__cell" data-sort-value="">{{ data['facility-800-accrued'] }} </td>
                 <td class="govuk-table__cell" data-sort-value="">{{ data['facility-800-currency'] }} {{ data['facility-800-paid'] }} </td>
               </tr>
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="{{ data['facility-900-ukef-id'] }}"><a href="#" class="govuk-link govuk-link--no-visited-state">{{ data['facility-900-ukef-id'] }}</a></th>
                 <td class="govuk-table__cell">{{ data['facility-900-name'] }}</td>
-                <td class="govuk-table__cell">{{ data['facility-900-currency'] }}</td>
+                <td class="govuk-table__cell govuk-!-text-align-right">{{ data['facility-900-currency'] }}</td>
                 <td class="govuk-table__cell" data-sort-value="600000">{{ data['facility-900-limit'] }}</td>
                 <td class="govuk-table__cell" data-sort-value="470000">{{ data['facility-900-utilisation'] }}</td>
                 <td class="govuk-table__cell">{{ data['facility-900-cover'] }}</td>
                 <td class="govuk-table__cell" data-sort-value="376000">{{ data['facility-900-exposure'] }}</td>
-                <td class="govuk-table__cell" data-sort-value="">{{ data['facility-900-currency'] }} {{ data['facility-900-accrued'] }} </td>
+                <td class="govuk-table__cell" data-sort-value="">{{ data['facility-900-accrued'] }} </td>
                 <td class="govuk-table__cell" data-sort-value="">{{ data['facility-900-currency'] }} {{ data['facility-900-paid'] }} </td>
               </tr>
 
@@ -1568,7 +1568,7 @@
   <!--Fee payable-->
   <td class="govuk-table__cell">{{ data['facility-403-currency'] }} {{ data['facility-403-paid'] }}</td>
   <!--Fee payable - total-->
-  <td class="govuk-table__cell">{{ data['facility-401-currency'] }} {{ data['facility-403-paid-total'] }}</td>
+  <td class="govuk-table__cell">{{ data['facility-403-currency'] }} {{ data['facility-403-paid'] }}</td>
   
   <td class="govuk-table__cell">
     <!--Payment received-->
