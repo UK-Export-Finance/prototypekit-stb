@@ -63,7 +63,7 @@
             <thead class="govuk-table__head">
               <tr class="govuk-table__row">
                 <th scope="col" class="govuk-table__header" aria-sort="ascending">Facility ID</th>
-                <th scope="col" class="govuk-table__header" aria-sort="none">Exporter</th>
+                <th scope="col" class="govuk-table__header govuk-width-one-seventh" aria-sort="none">Exporter</th>
                 <th scope="col" class="govuk-table__header govuk-!-text-align-right" aria-sort="none">Base currency</th>
                 <th scope="col" class="govuk-table__header" aria-sort="none">Value</th>  
                 <th scope="col" class="govuk-table__header" aria-sort="none">Utilisation</th>
@@ -231,13 +231,13 @@
 
             </div>  
 
-            <table class="govuk-table" data-module="moj-sortable-table">
+            <table class="govuk-table stb-table" data-module="moj-sortable-table">
               <thead class="govuk-table__head">
                 <tr class="govuk-table__row">
                   {% if data['bank-100-checkboxes'] == 'hide' %}
 
                   {% elif data['bank-100-checkboxes'] == 'show' %}
-                  <th class="govuk-table__header govuk-!-padding-top-0" scope="col">
+                  <th class="govuk-table__header govuk-!-padding-top-1" scope="col">
                     <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
                       
                       <input type="checkbox" class="govuk-checkboxes__input" id="facility-id-check" onclick="javascript:checkAll(this)">
@@ -262,7 +262,7 @@
               <!--facility 100 row-->  
                 <tr class="govuk-table__row govuk-table__row--selected">
                   {% if data['bank-100-checkboxes'] == 'show' %}
-                  <td class="govuk-table__cell govuk-!-padding-top-0 govuk-!-padding-bottom-0">
+                  <td class="govuk-table__cell govuk-!-padding-top-1 govuk-!-padding-bottom-0">
                     <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
                       <input type="checkbox" class="govuk-checkboxes__input" id="{{ data['facility-100-ukef-id'] }}">
                       <label class="govuk-label govuk-checkboxes__label" for="{{ data['facility-100-ukef-id'] }}">
@@ -297,7 +297,7 @@
               <!--facility 300 row-->  
                 <tr class="govuk-table__row govuk-table__row--selected">
                   {% if data['bank-100-checkboxes'] == 'show' %}
-                  <td class="govuk-table__cell govuk-!-padding-top-0 govuk-!-padding-bottom-0">
+                  <td class="govuk-table__cell govuk-!-padding-top-1 govuk-!-padding-bottom-0">
                     <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
                       <input type="checkbox" class="govuk-checkboxes__input" id="{{ data['facility-301-ukef-id'] }}">
                       <label class="govuk-label govuk-checkboxes__label" for="{{ data['facility-301-ukef-id'] }}">
@@ -331,7 +331,7 @@
               <!--facility 401 row-->  
                 <tr class="govuk-table__row govuk-table__row--selected">
                   {% if data['bank-100-checkboxes'] == 'show' %}
-                  <td class="govuk-table__cell govuk-!-padding-top-0 govuk-!-padding-bottom-0">
+                  <td class="govuk-table__cell govuk-!-padding-top-1 govuk-!-padding-bottom-0">
                     <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
                       <input type="checkbox" class="govuk-checkboxes__input" id="{{ data['facility-401-ukef-id'] }}">
                       <label class="govuk-label govuk-checkboxes__label" for="{{ data['facility-401-ukef-id'] }}">
@@ -365,7 +365,7 @@
               <!--facility 402 row-->  
               <tr class="govuk-table__row govuk-table__row--selected">
                 {% if data['bank-100-checkboxes'] == 'show' %}
-                <td class="govuk-table__cell govuk-!-padding-top-0 govuk-!-padding-bottom-0">
+                <td class="govuk-table__cell govuk-!-padding-top-1 govuk-!-padding-bottom-0">
                   <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
                     <input type="checkbox" class="govuk-checkboxes__input" id="{{ data['facility-401-ukef-id'] }}">
                     <label class="govuk-label govuk-checkboxes__label" for="{{ data['facility-401-ukef-id'] }}">
@@ -399,7 +399,7 @@
             <!--facility 403 row-->  
             <tr class="govuk-table__row govuk-table__row--selected">
               {% if data['bank-100-checkboxes'] == 'show' %}
-              <td class="govuk-table__cell govuk-!-padding-top-0 govuk-!-padding-bottom-0">
+              <td class="govuk-table__cell govuk-!-padding-top-1 govuk-!-padding-bottom-0">
                 <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
                   <input type="checkbox" class="govuk-checkboxes__input" id="{{ data['facility-401-ukef-id'] }}">
                   <label class="govuk-label govuk-checkboxes__label" for="{{ data['facility-401-ukef-id'] }}">
@@ -433,7 +433,7 @@
               <!--facility 500 row-->  
                 <tr class="govuk-table__row govuk-table__row--selected">
                   {% if data['bank-100-checkboxes'] == 'show' %}
-                  <td class="govuk-table__cell govuk-!-padding-top-0 govuk-!-padding-bottom-0">
+                  <td class="govuk-table__cell govuk-!-padding-top-1 govuk-!-padding-bottom-0">
                     <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
                       <input type="checkbox" class="govuk-checkboxes__input" id="{{ data['facility-500-ukef-id'] }}">
                       <label class="govuk-label govuk-checkboxes__label" for="{{ data['facility-500-ukef-id'] }}">
@@ -467,7 +467,7 @@
               <!--facility 600 row-->  
                 <tr class="govuk-table__row govuk-table__row--selected">
                   {% if data['bank-100-checkboxes'] == 'show' %}
-                  <td class="govuk-table__cell govuk-!-padding-top-0 govuk-!-padding-bottom-0">
+                  <td class="govuk-table__cell govuk-!-padding-top-1 govuk-!-padding-bottom-0">
                     <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
                       <input type="checkbox" class="govuk-checkboxes__input" id="{{ data['facility-600-ukef-id'] }}">
                       <label class="govuk-label govuk-checkboxes__label" for="{{ data['facility-600-ukef-id'] }}">
@@ -501,7 +501,7 @@
               <!--facility 700 row-->  
                 <tr class="govuk-table__row govuk-table__row--selected">
                   {% if data['bank-100-checkboxes'] == 'show' %}
-                  <td class="govuk-table__cell govuk-!-padding-top-0 govuk-!-padding-bottom-0">
+                  <td class="govuk-table__cell govuk-!-padding-top-1 govuk-!-padding-bottom-0">
                     <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
                       <input type="checkbox" class="govuk-checkboxes__input" id="{{ data['facility-700-ukef-id'] }}">
                       <label class="govuk-label govuk-checkboxes__label" for="{{ data['facility-700-ukef-id'] }}">
@@ -535,7 +535,7 @@
               <!--facility 800 row-->  
                 <tr class="govuk-table__row govuk-table__row--selected">
                   {% if data['bank-100-checkboxes'] == 'show' %}
-                  <td class="govuk-table__cell govuk-!-padding-top-0 govuk-!-padding-bottom-0">
+                  <td class="govuk-table__cell govuk-!-padding-top-1 govuk-!-padding-bottom-0">
                     <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
                       <input type="checkbox" class="govuk-checkboxes__input" id="{{ data['facility-800-ukef-id'] }}">
                       <label class="govuk-label govuk-checkboxes__label" for="{{ data['facility-800-ukef-id'] }}">
@@ -569,7 +569,7 @@
               <!--facility 900 row-->  
                 <tr class="govuk-table__row govuk-table__row--selected">
                   {% if data['bank-100-checkboxes'] == 'show' %}
-                  <td class="govuk-table__cell govuk-!-padding-top-0 govuk-!-padding-bottom-0">
+                  <td class="govuk-table__cell govuk-!-padding-top-1 govuk-!-padding-bottom-0">
                     <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
                       <input type="checkbox" class="govuk-checkboxes__input" id="{{ data['facility-900-ukef-id'] }}">
                       <label class="govuk-label govuk-checkboxes__label" for="{{ data['facility-900-ukef-id'] }}">
@@ -635,7 +635,7 @@
           {% if data['bank-100-checkboxes'] == 'hide' %}
 
           {% elif data['bank-100-checkboxes'] == 'show' %}
-          <th class="govuk-table__header govuk-!-padding-top-1" scope="col">
+          <th class="govuk-table__header govuk-!-padding-top-0" scope="col">
             <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
               
               <input type="checkbox" class="govuk-checkboxes__input" id="facility-id-check" onclick="javascript:checkAll(this)">
@@ -887,7 +887,7 @@
             {% if data['bank-100-checkboxes'] == 'hide' %}
   
             {% elif data['bank-100-checkboxes'] == 'show' %}
-            <th class="govuk-table__header govuk-!-padding-top-1" scope="col">
+            <th class="govuk-table__header govuk-!-padding-top-0" scope="col">
               <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
                 
                 <input type="checkbox" class="govuk-checkboxes__input" id="facility-id-check" onclick="javascript:checkAll(this)">
@@ -1023,7 +1023,7 @@
         <!--Fee payable-->
         <td class="govuk-table__cell">{{ data['facility-403-currency'] }} {{ data['facility-403-paid'] }}</td>
         <!--Fee payable - total-->
-        <td class="govuk-table__cell">{{ data['facility-401-currency'] }} {{ data['facility-403-paid'] }}</td>
+        <td class="govuk-table__cell">{{ data['facility-403-currency'] }} {{ data['facility-403-paid'] }}</td>
         
         <td class="govuk-table__cell">
           <!--Payment received-->
@@ -1032,7 +1032,7 @@
           <!--Total received-->
         </td>
         <td class="govuk-table__cell">
-          <strong class="govuk-tag">To&nbsp;do</strong>
+          <strong class="govuk-tag">To do</strong>
         </td>
       </tr>
     <!--end facility 403 row-->
@@ -1076,7 +1076,7 @@
             {% if data['bank-100-checkboxes'] == 'hide' %}
   
             {% elif data['bank-100-checkboxes'] == 'show' %}
-            <th class="govuk-table__header govuk-!-padding-top-1" scope="col">
+            <th class="govuk-table__header govuk-!-padding-top-0" scope="col">
               <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
                 
                 <input type="checkbox" class="govuk-checkboxes__input" id="facility-id-check" onclick="javascript:checkAll(this)">

@@ -273,7 +273,7 @@ module.exports = {
   'last-month-name': 'Jane Smith',
 
   // Banks
-  'bank-1-name': 'Barclays Bank',
+  'bank-1-name': 'Barclays',
   'bank-2-name': 'Bank of Scotland',
   'bank-3-name': 'Emirates NBD Bank (P.J.S.C)',
   'bank-4-name': 'HSBC UK Bank',

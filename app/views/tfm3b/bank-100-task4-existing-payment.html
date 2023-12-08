@@ -56,7 +56,7 @@ Add to existing payment - {{ data['bank-100-name'] }} – {{ serviceName }} – 
               </tfoot>   
             </table>
         <fieldset class="govuk-fieldset">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Which payment do you want to add the reported fee to?</legend>
+            <!--<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Which payment do you want to add the reported fee to?</legend>
                 
                 <div class="govuk-form-group">
 
@@ -67,9 +67,38 @@ Add to existing payment - {{ data['bank-100-name'] }} – {{ serviceName }} – 
                           <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="GBP" name="bank-100-task3-edit-currency" type="radio" value="GBP">
                             <label class="govuk-label govuk-radios__label" for="GBP">{{ data['facility-403-currency'] }} 8,990.00</label>
-							<div id="GB-hint" class="govuk-hint govuk-radios__hint">
-								Payment reference: {{ data['bank-100-name'] | upper}}/GEF/USD/8990 
+                            <div id="GB-hint" class="govuk-hint govuk-radios__hint">
+                              Payment reference: {{ data['bank-100-name'] | upper}}/GEF/USD/8990 
+                            </div>
 							</div>
+
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="EUR" name="bank-100-task3-edit-currency" type="radio" value="EUR">
+                            <label class="govuk-label govuk-radios__label" for="EUR">{{ data['facility-403-currency'] }} 2,145.00</label>
+							<div id="EUR-hint" class="govuk-hint govuk-radios__hint">
+								Payment reference: {{ data['bank-100-name'] | upper}}/GEF/USD/2145
+							</div>
+                          </div>
+
+                    </div>
+                  </fieldset>
+                </div>-->
+
+
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Which payment do you want to add the reported fee to?</legend>
+                
+                <div class="govuk-form-group">
+
+                    <fieldset class="govuk-fieldset">
+
+                    <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="GBP" name="bank-100-task3-edit-currency" type="radio" value="GBP">
+                            <label class="govuk-label govuk-radios__label" for="GBP">{{ data['facility-403-currency'] }} 8,990.00</label>
+                            <div id="GB-hint" class="govuk-hint govuk-radios__hint">
+                              Payment reference: {{ data['bank-100-name'] | upper}}/GEF/USD/8990 
+                            </div>
 							</div>
 
                           <div class="govuk-radios__item">
