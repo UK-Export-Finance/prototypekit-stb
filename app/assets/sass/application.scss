@@ -4,6 +4,8 @@
 //
 // Add extra styles here
 
+
+// Start of make prototype kit look like TFM 
 html,
 body,
 address,
@@ -287,7 +289,9 @@ caption,
 .ukef-heading-xs {
   font-weight: 700;
 }
+// End of make prototype kit look like TFM 
 
+// Start of custom widths
 .ukef-grid-column-one-sixth {
   box-sizing: border-box;
   padding: 0 15px;
@@ -300,8 +304,6 @@ caption,
     width: 16.6667%;
   }
 }
-
-
 
 .ukef-grid-column-five-sixth {
   box-sizing: border-box;
@@ -363,10 +365,11 @@ caption,
   width: 28.571% !important;
 }
 
+// End of custom widths
+ 
 .moj-side-navigation {
   padding-top: 0 !important;
 }
-
 
 .moj-page-header-actions {
   margin-bottom: 0;
@@ -382,8 +385,6 @@ caption,
 .emailcontent p.govuk-body {font-size: 19px}
 .emailcontent li  {font-size: 19px; color: #0b0c0c}
 
-.govuk-accordion__controls {display:none!important}
-
 .moj-sub-navigation {
   margin-top: 0 !important;
   margin-bottom: 40px;
@@ -391,6 +392,8 @@ caption,
 
 .moj-sub-navigation.oldreportsnav {margin-bottom: 40px}
 
+
+// Filter stuff - not used in the latetst version
 .find-report {
   background-color: #f3f2f1;
   font-family: Helvetica;
@@ -405,6 +408,7 @@ caption,
 
 .govuk-button.ukef-hide-button {padding: 10px 10px 9px; margin-top:-25px}
 
+// Contents links for payment details - not used in the latest version
 .gem-c-contents-list__list, .gem-c-contents-list__nested-list {
   margin: 0;
   padding: 0 0 0 25px;
@@ -444,8 +448,7 @@ caption,
   overflow: hidden;
 }
 
-.govuk-table.stb-table {line-height: 2}
-.govuk-table.stb-table .govuk-table__header {line-height: 1.5}
+// End of contents links for payment details tabs - not used in the latest version
 
 @media (min-width: 48.0625em) {
 .moj-action-bar__filter:after {
@@ -476,3 +479,10 @@ caption,
     margin-top: 95px;
   }
   }
+
+// Hides the 'Show all sections' on the accordion - there is always only one section so it's not needed
+  .govuk-accordion__controls {display:none!important}
+
+// Styling for the Premium payments and Payment details table tables - helps space out the contents when there are multiple elements within a single row
+.govuk-table.stb-table {line-height: 2}
+.govuk-table.stb-table .govuk-table__header {line-height: 1.5}
